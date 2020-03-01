@@ -1,0 +1,17 @@
+[Language]
+
+
+_cn=简体中文
+_en=English_US
+_tw=繁體中文
+
+
+[_cn]
+ui_system_cn
+
+[_en]
+ui_system_en
+
+
+[_tw]
+ui_system_tw

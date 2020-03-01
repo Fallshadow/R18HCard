@@ -1,0 +1,6 @@
+event_id,event_name,event_desc,event_result_desc,event_round,event_condition_SPId,event_condition_SP_var,event_effect_SPId,event_effect_SP_var,event_condition_1,event_condition_var_1,event_effect_1,event_effect_var_1,event_condition_2,event_condition_var_2,event_effect_2,event_effect_var_2
+1,event_name1,event_desc1,event_result_desc1,3,,,,,1,1,1,5,,,,
+2,event_name2,event_desc2,event_result_desc2,3,,,,,1,2,1,5,,,,
+3,event_name3,event_desc3,event_result_desc3,3,,,,,1,1,1,5,,,,
+4,event_name4,event_desc4,event_result_desc4,2,,,,,1,1,1_2,5;4,,,,
+5,event_name5,event_desc5,event_result_desc5,3,,,,,1,3,1,10,,,,

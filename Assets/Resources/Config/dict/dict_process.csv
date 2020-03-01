@@ -1,0 +1,3 @@
+process_id,p_condition_id,p_condition_var,p_events_id
+1,2,1,1_2
+2,2,2,3_4_5
