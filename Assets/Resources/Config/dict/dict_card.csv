@@ -2,3 +2,4 @@ card_id,card_level,card_name,card_img,card_desc,card_verification_number,card_ty
 1,1,card_name1,img1,card_desc1,3,1,1,,,,,,,
 2,2,card_name2,img2,card_desc2,3,2,,,,,,,,
 3,3,card_name3,img3,card_desc3,3,3,,,,,,,,
+4,4,card_name4,img4,card_desc4,4,4,,,,,,,,
