@@ -18,6 +18,12 @@ namespace act.ui
         public void Init()
         {
             config = GetComponent<EventReference>();
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, CheckDestoryEvent);
+        }
+
+        public void Release()
+        {
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, CheckDestoryEvent);
         }
         public game.EventInst GetEventInst()
         {
@@ -71,14 +77,26 @@ namespace act.ui
             }
         }
 
-        public void Release()
-        {
-
-        }
 
         public void Show()
         {
 
+        }
+
+        public void CheckDestoryEvent()
+        {
+            if (event_inst.hasComplete)
+            {
+                Release();
+                Destroy(this.gameObject);
+            }
+            if (event_inst.config.rountNum == 0)
+            {
+                Release();
+                Destroy(this.gameObject);
+            }
+
+            config.Text_Round.text = event_inst.config.rountNum.ToString();
         }
     }
 }

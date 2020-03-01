@@ -12,6 +12,7 @@ namespace act.ui
         public UiStaticText Text_Name = null;
         public UiStaticText Text_Desc = null;
         public UiStaticText Text_TestNum = null;
+        public UiStaticText Text_CardType = null;
         public UiStaticText[] Text_Conditions = null;
         public UiStaticText[] Text_Effects = null;
 

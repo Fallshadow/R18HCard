@@ -26,9 +26,9 @@ card_desc2=任何时候的交流都少不了言语，恋爱也不例外。
 card_desc3=情调不一定是首要的，但一定是不可或缺的。
 card_desc4=酒精有害健康，但偶尔也能有助于气氛。
 
-condition_desc1=必须打入card_typeX的卡牌
+condition_desc1=必须打入card_type{0}的卡牌
 condition_desc2=在第{0}回合的开始
 
-effect_desc1=进度值增加X
-effect_desc2=获得一张card_idX的卡牌
+effect_desc1=进度值增加{0}
+effect_desc2=获得一张card_id{0}的卡牌
 effect_desc3=下一次检定结果必定为6

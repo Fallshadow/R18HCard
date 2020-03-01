@@ -36,7 +36,7 @@ namespace act.game
 
         public bool ExcuteCheck()
         {
-            if (config.testNumber < GameFlowMgr.instance.CreatRandomNum())//TODO:随机数生成,全局加持！！
+            if (config.testNumber > GameFlowMgr.instance.CreatRandomNum())//TODO:随机数生成,全局加持！！
             {
                 return false;
             }

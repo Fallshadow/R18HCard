@@ -12,6 +12,7 @@ namespace act.game
         public List<List<EffectInst>> effectInsts = new List<List<EffectInst>>();
         public List<List<ConditionInst>> conditionSpInsts = new List<List<ConditionInst>>();
         public List<List<EffectInst>> effectSpInsts = new List<List<EffectInst>>();
+        public bool hasComplete = false;
         public EventInst(EventData eventData)
         {
             config = eventData;
@@ -38,6 +39,9 @@ namespace act.game
         public void ExcuteResult(List<bool> results)
         {
             EffectMgr.instance.ExcuteResult(effectInsts, results);
+            hasComplete = true;
         }
+
+
     }
 }

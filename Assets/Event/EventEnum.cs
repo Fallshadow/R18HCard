@@ -24,6 +24,7 @@ namespace act.evt
         Globe_RoundNum_Change,
         Globe_Event_Create,
         Globe_Card_Create,
+        Globe_Round_Over,
     }
 
 }

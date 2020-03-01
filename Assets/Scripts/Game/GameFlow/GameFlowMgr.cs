@@ -32,7 +32,7 @@ namespace act.game
         private EventInst curEvent = null;
         public List<EventInst> eventInsts = new List<EventInst>();
         public List<CardInst> cardInsts = new List<CardInst>();
-        public int RandomNum = 0;
+        public float RandomNum = 0;
         public int RoundNum
         {
             get
@@ -99,6 +99,7 @@ namespace act.game
                 //TODO:发信号！卡牌使用失败了
                 Debug.Log("卡牌使用失败了");
                 eventInst.CheckAndExcuteSPByBlend();
+                cardInst.Canuse = false;
             }
             else
             {
@@ -151,9 +152,9 @@ namespace act.game
             cardInsts.Add(inst);
         }
 
-        public int CreatRandomNum()
+        public float CreatRandomNum()
         {
-            RandomNum = UnityEngine.Random.Range(0, 7);
+            RandomNum = RandomNumMgr.instance.GetRandomNum();
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
             return RandomNum;
         }
@@ -174,6 +175,8 @@ namespace act.game
             }
             CheckProcessCondition();
             RoundNum++;
+
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over);
         }
         public void ResetRound()
         {

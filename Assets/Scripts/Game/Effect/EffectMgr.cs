@@ -74,7 +74,7 @@ namespace act.game
                     GameFlowMgr.instance.PushCardToTable((int)vars[0]);
                     return;
                 case EffectId.EI_3:
-                    GameFlowMgr.instance.PushCardToTable((int)vars[0]);
+                    RandomNumMgr.instance.SetRandomNumByTime(6, 1);
                     return;
                 default:
                     break;
