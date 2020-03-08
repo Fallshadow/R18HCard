@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &338357838059246625
 Transform:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -345,7 +345,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -420,10 +420,10 @@ RectTransform:
   m_Father: {fileID: 4334406662237473320}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2254308589748022561
 CanvasRenderer:
@@ -480,7 +480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4334406662237473320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -496,10 +496,10 @@ RectTransform:
   m_Father: {fileID: 338357838615683834}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1790813165310738645
 CanvasRenderer:
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6379579306824884004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -572,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3868481555585905895}
   - component: {fileID: 6057858248881467057}
+  - component: {fileID: 892055687}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -606,3 +607,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c70b9eb7ccf2d49aadb9357f5f314e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &892055687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086230290344969043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e872bea4f78474db2b11f01d5aed25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 0}
+  Actions:
+    m_keys: 000000000100000002000000
+    m_values:
+    - {fileID: 7400000, guid: 0147e212f97e3d449a4b9e4f5d057180, type: 3}
+    - {fileID: 7400000, guid: ac75d16809dc0054d8e3449e7ba665f2, type: 3}
+    - {fileID: 7400000, guid: e52be2fa48716194ea1d9d76686005f8, type: 3}
+  Faces:
+    m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+    m_values:
+    - {fileID: 7400000, guid: 6394472d24c9347e5bb789ec1f15e5bb, type: 2}
+    - {fileID: 7400000, guid: 689da6f371ad8441395f39acaf2c7ae3, type: 2}
+    - {fileID: 7400000, guid: 06b76ba9895174fc19d91c361e7c911b, type: 2}
+    - {fileID: 7400000, guid: 3555863ff4ef948e298b8d11ea795ec4, type: 2}
+    - {fileID: 7400000, guid: a20620e3db1a64f2f9a3e3339b884479, type: 2}
+    - {fileID: 7400000, guid: 73cb3ae8fc1de47a0a307cb5f95ec701, type: 2}
+    - {fileID: 7400000, guid: aaf4f40e5f852472f9eb781bef3a2c17, type: 2}
+    - {fileID: 7400000, guid: 63e3bd86527074923b9dc38ddb715245, type: 2}
+    - {fileID: 7400000, guid: 5da03c4c995e34f35a8c17702e9d6012, type: 2}
+    - {fileID: 7400000, guid: 8564dc45968774e70ad835503fda627e, type: 2}
+    - {fileID: 7400000, guid: 69a5af149623d4592b3764b7cb6a7482, type: 2}
