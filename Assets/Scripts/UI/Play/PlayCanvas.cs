@@ -10,6 +10,7 @@ namespace act.ui
     [BindingResource("Play/PlayCanvas")]
     public class PlayCanvas : InteractableUiBase
     {
+        [SerializeField] private CardGroup cardGroup;
         [SerializeField] private Transform cardParentGroupTran;
         [SerializeField] private Transform eventParentGroupTran;
         [SerializeField] private InputField tempCardId;
@@ -65,6 +66,7 @@ namespace act.ui
             eventDisplay.Init();
             eventDisplay.SetInst(eventInst);
             eventDisplay.EnterToTable();
+            game.GameFlowMgr.instance.eventInsts.Add(eventInst);
         }
 
         public void CreateCard(game.CardInst cardInst)
@@ -74,29 +76,21 @@ namespace act.ui
             cardDisplay.Init();
             cardDisplay.SetInst(cardInst);
             cardDisplay.EnterToTable();
+            cardGroup.RefreshCardChildPos();
+            game.GameFlowMgr.instance.cardInsts.Add(cardInst);
         }
         public void CreateEvent()
         {
             int eventID = Convert.ToInt32(tempEventId.text);
-            ui.EventDisplay eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(data.ResourcesPathSetting.UiPrefabFolder + data.ResourcesPathSetting.PlayUIEventPrefab,
-                eventParentGroupTran);
-            eventDisplay.Init();
             game.EventInst inst = game.EventMgr.instance.GetEventInstByID(eventID);
-            eventDisplay.SetInst(inst);
-            eventDisplay.EnterToTable();
-            game.GameFlowMgr.instance.eventInsts.Add(inst);
+            CreateEvent(inst);
         }
 
         public void CreateCard()
         {
             int cardId = Convert.ToInt32(tempCardId.text);
-            ui.CardDisplay cardDisplay = utility.LoadResources.LoadPrefab<ui.CardDisplay>(data.ResourcesPathSetting.UiPrefabFolder + data.ResourcesPathSetting.PlayUICardPrefab,
-                cardParentGroupTran);
-            cardDisplay.Init();
             game.CardInst inst = game.CardMgr.instance.GetCardInstByID(cardId);
-            cardDisplay.SetInst(inst);
-            cardDisplay.EnterToTable();
-            game.GameFlowMgr.instance.cardInsts.Add(inst);
+            CreateCard(inst);
         }
 
         public void ShowRandomNum()

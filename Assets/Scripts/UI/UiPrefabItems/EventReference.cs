@@ -10,6 +10,7 @@ namespace act.ui
         [Header("Common")]
         public UiStaticText Text_Name = null;
         public UiStaticText Text_Desc = null;
+        public UiStaticText Text_SPResultDesc = null;
         public UiStaticText Text_ResultDesc = null;
         public UiStaticText Text_Round = null;
         public UiStaticText[] Text_Conditions = null;

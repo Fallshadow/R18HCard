@@ -25,9 +25,13 @@ namespace act.fsm
 
         public void EndRound()
         {
-            foreach (var item in game.GameFlowMgr.instance.eventInsts)
+            for (int i = 0; i < game.GameFlowMgr.instance.eventInsts.Count; i++)
             {
-                item.RoundNum--;
+                game.GameFlowMgr.instance.eventInsts[i].RoundNum--;
+                if (game.GameFlowMgr.instance.eventInsts[i].RoundNum == -1)
+                {
+                    i--;
+                }
             }
             foreach (var item in game.GameFlowMgr.instance.cardInsts)
             {

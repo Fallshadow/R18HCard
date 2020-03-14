@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace act.ui
 {
@@ -92,20 +93,23 @@ namespace act.ui
 
         public void CheckDestoryEvent()
         {
-            if (event_inst.hasComplete)
+            if (event_inst.hasComplete || event_inst.RoundNum == -1)
             {
-                Release();
-                event_inst.DestorySelf();
-                Destroy(this.gameObject);
-            }
-            if (event_inst.RoundNum == -1)
-            {
-                Release();
-                event_inst.DestorySelf();
-                Destroy(this.gameObject);
+                ShowDie();
             }
 
             config.Text_Round.text = event_inst.RoundNum.ToString();
+        }
+        public void ShowDie()
+        {
+            GetComponent<DOTweenAnimation>().DOPlay();
+        }
+
+        public void DestoryEvent()
+        {
+            Release();
+            event_inst.DestorySelf();
+            Destroy(this.gameObject);
         }
     }
 }

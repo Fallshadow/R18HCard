@@ -21,6 +21,7 @@ namespace act.game
             set
             {
                 canUse = value;
+                evt.EventManager.instance.Send<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, UniqueId);
             }
         }
         private bool canUse = false;
