@@ -36,6 +36,7 @@ namespace act.ui
         public void SetInst(game.CardInst cardInst)
         {
             card_inst = cardInst;
+            config.cardTypeBG.sprite = UiManager.instance.GetSprite($"CardType{cardInst.config.type}", "PlayCanvas");
             config.Text_Name.Localize(card_inst.config.name, "ui_system");
             config.Text_Desc.Localize(card_inst.config.desc, "ui_system");
             config.Text_TestNum.text = card_inst.config.testNumber.ToString();

@@ -9,6 +9,7 @@ namespace act.ui
     public class CardReference : MonoBehaviour
     {
         [Header("Common")]
+        public Image cardTypeBG = null;
         public UiStaticText Text_Name = null;
         public UiStaticText Text_Desc = null;
         public UiStaticText Text_TestNum = null;
