@@ -21,6 +21,11 @@ card_name2=言语
 card_name3=情调
 card_name4=劝酒
 
+CT_Action=动作
+CT_Word=言语
+CT_Emotion=情调
+CT_UrgeWine=劝酒
+
 card_desc1=再多的花言巧语也比不上实际行动。
 card_desc2=任何时候的交流都少不了言语，恋爱也不例外。
 card_desc3=情调不一定是首要的，但一定是不可或缺的。

@@ -64,24 +64,31 @@ namespace act.game
                 case ConditionId.CI_None:
                     return true;
                 case ConditionId.CI_1:
-                    if (GameFlowMgr.instance.CurCard.config.type == vars[0])
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return (GameFlowMgr.instance.CurCard.config.type == vars[0])
+                        ? true : false;
                 case ConditionId.CI_2:
-                    if (GameFlowMgr.instance.RoundNum == vars[0] - 1)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return true;
                 case ConditionId.CI_3:
+                    return (GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                        ? true : false;
+                case ConditionId.CI_4:
+                    return (GameFlowMgr.instance.CurEvent.RoundNum == 0)
+                        ? true : false;
+                case ConditionId.CI_5:
+                    return GameFlowMgr.instance.IsCurEventContain((int)vars[0]);
+                case ConditionId.CI_6:
+                    return (GameFlowMgr.instance.GetGrayCard() >= vars[0])
+                        ? true : false;
+                case ConditionId.CI_7:
+                    return (GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                        ? true : false;
+                case ConditionId.CI_8:
+                    return true;
+                case ConditionId.CI_9:
+                    return true;
+                case ConditionId.CI_10:
+                    return true;
+                case ConditionId.CI_11:
                     return true;
                 default:
                     break;
@@ -104,21 +111,6 @@ namespace act.game
         /// <summary>
         /// list 条件返回（且）
         /// </summary>
-        /// <param name="conditionIds">IDs</param>
-        /// <returns></returns>
-        public bool ExcuteConditionListCheckByBlend(List<ConditionId> conditionIds)
-        {
-            bool result = true;
-            foreach (var item in conditionIds)
-            {
-                result = (result && ExcuteConditionCheck(item, GetConditionInstById(item).numVars.ToArray()));
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// list 条件返回（且）
-        /// </summary>
         /// <param name="conditionInsts">Insts</param>
         /// <returns></returns>
         public bool ExcuteConditionListCheckByBlend(List<ConditionInst> conditionInsts)
@@ -129,19 +121,6 @@ namespace act.game
                 result = result && ExcuteConditionCheck(item);
             }
             return result;
-        }
-
-
-
-        public bool ExcuteConditionCheck(List<ConditionInst> conditionInsts)
-        {
-            bool conditionRe = true;
-
-            foreach (var condition in conditionInsts)
-            {
-                conditionRe = conditionRe && condition.Excute();
-            }
-            return conditionRe;
         }
 
 

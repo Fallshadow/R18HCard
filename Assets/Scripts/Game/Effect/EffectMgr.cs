@@ -74,8 +74,78 @@ namespace act.game
                     GameFlowMgr.instance.PushCardToTable((int)vars[0]);
                     return;
                 case EffectId.EI_3:
-                    RandomNumMgr.instance.SetRandomNumByTime(6, 1);
+                    if (vars.Length == 1)
+                    {
+                        RandomNumMgr.instance.SetRandomNumByTime((int)vars[0], 1);
+                    }
+                    else
+                    {
+                        RandomNumMgr.instance.SetRandomNumByTime((int)vars[0], (int)vars[1]);
+                    }
                     return;
+                case EffectId.EI_4:
+                    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
+                    return;
+                case EffectId.EI_5:
+                    RandomNumMgr.instance.curUseTouziTime = (int)vars[0];
+                    return;
+                case EffectId.EI_6:
+                    GameFlowMgr.instance.CurCard.Canuse = true;//TODO:需要能使用
+                    return;
+                case EffectId.EI_7:
+                    GameFlowMgr.instance.CurEvent.RoundNum += (int)vars[0];
+                    return;
+                case EffectId.EI_8:
+                    GameFlowMgr.instance.Hp += (int)vars[0];
+                    return;
+                case EffectId.EI_9:
+                    GameFlowMgr.instance.CurCard.config.type =
+                    GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].config.type;
+                    return;
+                case EffectId.EI_10:
+                    GameFlowMgr.instance.RandomNum += (int)vars[0];
+                    return;
+                case EffectId.EI_11:
+                    //TODO:调用CG   ！临时用跳跃代替
+                    act.game.ModelController.instance.ChangeAction((Action)vars[0], false);
+                    return;
+                case EffectId.EI_12:
+                    if (GameFlowMgr.instance.CurEvent.config.ID == (int)vars[0])
+                    {
+                        GameFlowMgr.instance.CurCard.DestorySelf();
+                    }
+                    return;
+                case EffectId.EI_13:
+                    int index = 0;
+                    List<ConditionInst> conditions = new List<ConditionInst>();
+                    List<EffectInst> effectInsts = new List<EffectInst>();
+                    conditions.Add(ConditionMgr.instance.GetConditionInstById((ConditionId)(int)vars[index++]));
+                    for (int cdtx = index; cdtx < vars.Length; cdtx++)
+                    {
+                        if (vars[cdtx] != 111111)
+                        {
+                            conditions[0].numVars.Add(vars[index++]);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    index++;
+                    effectInsts.Add(EffectMgr.instance.GetEffectInstById((EffectId)(int)vars[index++]));
+                    for (int eftx = index; eftx < vars.Length; eftx++)
+                    {
+                        effectInsts[0].numVars.Add(vars[index++]);
+                    }
+                    ConditionEffectConfig conditionEffectConfig = new ConditionEffectConfig(0, conditions, effectInsts);
+                    GameFlowCdtAndEft.instance.AddCECToList(conditionEffectConfig);
+                    return;
+                //case EffectId.EI_9:
+                //    GameFlowMgr.instance.CurEvent.
+                //    return;
+                //case EffectId.EI_10:
+                //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
+                //    return;
                 default:
                     break;
             }

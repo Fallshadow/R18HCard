@@ -11,6 +11,13 @@ namespace act
             ENTRY = 0,
             MAINMENU,
             PLAP,
+            GameFlowRoundStart,
+            GameFlowWaitForCheck,
+            GameFlowCardCheck,
+            GameFlowCardNumCheck,
+            GameFlowCardUseOver,
+            GameFlowRoundEnd,
+
         }
 
         public enum PlayerFsmState

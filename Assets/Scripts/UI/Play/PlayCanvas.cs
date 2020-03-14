@@ -42,11 +42,15 @@ namespace act.ui
             evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Create, CreateCard);
             evt.EventManager.instance.Unregister<game.EventInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Event_Create, CreateEvent);
         }
-
+        protected override void onShow()
+        {
+            base.onShow();
+            game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundStart);
+        }
         #region Btn
         public void EndRound()
         {
-            game.GameFlowMgr.instance.EndRound();
+            game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
         }
         public void ReturnToMain()
         {
@@ -60,6 +64,7 @@ namespace act.ui
                 eventParentGroupTran);
             eventDisplay.Init();
             eventDisplay.SetInst(eventInst);
+            eventDisplay.EnterToTable();
         }
 
         public void CreateCard(game.CardInst cardInst)
@@ -68,6 +73,7 @@ namespace act.ui
                 cardParentGroupTran);
             cardDisplay.Init();
             cardDisplay.SetInst(cardInst);
+            cardDisplay.EnterToTable();
         }
         public void CreateEvent()
         {
@@ -77,6 +83,7 @@ namespace act.ui
             eventDisplay.Init();
             game.EventInst inst = game.EventMgr.instance.GetEventInstByID(eventID);
             eventDisplay.SetInst(inst);
+            eventDisplay.EnterToTable();
             game.GameFlowMgr.instance.eventInsts.Add(inst);
         }
 
@@ -88,6 +95,7 @@ namespace act.ui
             cardDisplay.Init();
             game.CardInst inst = game.CardMgr.instance.GetCardInstByID(cardId);
             cardDisplay.SetInst(inst);
+            cardDisplay.EnterToTable();
             game.GameFlowMgr.instance.cardInsts.Add(inst);
         }
 

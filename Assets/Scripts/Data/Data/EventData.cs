@@ -13,6 +13,8 @@ namespace act.data
         public string name;
         [Description("event_desc")]
         public string desc;
+        [Description("event_desc_SP")]
+        public string desc_SP;
         [Description("event_result_desc")]
         public string resultDesc;
         [Description("event_round")]

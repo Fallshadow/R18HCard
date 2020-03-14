@@ -11,20 +11,20 @@ public class ModelControllerEditor : Editor
     private bool showFaces = true;
     private bool showTestChangeFace = true;
     private bool keepAction = true;
-    private ModelController.Action actionChangeTo = ModelController.Action.IDLE;
+    private act.game.Action actionChangeTo = act.game.Action.IDLE;
     private bool keepFace = true;
-    private ModelController.Face faceChangeTo = ModelController.Face.DEFAULT;
+    private act.game.Face faceChangeTo = act.game.Face.DEFAULT;
     public override void OnInspectorGUI()
     {
         ModelController controller = (ModelController)target;
         EditorGUI.BeginDisabledGroup(true);
         EditorGUILayout.ObjectField("Script", MonoScript.FromMonoBehaviour(target as MonoBehaviour), typeof(MonoScript), false);
         EditorGUI.EndDisabledGroup();
-        controller.Animator = EditorGUILayout.ObjectField("Animator",controller.Animator, typeof(Animator),true) as Animator;
+        controller.Animator = EditorGUILayout.ObjectField("Animator", controller.Animator, typeof(Animator), true) as Animator;
         showActions = EditorGUILayout.Foldout(showActions, "Actions", true);
         if (showActions)
         {
-            var actionsList = new List<ModelController.Action>(controller.Actions.Keys);
+            var actionsList = new List<act.game.Action>(controller.Actions.Keys);
             foreach (var action in actionsList)
             {
                 EditorGUILayout.BeginHorizontal();
@@ -38,7 +38,7 @@ public class ModelControllerEditor : Editor
         var changeAction = false;
         if (showTestChangeAction)
         {
-            actionChangeTo = (ModelController.Action)EditorGUILayout.EnumPopup("Action", actionChangeTo);
+            actionChangeTo = (act.game.Action)EditorGUILayout.EnumPopup("Action", actionChangeTo);
             keepAction = EditorGUILayout.Toggle("KeepAction", keepAction);
             changeAction = GUILayout.Button("Change Action");
         }
@@ -49,7 +49,7 @@ public class ModelControllerEditor : Editor
         showFaces = EditorGUILayout.Foldout(showFaces, "Faces", true);
         if (showFaces)
         {
-            var facesList = new List<ModelController.Face>(controller.Faces.Keys);
+            var facesList = new List<act.game.Face>(controller.Faces.Keys);
             foreach (var face in facesList)
             {
                 EditorGUILayout.BeginHorizontal();
@@ -63,7 +63,7 @@ public class ModelControllerEditor : Editor
         var changeFace = false;
         if (showTestChangeFace)
         {
-            faceChangeTo = (ModelController.Face)EditorGUILayout.EnumPopup("Face", faceChangeTo);
+            faceChangeTo = (act.game.Face)EditorGUILayout.EnumPopup("Face", faceChangeTo);
             keepFace = EditorGUILayout.Toggle("KeepFace", keepFace);
             changeFace = GUILayout.Button("Change Face");
         }

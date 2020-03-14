@@ -23,8 +23,10 @@ namespace act.evt
         Globe_HpNum_Change,
         Globe_RoundNum_Change,
         Globe_Event_Create,
+        Globe_CurEvent_Completed,
         Globe_Card_Create,
         Globe_Round_Over,
+        Globe_IDEvent_ROUNDNUM_CHANGE,
     }
 
 }

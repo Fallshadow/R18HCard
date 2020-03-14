@@ -7,28 +7,8 @@ namespace act
 {
     namespace game
     {
-        public class ModelController : SingletonMonoBehaviorNoDestroy<GameController>
+        public class ModelController : SingletonMonoBehaviorNoDestroy<ModelController>
         {
-            public enum Action
-            {
-                IDLE,
-                JUMP,
-                WALK
-            };
-            public enum Face
-            {
-                DEFAULT,
-                ANGRY,
-                SMILE,
-                ASHAMED,
-                SURPRISE,
-                EYE_CLOSE,
-                MOUTH_A,
-                MOUTH_E,
-                MOUTH_I,
-                MOUTH_O,
-                MOUTH_U
-            };
             public Animator Animator = null;
             [Serializable]
             public class ActionAnimationClipDictionary : SerializableDictionary<Action, AnimationClip> { }

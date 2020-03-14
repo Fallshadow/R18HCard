@@ -24,7 +24,7 @@ namespace act.game
         }
         public EventInst GetEventInstByID(int ID)
         {
-            return dictEventInst[ID];
+            return new EventInst(GetEventDataByID(ID));
         }
     }
 }

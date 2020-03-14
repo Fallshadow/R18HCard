@@ -17,6 +17,8 @@ namespace act.data
         public string showImg;
         [Description("card_desc")]
         public string desc;
+        [Description("card_desc_SP")]
+        public string descSP;
         [Description("card_verification_number")]
         public int testNumber;
         [Description("card_type")]

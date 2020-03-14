@@ -18,16 +18,24 @@ namespace act.ui
         public void Init()
         {
             config = GetComponent<EventReference>();
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, CheckDestoryEvent);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, CheckDestoryEvent);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
         }
 
         public void Release()
         {
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, CheckDestoryEvent);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, CheckDestoryEvent);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
         }
         public game.EventInst GetEventInst()
         {
             return event_inst;
+        }
+
+        public void EnterToTable()
+        {
+            event_inst.EnterToTable();
+            //TODO:表现上EnterToTable
         }
         public void SetInst(game.EventInst eventInst)
         {
@@ -35,7 +43,7 @@ namespace act.ui
             config.Text_Name.Localize(event_inst.config.name, "ui_system");
             config.Text_Desc.Localize(event_inst.config.desc, "ui_system");
             config.Text_ResultDesc.Localize(event_inst.config.resultDesc, "ui_system");
-            config.Text_Round.text = event_inst.config.rountNum.ToString();
+            config.Text_Round.text = event_inst.RoundNum.ToString();
 
             int tempCSPCount = event_inst.conditionSpInsts.Count;
             int tempCCount = event_inst.conditionInsts.Count;
@@ -44,7 +52,7 @@ namespace act.ui
             {
                 for (int indexY = 0; indexY < event_inst.conditionSpInsts[index].Count; indexY++)
                 {
-                    string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.conditionInsts[index][indexY].desc, "ui_system");
+                    string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.conditionSpInsts[index][indexY].desc, "ui_system");
                     config.Text_Conditions[index].text += ss + " ";
                 }
             }
@@ -77,7 +85,6 @@ namespace act.ui
             }
         }
 
-
         public void Show()
         {
 
@@ -88,15 +95,17 @@ namespace act.ui
             if (event_inst.hasComplete)
             {
                 Release();
+                event_inst.DestorySelf();
                 Destroy(this.gameObject);
             }
-            if (event_inst.config.rountNum == 0)
+            if (event_inst.RoundNum == -1)
             {
                 Release();
+                event_inst.DestorySelf();
                 Destroy(this.gameObject);
             }
 
-            config.Text_Round.text = event_inst.config.rountNum.ToString();
+            config.Text_Round.text = event_inst.RoundNum.ToString();
         }
     }
 }

@@ -26,7 +26,8 @@ namespace act.game
 
         public CardInst GetCardInstByID(int ID)
         {
-            return dictCardInst[ID];
+            //return dictCardInst[ID];
+            return new CardInst(GetCardDataByID(ID));
         }
     }
 }

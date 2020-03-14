@@ -22,6 +22,11 @@ namespace act.ui
 
         }
 
+        public void EnterToTable()
+        {
+            card_inst.EnterTable();
+            //TODO:表现上EnterToTable
+        }
         public void Init()
         {
             config = GetComponent<CardReference>();
@@ -34,7 +39,7 @@ namespace act.ui
             config.Text_Name.Localize(card_inst.config.name, "ui_system");
             config.Text_Desc.Localize(card_inst.config.desc, "ui_system");
             config.Text_TestNum.text = card_inst.config.testNumber.ToString();
-            config.Text_CardType.text = Enum.GetName(typeof(game.CardType), card_inst.config.type);
+            config.Text_CardType.Localize(Enum.GetName(typeof(game.CardType), card_inst.config.type), "ui_system");
             for (int index = 0; index < card_inst.conditionInsts.Count; index++)
             {
                 for (int indexY = 0; indexY < card_inst.conditionInsts[index].Count; indexY++)
@@ -79,10 +84,6 @@ namespace act.ui
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!card_inst.Canuse)
-            {
-                return;
-            }
             Vector3 globalMousePos;
             if (RectTransformUtility.ScreenPointToWorldPointInRectangle(rectTrans, eventData.position, eventData.pressEventCamera, out globalMousePos))
             {
@@ -101,7 +102,7 @@ namespace act.ui
                     if (game.GameFlowMgr.instance.CurEvent != eventInst)
                     {
                         game.GameFlowMgr.instance.CurEvent = eventInst;
-                        game.GameFlowMgr.instance.CheckCardOnEvent();//TODO:如果成了表现为行
+                        game.GameFlowMgr.instance.CurEvent.CheckCardOnEventBySplit();//TODO:如果成了表现为行
                     }
                     return;
                 }
@@ -114,11 +115,6 @@ namespace act.ui
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (!card_inst.Canuse)
-            {
-                game.GameFlowMgr.instance.CurEvent = null;
-                return;
-            }
             transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
             game.GameFlowMgr.instance.UseCard();
             game.GameFlowMgr.instance.CurEvent = null;

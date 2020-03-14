@@ -5,7 +5,10 @@ using UnityEngine;
 public class RandomNumMgr : Singleton<RandomNumMgr>
 {
     public float curTouziNum = 1;
+    public float curUseTouziTime = 1;
     public float initTouziNum = 1;
+    public float initUseTouziTime = 1;
+    public float curTouziCheckNum = 0;
     public List<float> futureTimeRandomNum = new List<float>();
 
     /// <summary>
@@ -20,6 +23,7 @@ public class RandomNumMgr : Singleton<RandomNumMgr>
         //要不要判断一下骰子数和当前要到达的数值。。
         futureTimeRandomNum[timeNum - 1] = number;
     }
+
     public float GetRandomNum()
     {
         float result = 0;
@@ -37,12 +41,21 @@ public class RandomNumMgr : Singleton<RandomNumMgr>
         }
         else
         {
-            result = Random.Range(1, 7) * curTouziNum;
+            for (int i = 0; i < curUseTouziTime; i++)
+            {
+                result = Mathf.Max(result, Random.Range(1, 7) * curTouziNum);
+            }
         }
+        curTouziCheckNum = result;
+        ResetUseTouziTime();
         return result;
     }
-    public void Reset()
+    public void ResetTouziNum()
     {
         curTouziNum = initTouziNum;
+    }
+    public void ResetUseTouziTime()
+    {
+        curUseTouziTime = initUseTouziTime;
     }
 }

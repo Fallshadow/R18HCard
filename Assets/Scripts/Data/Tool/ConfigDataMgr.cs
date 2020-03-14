@@ -1,5 +1,6 @@
 ﻿using data;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace act.data
 {
@@ -279,7 +280,7 @@ namespace act.data
                 T typeT;
                 if (item == "")
                 {
-                    debug.PrintSystem.LogWarning($"你确定你没有填错表？这一项{sentence}里面有空的啊");
+                    Debug.Log($"你确定你没有填错表？这一项{sentence}里面有空的啊");
                     typeT = default(T);
                 }
                 else
