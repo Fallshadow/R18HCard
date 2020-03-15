@@ -37,25 +37,12 @@ namespace act.fsm
             {
                 item.RefreshUse();
             }
-            CheckProcessCondition();
             game.GameFlowMgr.instance.RoundNum++;
 
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over);
         }
 
-        public void CheckProcessCondition()
-        {
-            foreach (var item in game.ProcessMgr.instance.processInsts)
-            {
-                if (item.conditionInst.Excute())
-                {
-                    foreach (var eventid in item.eventIds)
-                    {
-                        game.GameFlowMgr.instance.PushEventToTable(eventid);
-                    }
-                }
-            }
-        }
+
 
         public void SwitchToStart()
         {

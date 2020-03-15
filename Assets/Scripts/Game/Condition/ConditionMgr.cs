@@ -89,6 +89,14 @@ namespace act.game
                 case ConditionId.CI_10:
                     return true;
                 case ConditionId.CI_11:
+                    return game.GameFlowMgr.instance.RoundNum == vars[0];
+                case ConditionId.CI_12:
+                    return game.GameFlowMgr.instance.Process >= vars[0];
+                case ConditionId.CI_13:
+                    return true;
+                case ConditionId.CI_14:
+                    return game.RandomNumMgr.instance.curTouziCheckNum == 6;
+                case ConditionId.CI_15:
                     return true;
                 default:
                     break;

@@ -87,7 +87,7 @@ namespace act.game
         }
         public void RefreshUse()
         {
-            canUse = true;
+            Canuse = true;
         }
     }
 }

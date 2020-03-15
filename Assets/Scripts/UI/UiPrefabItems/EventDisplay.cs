@@ -41,9 +41,27 @@ namespace act.ui
         public void SetInst(game.EventInst eventInst)
         {
             event_inst = eventInst;
+            if (eventInst.conditionInsts.Count == 0)
+            {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{4}", "PlayCanvas");
+            }
+            else
+            {
+                if (eventInst.conditionInsts[0][0].config.ID == 1)
+                {
+                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{eventInst.conditionInsts[0][0].numVars[0]}", "PlayCanvas");
+                }
+                else if (eventInst.conditionInsts[0][0].config.ID == 3)
+                {
+                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{game.CardMgr.instance.GetCardDataByID((int)eventInst.conditionInsts[0][0].numVars[0]).type}", "PlayCanvas");
+                }
+            }
+
             config.Text_Name.Localize(event_inst.config.name, "ui_system");
             config.Text_Desc.Localize(event_inst.config.desc, "ui_system");
-            config.Text_ResultDesc.Localize(event_inst.config.resultDesc, "ui_system");
+            config.Text_SPDesc.Localize(event_inst.config.desc_SP, "ui_system");
+            config.Text_SuccResultDesc.Localize(event_inst.config.desc_SuccResult, "ui_system");
+            config.Text_DefResultDesc.Localize(event_inst.config.desc_DefResult, "ui_system");
             config.Text_Round.text = event_inst.RoundNum.ToString();
 
             int tempCSPCount = event_inst.conditionSpInsts.Count;

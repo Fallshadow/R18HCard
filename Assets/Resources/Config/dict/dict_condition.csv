@@ -9,4 +9,6 @@ condition_id,condition_desc,condition_tp,condition_times,condition_self
 8,condition_desc8,1,-2,1
 9,condition_desc9,1,-2,2
 10,condition_desc10,6,-2,1
-11,condition_desc11,3,1,1
+11,condition_desc11,1,0,2
+12,condition_desc12,1,0,2
+13,condition_desc13,3,1,1

@@ -36,7 +36,7 @@ namespace act.game
         public List<CardInst> cardInsts = new List<CardInst>();
         public List<CardInst> hadUsecardInsts = new List<CardInst>();
         public List<CardInst> hadSolvecardInsts = new List<CardInst>();
-        public float RandomNum = 0;
+
         public int RoundNum
         {
             get
@@ -49,7 +49,9 @@ namespace act.game
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change);
             }
         }
-        private int roundNum = 0;
+        private int roundNum = 1;
+
+        public float RandomNum = 0;
         public float Process
         {
             get

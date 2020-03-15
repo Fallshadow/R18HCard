@@ -13,10 +13,14 @@ namespace act.data
         public string name;
         [Description("event_desc")]
         public string desc;
-        [Description("event_desc_SP")]
+        [Description("event_SP_desc")]
         public string desc_SP;
-        [Description("event_result_desc")]
-        public string resultDesc;
+        [Description("event_common_desc")]
+        public string desc_Common;
+        [Description("event_succResult_desc")]
+        public string desc_SuccResult;
+        [Description("event_defResult_desc")]
+        public string desc_DefResult;
         [Description("event_round")]
         public int rountNum;
         [Description("event_condition_SPId")]

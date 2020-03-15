@@ -9,7 +9,7 @@ using DG.Tweening;
 namespace act.ui
 {
     [RequireComponent(typeof(CardReference))]
-    public class CardDisplay : MonoBehaviour, IUiItemLifeInterface, IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerEnterHandler,IPointerExitHandler
+    public class CardDisplay : MonoBehaviour, IUiItemLifeInterface, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] protected CardReference config = null;
         [SerializeField] private game.CardInst card_inst = null;
@@ -44,8 +44,8 @@ namespace act.ui
             card_inst = cardInst;
             config.cardTypeBG.sprite = UiManager.instance.GetSprite($"CardType{cardInst.config.type}", "PlayCanvas");
             config.Text_Name.Localize(card_inst.config.name, "ui_system");
-            config.Text_Desc.Localize(card_inst.config.desc, "ui_system");
-            config.Text_DescSP.Localize(card_inst.config.descSP, "ui_system");
+            config.Text_DescSP.Localize(card_inst.config.desc, "ui_system");
+            config.Text_Desc.Localize(card_inst.config.descSP, "ui_system");
             config.Text_TestNum.text = card_inst.config.testNumber.ToString();
             config.Text_CardType.Localize(Enum.GetName(typeof(game.CardType), card_inst.config.type), "ui_system");
             for (int index = 0; index < card_inst.conditionInsts.Count; index++)
@@ -127,14 +127,32 @@ namespace act.ui
             HideDownOthers();
             //transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
             tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
-            game.GameFlowMgr.instance.UseCard();
-            game.GameFlowMgr.instance.CurEvent = null;
+            if (game.GameFlowMgr.instance.CurEvent != null)
+            {
+                if (game.GameFlowMgr.instance.CurEvent.config.ID == 28)
+                {
+                    Destroy(this.gameObject);
+                    transform.SetParent(tempParent.parent);
+                    game.GameFlowMgr.instance.PushCardToTable(
+                        game.GameFlowMgr.instance.CurEvent.conditionSpInsts[0][0].config.ID);
+                    card_inst.DestorySelf();
+                    game.GameFlowMgr.instance.CurEvent.RoundNum = -1;
+                    game.GameFlowMgr.instance.CurEvent = null;
+                    tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
+                }
+                else
+                {
+                    game.GameFlowMgr.instance.UseCard();
+                    game.GameFlowMgr.instance.CurEvent = null;
+                }
+            }
+
         }
         public void ChangeDisplay(int id)
         {
-            if(card_inst.UniqueId != id)
+            if (card_inst.UniqueId != id)
                 return;
-            if(!card_inst.Canuse)
+            if (!card_inst.Canuse)
             {
                 config.cardTypeBG.DOFade(0.6f, 1);
             }
@@ -142,7 +160,7 @@ namespace act.ui
             {
                 config.cardTypeBG.DOFade(1f, 1);
             }
-            
+
         }
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -163,7 +181,7 @@ namespace act.ui
 
         public void HideDownOthers()
         {
-            if(isDrag)
+            if (isDrag)
                 return;
             transform.localScale = Vector3.one;
             config.DescShow.SetActive(false);
