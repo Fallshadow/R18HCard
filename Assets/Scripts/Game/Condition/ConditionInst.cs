@@ -16,6 +16,7 @@ namespace act.game
         {
             config = conditionData;
             timePoint = (TimePoint)conditionData.timePoint;
+            Debug.Log(conditionData.ID);
             desc = localization.LocalizationManager.instance.GetLocalizedString(conditionData.desc, "ui_system");
         }
 
