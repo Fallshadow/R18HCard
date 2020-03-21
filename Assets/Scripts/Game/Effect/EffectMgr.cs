@@ -140,9 +140,9 @@ namespace act.game
                     ConditionEffectConfig conditionEffectConfig = new ConditionEffectConfig(0, conditions, effectInsts);
                     GameFlowCdtAndEft.instance.AddCECToList(conditionEffectConfig);
                     return;
-                //case EffectId.EI_9:
-                //    GameFlowMgr.instance.CurEvent.
-                //    return;
+                case EffectId.EI_14:
+                    GameFlowMgr.instance.cardSuccEventComp = false;
+                    return;
                 //case EffectId.EI_10:
                 //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
                 //    return;

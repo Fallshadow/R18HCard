@@ -6,6 +6,7 @@ namespace act.game
 {
     public class GameFlowMgr : Singleton<GameFlowMgr>
     {
+        public bool cardSuccEventComp = true;
         public CardInst CurCard
         {
             get

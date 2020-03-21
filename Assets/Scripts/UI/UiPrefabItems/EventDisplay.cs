@@ -60,6 +60,7 @@ namespace act.ui
             config.Text_Name.Localize(event_inst.config.name, "ui_system");
             config.Text_Desc.Localize(event_inst.config.desc, "ui_system");
             config.Text_SPDesc.Localize(event_inst.config.desc_SP, "ui_system");
+            config.Text_CommonDesc.Localize(event_inst.config.desc_Common, "ui_system");
             config.Text_SuccResultDesc.Localize(event_inst.config.desc_SuccResult, "ui_system");
             config.Text_DefResultDesc.Localize(event_inst.config.desc_DefResult, "ui_system");
             config.Text_Round.text = event_inst.RoundNum.ToString();

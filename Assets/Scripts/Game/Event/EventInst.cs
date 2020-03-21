@@ -75,8 +75,16 @@ namespace act.game
         public void ExcuteResult(List<bool> results)
         {
             EffectMgr.instance.ExcuteResult(effectInsts, results);
-            hasComplete = true;
-            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
+            if (GameFlowMgr.instance.cardSuccEventComp)
+            {
+                hasComplete = true;
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
+            }
+            else
+            {
+                GameFlowMgr.instance.cardSuccEventComp = true;
+            }
+
         }
 
 
