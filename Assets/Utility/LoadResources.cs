@@ -50,6 +50,19 @@ namespace act.utility
             GameObject go = InstantiateObject(obj, parent);
             return go.GetComponent<T>();
         }
+        public static T LoadPrefab<T>(string path, bool checkExisted = false) where T : class
+        {
+            Object obj = Resources.Load(path) as GameObject;
+            if(checkExisted)
+            {
+                if(obj == null)
+                {
+                    return null;
+                }
+            }
+            GameObject go = InstantiateObject(obj);
+            return go.GetComponent<T>();
+        }
         public static GameObject InstantiateObject(Object obj)
         {
             return Object.Instantiate(obj) as GameObject;

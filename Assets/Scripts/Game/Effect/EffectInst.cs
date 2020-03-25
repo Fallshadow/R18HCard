@@ -5,6 +5,7 @@ using act.data;
 
 namespace act.game
 {
+    [System.Serializable]
     public class EffectInst
     {
         public EffectData config = null;

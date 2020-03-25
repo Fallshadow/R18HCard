@@ -16,8 +16,8 @@ namespace act.ui
         public UiStaticText Text_SuccResultDesc = null;
         public UiStaticText Text_DefResultDesc = null;
         public UiStaticText Text_Round = null;
-        public UiStaticText[] Text_Conditions = null;
-        public UiStaticText[] Text_Effects = null;
+        //public UiStaticText[] Text_Conditions = null;
+        //public UiStaticText[] Text_Effects = null;
 
     }
 }

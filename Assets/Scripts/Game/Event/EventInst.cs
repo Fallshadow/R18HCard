@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace act.game
 {
+    [Serializable]
     public class EventInst
     {
         public EventData config = null;
@@ -21,7 +22,7 @@ namespace act.game
             set
             {
                 roundNum = value;
-                if (roundNum == -1)
+                if (roundNum == 0)
                 {
                     DestorySelf();
                 }
@@ -29,7 +30,22 @@ namespace act.game
             }
         }
         private int roundNum = 0;
-        public bool hasComplete = false;
+        public bool HasComplete
+        {
+            get
+            {
+                return hasComplete;
+            }
+            set
+            {
+                hasComplete = value;
+                if(hasComplete)
+                {
+                    evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
+                }
+            }
+        }
+        private bool hasComplete = false;
         public int UniqueId = 0;
         public EventInst(EventData eventData)
         {
@@ -77,8 +93,7 @@ namespace act.game
             EffectMgr.instance.ExcuteResult(effectInsts, results);
             if (GameFlowMgr.instance.cardSuccEventComp)
             {
-                hasComplete = true;
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
+                HasComplete = true;
             }
             else
             {

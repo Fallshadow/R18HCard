@@ -26,31 +26,38 @@ namespace act.game
             futureTimeRandomNum[timeNum - 1] = number;
         }
 
-        public float GetRandomNum()
+        public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum)
         {
-            float result = 0;
+            result = new List<float>();
+            touziNum = curTouziNum;
             if (futureTimeRandomNum.Count >= 1)
             {
                 if (futureTimeRandomNum[0] > 0)
                 {
-                    result = futureTimeRandomNum[0];
+                    result.Add(futureTimeRandomNum[0]);
                 }
                 else
                 {
-                    result = Random.Range(1, 7) * curTouziNum;
+                    for(int i = 0; i < curTouziNum; i++)
+                    {
+                        result.Add(Random.Range(1, 7));
+                    }
                 }
                 futureTimeRandomNum.RemoveAt(0);
             }
             else
             {
-                for (int i = 0; i < curUseTouziTime; i++)
+                for(int i = 0; i < curTouziNum; i++)
                 {
-                    result = Mathf.Max(result, Random.Range(1, 7) * curTouziNum);
+                    result.Add(Random.Range(1, 7));
                 }
             }
-            curTouziCheckNum = result;
+            foreach(var item in result)
+            {
+                curTouziCheckNum = Mathf.Max(item, curTouziCheckNum);
+            }
+            maxNum = curTouziCheckNum;
             ResetUseTouziTime();
-            return result;
         }
         public void ResetTouziNum()
         {

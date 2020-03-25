@@ -5,6 +5,7 @@ using System.ComponentModel;
 
 namespace act.data
 {
+    [System.Serializable]
     public class EventData
     {
         [Description("event_id")]

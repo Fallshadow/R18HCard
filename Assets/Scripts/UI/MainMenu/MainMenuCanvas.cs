@@ -24,10 +24,16 @@ namespace act.ui
         {
 
         }
-        #region 
-        public void TurnToPlay()
+        #region Btn
+        public void Play()
         {
             Hide();
+            game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
+        }
+        public void RePlay()
+        {
+            Hide();
+            game.GameFlowMgr.instance.ClearData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
         }
         #endregion

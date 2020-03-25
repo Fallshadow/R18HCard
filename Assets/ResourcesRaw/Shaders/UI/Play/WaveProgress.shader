@@ -86,10 +86,10 @@
 				half2 uv = i.uv;
 				fixed4 color = i.color * tex2D(_MainTex, uv);
 				half2 uv1 = i.uv1;
-				half val = uv1.y + sin(uv1.x * 6.0 + _Time.y * _WaveSpeed)* 0.4;  
+				half val = uv1.y + sin(uv1.x * 6.0 + _Time.y * _WaveSpeed)* 0.4 - 1;  
 				val *= 0.1;
 				color.rgb = lerp(lerp(color.rgb + 0.1 , color.rgb, _Progress), 1.0, 0.6 - uv1.y);
-				color.a = uv1.y + val - 0.2 > _Progress ? 0 : color.a;
+				color.a = uv1.y + val > _Progress ? 0 : color.a;
 				#ifdef UNITY_UI_ALPHACLIP
 				clip (color.a - 0.001);
 				#endif

@@ -2,6 +2,7 @@
 
 namespace act.data
 {
+    [System.Serializable]
     public class ConditionData
     {
         [Description("condition_id")]

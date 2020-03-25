@@ -9,6 +9,7 @@ namespace act.fsm
         public override void Enter()
         {
             Debug.Log("进入状态：卡牌使用结束");
+
             game.GameFlowMgr.instance.RecordCurCard();
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardUseOverCEC);
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowWaitForCheck);

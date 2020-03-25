@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace act.game
 {
+    [System.Serializable]
     public class ConditionEffectConfig
     {
         public int id = 0;

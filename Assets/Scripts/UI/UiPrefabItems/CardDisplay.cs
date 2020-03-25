@@ -9,12 +9,16 @@ using DG.Tweening;
 namespace act.ui
 {
     [RequireComponent(typeof(CardReference))]
-    public class CardDisplay : MonoBehaviour, IUiItemLifeInterface, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+    public class CardDisplay : MonoBehaviour, IUiItemLifeInterface, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler
     {
         [SerializeField] protected CardReference config = null;
         [SerializeField] private game.CardInst card_inst = null;
         private RectTransform rectTrans = null;
         private bool isDrag = false;
+        private GameObject tempPointGo = null;
+        private bool isLockedSlot = false;
+        private Vector3 InitPos = Vector3.zero; 
+         private Vector2 InitSizeDelta = Vector2.zero; 
         public game.CardInst GetCardInst()
         {
             return card_inst;
@@ -37,6 +41,9 @@ namespace act.ui
         {
             config = GetComponent<CardReference>();
             rectTrans = GetComponent<RectTransform>();
+            tempParent = transform.parent;
+            InitPos = rectTrans.position;
+            InitSizeDelta = rectTrans.sizeDelta;
         }
 
         public void SetInst(game.CardInst cardInst)
@@ -66,9 +73,10 @@ namespace act.ui
                 }
             }
 
-
+            evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, CheckCardDestroy);
             evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, ChangeDisplay);
-        }
+            evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
+    }
 
         public void Release()
         {
@@ -78,6 +86,10 @@ namespace act.ui
         private Transform tempParent = null;
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if(isLockedSlot)
+            {
+                return;
+            }
             if (!card_inst.Canuse)
             {
                 return;
@@ -90,6 +102,10 @@ namespace act.ui
 
         public void OnDrag(PointerEventData eventData)
         {
+            if(isLockedSlot)
+            {
+                return;
+            }
             isDrag = true;
             config.DescShow.SetActive(false);
             Vector3 globalMousePos;
@@ -100,22 +116,15 @@ namespace act.ui
             GraphicRaycaster gr = gameObject.GetComponentInParent<Canvas>().GetComponent<GraphicRaycaster>();
             List<RaycastResult> results = new List<RaycastResult>();
             gr.Raycast(eventData, results);
-            bool tempExistEvent = false;
             foreach (var item in results)
             {
-                if (item.gameObject.tag == "EventPrefab")
+                if (item.gameObject.tag == "CardSlot")
                 {
-                    tempExistEvent = true;
-                    game.EventInst eventInst = item.gameObject.GetComponent<EventDisplay>().GetEventInst();
-                    if (game.GameFlowMgr.instance.CurEvent != eventInst)
-                    {
-                        game.GameFlowMgr.instance.CurEvent = eventInst;
-                        game.GameFlowMgr.instance.CurEvent.CheckCardOnEventBySplit();//TODO:如果成了表现为行
-                    }
+                    tempPointGo = item.gameObject;
                     return;
                 }
             }
-            if (!tempExistEvent) { game.GameFlowMgr.instance.CurEvent = null; }
+            tempPointGo = null;
             //TODO:表现为不行
         }
 
@@ -126,27 +135,29 @@ namespace act.ui
             isDrag = false;
             HideDownOthers();
             //transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
-            tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
-            if (game.GameFlowMgr.instance.CurEvent != null)
+            if(tempPointGo != null && card_inst.Canuse && (tempPointGo.gameObject.name == $"CardType{card_inst.config.type}" || tempPointGo.gameObject.name == $"CardType"))
             {
-                if (game.GameFlowMgr.instance.CurEvent.config.ID == 28)
-                {
-                    Destroy(this.gameObject);
-                    transform.SetParent(tempParent.parent);
-                    game.GameFlowMgr.instance.PushCardToTable(
-                        game.GameFlowMgr.instance.CurEvent.conditionSpInsts[0][0].config.ID);
-                    card_inst.DestorySelf();
-                    game.GameFlowMgr.instance.CurEvent.RoundNum = -1;
-                    game.GameFlowMgr.instance.CurEvent = null;
-                    tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
-                }
-                else
-                {
-                    game.GameFlowMgr.instance.UseCard();
-                    game.GameFlowMgr.instance.CurEvent = null;
-                }
+                rectTrans.position = (tempPointGo.transform as RectTransform).position;
+                rectTrans.sizeDelta = (tempPointGo.transform as RectTransform).sizeDelta;
+                isLockedSlot = true;
             }
-
+            else
+            {
+                tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
+            }
+        }
+        public void CheckCardDestroy(int id)
+        {
+            if(card_inst.UniqueId != id)
+                return;
+            //TODO:表现
+            GameObject.Destroy(this.gameObject);
+        }
+        private void OnDestroy()
+        {
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, CheckCardDestroy);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, ChangeDisplay);
+            evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
         }
         public void ChangeDisplay(int id)
         {
@@ -164,11 +175,19 @@ namespace act.ui
         }
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if(isLockedSlot)
+            {
+                return;
+            }
             ShowUpOthers();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if(isLockedSlot)
+            {
+                return;
+            }
             HideDownOthers();
         }
 
@@ -186,6 +205,23 @@ namespace act.ui
             transform.localScale = Vector3.one;
             config.DescShow.SetActive(false);
             //GetComponent<Canvas>().sortingOrder = 1;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if(isLockedSlot)
+            {
+                ResetToCardGroup();
+            }
+        }
+
+        //回到手牌区
+        private void ResetToCardGroup()
+        {
+            isLockedSlot = false;
+            rectTrans.position = InitPos;
+            rectTrans.sizeDelta = InitSizeDelta;
+            tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
         }
     }
 }

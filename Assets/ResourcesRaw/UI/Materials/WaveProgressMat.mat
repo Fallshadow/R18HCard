@@ -86,7 +86,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Progress: 0.56
+    - _Progress: 0.15
     - _Shine: 0
     - _ShineSpeed: 1
     - _SmoothnessTextureChannel: 0
@@ -104,5 +104,5 @@ Material:
     - _WaveSpeed: 2
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.14576934, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.31043285, b: 0.19339621, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -143,6 +143,14 @@ namespace act.game
                 case EffectId.EI_14:
                     GameFlowMgr.instance.cardSuccEventComp = false;
                     return;
+                case EffectId.EI_15:
+                    //删卡牌
+                    GameFlowMgr.instance.DelectCardByID((int)vars[0]);
+                    return;
+                case EffectId.EI_16:
+                    //删事件
+                    GameFlowMgr.instance.DelectEventByID((int)vars[0]);
+                    return;
                 //case EffectId.EI_10:
                 //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
                 //    return;

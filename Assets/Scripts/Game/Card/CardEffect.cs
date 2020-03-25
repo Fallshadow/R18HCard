@@ -78,9 +78,7 @@ namespace act.ui
         {
             if (display == null)
                 return;
-            var group = display.GetComponent<CanvasGroup>();
-            if (group == null)
-                group = display.gameObject.AddComponent<CanvasGroup>();
+            CanvasGroup group = display.GetOrAddComponent<CanvasGroup>();
             StartCoroutine(DoHideCard(group, callBack));
         }
         IEnumerator DoShowCard(CanvasGroup group, CallBack callBack = null)
@@ -101,9 +99,7 @@ namespace act.ui
         {
             if (display == null)
                 return;
-            var group = display.GetComponent<CanvasGroup>();
-            if (group == null)
-                group = display.gameObject.AddComponent<CanvasGroup>();
+            CanvasGroup group = display.GetOrAddComponent<CanvasGroup>();
             StartCoroutine(DoShowCard(group, callBack));
         }
     }

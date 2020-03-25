@@ -2,6 +2,7 @@
 
 namespace act.data
 {
+    [System.Serializable]
     public class EffectData
     {
         [Description("effect_id")]

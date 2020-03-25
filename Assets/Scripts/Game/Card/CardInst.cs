@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace act.game
 {
+    [Serializable]
     public class CardInst
     {
         public CardData config = null;
@@ -25,6 +26,7 @@ namespace act.game
             }
         }
         private bool canUse = false;
+
         public CardInst(CardData cardData)
         {
             UniqueId = CECMgr.instance.GetUniqueId(cardData.ID, 1);
@@ -60,7 +62,7 @@ namespace act.game
         public void DestorySelf()
         {
             GameFlowMgr.instance.cardInsts.Remove(this);
-            //TODO:通知表现
+            evt.EventManager.instance.Send<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, UniqueId);
         }
         public bool ExcuteCheck()
         {

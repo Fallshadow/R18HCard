@@ -5,6 +5,7 @@ using act.data;
 
 namespace act.game
 {
+    [System.Serializable]
     public class ConditionInst
     {
         public ConditionData config = null;

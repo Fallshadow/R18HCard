@@ -68,6 +68,8 @@ namespace act.game
         EI_12,
         EI_13,
         EI_14,
+        EI_15,
+        EI_16,
     }
 
     public enum TimePoint

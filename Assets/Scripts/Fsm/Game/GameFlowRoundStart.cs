@@ -8,6 +8,7 @@ namespace act.fsm
     {
         public override void Enter()
         {
+            game.GameFlowMgr.instance.SaveData();
             Debug.Log("进入状态：回合开始");
             GiveInitCard();
             CheckProcessCondition();

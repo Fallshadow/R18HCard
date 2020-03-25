@@ -10,7 +10,7 @@ namespace act.data
         public const string UiAtlasFolder = "Atlases/";
         public const string DefaultSpriteUiTexture = "PicMiss";
         public const string PlayUICardPrefab = "Play/CardPrefab";
-        public const string PlayUIEventPrefab = "Play/EventPrefab";
+        public const string PlayUIEventPrefabBase = "Play/Event/EventPrefabBase";
         #endregion
         #region Resources Path
         public const string Config = "Config/";

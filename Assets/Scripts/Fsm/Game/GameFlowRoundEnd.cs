@@ -25,13 +25,15 @@ namespace act.fsm
 
         public void EndRound()
         {
-            for (int i = 0; i < game.GameFlowMgr.instance.eventInsts.Count; i++)
+            int tempCount = game.GameFlowMgr.instance.eventInsts.Count;
+            for (int i = 0; i < tempCount; i++)
             {
                 game.GameFlowMgr.instance.eventInsts[i].RoundNum--;
-                if (game.GameFlowMgr.instance.eventInsts[i].RoundNum == -1)
+                if (tempCount > game.GameFlowMgr.instance.eventInsts.Count)
                 {
                     i--;
                 }
+                tempCount = game.GameFlowMgr.instance.eventInsts.Count;
             }
             foreach (var item in game.GameFlowMgr.instance.cardInsts)
             {
@@ -40,6 +42,8 @@ namespace act.fsm
             game.GameFlowMgr.instance.RoundNum++;
 
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over);
+
+            
         }
 
 

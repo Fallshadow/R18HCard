@@ -5,6 +5,7 @@ using System.ComponentModel;
 
 namespace act.data
 {
+    [System.Serializable]
     public class CardData
     {
         [Description("card_id")]
