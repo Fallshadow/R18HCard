@@ -10,12 +10,16 @@ namespace act.fsm
         {
             Debug.Log("进入状态：检定卡牌成功或失败");
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckStartCEC);
-            float touziNum = 0;
-            float maxNum = 0;
-            List<float> result = new List<float>();
-            game.RandomNumMgr.instance.GetRandomNum(out result,out touziNum,out maxNum);
-            game.RollTouZiManager.instance.PlayRoll(touziNum, result, TouziCallBack,maxNum);
 
+            if(game.GameFlowMgr.instance.JumpUpTouzi)
+            {
+                game.GameFlowMgr.instance.JumpUpTouzi = false;
+                m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);
+            }
+            else
+            {
+                Touzi();
+            }
         }
 
         public override void Exit()
@@ -28,6 +32,15 @@ namespace act.fsm
 
         }
 
+
+        public void Touzi()
+        {
+            float touziNum = 0;
+            float maxNum = 0;
+            List<float> result = new List<float>();
+            game.RandomNumMgr.instance.GetRandomNum(out result, out touziNum, out maxNum);
+            game.RollTouZiManager.instance.PlayRoll(touziNum, result, TouziCallBack, maxNum);
+        }
         public void TouziCallBack()
         {
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckOverCEC);
@@ -44,7 +57,6 @@ namespace act.fsm
                 game.GameFlowMgr.instance.CurCard.CheckCdt();
                 game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
                 game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
-                game.GameFlowMgr.instance.CurEvent = null;
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
             }
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);

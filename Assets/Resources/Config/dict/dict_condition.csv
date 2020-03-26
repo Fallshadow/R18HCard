@@ -11,6 +11,7 @@ condition_id,condition_desc,condition_tp,condition_times,condition_self
 10,condition_desc10,6,-2,1
 11,condition_desc11,1,-2,2
 12,condition_desc12,1,-2,2
-13,condition_desc13,3,1,1
+13,condition_desc13,3,-2,1
 14,condition_desc14,5,-2,1
 15,condition_desc15,8,-2,2
+16,condition_desc16,2,-2,1

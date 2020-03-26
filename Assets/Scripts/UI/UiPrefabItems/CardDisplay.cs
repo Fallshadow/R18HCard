@@ -90,10 +90,10 @@ namespace act.ui
             {
                 return;
             }
-            if (!card_inst.Canuse)
-            {
-                return;
-            }
+            //if (!card_inst.Canuse)
+            //{
+            //    return;
+            //}
             tempParent = transform.parent;
             //transform.SetParent(tempParent.parent);//TODO:表现
 
@@ -128,14 +128,36 @@ namespace act.ui
             //TODO:表现为不行
         }
 
+        //能否把卡牌插入插槽
+        public bool CheckCanUseCardInSlot()
+        {
+            if(tempPointGo != null
+                && card_inst.Canuse
+                &&
+                (
+                    tempPointGo.gameObject.name == $"CardType{card_inst.config.type}"
+                    || tempPointGo.gameObject.name == $"CardType"
+                    || tempPointGo.gameObject.name == $"CardType{card_inst.config.ID}"
+                )
+            )
+            {
+                return true;
+            }
 
+            if(tempPointGo != null && (!card_inst.Canuse) && tempPointGo.gameObject.name == $"CardTypeUnuse")
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             isDrag = false;
             HideDownOthers();
             //transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
-            if(tempPointGo != null && card_inst.Canuse && (tempPointGo.gameObject.name == $"CardType{card_inst.config.type}" || tempPointGo.gameObject.name == $"CardType"))
+            if(CheckCanUseCardInSlot())
             {
                 rectTrans.position = (tempPointGo.transform as RectTransform).position;
                 rectTrans.sizeDelta = (tempPointGo.transform as RectTransform).sizeDelta;

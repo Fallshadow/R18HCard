@@ -99,7 +99,7 @@ namespace act.ui
             config.Text_Round.text = event_inst.RoundNum.ToString();
             if(event_inst.RoundNum == -2)
             {
-                config.Text_Round.text = "1";
+                config.Text_Round.text = "无限";
             }
             //int tempCSPCount = event_inst.conditionSpInsts.Count;
             //int tempCCount = event_inst.conditionInsts.Count;
@@ -155,8 +155,12 @@ namespace act.ui
                     ShowDie();
                 }
             }
-            
             config.Text_Round.text = event_inst.RoundNum.ToString();
+            if(event_inst.RoundNum == -2)
+            {
+                config.Text_Round.text = "无限";
+            }
+            
         }
         public void ShowDie()
         {

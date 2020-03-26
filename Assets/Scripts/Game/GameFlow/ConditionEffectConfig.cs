@@ -8,8 +8,8 @@ namespace act.game
     public class ConditionEffectConfig
     {
         public int id = 0;
-        List<ConditionInst> conditionInsts = new List<ConditionInst>();
-        List<EffectInst> effectInsts = new List<EffectInst>();
+        public List<ConditionInst> conditionInsts = new List<ConditionInst>();
+        public List<EffectInst> effectInsts = new List<EffectInst>();
         public TimePoint timePoint = TimePoint.TP_None;
         public int times = 0;
         public EntityType self = 0;
@@ -25,6 +25,10 @@ namespace act.game
 
         public bool CECheckByBlend()
         {
+            if(GameFlowMgr.instance.CurEvent.UniqueId != id && GameFlowMgr.instance.CurCard.UniqueId != id)
+            {
+                return false;
+            }
             if(times != -2)
             {
                 times--;

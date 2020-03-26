@@ -87,6 +87,18 @@ namespace act.game
         public List<CardInst> hadUsecardInsts = new List<CardInst>();
         public float RandomNum = 0;
 
+        public bool JumpUpTouzi
+        {
+            get
+            {
+                return jumpUpTouzi;
+            }
+            set
+            {
+                jumpUpTouzi = value;
+            }
+        }
+        private bool jumpUpTouzi;
         public bool canOverRound = false;
         data.SaveData saveData = null;
         private const string SAVE_FILE_NAME = "SaveData";
@@ -369,6 +381,9 @@ namespace act.game
                 default:
                     break;
             }
+            Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," +
+                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," +
+                $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}"): "无")} ");
         }
         public void RemoveCECToList(ConditionEffectConfig CEC)
         {

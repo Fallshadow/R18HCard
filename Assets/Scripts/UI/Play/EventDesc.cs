@@ -88,10 +88,16 @@ namespace act.ui
                         Image_CardSlot[tempCardSlot].gameObject.name = $"CardType{item.numVars[0]}";
                         tempCardSlot++;
                     }
-                    else if(item.config.ID == 8)
+                    else if(item.config.ID == 2)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType", "PlayCanvas");
                         Image_CardSlot[tempCardSlot].gameObject.name = $"CardType";
+                        tempCardSlot++;
+                    }
+                    else if(item.config.ID == 16)
+                    {
+                        Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType", "PlayCanvas");
+                        Image_CardSlot[tempCardSlot].gameObject.name = $"CardTypeUnuse";
                         tempCardSlot++;
                     }
                 }

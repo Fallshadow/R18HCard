@@ -59,6 +59,7 @@ namespace act.game
         #endregion
         public bool ExcuteConditionCheck(ConditionId condition, params float[] vars)
         {
+            Debug.Log($"执行条件ID：{(int)condition}");
             switch (condition)
             {
                 case ConditionId.CI_None:
@@ -98,6 +99,8 @@ namespace act.game
                     return game.RandomNumMgr.instance.curTouziCheckNum == 6;
                 case ConditionId.CI_15:
                     return true;
+                case ConditionId.CI_16:
+                    return !game.GameFlowMgr.instance.CurCard.Canuse;
                 default:
                     break;
             }

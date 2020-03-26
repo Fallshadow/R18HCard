@@ -11,11 +11,11 @@ namespace act.fsm
         {
             Debug.Log("进入状态：检测卡牌");
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardCheckCEC);
-            if (!game.GameFlowMgr.instance.CurCard.Canuse)
-            {
-                game.GameFlowMgr.instance.CurEvent = null;
-                return;
-            }
+            //if (!game.GameFlowMgr.instance.CurCard.Canuse)
+            //{
+            //    game.GameFlowMgr.instance.CurEvent = null;
+            //    return;
+            //}
             List<bool> commonResults = new List<bool>();
             if (!game.ConditionMgr.instance.CheckConditionBySplit(game.GameFlowMgr.instance.CurEvent.conditionInsts, out commonResults))
             {

@@ -62,6 +62,7 @@ namespace act.game
 
         public void ExcuteEffectResult(game.EffectId effect, params float[] vars)
         {
+            Debug.Log($"执行效果ID：{(int)effect}");
             switch (effect)
             {
                 case EffectId.EI_None:
@@ -150,6 +151,10 @@ namespace act.game
                 case EffectId.EI_16:
                     //删事件
                     GameFlowMgr.instance.DelectEventByID((int)vars[0]);
+                    return;
+                case EffectId.EI_17:
+                    //跳过骰子
+                    GameFlowMgr.instance.JumpUpTouzi = true;
                     return;
                 //case EffectId.EI_10:
                 //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);

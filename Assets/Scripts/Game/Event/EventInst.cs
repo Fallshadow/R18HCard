@@ -13,6 +13,8 @@ namespace act.game
         public List<List<EffectInst>> effectInsts = new List<List<EffectInst>>();
         public List<List<ConditionInst>> conditionSpInsts = new List<List<ConditionInst>>();
         public List<List<EffectInst>> effectSpInsts = new List<List<EffectInst>>();
+
+
         public int RoundNum
         {
             get
@@ -21,6 +23,10 @@ namespace act.game
             }
             set
             {
+                if(roundNum == -2)
+                {
+                    return;
+                }
                 roundNum = value;
                 if (roundNum == 0)
                 {
@@ -65,13 +71,19 @@ namespace act.game
         public void EnterToTable()
         {
             Debug.Log($"事件入场：  独有ID：{UniqueId}");
-            for (int i = 0; i < conditionSpInsts.Count; i++)
+            if(conditionSpInsts.Count != 0)
             {
-                ConditionEffectConfig conditionEffectConfig = new ConditionEffectConfig(UniqueId, conditionSpInsts[i], effectSpInsts[i]);
-                GameFlowCdtAndEft.instance.AddCECToList(conditionEffectConfig);
-                Debug.Log($"{UniqueId}事件入场：  特殊CEC：{i}");
+                for(int i = 0; i < conditionSpInsts[0].Count; i++)
+                {
+                    List<ConditionInst> tempCInstList = new List<ConditionInst>();
+                    List<EffectInst> tempEInstList = new List<EffectInst>();
+                    tempCInstList.Add(conditionSpInsts[0][i]);
+                    tempEInstList.Add(effectSpInsts[0][i]);
+                    ConditionEffectConfig conditionEffectConfig = new ConditionEffectConfig(UniqueId, tempCInstList, tempEInstList);
+                    GameFlowCdtAndEft.instance.AddCECToList(conditionEffectConfig);
+                }
+                GameFlowMgr.instance.eventInsts.Add(this);
             }
-            GameFlowMgr.instance.eventInsts.Add(this);
         }
 
         public void DestorySelf()
@@ -94,6 +106,7 @@ namespace act.game
             if (GameFlowMgr.instance.cardSuccEventComp)
             {
                 HasComplete = true;
+                game.GameFlowMgr.instance.CurEvent = null;
             }
             else
             {
