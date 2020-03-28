@@ -32,7 +32,8 @@ namespace act.evt
         Globe_Card_Event_Def,
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
-        
+        Globe_Card_Enter_Slot
     }
+
 
 }

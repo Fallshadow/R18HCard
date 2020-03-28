@@ -162,6 +162,7 @@ namespace act.ui
                 rectTrans.position = (tempPointGo.transform as RectTransform).position;
                 rectTrans.sizeDelta = (tempPointGo.transform as RectTransform).sizeDelta;
                 isLockedSlot = true;
+                
             }
             else
             {

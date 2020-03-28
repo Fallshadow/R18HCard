@@ -1,0 +1,6 @@
+id,event_id,card_type,card_id,desc
+1,0,1,0,event_card_desc1
+2,0,2,0,event_card_desc2
+3,0,3,0,event_card_desc3
+4,0,4,0,event_card_desc4
+5,2,1,1,event_card_desc_2_1

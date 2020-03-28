@@ -22,6 +22,8 @@ namespace act.data
         public string desc_SuccResult;
         [Description("event_defResult_desc")]
         public string desc_DefResult;
+        [Description("event_RoundOver_desc")]
+        public string desc_RoundOver;
         [Description("event_round")]
         public int rountNum;
         [Description("event_condition_SPId")]

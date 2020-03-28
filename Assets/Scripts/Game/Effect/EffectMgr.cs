@@ -11,6 +11,7 @@ namespace act.game
         public void InitConfigData()
         {
             data.ConfigDataMgr.GetDataDictionary(dictEffect, "ID", data.CONFIG_PATH.DICT_EFFECT);
+            data.ConfigDataMgr.GetDataDictionary(dictEffect, "ID", data.CONFIG_PATH.DICT_EFFECT);
         }
 
         public EffectData GetEffectDataById(game.EffectId effectId)
