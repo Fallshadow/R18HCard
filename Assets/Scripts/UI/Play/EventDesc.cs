@@ -53,7 +53,9 @@ namespace act.ui
     }
     public void ShowDesc(game.EventInst inst)
         {
+            evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change,ChangeCurCard);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot, ShowEventCardDescTip);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot, HideEventCardDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, HideDesc);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, ShowRoundOverDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
@@ -81,11 +83,15 @@ namespace act.ui
             SText_Succ_Desc.Localize(inst.config.desc_SuccResult, "ui_system");
             SText_Def_Desc.Localize(inst.config.desc_DefResult, "ui_system");
             SText_RoundOver_Desc.Localize(inst.config.desc_DefResult, "ui_system");
-            SText_EventCard_Desc.text = game.EventMgr.instance.GetEventCardDesc(
-                game.GameFlowMgr.instance.CurEvent.config.ID,
-                game.GameFlowMgr.instance.CurCard.config.type,
-                game.GameFlowMgr.instance.CurCard.config.ID
-                );
+
+            if(curCardInst != null && curCardInst.UniqueId != 0)
+            {
+                SText_EventCard_Desc.text = game.EventMgr.instance.GetEventCardDesc(
+                    game.GameFlowMgr.instance.CurEvent.config.ID,
+                    game.GameFlowMgr.instance.CurCard.config.type,
+                    game.GameFlowMgr.instance.CurCard.config.ID
+                    );
+            }
             int tempCardSlot = 0;
             foreach(var conditions in inst.conditionInsts)
             {
@@ -124,9 +130,16 @@ namespace act.ui
             LayoutRefresh();
         }
 
+
+        private void ChangeCurCard(game.CardInst cardInst)
+        {
+            curCardInst = cardInst;
+        }
         public void HideDesc()
         {
+            evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, ChangeCurCard);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot, ShowEventCardDescTip);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot, HideEventCardDescTip);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, ShowRoundOverDescTip);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, HideDesc);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
@@ -192,7 +205,13 @@ namespace act.ui
             SText_EventCard_Desc_Title.gameObject.SetActive(true);
             LayoutRefresh();
         }
-
+        public void HideEventCardDescTip()
+        {
+            SText_EventCard_Desc.gameObject.SetActive(false);
+            SText_EventCard_Desc_Title.gameObject.SetActive(false);
+            LayoutRefresh();
+        }
+        
 
 
         public void UseCard()

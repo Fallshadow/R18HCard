@@ -97,7 +97,7 @@ namespace act.ui
             tempParent = transform.parent;
             //transform.SetParent(tempParent.parent);//TODO:表现
 
-            game.GameFlowMgr.instance.CurCard = card_inst;
+            //game.GameFlowMgr.instance.CurCard = card_inst;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -131,6 +131,11 @@ namespace act.ui
         //能否把卡牌插入插槽
         public bool CheckCanUseCardInSlot()
         {
+            if(game.GameFlowMgr.instance.CurCard != null)
+            {
+                return false;
+            }
+            game.GameFlowMgr.instance.CurCard = card_inst;
             if(tempPointGo != null
                 && card_inst.Canuse
                 &&
@@ -139,7 +144,7 @@ namespace act.ui
                     || tempPointGo.gameObject.name == $"CardType"
                     || tempPointGo.gameObject.name == $"CardType{card_inst.config.ID}"
                 )
-            )
+             )
             {
                 return true;
             }
@@ -162,11 +167,12 @@ namespace act.ui
                 rectTrans.position = (tempPointGo.transform as RectTransform).position;
                 rectTrans.sizeDelta = (tempPointGo.transform as RectTransform).sizeDelta;
                 isLockedSlot = true;
-                
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot);
             }
             else
             {
                 tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
+                game.GameFlowMgr.instance.CurCard = null;
             }
         }
         public void CheckCardDestroy(int id)
@@ -234,12 +240,13 @@ namespace act.ui
         {
             if(isLockedSlot)
             {
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot);
                 ResetToCardGroup();
             }
         }
 
         //回到手牌区
-        private void ResetToCardGroup()
+        public void ResetToCardGroup()
         {
             isLockedSlot = false;
             rectTrans.position = InitPos;

@@ -21,6 +21,7 @@ namespace act.game
             set
             {
                 curCard = value;
+                evt.EventManager.instance.Send<CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, curCard);
             }
         }
         private CardInst curCard;
@@ -263,6 +264,7 @@ namespace act.game
                 return;
             }
             CurCard = saveData.curCard;
+            CurCard = null;
             CurEvent = saveData.curEvent;
             curEventResults = saveData.curEventResults;
             eventInsts = saveData.eventInsts;

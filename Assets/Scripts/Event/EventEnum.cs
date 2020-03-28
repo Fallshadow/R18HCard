@@ -10,6 +10,7 @@ namespace act.evt
         NONE = 0,
         UI = 1,
         GAME = 2,
+        CARD = 3,
     }
     public enum UiEvent : short
     {
@@ -32,7 +33,13 @@ namespace act.evt
         Globe_Card_Event_Def,
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
-        Globe_Card_Enter_Slot
+        Globe_Card_Enter_Slot,
+        Globe_Card_Exit_Slot
+    }
+
+    public enum CardEvent : short
+    {
+        Card_Current_Change = 0,
     }
 
 
