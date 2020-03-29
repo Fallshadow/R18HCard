@@ -139,8 +139,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a224abb4a7bc5c4987515c8c76e571a, type: 2}
-  m_sharedMaterial: {fileID: 3443549521093475982, guid: 3a224abb4a7bc5c4987515c8c76e571a,
+  m_fontAsset: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8, type: 2}
+  m_sharedMaterial: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -813,8 +813,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6211"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a224abb4a7bc5c4987515c8c76e571a, type: 2}
-  m_sharedMaterial: {fileID: 3443549521093475982, guid: 3a224abb4a7bc5c4987515c8c76e571a,
+  m_fontAsset: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8, type: 2}
+  m_sharedMaterial: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -888,7 +888,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2158,8 +2158,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5979"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a224abb4a7bc5c4987515c8c76e571a, type: 2}
-  m_sharedMaterial: {fileID: 3443549521093475982, guid: 3a224abb4a7bc5c4987515c8c76e571a,
+  m_fontAsset: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8, type: 2}
+  m_sharedMaterial: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
