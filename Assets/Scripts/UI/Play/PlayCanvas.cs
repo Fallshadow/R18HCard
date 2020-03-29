@@ -20,7 +20,7 @@ namespace act.ui
         [SerializeField] private EventDesc eventDesc;
 
         [SerializeField] private UiStaticText text_Touzi_Num;
-        [SerializeField] private UiStaticText text_HP_Num;
+        [SerializeField] private Text text_HP_Num;
         [SerializeField] private Text text_Process_Num;
         [SerializeField] private Material material_Process_Num;
         [SerializeField] private UiStaticText text_Round_Num;
@@ -28,6 +28,7 @@ namespace act.ui
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
+        private List<GameObject> eventOGS = new List<GameObject>();
         private float processNum = 0;
         public override void Initialize()
         {
@@ -81,6 +82,7 @@ namespace act.ui
                     data.ResourcesPathSetting.UiPrefabFolder
                     + data.ResourcesPathSetting.PlayUIEventPrefabBase);
             }
+            eventOGS.Add(eventDisplayOB);
             ui.EventDisplay eventDisplay = eventDisplayOB.GetComponentInChildren<ui.EventDisplay>();
             eventDisplay.Init();
             eventDisplay.SetInst(eventInst);
@@ -143,6 +145,13 @@ namespace act.ui
         {
             Hide();
             ResetShow();
+            foreach(var item in eventOGS)
+            {
+                if(item != null)
+                {
+                    Destroy(item);
+                }
+            }
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.MAINMENU);
         }
        

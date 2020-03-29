@@ -9,6 +9,7 @@ namespace act.ui
     public class EventDesc : MonoBehaviour
     {
         [SerializeField] private Image Img_Bg = null;
+        [SerializeField] private Image Img_Event_Bg = null;
         [SerializeField] private UiStaticText SText_Event_Name = null;
         [SerializeField] private UiStaticText SText_Event_Round = null;
 
@@ -107,6 +108,7 @@ namespace act.ui
                     );
             }
             int tempCardSlot = 0;
+            Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType4", "PlayCanvas");
             foreach(var conditions in inst.conditionInsts)
             {
                 foreach(var item in conditions)
@@ -114,12 +116,14 @@ namespace act.ui
                     if(item.config.ID == 1)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{item.numVars[0]}", "PlayCanvas");
+                        Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{item.numVars[0]}", "PlayCanvas");
                         Image_CardSlot[tempCardSlot].gameObject.name = $"CardType{item.numVars[0]}";
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 3)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
+                        Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
                         Image_CardSlot[tempCardSlot].gameObject.name = $"CardType{item.numVars[0]}";
                         tempCardSlot++;
                     }

@@ -255,6 +255,7 @@ namespace act.game
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 
+
         public void LoadData()
         {
             ResetData();

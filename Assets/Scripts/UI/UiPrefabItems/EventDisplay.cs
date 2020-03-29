@@ -174,6 +174,7 @@ namespace act.ui
             Release();
             event_inst.DestorySelf();
             Destroy(this.gameObject);
+            Destroy(this.transform.parent);
         }
 
         private void OnMouseEnter()
