@@ -14,7 +14,6 @@ namespace act.ui
 
 
         [SerializeField] private UiStaticText SText_Name = null;
-        [SerializeField] private UiStaticText SText_Desc_Title = null;
         [SerializeField] private UiStaticText SText_Com_Desc_Title = null;
         [SerializeField] private UiStaticText SText_SP_Desc_Title = null;
         [SerializeField] private UiStaticText SText_Succ_Desc_Title = null;
@@ -33,6 +32,7 @@ namespace act.ui
         [SerializeField] private Image[] Image_CardSlot = new Image[4];
         [SerializeField] private CanvasGroup canvasGroup;
 
+        public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
         private void Awake()
         {
@@ -68,7 +68,7 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
 
 
-
+            curEventInst = inst;
             game.GameFlowMgr.instance.CurEvent = inst;
             gameObject.SetActive(true);
             game.GameFlowMgr.instance.eventDesc = true;
@@ -171,12 +171,13 @@ namespace act.ui
         }
         public void HideAll()
         {
+            SText_Com_Desc_Title.gameObject.SetActive(false);
+            SText_Com_Desc.gameObject.SetActive(false);
             SText_Name.gameObject.SetActive(false);
             SText_EventCard_Desc.gameObject.SetActive(false);
             SText_EventCard_Desc_Title.gameObject.SetActive(false);
             SText_RoundOver_Desc.gameObject.SetActive(false);
             SText_RoundOver_Desc_Title.gameObject.SetActive(false);
-            SText_Desc_Title.gameObject.SetActive(false);
             SText_SP_Desc_Title.gameObject.SetActive(false);
             SText_Succ_Desc_Title.gameObject.SetActive(false);
             SText_Def_Desc_Title.gameObject.SetActive(false);
@@ -193,19 +194,27 @@ namespace act.ui
         
         public void ShowSuccDescTip()
         {
-            SText_Def_Desc.gameObject.SetActive(false);
-            SText_Def_Desc_Title.gameObject.SetActive(false);
-            SText_Succ_Desc.gameObject.SetActive(true);
-            SText_Succ_Desc_Title.gameObject.SetActive(true);
+            SText_Com_Desc_Title.gameObject.SetActive(false);
+            SText_Com_Desc.gameObject.SetActive(false);
+            SText_SP_Desc_Title.gameObject.SetActive(false);
+            SText_SP_Desc.gameObject.SetActive(false);
+            SText_EventCard_Desc.gameObject.SetActive(false);
+            SText_EventCard_Desc_Title.gameObject.SetActive(false);
+            SText_Desc.Localize(curEventInst.config.desc_SuccResult, "ui_system");
+            //SText_Def_Desc.gameObject.SetActive(false);
+            //SText_Def_Desc_Title.gameObject.SetActive(false);
+            //SText_Succ_Desc.gameObject.SetActive(true);
+            //SText_Succ_Desc_Title.gameObject.SetActive(true);
             LayoutRefresh();
         }
 
         public void ShowDefDescTip()
         {
-            SText_Succ_Desc.gameObject.SetActive(false);
-            SText_Succ_Desc_Title.gameObject.SetActive(false);
-            SText_Def_Desc.gameObject.SetActive(true);
-            SText_Def_Desc_Title.gameObject.SetActive(true);
+            SText_Desc.Localize(curEventInst.config.desc_DefResult, "ui_system");
+            //SText_Succ_Desc.gameObject.SetActive(false);
+            //SText_Succ_Desc_Title.gameObject.SetActive(false);
+            //SText_Def_Desc.gameObject.SetActive(true);
+            //SText_Def_Desc_Title.gameObject.SetActive(true);
              LayoutRefresh();
         }
 

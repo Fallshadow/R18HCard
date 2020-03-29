@@ -11,6 +11,7 @@ namespace act.evt
         UI = 1,
         GAME = 2,
         CARD = 3,
+        INPUT = 4,
     }
     public enum UiEvent : short
     {
@@ -41,6 +42,10 @@ namespace act.evt
     {
         Card_Current_Change = 0,
     }
-
+    public enum InputEvent : short
+    {
+        IE_Mouse_Right_Down = 0,
+        IE_Mouse_Right_Up = 1,
+    }
 
 }
