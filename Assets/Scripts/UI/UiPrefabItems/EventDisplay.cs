@@ -27,7 +27,7 @@ namespace act.ui
                 {
                     return anim;
                 }
-                return GetComponent<Animator>();
+                return GetComponentInParent<Animator>();
             }
         }
         private Animator anim;

@@ -59,16 +59,29 @@ namespace act.ui
         
         public void CreateEvent(game.EventInst eventInst)
         {
-            ui.EventDisplay eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
-                data.ResourcesPathSetting.UiPrefabFolder 
+
+            //ui.EventDisplay eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
+            //    data.ResourcesPathSetting.UiPrefabFolder 
+            //    + data.ResourcesPathSetting.PlayUIEventPrefabBase
+            //    + eventInst.config.ID,true);
+            //if(eventDisplay == null)
+            //{
+            //    eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
+            //        data.ResourcesPathSetting.UiPrefabFolder 
+            //        + data.ResourcesPathSetting.PlayUIEventPrefabBase);
+            //}
+
+            GameObject eventDisplayOB = utility.LoadResources.LoadPrefab(
+                data.ResourcesPathSetting.UiPrefabFolder
                 + data.ResourcesPathSetting.PlayUIEventPrefabBase
-                + eventInst.config.ID,true);
-            if(eventDisplay == null)
+                + eventInst.config.ID, true);
+            if(eventDisplayOB == null)
             {
-                eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
-                    data.ResourcesPathSetting.UiPrefabFolder 
+                eventDisplayOB = utility.LoadResources.LoadPrefab(
+                    data.ResourcesPathSetting.UiPrefabFolder
                     + data.ResourcesPathSetting.PlayUIEventPrefabBase);
             }
+            ui.EventDisplay eventDisplay = eventDisplayOB.GetComponentInChildren<ui.EventDisplay>();
             eventDisplay.Init();
             eventDisplay.SetInst(eventInst);
             eventDisplay.EnterToTable();
