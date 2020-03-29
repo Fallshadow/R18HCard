@@ -117,7 +117,7 @@ Material:
     - _EnableTextureTransparent: 0
     - _EnvironmentalLightingIntensity: 2.56
     - _GIFlatShade: 1
-    - _GIShadeThreshold: 1
+    - _GIShadeThreshold: 0
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
@@ -133,7 +133,7 @@ Material:
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 1
     - _LightFalloffAffectShadowT: 0
-    - _LightFalloffSoftness: 0.462
+    - _LightFalloffSoftness: 0.2
     - _LightIntensity: 0.18
     - _Metallic: 0
     - _Mode: 0
@@ -163,12 +163,12 @@ Material:
     - _OutlineExtrudeMethod: 0
     - _OutlineWidth: 0.5
     - _OutlineWidthAffectedByViewDistance: 0
-    - _OverallShadowColorPower: 1
+    - _OverallShadowColorPower: 0.29
     - _PTexturePower: 1
     - _Parallax: 0.02
     - _PointSpotlightIntensity: 0.11
-    - _ReduceShadowPointLight: 0
-    - _ReduceShadowSpotDirectionalLight: 10
+    - _ReduceShadowPointLight: -4.2
+    - _ReduceShadowSpotDirectionalLight: 10.38
     - _ReduceTextureQuality: 0
     - _RefVal: 0
     - _ReflectionIntensity: 0
@@ -186,7 +186,7 @@ Material:
     - _SelfShadowRealTimeShadowColorPower: 1
     - _SelfShadowRealtimeShadowIntensity: 1
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.85
+    - _SelfShadowThreshold: 1
     - _ShadowColorTexturePower: 0
     - _ShadowTColorPower: 1
     - _ShadowTHardness: 1
