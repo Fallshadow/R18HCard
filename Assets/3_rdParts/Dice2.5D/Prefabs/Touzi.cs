@@ -16,6 +16,7 @@ namespace act.ui
         };
 
         public int NumToShow = 1;
+        [SerializeField] Vector2 rollPos = Vector2.zero;
         [SerializeField] int m_pip = -1;
         [SerializeField] Vector2 rollVec = Vector2.one * 200f;
         public int pip
@@ -68,6 +69,7 @@ namespace act.ui
         {
             resetTouzi?.Invoke();
             continueCheck?.Invoke();
+            (transform as RectTransform).localPosition = rollPos;
         }
         public void OnRollButton()
         {
