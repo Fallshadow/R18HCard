@@ -8,6 +8,12 @@ namespace act.ui
 {
     public class EventDesc : MonoBehaviour
     {
+        [SerializeField] private Image Img_Bg = null;
+        [SerializeField] private UiStaticText SText_Event_Name = null;
+        [SerializeField] private UiStaticText SText_Event_Round = null;
+
+
+        [SerializeField] private UiStaticText SText_Name = null;
         [SerializeField] private UiStaticText SText_Desc_Title = null;
         [SerializeField] private UiStaticText SText_Com_Desc_Title = null;
         [SerializeField] private UiStaticText SText_SP_Desc_Title = null;
@@ -39,18 +45,18 @@ namespace act.ui
 
         private void LayoutRefresh()
         {
-            SText_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-            SText_Com_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-            SText_SP_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-            SText_Succ_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-            SText_Def_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-            verLayputGroup.enabled = false;
-            Invoke("InvokeLayout", 0.2f);
-    }
-    private void InvokeLayout()
-    {
-        verLayputGroup.enabled = true;
-    }
+            //SText_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            //SText_Com_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            //SText_SP_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            //SText_Succ_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            //SText_Def_Desc.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            for(int i = 0; i < verLayputGroup.transform.childCount; i++)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform.GetChild(i) as RectTransform);
+            }
+            verLayputGroup.SetLayoutVertical();
+        }
+
     public void ShowDesc(game.EventInst inst)
         {
             evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change,ChangeCurCard);
@@ -60,6 +66,8 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, ShowRoundOverDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
+
+
 
             game.GameFlowMgr.instance.CurEvent = inst;
             gameObject.SetActive(true);
@@ -77,6 +85,12 @@ namespace act.ui
                 SText_SP_Desc.gameObject.SetActive(true);
                 SText_SP_Desc_Title.gameObject.SetActive(true);
             }
+            SText_Event_Name.Localize(inst.config.name, "ui_system");
+            SText_Event_Round.text = inst.RoundNum.ToString();
+
+            SText_Name.gameObject.SetActive(true);
+            SText_Desc.gameObject.SetActive(true);
+            SText_Name.Localize(inst.config.name, "ui_system");
             SText_Desc.Localize(inst.config.desc, "ui_system");
             SText_SP_Desc.Localize(inst.config.desc_SP, "ui_system");
             SText_Com_Desc.Localize(inst.config.desc_Common, "ui_system");
@@ -123,6 +137,8 @@ namespace act.ui
                     }
                 }
             }
+            Img_Bg.sprite = UiManager.instance.GetSprite($"determine_bg{tempCardSlot}", "PlayCanvas");
+            Img_Bg.SetNativeSize();
             for(int i = 0; i < tempCardSlot; i++)
             {
                 Image_CardSlot[i].gameObject.SetActive(true);
@@ -155,6 +171,7 @@ namespace act.ui
         }
         public void HideAll()
         {
+            SText_Name.gameObject.SetActive(false);
             SText_EventCard_Desc.gameObject.SetActive(false);
             SText_EventCard_Desc_Title.gameObject.SetActive(false);
             SText_RoundOver_Desc.gameObject.SetActive(false);

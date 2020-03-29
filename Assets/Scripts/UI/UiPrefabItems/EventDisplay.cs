@@ -76,17 +76,17 @@ namespace act.ui
             event_inst = eventInst;
             if (eventInst.conditionInsts.Count == 0)
             {
-                config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{4}", "PlayCanvas");
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"EventShowType{4}", "PlayCanvas");
             }
             else
             {
                 if (eventInst.conditionInsts[0][0].config.ID == 1)
                 {
-                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{eventInst.conditionInsts[0][0].numVars[0]}", "PlayCanvas");
+                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventShowType{eventInst.conditionInsts[0][0].numVars[0]}", "PlayCanvas");
                 }
                 else if (eventInst.conditionInsts[0][0].config.ID == 3)
                 {
-                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventType{game.CardMgr.instance.GetCardDataByID((int)eventInst.conditionInsts[0][0].numVars[0]).type}", "PlayCanvas");
+                    config.Img_Type.sprite = UiManager.instance.GetSprite($"EventShowType{game.CardMgr.instance.GetCardDataByID((int)eventInst.conditionInsts[0][0].numVars[0]).type}", "PlayCanvas");
                 }
             }
 
