@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3816251943476909802
+--- !u!1 &7462168047356785362
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3597809617266702297}
-  - component: {fileID: 7692033318751829687}
-  - component: {fileID: 4827395178137905519}
+  - component: {fileID: 5232968813199089556}
+  - component: {fileID: 4693125015591355806}
+  - component: {fileID: 4600315320380159588}
   m_Layer: 0
   m_Name: TMP SubMeshUI [muyao_CN SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3597809617266702297
+--- !u!224 &5232968813199089556
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816251943476909802}
+  m_GameObject: {fileID: 7462168047356785362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,21 +37,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7692033318751829687
+--- !u!222 &4693125015591355806
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816251943476909802}
+  m_GameObject: {fileID: 7462168047356785362}
   m_CullTransparentMesh: 0
---- !u!114 &4827395178137905519
+--- !u!114 &4600315320380159588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816251943476909802}
+  m_GameObject: {fileID: 7462168047356785362}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
   m_padding: 1.25
-  m_canvasRenderer: {fileID: 7692033318751829687}
+  m_canvasRenderer: {fileID: 4693125015591355806}
   m_TextComponent: {fileID: 780772043007373046}
   m_materialReferenceIndex: 1
 --- !u!1001 &5700388916215802642
@@ -147,17 +147,17 @@ PrefabInstance:
     - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5549802
+      value: -0.80569994
       objectReference: {fileID: 0}
     - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77215797
+      value: 0.27343002
       objectReference: {fileID: 0}
     - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6021745
+      value: 1.7228
       objectReference: {fileID: 0}
     - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
         type: 3}
@@ -199,6 +199,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14835157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.006460855
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164499761888442518, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17119385
+      objectReference: {fileID: 0}
     - target: {fileID: 4230718825719048319, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_fontAsset
@@ -209,6 +224,18 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8,
+        type: 2}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
+        type: 2}
     - target: {fileID: 4632224841301229551, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_Name
@@ -248,29 +275,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 3a224abb4a7bc5c4987515c8c76e571a,
+      objectReference: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8,
         type: 2}
     - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3443549521093475982, guid: 3a224abb4a7bc5c4987515c8c76e571a,
+      objectReference: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
         type: 2}
     - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_textInfo.materialCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 4827395178137905519}
+      objectReference: {fileID: 4600315320380159588}
     - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_subTextObjects.Array.data[2]
