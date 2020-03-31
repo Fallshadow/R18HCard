@@ -31,6 +31,7 @@ namespace act.game
         CT_Special,
     }
 
+
     public enum ConditionId
     {
         CI_None = 0,

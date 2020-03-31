@@ -82,6 +82,7 @@ namespace act.ui
         public void Roll()
         {
             anm.Play("roll");
+            evt.EventManager.instance.Send(evt.EventGroup.TOUZI, (short)evt.TouziEvent.T_Roll);
         }
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace act.ui
         {
             m_pip = _pip;
             anm.Play("to" + m_pip.ToString());
+            
         }
     }
 }

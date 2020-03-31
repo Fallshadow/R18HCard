@@ -1705,11 +1705,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a88a2fcdf3a545249992ed50f73e78a7, type: 3}
-    m_FontSize: 35
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 42
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3983,6 +3983,10 @@ PrefabInstance:
     - target: {fileID: 1978240393723066, guid: 549d59d4977c3e34cb74f8feac69f82a, type: 3}
       propertyPath: m_Name
       value: RollTouZi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978240393723066, guid: 549d59d4977c3e34cb74f8feac69f82a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4257918863694504, guid: 549d59d4977c3e34cb74f8feac69f82a, type: 3}
       propertyPath: m_LocalPosition.x

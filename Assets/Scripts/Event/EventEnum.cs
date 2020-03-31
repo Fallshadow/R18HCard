@@ -12,6 +12,7 @@ namespace act.evt
         GAME = 2,
         CARD = 3,
         INPUT = 4,
+        TOUZI = 5,
     }
     public enum UiEvent : short
     {
@@ -46,6 +47,11 @@ namespace act.evt
     {
         IE_Mouse_Right_Down = 0,
         IE_Mouse_Right_Up = 1,
+    }
+
+    public enum TouziEvent : short
+    {
+        T_Roll,
     }
 
 }

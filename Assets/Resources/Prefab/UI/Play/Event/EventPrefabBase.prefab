@@ -126,6 +126,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: specificFont
+      value: SourceHanSerifCN-SemiBold
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c7f2af0fafc122247a3408c2705b3737,
+        type: 2}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7102417178370363914, guid: c7f2af0fafc122247a3408c2705b3737,
+        type: 2}
     - target: {fileID: 4632224841301229551, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_Name
@@ -136,6 +153,23 @@ PrefabInstance:
       propertyPath: isSettingBorn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: specificFont
+      value: SourceHanSerifCN-SemiBold
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c7f2af0fafc122247a3408c2705b3737,
+        type: 2}
+    - target: {fileID: 5029963937548813796, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7102417178370363914, guid: c7f2af0fafc122247a3408c2705b3737,
+        type: 2}
     - target: {fileID: 5909199917717452436, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_SizeDelta.x

@@ -35,9 +35,12 @@ namespace act.ui
 
         public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
+
+        private Animator anim = null;
+             
         private void Awake()
         {
-            
+            anim = GetComponent<Animator>();
         }
         private void OnDestroy()
         {
@@ -60,6 +63,7 @@ namespace act.ui
 
     public void ShowDesc(game.EventInst inst)
         {
+            curCardInst = null;
             evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change,ChangeCurCard);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot, ShowEventCardDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot, HideEventCardDescTip);
@@ -67,6 +71,9 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, ShowRoundOverDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
+            evt.EventManager.instance.Register(evt.EventGroup.TOUZI, (short)evt.TouziEvent.T_Roll,RollEvent);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def,RollEventDef);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
 
 
             curEventInst = inst;
@@ -74,7 +81,7 @@ namespace act.ui
             gameObject.SetActive(true);
             game.GameFlowMgr.instance.eventDesc = true;
             canvasGroup.interactable = false;
-            canvasGroup.DOFade(1, 1).OnComplete(()=> { canvasGroup.interactable = true; });
+            canvasGroup.DOFade(1, 1).OnComplete(()=> { canvasGroup.interactable = true; canvasGroup.blocksRaycasts = true; });
             HideAll();
             if(inst.config.condition_1 != null)
             {
@@ -117,26 +124,26 @@ namespace act.ui
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{item.numVars[0]}", "PlayCanvas");
                         Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{item.numVars[0]}", "PlayCanvas");
-                        Image_CardSlot[tempCardSlot].gameObject.name = $"CardType{item.numVars[0]}";
+                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType{item.numVars[0]}";
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 3)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
                         Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
-                        Image_CardSlot[tempCardSlot].gameObject.name = $"CardType{item.numVars[0]}";
+                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType{item.numVars[0]}";
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 2)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType", "PlayCanvas");
-                        Image_CardSlot[tempCardSlot].gameObject.name = $"CardType";
+                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType";
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 16)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType", "PlayCanvas");
-                        Image_CardSlot[tempCardSlot].gameObject.name = $"CardTypeUnuse";
+                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardTypeUnuse";
                         tempCardSlot++;
                     }
                 }
@@ -164,7 +171,11 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, HideDesc);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
+            evt.EventManager.instance.Unregister(evt.EventGroup.TOUZI, (short)evt.TouziEvent.T_Roll, RollEvent);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, RollEventDef);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
             canvasGroup.DOFade(0, 1);
+            canvasGroup.blocksRaycasts = false;
             game.GameFlowMgr.instance.eventDesc = false;
             game.GameFlowMgr.instance.CurEvent = null;
             evt.EventManager.instance.Send(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide);
@@ -262,6 +273,19 @@ namespace act.ui
                 }
             }
         }
+        public void RollEvent()
+        {
+            anim.Play("Rotate");
+        }
+        public void RollEventSucc()
+        {
+            anim.Play("EventSucc");
+        }
+        public void RollEventDef()
+        {
+            anim.Play("EventDef");
+        }
+
     }
 }
 

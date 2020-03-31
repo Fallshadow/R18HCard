@@ -25,6 +25,7 @@ namespace act.ui
                 for (int i = 0; i < transform.childCount; i++)
                 {
                     transform.GetChild(i).localPosition = new Vector2(childX * (i + 1), -(rect.sizeDelta.y / 2));
+                    transform.GetChild(i).GetComponent<CardDisplay>().InitPos = new Vector2(childX * (i + 1), -(rect.sizeDelta.y / 2)); 
                 }
             }
             else
@@ -32,6 +33,7 @@ namespace act.ui
                 for (int i = 0; i < transform.childCount; i++)
                 {
                     transform.GetChild(i).localPosition = new Vector2(space * (i + 1), -(rect.sizeDelta.y / 2));
+                    transform.GetChild(i).GetComponent<CardDisplay>().InitPos = new Vector2(childX * (i + 1), -(rect.sizeDelta.y / 2));
                 }
             }
 

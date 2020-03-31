@@ -17,7 +17,7 @@ namespace act.ui
         private bool isDrag = false;
         private GameObject tempPointGo = null;
         private bool isLockedSlot = false;
-        private Vector3 InitPos = Vector3.zero; 
+        public Vector3 InitPos = Vector3.zero; 
          private Vector2 InitSizeDelta = Vector2.zero; 
         public game.CardInst GetCardInst()
         {
@@ -46,6 +46,14 @@ namespace act.ui
             InitSizeDelta = rectTrans.sizeDelta;
         }
 
+        private void SetTextColor(Color color)
+        {
+            config.Text_Name.color = color;
+            config.Text_DescSP.color = color;
+            config.Text_Desc.color = color;
+            config.Text_TestNum.color = color;
+        }
+
         public void SetInst(game.CardInst cardInst)
         {
             card_inst = cardInst;
@@ -55,6 +63,24 @@ namespace act.ui
             config.Text_Desc.Localize(card_inst.config.descSP, "ui_system");
             config.Text_TestNum.text = card_inst.config.testNumber.ToString();
             config.Text_CardType.Localize(Enum.GetName(typeof(game.CardType), card_inst.config.type), "ui_system");
+            switch(cardInst.config.type)
+            {
+                case (int)game.CardType.CT_Action:
+                    SetTextColor(UiStyleHelper.instance.ActionCardColor);
+                    break;
+                case (int)game.CardType.CT_Emotion:
+                    SetTextColor(UiStyleHelper.instance.EmotionCardColor);
+                    break;
+                case (int)game.CardType.CT_Special:
+                    SetTextColor(UiStyleHelper.instance.SpecialCardColor);
+                    break;
+                case (int)game.CardType.CT_Word:
+                    SetTextColor(UiStyleHelper.instance.WordCardColor);
+                    break;
+                default:
+                    break;
+            }
+
             for (int index = 0; index < card_inst.conditionInsts.Count; index++)
             {
                 for (int indexY = 0; indexY < card_inst.conditionInsts[index].Count; indexY++)
@@ -121,6 +147,7 @@ namespace act.ui
                 if (item.gameObject.tag == "CardSlot")
                 {
                     tempPointGo = item.gameObject;
+                    Debug.Log("检测到卡牌槽");
                     return;
                 }
             }
@@ -131,11 +158,13 @@ namespace act.ui
         //能否把卡牌插入插槽
         public bool CheckCanUseCardInSlot()
         {
+            Debug.Log($"CurCard：{game.GameFlowMgr.instance.CurCard == null}");
             if(game.GameFlowMgr.instance.CurCard != null)
             {
                 return false;
             }
             game.GameFlowMgr.instance.CurCard = card_inst;
+            Debug.Log($"tempPointGo：{tempPointGo}");
             if(tempPointGo != null
                 && card_inst.Canuse
                 &&
@@ -164,14 +193,16 @@ namespace act.ui
             //transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
             if(CheckCanUseCardInSlot())
             {
-                rectTrans.position = (tempPointGo.transform as RectTransform).position;
-                rectTrans.sizeDelta = (tempPointGo.transform as RectTransform).sizeDelta;
+                rectTrans.position = (tempPointGo.transform.GetChild(0) as RectTransform).position;
+                rectTrans.localPosition += new Vector3(0, 5.5f, 0);
+                rectTrans.sizeDelta = (tempPointGo.transform.GetChild(0) as RectTransform).sizeDelta* 1.17f;
                 isLockedSlot = true;
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot);
             }
             else
             {
-                tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
+                Debug.Log("卡牌无法使用，不满足条件");
+                ResetToCardGroup();
                 game.GameFlowMgr.instance.CurCard = null;
             }
         }
@@ -240,6 +271,7 @@ namespace act.ui
         {
             if(isLockedSlot)
             {
+                game.GameFlowMgr.instance.CurCard = null;
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot);
                 ResetToCardGroup();
             }
@@ -248,10 +280,13 @@ namespace act.ui
         //回到手牌区
         public void ResetToCardGroup()
         {
+            if(game.GameFlowMgr.instance.CurCard == card_inst)
+            {
+                game.GameFlowMgr.instance.CurCard = null;
+            }
             isLockedSlot = false;
-            rectTrans.position = InitPos;
-            rectTrans.sizeDelta = InitSizeDelta;
-            tempParent.GetComponent<CardGroup>().RefreshCardChildPos();
+            rectTrans.DOAnchorPos(InitPos, 0.5f).SetEase(Ease.OutQuad);
+            rectTrans.DOSizeDelta(InitSizeDelta,0.5f).SetEase(Ease.InQuad);
         }
     }
 }

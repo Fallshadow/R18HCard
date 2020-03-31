@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5083651355802369924}
   - component: {fileID: 8666306050571852567}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [muyao_CN SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [muyao Atlas Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 5083651355802369924}
   m_TextComponent: {fileID: 4200797042844442797}
   m_materialReferenceIndex: 1
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -285,7 +285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -96.8, y: 48.2}
-  m_SizeDelta: {x: 196.75, y: 36.54}
+  m_SizeDelta: {x: 196.75, y: 87.68}
   m_Pivot: {x: 0.00000009313226, y: 1}
 --- !u!222 &3857818714126824224
 CanvasRenderer:
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -388,7 +388,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -782,7 +782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 56.3}
+  m_AnchoredPosition: {x: 0, y: 47.2}
   m_SizeDelta: {x: 118.65, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1431263217910492691
@@ -840,8 +840,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1880,6 +1880,7 @@ MonoBehaviour:
       effect_var_2: 
     selfCEC: []
     UniqueId: 0
+  InitPos: {x: 0, y: 0, z: 0}
 --- !u!114 &3846818100573291866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,7 +2128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27.400002}
+  m_AnchoredPosition: {x: 0, y: -21.56}
   m_SizeDelta: {x: 53.440002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3056764054530452422
@@ -2156,7 +2157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5979\u5979\u5979"
+  m_text: "\u6311\u9017"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7f2af0fafc122247a3408c2705b3737, type: 2}
   m_sharedMaterial: {fileID: -7102417178370363914, guid: c7f2af0fafc122247a3408c2705b3737,
@@ -2185,8 +2186,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2226,7 +2227,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4200797042844442797}
-    characterCount: 3
+    characterCount: 2
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
