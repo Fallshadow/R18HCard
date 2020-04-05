@@ -13,6 +13,7 @@ namespace act.evt
         CARD = 3,
         INPUT = 4,
         TOUZI = 5,
+        EVENT = 6,
     }
     public enum UiEvent : short
     {
@@ -28,20 +29,27 @@ namespace act.evt
         Globe_RoundNum_Change,
         Globe_Event_Create,
         Globe_CurEvent_Completed,
-        Globe_Card_Create,
-        Globe_Card_Destory,
-        Globe_Card_Refresh_Use,
         Globe_Card_Event_Success,
         Globe_Card_Event_Def,
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
-        Globe_Card_Enter_Slot,
         Globe_Card_Exit_Slot
+
     }
 
     public enum CardEvent : short
     {
         Card_Current_Change = 0,
+        Card_Create,
+        Card_Destory,
+        Card_Refresh_Use,
+        Card_Enter_Slot,
+        Card_Exit_Slot
+    }
+    public enum EventEvent : short
+    {
+        Event_ID_ROUNDNUM_CHANGE = 0,
+        Event_ID_ROUNDNUM_Over,
     }
     public enum InputEvent : short
     {

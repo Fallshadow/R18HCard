@@ -36,8 +36,9 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
-            evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Create, CreateCard);
+            evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Create, CreateCard);
             evt.EventManager.instance.Register<game.EventInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Event_Create, CreateEvent);
+
             evt.EventManager.instance.Register<game.EventInst>(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Click, ShowEventDesc);
         }
         public override void Release()
@@ -46,8 +47,9 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
-            evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Create, CreateCard);
+            evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Create, CreateCard);
             evt.EventManager.instance.Unregister<game.EventInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Event_Create, CreateEvent);
+
             evt.EventManager.instance.Unregister<game.EventInst>(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Click, ShowEventDesc);
         }
         protected override void onShow()
@@ -60,18 +62,6 @@ namespace act.ui
         
         public void CreateEvent(game.EventInst eventInst)
         {
-
-            //ui.EventDisplay eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
-            //    data.ResourcesPathSetting.UiPrefabFolder 
-            //    + data.ResourcesPathSetting.PlayUIEventPrefabBase
-            //    + eventInst.config.ID,true);
-            //if(eventDisplay == null)
-            //{
-            //    eventDisplay = utility.LoadResources.LoadPrefab<ui.EventDisplay>(
-            //        data.ResourcesPathSetting.UiPrefabFolder 
-            //        + data.ResourcesPathSetting.PlayUIEventPrefabBase);
-            //}
-
             GameObject eventDisplayOB = utility.LoadResources.LoadPrefab(
                 data.ResourcesPathSetting.UiPrefabFolder
                 + data.ResourcesPathSetting.PlayUIEventPrefabBase

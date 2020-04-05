@@ -31,8 +31,9 @@ namespace act.game
                 if (roundNum == 0)
                 {
                     DestorySelf();
+                    evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_Over);
                 }
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE);
+                evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE);
             }
         }
         private int roundNum = 0;

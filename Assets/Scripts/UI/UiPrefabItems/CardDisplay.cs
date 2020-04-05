@@ -44,6 +44,9 @@ namespace act.ui
             tempParent = transform.parent;
             InitPos = rectTrans.position;
             InitSizeDelta = rectTrans.sizeDelta;
+            evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
+            evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
+            evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
         }
 
         private void SetTextColor(Color color)
@@ -99,10 +102,8 @@ namespace act.ui
                 }
             }
 
-            evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, CheckCardDestroy);
-            evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, ChangeDisplay);
-            evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
-    }
+
+        }
 
         public void Release()
         {
@@ -116,14 +117,7 @@ namespace act.ui
             {
                 return;
             }
-            //if (!card_inst.Canuse)
-            //{
-            //    return;
-            //}
             tempParent = transform.parent;
-            //transform.SetParent(tempParent.parent);//TODO:表现
-
-            //game.GameFlowMgr.instance.CurCard = card_inst;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -132,6 +126,7 @@ namespace act.ui
             {
                 return;
             }
+
             isDrag = true;
             config.DescShow.SetActive(false);
             Vector3 globalMousePos;
@@ -154,6 +149,27 @@ namespace act.ui
             tempPointGo = null;
             //TODO:表现为不行
         }
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            isDrag = false;
+            HideDownOthers();
+
+            if(CheckCanUseCardInSlot())
+            {
+                rectTrans.position = (tempPointGo.transform.GetChild(0) as RectTransform).position;
+                rectTrans.localPosition += new Vector3(0, 5.5f, 0);
+                rectTrans.sizeDelta = (tempPointGo.transform.GetChild(0) as RectTransform).sizeDelta * 1.17f;
+                isLockedSlot = true;
+                evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Enter_Slot);
+            }
+            else
+            {
+                Debug.Log("卡牌无法使用，不满足条件");
+                ResetToCardGroup();
+                game.GameFlowMgr.instance.CurCard = null;
+            }
+        }
+
 
         //能否把卡牌插入插槽
         public bool CheckCanUseCardInSlot()
@@ -186,26 +202,6 @@ namespace act.ui
             return false;
         }
 
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            isDrag = false;
-            HideDownOthers();
-            //transform.SetParent(tempParent);//TODO:根据卡片的不同有不同的表现形式，需要滞后表现
-            if(CheckCanUseCardInSlot())
-            {
-                rectTrans.position = (tempPointGo.transform.GetChild(0) as RectTransform).position;
-                rectTrans.localPosition += new Vector3(0, 5.5f, 0);
-                rectTrans.sizeDelta = (tempPointGo.transform.GetChild(0) as RectTransform).sizeDelta* 1.17f;
-                isLockedSlot = true;
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Enter_Slot);
-            }
-            else
-            {
-                Debug.Log("卡牌无法使用，不满足条件");
-                ResetToCardGroup();
-                game.GameFlowMgr.instance.CurCard = null;
-            }
-        }
         public void CheckCardDestroy(int id)
         {
             if(card_inst.UniqueId != id)
@@ -215,8 +211,8 @@ namespace act.ui
         }
         private void OnDestroy()
         {
-            evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, CheckCardDestroy);
-            evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, ChangeDisplay);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
         }
         public void ChangeDisplay(int id)
@@ -231,7 +227,6 @@ namespace act.ui
             {
                 config.cardTypeBG.DOFade(1f, 1);
             }
-
         }
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -241,7 +236,15 @@ namespace act.ui
             }
             ShowUpOthers();
         }
-
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if(isLockedSlot)
+            {
+                game.GameFlowMgr.instance.CurCard = null;
+                evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Exit_Slot);
+                ResetToCardGroup();
+            }
+        }
         public void OnPointerExit(PointerEventData eventData)
         {
             if(isLockedSlot)
@@ -265,16 +268,6 @@ namespace act.ui
             transform.localScale = Vector3.one;
             config.DescShow.SetActive(false);
             //GetComponent<Canvas>().sortingOrder = 1;
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if(isLockedSlot)
-            {
-                game.GameFlowMgr.instance.CurCard = null;
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Exit_Slot);
-                ResetToCardGroup();
-            }
         }
 
         //回到手牌区

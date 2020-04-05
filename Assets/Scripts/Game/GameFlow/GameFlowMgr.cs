@@ -81,13 +81,8 @@ namespace act.game
         }
         private int hp = 0;
         #endregion
-        public List<bool> curEventResults = new List<bool>();
-        public List<EventInst> eventInsts = new List<EventInst>();
-        public List<EventInst> hadSolveEventInsts = new List<EventInst>();
-        public List<CardInst> cardInsts = new List<CardInst>();
-        public List<CardInst> hadUsecardInsts = new List<CardInst>();
-        public float RandomNum = 0;
 
+        #region 是否跳过流程：投骰子
         public bool JumpUpTouzi
         {
             get
@@ -100,10 +95,18 @@ namespace act.game
             }
         }
         private bool jumpUpTouzi;
-        public bool canOverRound = false;
+        #endregion
+        public List<bool> curEventResults = new List<bool>();
+        public List<EventInst> eventInsts = new List<EventInst>();
+        public List<EventInst> hadSolveEventInsts = new List<EventInst>();
+        public List<CardInst> cardInsts = new List<CardInst>();
+        public List<CardInst> hadUsecardInsts = new List<CardInst>();
+        public float RandomNum = 0;
+
         data.SaveData saveData = null;
         private const string SAVE_FILE_NAME = "SaveData";
 
+        #region 初始化、注册、释放
         public void InitConfigData()
         {
             register();
@@ -119,10 +122,78 @@ namespace act.game
         {
 
         }
+        #endregion
+
+        #region 存储相关
+        //记录当前使用的卡牌
         public void RecordCurCard()
         {
             hadUsecardInsts.Add(curCard);
         }
+
+        //清空重置数据
+        public void ResetData()
+        {
+            RoundNum = 0;
+            Hp = 0;
+            Process = 0;
+            CurCard = null;
+            CurEvent = null;
+            curEventResults.Clear();
+            eventInsts.Clear();
+            cardInsts.Clear();
+            hadUsecardInsts.Clear();
+            hadSolveEventInsts.Clear();
+        }
+
+        //加载数据： 重置-加载-展现 三步
+        public void LoadData()
+        {
+            ResetData();
+            saveData = data.DataArchiver.Load<data.SaveData>(SAVE_FILE_NAME);
+            if(saveData == null)
+            {
+                return;
+            }
+            CurCard = saveData.curCard;
+            CurCard = null;
+            CurEvent = saveData.curEvent;
+            curEventResults = saveData.curEventResults;
+            eventInsts = saveData.eventInsts;
+            cardInsts = saveData.cardInsts;
+            hadUsecardInsts = saveData.hadUsecardInsts;
+            hadSolveEventInsts = saveData.hadSolvecardInsts;
+            RoundNum = saveData.RoundNum;
+            Hp = saveData.HP;
+            ReShowData();
+        }
+
+        public void SaveData()
+        {
+            saveData = new data.SaveData();
+            saveData.curCard = CurCard;
+            saveData.curEvent = CurEvent;
+            saveData.curEventResults = curEventResults;
+            saveData.eventInsts = eventInsts;
+            saveData.cardInsts = cardInsts;
+            saveData.hadUsecardInsts = hadUsecardInsts;
+            saveData.hadSolvecardInsts = hadSolveEventInsts;
+            saveData.RoundNum = RoundNum;
+            saveData.HP = Hp;
+
+            data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
+        }
+
+        //清空存储的数据
+        public void ClearData()
+        {
+            saveData = new data.SaveData();
+            data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
+        }
+        #endregion
+
+        #region 流程相关
+        //使用卡牌
         public void UseCard()
         {
             if (curEvent == null || curCard == null)
@@ -131,6 +202,41 @@ namespace act.game
             }
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowCardCheck);
         }
+        //重新展示数据
+        private void ReShowData()
+        {
+            if(eventInsts != null)
+            {
+                List<EventInst> tempEventList = new List<EventInst>();
+                foreach(var item in eventInsts)
+                {
+                    tempEventList.Add(item);
+                }
+                eventInsts.Clear();
+                foreach(var item in tempEventList)
+                {
+                    PushEventToTable(item);
+                }
+            }
+            if(cardInsts != null)
+            {
+                List<CardInst> tempCardList = new List<CardInst>();
+                foreach(var item in cardInsts)
+                {
+                    tempCardList.Add(item);
+                }
+                cardInsts.Clear();
+                foreach(var item in tempCardList)
+                {
+                    PushCardToTable(item);
+                }
+            }
+        }
+        #endregion
+
+        #region 功能相关
+
+        #region 删除卡牌、事件
         public void DelectEventByID(int ID)
         {
             for(int i = 0; i < eventInsts.Count; i++)
@@ -164,6 +270,9 @@ namespace act.game
                 }
             }
         }
+        #endregion
+
+
         //执行卡牌事件检测（且：必须都满足）
         public bool CheckCardOnEventByBlend(List<List<ConditionInst>> conditionInsts, List<List<EffectInst>> effectInsts)
         {
@@ -187,6 +296,32 @@ namespace act.game
             }
             return false;
         }
+        //是否场上存在该ID事件
+        public bool IsCurEventContain(int id)
+        {
+            foreach(var item in eventInsts)
+            {
+                if(item.config.ID == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //获取已经用过的卡牌
+        public int GetGrayCard()
+        {
+            int tempInt = 0;
+            foreach(CardInst item in cardInsts)
+            {
+                if(!item.Canuse)
+                {
+                    tempInt++;
+                }
+            }
+            return tempInt;
+        }
         #region 推送卡牌和事件
         public void PushEventToTable(int eventID)
         {
@@ -204,126 +339,11 @@ namespace act.game
         }
         public void PushCardToTable(CardInst inst)
         {
-            evt.EventManager.instance.Send<game.CardInst>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Create, inst);
+            evt.EventManager.instance.Send<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Create, inst);
         }
         #endregion
-        public int GetGrayCard()
-        {
-            int tempInt = 0;
-            foreach (CardInst item in cardInsts)
-            {
-                if (!item.Canuse)
-                {
-                    tempInt++;
-                }
-            }
-            return tempInt;
-        }
-        //public float CreatRandomNum()
-        //{
-        //    RandomNum = ;
-        //    evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
-        //    return RandomNum;
-        //}
-
-        public void ResetData()
-        {
-            RoundNum = 0;
-            Hp = 0;
-            Process = 0;
-            CurCard = null;
-            CurEvent = null;
-            curEventResults.Clear();
-            eventInsts.Clear();
-            cardInsts.Clear();
-            hadUsecardInsts.Clear();
-            hadSolveEventInsts.Clear();
-        }
-        public void SaveData()
-        {
-            saveData = new data.SaveData();
-            saveData.curCard                 = CurCard;
-            saveData.curEvent                = CurEvent;
-            saveData.curEventResults         = curEventResults;
-            saveData.eventInsts              = eventInsts;
-            saveData.cardInsts               = cardInsts;
-            saveData.hadUsecardInsts         = hadUsecardInsts;
-            saveData.hadSolvecardInsts       = hadSolveEventInsts;
-            saveData.RoundNum = RoundNum;
-            saveData.HP = Hp;
-
-            data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
-        }
-
-
-        public void LoadData()
-        {
-            ResetData();
-            saveData = data.DataArchiver.Load<data.SaveData>(SAVE_FILE_NAME);
-            if(saveData == null)
-            {
-                return;
-            }
-            CurCard = saveData.curCard;
-            CurCard = null;
-            CurEvent = saveData.curEvent;
-            curEventResults = saveData.curEventResults;
-            eventInsts = saveData.eventInsts;
-            cardInsts = saveData.cardInsts;
-            hadUsecardInsts = saveData.hadUsecardInsts;
-            hadSolveEventInsts = saveData.hadSolvecardInsts;
-            RoundNum = saveData.RoundNum;
-            Hp = saveData.HP;
-            ReShowData();
-        }
-
-        public void ClearData()
-        {
-            saveData = new data.SaveData();
-            data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
-        }
-        private void ReShowData()
-        {
-            if(eventInsts != null)
-            {
-                List<EventInst> tempEventList = new List<EventInst>();
-                foreach(var item in eventInsts)
-                {
-                    tempEventList.Add(item);
-                }
-                eventInsts.Clear();
-                foreach(var item in tempEventList)
-                {
-                    PushEventToTable(item);
-                }
-            }
-            if(cardInsts != null)
-            {
-                List<CardInst> tempCardList = new List<CardInst>();
-                foreach(var item in cardInsts)
-                {
-                    tempCardList.Add(item);
-                }
-                cardInsts.Clear();
-                foreach(var item in tempCardList)
-                {
-                    PushCardToTable(item);
-                }
-            }
-        }
-        #region 这个是应付各种检测方法
-        public bool IsCurEventContain(int id)
-        {
-            foreach (var item in eventInsts)
-            {
-                if (item.config.ID == id)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
         #endregion
+
     }
     [System.Serializable]
     public class GameFlowCdtAndEft : Singleton<GameFlowCdtAndEft>

@@ -11,14 +11,17 @@ namespace act.ui
         [Header("Setting")]
         [SerializeField] private Canvas BaseCanvas;
         [SerializeField] private Canvas DescCanvas;
+
+        //展示位置
         [SerializeField] private bool isSettingBorn = true;
         [SerializeField] private Vector3 settingPos = new Vector3(0.64f, 0.802f, 1.401f);
         [SerializeField] private Vector3 settingRot = new Vector3(0f, 180f, 0f);
         [SerializeField] private Vector3 settingSca = new Vector3(0.315025f, 0.05390611f, 0.3635307f);
-        [SerializeField] private Vector3 settingShowDescPos = new Vector3(0.64f, 0.802f, 1.401f);
         [Space]
         [SerializeField] protected EventReference config = null;
         [SerializeField] private game.EventInst event_inst = null;
+
+        private Animator anim;
         private Animator Anim
         {
             get
@@ -30,7 +33,7 @@ namespace act.ui
                 return GetComponentInParent<Animator>();
             }
         }
-        private Animator anim;
+        
         private void Start()
         {
             BaseCanvas.worldCamera = Camera.main;
@@ -42,22 +45,21 @@ namespace act.ui
                 transform.localScale = settingSca;
             }
         }
-        public void Hide()
-        {
-
-        }
 
         public void Init()
         {
             config = GetComponent<EventReference>();
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, CheckDestoryEvent);
+
+            //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
+            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
         }
 
         public void Release()
         {
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_IDEvent_ROUNDNUM_CHANGE, CheckDestoryEvent);
+            //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
+            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
         }
@@ -80,6 +82,7 @@ namespace act.ui
             }
             else
             {
+                //侦测第一个条件来显示事件卡面
                 if (eventInst.conditionInsts[0][0].config.ID == 1)
                 {
                     config.Img_Type.sprite = UiManager.instance.GetSprite($"EventShowType{eventInst.conditionInsts[0][0].numVars[0]}", "PlayCanvas");
@@ -91,60 +94,13 @@ namespace act.ui
             }
 
             config.Text_Name.Localize(event_inst.config.name, "ui_system");
-            config.Text_Desc.Localize(event_inst.config.desc, "ui_system");
-            config.Text_SPDesc.Localize(event_inst.config.desc_SP, "ui_system");
-            config.Text_CommonDesc.Localize(event_inst.config.desc_Common, "ui_system");
-            config.Text_SuccResultDesc.Localize(event_inst.config.desc_SuccResult, "ui_system");
-            config.Text_DefResultDesc.Localize(event_inst.config.desc_DefResult, "ui_system");
             config.Text_Round.text = event_inst.RoundNum.ToString();
             if(event_inst.RoundNum == -2)
             {
                 config.Text_Round.text = "无限";
             }
-            //int tempCSPCount = event_inst.conditionSpInsts.Count;
-            //int tempCCount = event_inst.conditionInsts.Count;
-
-            //for (int index = 0; index < tempCSPCount; index++)
-            //{
-            //    for (int indexY = 0; indexY < event_inst.conditionSpInsts[index].Count; indexY++)
-            //    {
-            //        string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.conditionSpInsts[index][indexY].desc, "ui_system");
-            //        config.Text_Conditions[index].text += ss + " ";
-            //    }
-            //}
-            //for (int index = tempCSPCount; index < tempCSPCount + tempCCount; index++)
-            //{
-            //    for (int indexY = 0; indexY < event_inst.conditionInsts[index - tempCSPCount].Count; indexY++)
-            //    {
-            //        string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.conditionInsts[index - tempCSPCount][indexY].desc, "ui_system");
-            //        config.Text_Conditions[index].text += ss + " ";
-            //    }
-            //}
-            //int tempESPCount = event_inst.effectSpInsts.Count;
-            //int tempECount = event_inst.effectInsts.Count;
-
-            //for (int index = 0; index < tempESPCount; index++)
-            //{
-            //    for (int indexY = 0; indexY < event_inst.effectSpInsts[index].Count; indexY++)
-            //    {
-            //        string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.effectSpInsts[index][indexY].desc, "ui_system");
-            //        config.Text_Effects[index].text += ss + " ";
-            //    }
-            //}
-            //for (int index = tempESPCount; index < tempESPCount + tempECount; index++)
-            //{
-            //    for (int indexY = 0; indexY < event_inst.effectInsts[index - tempESPCount].Count; indexY++)
-            //    {
-            //        string ss = localization.LocalizationManager.instance.GetLocalizedString(event_inst.effectInsts[index - tempESPCount][indexY].desc, "ui_system");
-            //        config.Text_Effects[index].text += ss + " ";
-            //    }
-            //}
         }
 
-        public void Show()
-        {
-            Anim.Play("Show");
-        }
 
         public void CheckDestoryEvent()
         {
@@ -152,7 +108,7 @@ namespace act.ui
             {
                 if(game.GameFlowMgr.instance.eventDesc == false)
                 {
-                    ShowDie();
+                    Hide();
                 }
             }
             config.Text_Round.text = event_inst.RoundNum.ToString();
@@ -162,25 +118,32 @@ namespace act.ui
             }
             
         }
-        public void ShowDie()
+
+        #region 表现
+        public void Show()
+        {
+            Anim.Play("Show");
+        }
+        public void Hide()
         {
             Anim.enabled = true;
             Anim.Play("Hide");
         }
-
+        private void OnMouseEnter()
+        {
+            Debug.Log("自发光");
+        }
         //TODO:写在动画最后一帧
         public void DestoryEvent()
         {
             Release();
             event_inst.DestorySelf();
             Destroy(this.gameObject);
-            Destroy(this.transform.parent);
+            Destroy(this.transform.parent.gameObject);
         }
+        #endregion
 
-        private void OnMouseEnter()
-        {
-            Debug.Log("自发光");
-        }
+
 
         private void OnMouseDown()
         {

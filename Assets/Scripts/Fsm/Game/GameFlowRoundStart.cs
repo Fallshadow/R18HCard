@@ -23,6 +23,7 @@ namespace act.fsm
 
         public override void Update()
         {
+
         }
         public void CheckProcessCondition()
         {
@@ -46,7 +47,6 @@ namespace act.fsm
                 game.GameFlowMgr.instance.PushCardToTable(2);
                 game.GameFlowMgr.instance.PushCardToTable(3);
             }
-
         }
     }
 }

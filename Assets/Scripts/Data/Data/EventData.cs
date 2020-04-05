@@ -50,5 +50,8 @@ namespace act.data
         public string effect_2;
         [Description("event_effect_var_2")]
         public string effect_var_2;
+
+        [Description("event_condition_SP_"), ListAttribute(), TypeConverter(typeof(converter.IntListConverter))]
+        public List<int> event_condition_SP_config = new List<int>();
     }
 }

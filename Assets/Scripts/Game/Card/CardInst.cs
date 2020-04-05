@@ -22,7 +22,7 @@ namespace act.game
             set
             {
                 canUse = value;
-                evt.EventManager.instance.Send<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Refresh_Use, UniqueId);
+                evt.EventManager.instance.Send<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, UniqueId);
             }
         }
         private bool canUse = false;
@@ -62,7 +62,7 @@ namespace act.game
         public void DestorySelf()
         {
             GameFlowMgr.instance.cardInsts.Remove(this);
-            evt.EventManager.instance.Send<int>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Destory, UniqueId);
+            evt.EventManager.instance.Send<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, UniqueId);
         }
         public bool ExcuteCheck()
         {
