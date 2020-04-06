@@ -7,9 +7,19 @@ namespace act.ui
     public class CardGroup : MonoBehaviour
     {
         private RectTransform rect = null;
-        void Start()
+        private void Awake()
         {
             rect = transform as RectTransform;
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Refresh_HandCard_Delay, RefreshCardChildPosDelay);
+        }
+        private void OnDestroy()
+        {
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Refresh_HandCard_Delay, RefreshCardChildPosDelay);
+        }
+
+        public void RefreshCardChildPosDelay()
+        {
+            Invoke("RefreshCardChildPos", 0.5f);
         }
         public void RefreshCardChildPos()
         {

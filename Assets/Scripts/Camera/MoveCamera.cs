@@ -40,6 +40,7 @@ namespace act.game
                 case CameraType.TableMain:
                     if(trigger == false)
                     {
+                        Cursor.visible = true;
                         SetPosAndRot(TableMainPos, TableMainRot);
                     }
                     break;
@@ -70,6 +71,7 @@ namespace act.game
         {
             if(CanMove)
             {
+                Cursor.visible = false;
                 float x = Input.GetAxis("Mouse X");//鼠标横向移动,让Unity中摄像机绕Y轴转动      
                 float y = Input.GetAxis("Mouse Y");//鼠标纵向移动,让Unity中摄像机绕X轴转动
 

@@ -142,7 +142,6 @@ namespace act.ui
                 if (item.gameObject.tag == "CardSlot")
                 {
                     tempPointGo = item.gameObject;
-                    Debug.Log("检测到卡牌槽");
                     return;
                 }
             }
@@ -166,7 +165,6 @@ namespace act.ui
             {
                 Debug.Log("卡牌无法使用，不满足条件");
                 ResetToCardGroup();
-                game.GameFlowMgr.instance.CurCard = null;
             }
         }
 
@@ -208,6 +206,7 @@ namespace act.ui
                 return;
             //TODO:表现
             GameObject.Destroy(this.gameObject);
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Refresh_HandCard_Delay);
         }
         private void OnDestroy()
         {

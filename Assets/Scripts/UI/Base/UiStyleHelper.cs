@@ -7,9 +7,9 @@ namespace act.ui
 {
     public class UiStyleHelper : SingletonMonoBehavior<UiStyleHelper>
     {
-        private string ActionCardColorHex = "#bd6b39";
-        private string WordCardColorHex = "#8e6e5e";
-        private string EmotionCardColorHex = "#876492";
+        private string ActionCardColorHex = "#BD6B39";
+        private string WordCardColorHex = "#CF8A68";
+        private string EmotionCardColorHex = "#BD86CF";
         private string SpecialCardColorHex = "#a15c6d";
 
         public Color ActionCardColor;

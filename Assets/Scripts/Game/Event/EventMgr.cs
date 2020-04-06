@@ -35,9 +35,9 @@ namespace act.game
             string[] eventCardDescs = dictEventCardDesc.Where(x => x.Value.eventID == eventID && x.Value.cardID == cardID).Select(x=>x.Value.desc).ToArray();
             if(eventCardDescs != null && eventCardDescs.Length != 0)
             {
-                return localization.LocalizationManager.instance.GetLocalizedString(eventCardDescs[0], "ui_systen");
+                return localization.LocalizationManager.instance.GetLocalizedString(eventCardDescs[0], "ui_system");
             }
-            string desc = localization.LocalizationManager.instance.GetLocalizedString(dictEventCardDesc[cardType].desc, "ui_systen");
+            string desc = localization.LocalizationManager.instance.GetLocalizedString(dictEventCardDesc[cardType].desc, "ui_system");
             if(desc != null)
             {
                 return desc;
