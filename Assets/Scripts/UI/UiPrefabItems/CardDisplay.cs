@@ -252,9 +252,11 @@ namespace act.ui
             }
             HideDownOthers();
         }
-
+        private int showIndexID = 0;
         public void ShowUpOthers()
         {
+            showIndexID = rectTrans.GetSiblingIndex();
+            rectTrans.SetAsLastSibling();
             transform.localScale = config.enterScaleSize;
             config.DescShow.SetActive(true);
             //GetComponent<Canvas>().sortingOrder = 2;
@@ -262,6 +264,8 @@ namespace act.ui
 
         public void HideDownOthers()
         {
+            rectTrans.SetAsFirstSibling();
+            rectTrans.SetSiblingIndex(showIndexID);
             if (isDrag)
                 return;
             transform.localScale = Vector3.one;

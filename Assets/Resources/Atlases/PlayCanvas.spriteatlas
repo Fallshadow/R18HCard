@@ -31,12 +31,13 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 56074f5934aa2ef4ab971988d30bf4ba, type: 3}
-    totalSpriteSurfaceArea: 2770315
+    totalSpriteSurfaceArea: 2978517
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 299b525014e823f4489bc3b6f647233c, type: 3}
   - {fileID: 21300000, guid: 11f52b50cac71264d8d16e4c9cafb857, type: 3}
+  - {fileID: 21300000, guid: e4f00e50495dda644850ad62edbbfa9d, type: 3}
   - {fileID: 21300000, guid: 306418e06a1ad5d4cb1e393d0498b16c, type: 3}
   - {fileID: 21300000, guid: 82b8efe0fe253b242a3de880577b1ae5, type: 3}
   - {fileID: 21300000, guid: 22a836f18102052499942eb9d216faf1, type: 3}
@@ -51,10 +52,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8ca13779a3d3d244eaea85da9705b4d6, type: 3}
   - {fileID: 21300000, guid: 67e603a9148bb88469f90bb128c272e7, type: 3}
   - {fileID: 21300000, guid: 7587902a0d9aeb749a8bf86feea6b369, type: 3}
+  - {fileID: 21300000, guid: 9ff29efa059f4144e8c4cc9111ace859, type: 3}
   - {fileID: 21300000, guid: 76e26c3b6de67454ab4c99a4fb87f540, type: 3}
   - {fileID: 21300000, guid: 67f45b5b147ac424c919376ec6c10d4a, type: 3}
   - {fileID: 21300000, guid: d12b5c5baca0af244b8838511e5d5622, type: 3}
   - {fileID: 21300000, guid: 2cf3fb7b2ea8b3d47ad836399ec1d92d, type: 3}
+  - {fileID: 21300000, guid: 48a7059bcf709114ca9f50e3746e2810, type: 3}
   - {fileID: 21300000, guid: 2a089f9b810da86458b5a287f7de75ad, type: 3}
   - {fileID: 21300000, guid: a06c7e4c3cd8e434bbdeedc1e8c99cb1, type: 3}
   - {fileID: 21300000, guid: 8f858fad7d04ba54a8d85c2eb91cc700, type: 3}
@@ -63,6 +66,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - EventShowType4
   - EventShowType3
+  - EventType2
   - fenwei_bg
   - CardDesc
   - card_sj_name
@@ -73,14 +77,16 @@ SpriteAtlas:
   - EventShowType1
   - determine_bg3
   - EventTime
-  - CardType2
+  - CardType2_3
   - determine_bg1
   - fenwei_light
   - card_sj_line
-  - EventType2
+  - content
+  - EventType2_3
   - CardType3
   - CardBord
   - EventShowType2
+  - CardType2
   - EventType4
   - determine_btn
   - cm_icon
