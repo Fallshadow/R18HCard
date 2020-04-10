@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 56074f5934aa2ef4ab971988d30bf4ba, type: 3}
-    totalSpriteSurfaceArea: 2978517
+    totalSpriteSurfaceArea: 3015547
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -61,6 +61,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2a089f9b810da86458b5a287f7de75ad, type: 3}
   - {fileID: 21300000, guid: a06c7e4c3cd8e434bbdeedc1e8c99cb1, type: 3}
   - {fileID: 21300000, guid: 8f858fad7d04ba54a8d85c2eb91cc700, type: 3}
+  - {fileID: 21300000, guid: 3fc37d5e71403ae48ba8adac5cd4af9f, type: 3}
   - {fileID: 21300000, guid: 4d40d7ae8484c8c48a02402d353408f6, type: 3}
   - {fileID: 21300000, guid: d007315fe364fd548a93ee5610d1b85a, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -90,6 +91,7 @@ SpriteAtlas:
   - EventType4
   - determine_btn
   - cm_icon
+  - EventType
   - determine_bg2
   - card_sj_bg
   m_Tag: PlayCanvas

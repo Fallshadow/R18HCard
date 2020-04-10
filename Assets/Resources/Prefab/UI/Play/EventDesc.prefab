@@ -2348,11 +2348,11 @@ MonoBehaviour:
     characterCount: 4
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3739,8 +3739,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4E3E\u624B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0d732deab70966c4298e892c80f17ed4, type: 2}
-  m_sharedMaterial: {fileID: -4118602972300262813, guid: 0d732deab70966c4298e892c80f17ed4,
+  m_fontAsset: {fileID: 11400000, guid: c7f2af0fafc122247a3408c2705b3737, type: 2}
+  m_sharedMaterial: {fileID: -7102417178370363914, guid: c7f2af0fafc122247a3408c2705b3737,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 514
-  m_characterSpacing: -15
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3833,7 +3833,7 @@ MonoBehaviour:
   isLocalizeOnAwake: 1
   localizationId: 
   localizationGroup: ui_system
-  specificFont: muyao
+  specificFont: SourceHanSerifCN-SemiBold
   specificMaterial: Default
 --- !u!114 &1479876845013916382
 MonoBehaviour:
