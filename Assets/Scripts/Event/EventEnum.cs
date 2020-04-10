@@ -34,8 +34,8 @@ namespace act.evt
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
         Globe_Card_Exit_Slot,
-        Globe_Refresh_HandCard_Delay
-
+        Globe_Refresh_HandCard_Delay,
+        Limit_TwoOne,
     }
 
     public enum CardEvent : short

@@ -62,6 +62,8 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, RollEventDef);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
+
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
 
         private void unRegister()
@@ -80,6 +82,8 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, RollEventDef);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
+
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
 
         public void ShowDesc(game.EventInst inst)
@@ -111,6 +115,12 @@ namespace act.ui
             }
             SText_Event_Name.Localize(inst.config.name, "ui_system");
             SText_Event_Round.text = inst.RoundNum.ToString();
+            if(inst.RoundNum == -2)
+            {
+                SText_Event_Round.text = "无限";
+                showEventID38();
+            }
+
             SText_Name.gameObject.SetActive(true);
             SText_Desc.gameObject.SetActive(true);
             SText_Name.Localize(inst.config.name, "ui_system");
@@ -164,7 +174,13 @@ namespace act.ui
             LayoutRefresh();
         }
 
-
+        private void showEventID38()
+        {
+            if(curEventInst.config.ID == 38)
+            {
+                SText_Event_Round.text = game.GameFlowMgr.instance.TwoOneNum.ToString();
+            }
+        }
         public void HideDesc()
         {
             canvasGroup.DOFade(0, 0.5f);

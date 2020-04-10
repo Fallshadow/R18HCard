@@ -10,7 +10,28 @@ namespace act.game
         public bool eventDesc = false;
         //卡牌成功即解决事件？
         public bool cardSuccEventComp = true;
-
+        public int TwoOneNum
+        {
+            get 
+            {
+                return twoOneNum;
+            }
+            set
+            {
+                twoOneNum = value;
+                if(twoOneNum == 21)
+                {
+                    CurEvent.HasComplete = true;
+                    twoOneNum = 0;
+                }
+                else if(twoOneNum > 21)
+                {
+                    twoOneNum = 0;
+                }
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne);
+            }
+        }
+        private int twoOneNum = 0;
         #region 当前使用的卡牌与事件
         public CardInst CurCard
         {

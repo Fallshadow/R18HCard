@@ -54,6 +54,9 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
+
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
+
         }
 
         public void Release()
@@ -62,6 +65,8 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
+
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
         public game.EventInst GetEventInst()
         {
@@ -98,9 +103,16 @@ namespace act.ui
             if(event_inst.RoundNum == -2)
             {
                 config.Text_Round.text = "无限";
+                showEventID38();
             }
         }
-
+        private void showEventID38()
+        {
+            if(event_inst.config.ID == 38)
+            {
+                config.Text_Round.text = game.GameFlowMgr.instance.TwoOneNum.ToString();
+            }
+        }
 
         public void CheckDestoryEvent()
         {
@@ -115,6 +127,7 @@ namespace act.ui
             if(event_inst.RoundNum == -2)
             {
                 config.Text_Round.text = "无限";
+                showEventID38();
             }
             
         }

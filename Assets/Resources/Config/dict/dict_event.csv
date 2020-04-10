@@ -26,7 +26,7 @@ event_id,event_name,event_desc,event_SP_desc,event_common_desc,event_succResult_
 25,event_name25,event_desc25,event_desc_SP25,event_common_desc25,event_result_desc25,event_defResult_desc25,event_roundOver_desc25,4,10,0,4,11,1,2,1,15,,,,
 26,event_name26,event_desc26,event_desc_SP26,event_common_desc26,event_result_desc26,event_defResult_desc26,event_roundOver_desc26,6,,,,,1,4,1_11_4,10;3;33,,,,
 27,event_name27,event_desc27,event_desc_SP27,event_common_desc27,event_result_desc27,event_defResult_desc27,event_roundOver_desc27,0,,,,,,,,,,,,
-28,event_name28,event_desc28,event_desc_SP28,event_common_desc28,event_result_desc28,event_defResult_desc28,event_roundOver_desc28,2,4,0,4:;16,23;20_21_22_28,1,0,1,0,,,,
+28,event_name28,event_desc28,event_desc_SP28,event_common_desc28,event_result_desc28,event_defResult_desc28,event_roundOver_desc28,2,4,0,4_16,23;20_21_22_28,1,0,1,0,,,,
 29,event_name29,event_desc29,event_desc_SP29,event_common_desc29,event_result_desc29,event_defResult_desc29,event_roundOver_desc29,9,,,,,2,0,14,0,,,,
 30,event_name30,event_desc30,event_desc_SP30,event_common_desc30,event_result_desc30,event_defResult_desc30,event_roundOver_desc30,9,,,,,1,1_2_3,2,10,,,,
 31,event_name31,event_desc31,event_desc_SP31,event_common_desc31,event_result_desc31,event_defResult_desc31,event_roundOver_desc31,0,,,,,,,,,,,,
@@ -36,3 +36,4 @@ event_id,event_name,event_desc,event_SP_desc,event_common_desc,event_succResult_
 35,event_name35,event_desc35,event_desc_SP35,event_common_desc35,event_result_desc35,event_defResult_desc35,event_roundOver_desc35,2,5,0,7,1,3,4,1_4,10;36,,,,
 36,event_name36,event_desc36,event_desc_SP36,event_common_desc36,event_result_desc36,event_defResult_desc36,event_roundOver_desc36,1,5,0,7,1,3,4,1_4,10;18,,,,
 37,event_name37,event_desc37,event_desc_SP37,event_common_desc37,event_result_desc37,event_defResult_desc37,event_roundOver_desc37,-2,8,0,14,0,1,1_2_3,1,0,,,,
+38,event_name38,event_desc38,event_desc_SP38,event_common_desc38,event_result_desc38,event_defResult_desc38,event_roundOver_desc38,-2,,,,,2,0,14_18,0;0,,,,

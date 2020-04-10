@@ -147,15 +147,25 @@ namespace act.game
                     return;
                 case EffectId.EI_15:
                     //删卡牌
-                    GameFlowMgr.instance.DelectCardByID((int)vars[0]);
+                    foreach(var item in vars)
+                    {
+                        GameFlowMgr.instance.DelectCardByID((int)item);
+                    }
                     return;
                 case EffectId.EI_16:
                     //删事件
-                    GameFlowMgr.instance.DelectEventByID((int)vars[0]);
+                    foreach(var item in vars)
+                    {
+                        GameFlowMgr.instance.DelectEventByID((int)item);
+                    }
                     return;
                 case EffectId.EI_17:
                     //跳过骰子
                     GameFlowMgr.instance.JumpUpTouzi = true;
+                    return;
+                case EffectId.EI_18:
+                    //21点事件，将游戏21点数值增加
+                    GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.curTouziCheckNum;
                     return;
                 //case EffectId.EI_10:
                 //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
