@@ -40,7 +40,7 @@ namespace act.fsm
                 item.RefreshUse();
             }
             game.GameFlowMgr.instance.RoundNum++;
-
+            game.GameFlowMgr.instance.CurCard = null;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over);
 
             

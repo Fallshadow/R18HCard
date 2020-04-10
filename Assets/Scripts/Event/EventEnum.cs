@@ -33,7 +33,8 @@ namespace act.evt
         Globe_Card_Event_Def,
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
-        Globe_Card_Exit_Slot
+        Globe_Card_Exit_Slot,
+        Globe_Refresh_HandCard_Delay
 
     }
 
@@ -50,6 +51,7 @@ namespace act.evt
     {
         Event_ID_ROUNDNUM_CHANGE = 0,
         Event_ID_ROUNDNUM_Over,
+        
     }
     public enum InputEvent : short
     {

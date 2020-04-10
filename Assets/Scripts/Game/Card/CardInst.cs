@@ -61,6 +61,10 @@ namespace act.game
         }
         public void DestorySelf()
         {
+            if(game.GameFlowMgr.instance.CurCard == this)
+            {
+                game.GameFlowMgr.instance.CurCard = null;
+            }
             GameFlowMgr.instance.cardInsts.Remove(this);
             evt.EventManager.instance.Send<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, UniqueId);
         }
