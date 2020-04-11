@@ -105,6 +105,7 @@ namespace act.ui
         public void ShowRandomNum()
         {
             text_Touzi_Num.text = game.GameFlowMgr.instance.RandomNum.ToString();
+            Debug.Log(game.GameFlowMgr.instance.RandomNum);
         }
         public void ShowProcessNum()
         {

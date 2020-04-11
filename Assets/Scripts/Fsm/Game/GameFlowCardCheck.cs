@@ -17,16 +17,26 @@ namespace act.fsm
             //    return;
             //}
             List<bool> commonResults = new List<bool>();
-            if (!game.ConditionMgr.instance.CheckConditionBySplit(game.GameFlowMgr.instance.CurEvent.conditionInsts, out commonResults))
+
+            if(game.GameFlowMgr.instance.CurEvent.config.ID == 17)
             {
-                //TODO:发信号！卡牌根本使用不了
-                Debug.Log("卡牌根本使用不了");
-                m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowWaitForCheck);
-                return;
+                Debug.Log("卡牌使用了！");
+                game.GameFlowMgr.instance.curEventResults = commonResults;
+                m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardNumCheck);
             }
-            Debug.Log("卡牌使用了！");
-            game.GameFlowMgr.instance.curEventResults = commonResults;
-            m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardNumCheck);
+            else
+            {
+                if(!game.ConditionMgr.instance.CheckConditionBySplit(game.GameFlowMgr.instance.CurEvent.conditionInsts, out commonResults))
+                {
+                    //TODO:发信号！卡牌根本使用不了
+                    Debug.Log("卡牌根本使用不了");
+                    m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowWaitForCheck);
+                    return;
+                }
+                Debug.Log("卡牌使用了！");
+                game.GameFlowMgr.instance.curEventResults = commonResults;
+                m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardNumCheck);
+            }
         }
 
         public override void Exit()

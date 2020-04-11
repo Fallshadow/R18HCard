@@ -51,6 +51,9 @@ namespace act.game
         CI_14,
         CI_15,
         CI_16,
+        CI_17,
+        CI_18,
+        CI_19,
     }
 
     public enum EffectId
@@ -79,14 +82,14 @@ namespace act.game
     public enum TimePoint
     {
         TP_None = 0,
-        TP_RoundStart,
-        TP_CardCheck,
-        TP_CardNumCheckStart,
-        TP_CardNumCheckOver,
-        TP_CardNumCheckSucc,
-        TP_CardNumCheckDeff,
-        TP_CardUseOver,
-        TP_RoundEnd,
+        TP_RoundStart = 1,
+        TP_CardCheck = 2,
+        TP_CardNumCheckStart = 3,
+        TP_CardNumCheckOver = 4,
+        TP_CardNumCheckSucc = 5,
+        TP_CardNumCheckDeff = 6,
+        TP_CardUseOver = 7,
+        TP_RoundEnd = 8,
     }
 
     public enum EntityType

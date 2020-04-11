@@ -83,8 +83,8 @@ namespace act.game
                     ConditionEffectConfig conditionEffectConfig = new ConditionEffectConfig(UniqueId, tempCInstList, tempEInstList);
                     GameFlowCdtAndEft.instance.AddCECToList(conditionEffectConfig);
                 }
-                GameFlowMgr.instance.eventInsts.Add(this);
             }
+            GameFlowMgr.instance.eventInsts.Add(this);
         }
 
         public void DestorySelf()

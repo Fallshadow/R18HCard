@@ -19,6 +19,8 @@ namespace act.ui
         [SerializeField] Vector2 rollPos = Vector2.zero;
         [SerializeField] int m_pip = -1;
         [SerializeField] Vector2 rollVec = Vector2.one * 200f;
+
+        public float invokeTime = 2;
         public int pip
         {
             get
@@ -52,6 +54,13 @@ namespace act.ui
             }
         }
 
+        public void StopRoll()
+        {
+            ac.Play();
+            SetPip(NumToShow);
+        }
+
+
         public void rollTouZi(float num,CallBack continueCheck,CallBack resetTouzi)
         {
             NumToShow = (int)num;
@@ -62,6 +71,8 @@ namespace act.ui
             Roll();
             this.resetTouzi = resetTouzi;
             this.continueCheck = continueCheck;
+
+            Invoke("StopRoll", invokeTime);
         }
 
         //鉴定完毕,执行回调

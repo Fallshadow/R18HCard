@@ -83,6 +83,10 @@ namespace act.game
             set
             {
                 process = Mathf.Clamp(value, 0, 100);
+                if(process == 100)
+                {
+                    
+                }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change);
             }
         }
@@ -156,7 +160,7 @@ namespace act.game
         public void ResetData()
         {
             RoundNum = 0;
-            Hp = 0;
+            Hp = 6;
             Process = 0;
             CurCard = null;
             CurEvent = null;

@@ -44,6 +44,8 @@ namespace act.fsm
         public void TouziCallBack()
         {
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckOverCEC);
+            game.GameFlowMgr.instance.RandomNum = game.RollTouZiManager.instance.maxNum;
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
             if(!game.GameFlowMgr.instance.CurCard.ExcuteCheck())
             {
                 //TODO:发信号！卡牌使用失败了

@@ -25,10 +25,10 @@ namespace act.game
 
         public bool CECheckByBlend()
         {
-            if(GameFlowMgr.instance.CurEvent.UniqueId != id && GameFlowMgr.instance.CurCard.UniqueId != id)
-            {
-                return false;
-            }
+            //if(GameFlowMgr.instance.CurEvent.UniqueId != id && GameFlowMgr.instance.CurCard.UniqueId != id)
+            //{
+            //    return false;
+            //}
             if(times != -2)
             {
                 times--;

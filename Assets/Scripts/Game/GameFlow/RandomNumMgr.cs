@@ -57,11 +57,14 @@ namespace act.game
                 curTouziCheckNum = Mathf.Max(item, curTouziCheckNum);
             }
             maxNum = curTouziCheckNum;
+            Debug.Log($"当前骰子应该的数值curTouziCheckNum:{curTouziCheckNum}");
+            Debug.Log($"当前result数值:{result[0]}");
             ResetUseTouziTime();
         }
         public void ResetTouziNum()
         {
             curTouziNum = initTouziNum;
+            curTouziCheckNum = 1;
         }
         public void ResetUseTouziTime()
         {

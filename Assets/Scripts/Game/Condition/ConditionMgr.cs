@@ -101,6 +101,14 @@ namespace act.game
                     return true;
                 case ConditionId.CI_16:
                     return !game.GameFlowMgr.instance.CurCard.Canuse;
+                case ConditionId.CI_17:
+                    return true;
+                case ConditionId.CI_18:
+                    return (GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                        ? true : false;
+                case ConditionId.CI_19:
+                    return (GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                        ? true : false;
                 default:
                     break;
             }

@@ -86,7 +86,10 @@ namespace act.game
                     }
                     return;
                 case EffectId.EI_4:
-                    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
+                    foreach(var item in vars)
+                    {
+                        GameFlowMgr.instance.PushEventToTable((int)item);
+                    }
                     return;
                 case EffectId.EI_5:
                     RandomNumMgr.instance.curUseTouziTime = (int)vars[0];

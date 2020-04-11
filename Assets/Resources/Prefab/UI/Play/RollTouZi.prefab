@@ -254,7 +254,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -273,8 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumToShow: 1
+  rollPos: {x: 0, y: 0}
   m_pip: -1
-  rollVec: {x: 20, y: 20}
+  rollVec: {x: 0, y: 0}
+  invokeTime: 0.2
 --- !u!82 &82234486746637480
 AudioSource:
   m_ObjectHideFlags: 0
@@ -429,6 +431,8 @@ MonoBehaviour:
   - {fileID: 2795650851567866235}
   - {fileID: 7989766983294308020}
   - {fileID: 1393836925562232055}
+  maxNum: 0
+  touziNum: 0
 --- !u!1 &284259268793416556
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +569,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -584,8 +588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumToShow: 1
+  rollPos: {x: 0, y: 0}
   m_pip: -1
-  rollVec: {x: 400, y: 400}
+  rollVec: {x: 0, y: 0}
+  invokeTime: 0.2
 --- !u!82 &8029326093761881631
 AudioSource:
   m_ObjectHideFlags: 0
@@ -818,7 +824,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -837,8 +843,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumToShow: 1
+  rollPos: {x: 0, y: 0}
   m_pip: -1
-  rollVec: {x: 400, y: 400}
+  rollVec: {x: 0, y: 0}
+  invokeTime: 0.2
 --- !u!82 &8160100197838297718
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1071,7 +1079,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1090,8 +1098,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumToShow: 1
+  rollPos: {x: 0, y: 0}
   m_pip: -1
-  rollVec: {x: 400, y: 400}
+  rollVec: {x: 0, y: 0}
+  invokeTime: 0.2
 --- !u!82 &6762155468179541889
 AudioSource:
   m_ObjectHideFlags: 0

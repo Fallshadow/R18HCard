@@ -19,7 +19,6 @@ namespace act.game
                 touzi[i].rollTouZi(resultList[i],continueCheck, ResetTouzi);
             }
             this.maxNum = maxNum;
-            game.GameFlowMgr.instance.RandomNum = maxNum;
         }
 
         public void ResetTouzi()
@@ -29,7 +28,7 @@ namespace act.game
             {
                 touzi[i].gameObject.SetActive(false);
             }
-            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
+            
         }
     }
 }
