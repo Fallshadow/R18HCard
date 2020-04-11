@@ -7,14 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u5361\u724C\u5E95\u5EA7"
-  m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
-  m_ShaderKeywords: _ _ALPHATEST_ON _EMISSION _EMISSIVE_SIMPLE _OUTLINE_POS
+  m_Name: "\u8FB9\u7F18\u53D1\u5149\uFF01\uFF01\uFF01"
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ _ALPHABLEND_ON _EMISSION _EMISSIVE_SIMPLE _OUTLINE_POS
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -139,12 +140,12 @@ Material:
     - _CullMode: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EMISSIVE: 0
     - _Farthest_Distance: 100
     - _GI_Intensity: 1
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _HighColor_Power: 0.77
     - _Inverse_MatcapMask: 0
@@ -179,8 +180,8 @@ Material:
     - _Is_ViewShift: 0
     - _LightDirection_MaskOn: 0
     - _MatCap: 0
-    - _Metallic: 0.24
-    - _Mode: 1
+    - _Metallic: 0
+    - _Mode: 2
     - _Nearest_Distance: 0.5
     - _OUTLINE: 1
     - _OcclusionStrength: 1
@@ -202,7 +203,7 @@ Material:
     - _ShadeColor_Step: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _StepOffset: 0
     - _TweakHighColorOnShadow: 0
     - _TweakMatCapOnShadow: 0
@@ -216,7 +217,7 @@ Material:
     - _Unlit_Intensity: 0.68
     - _Use_1stAs2nd: 0
     - _Use_BaseAs1st: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _simpleUI: 0
     - _utsTechnique: 0
     - _utsVersion: 2.075
@@ -225,9 +226,9 @@ Material:
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 0.45098042, g: 0.13725491, b: 0.30588236, a: 1}
-    - _Color: {r: 0.45098042, g: 0.13725491, b: 0.30588236, a: 1}
+    - _Color: {r: 0.9811321, g: 0, b: 0.5273584, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0.1509434, g: 0.091847636, b: 0.091847636, a: 1}
+    - _EmissionColor: {r: 16.062746, g: 0.5019608, b: 14.933333, a: 1}
     - _Emissive_Color: {r: 0.4339623, g: 0.24768601, b: 0.24768601, a: 1}
     - _HighColor: {r: 0, g: 0, b: 0, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
