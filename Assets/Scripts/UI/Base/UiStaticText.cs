@@ -21,7 +21,7 @@ namespace act.ui
 
     public class UiStaticText : TextMeshProUGUI, localization.ILocalizable
     {
-        public static string[] FontNames = new string[] { "HYQiHei", "impact" , "BEYNO", "ArialMT","muyao","zhanku", "SourceHanSerifCN-SemiBold" };
+        public static string[] FontNames = new string[] { "HYQiHei", "impact" , "BEYNO", "ArialMT","muyao","zhanku", "SourceHanSerifCN-SemiBold","muyao2","muyao3", "muyao4", "muyao5", "muyao6", "muyao7" };
         public static string[] MaterialNames = new string[] { "Default", "Outline" };
 
         [SerializeField] protected bool isLocalizeOnAwake = true;

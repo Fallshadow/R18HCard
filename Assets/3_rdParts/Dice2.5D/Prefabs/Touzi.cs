@@ -67,8 +67,12 @@ namespace act.ui
         //鉴定完毕,执行回调
         public void CallBack()
         {
-            resetTouzi?.Invoke();
             continueCheck?.Invoke();
+        }
+
+        public void ResetTouZi()
+        {
+            resetTouzi?.Invoke();
             (transform as RectTransform).localPosition = rollPos;
         }
         public void OnRollButton()

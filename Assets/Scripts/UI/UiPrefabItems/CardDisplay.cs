@@ -17,7 +17,8 @@ namespace act.ui
         private bool isDrag = false;
         private GameObject tempPointGo = null;
         private bool isLockedSlot = false;
-        public Vector3 InitPos = Vector3.zero; 
+        public Vector3 InitPos = Vector3.zero;
+        public Image CardMouseTest = null;
          private Vector2 InitSizeDelta = Vector2.zero; 
         public game.CardInst GetCardInst()
         {
@@ -157,7 +158,8 @@ namespace act.ui
             {
                 rectTrans.position = (tempPointGo.transform.GetChild(0) as RectTransform).position;
                 rectTrans.localPosition += new Vector3(0, 5.5f, 0);
-                rectTrans.sizeDelta = (tempPointGo.transform.GetChild(0) as RectTransform).sizeDelta * 1.17f;
+                rectTrans.sizeDelta = (tempPointGo.transform.GetChild(0) as RectTransform).sizeDelta * 0.9f;
+                CardMouseTest.raycastTarget = false;
                 isLockedSlot = true;
                 evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Enter_Slot);
             }
@@ -258,6 +260,7 @@ namespace act.ui
             showIndexID = rectTrans.GetSiblingIndex();
             rectTrans.SetAsLastSibling();
             transform.localScale = config.enterScaleSize;
+            transform.localPosition += config.enterPosition;
             config.DescShow.SetActive(true);
             //GetComponent<Canvas>().sortingOrder = 2;
         }
@@ -269,6 +272,10 @@ namespace act.ui
             if (isDrag)
                 return;
             transform.localScale = Vector3.one;
+            if((int)transform.localPosition.y != (int)InitPos.y)
+            {
+                transform.localPosition -= config.enterPosition;
+            }
             config.DescShow.SetActive(false);
             //GetComponent<Canvas>().sortingOrder = 1;
         }
@@ -283,6 +290,7 @@ namespace act.ui
             isLockedSlot = false;
             rectTrans.DOAnchorPos(InitPos, 0.5f).SetEase(Ease.OutQuad);
             rectTrans.DOSizeDelta(InitSizeDelta,0.5f).SetEase(Ease.InQuad);
+            CardMouseTest.raycastTarget = true;
         }
     }
 }

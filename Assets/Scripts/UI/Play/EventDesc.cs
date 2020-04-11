@@ -53,15 +53,15 @@ namespace act.ui
             evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, ChangeCurCard);
 
             evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_Over, ShowRoundOverDescTip);
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, HideDesc);
+            //evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, HideDesc);
 
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, HideDesc);
 
             evt.EventManager.instance.Register(evt.EventGroup.TOUZI, (short)evt.TouziEvent.T_Roll, RollEvent);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, RollEventDef);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def_Anim, RollEventDef);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim, RollEventSucc);
 
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
@@ -73,15 +73,15 @@ namespace act.ui
             evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, ChangeCurCard);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_Over, ShowRoundOverDescTip);
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, HideDesc);
+            //evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, HideDesc);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, HideDesc);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.TOUZI, (short)evt.TouziEvent.T_Roll, RollEvent);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, ShowDefDescTip);
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def, RollEventDef);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def_Anim, RollEventDef);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, ShowSuccDescTip);
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success, RollEventSucc);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim, RollEventSucc);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
@@ -183,6 +183,7 @@ namespace act.ui
         }
         public void HideDesc()
         {
+            InitAnim();
             canvasGroup.DOFade(0, 0.5f);
             canvasGroup.blocksRaycasts = false;
             game.GameFlowMgr.instance.eventDesc = false;
@@ -305,15 +306,40 @@ namespace act.ui
         #region 播放动画
         public void RollEvent()
         {
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll);
+            anim.SetFloat("Init", 1);
             anim.Play("Rotate");
         }
         public void RollEventSucc()
         {
-            anim.Play("EventSucc");
+            anim.SetFloat("Init", 1);
+            anim.SetTrigger("Succ");
         }
         public void RollEventDef()
         {
-            anim.Play("EventDef");
+            anim.SetFloat("Init", 1);
+            anim.SetTrigger("Def");
+        }
+
+        public void Succ()
+        {
+            game.GameFlowMgr.instance.CurCard.CheckCdt();
+            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
+            game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
+        }
+
+        public void Def()
+        {
+            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckDeffCEC);
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def);
+            evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
+        }
+
+        public void InitAnim()
+        {
+            anim.SetFloat("Init",0);
         }
         #endregion
 

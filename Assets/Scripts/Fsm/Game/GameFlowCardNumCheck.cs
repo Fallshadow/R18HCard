@@ -48,19 +48,18 @@ namespace act.fsm
             {
                 //TODO:发信号！卡牌使用失败了
                 Debug.Log("卡牌使用失败了QAQ");
-                game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckDeffCEC);
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def);
+
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def_Anim);
             }
             else
             {
                 Debug.Log("卡牌使用成功了！！！");
-                game.GameFlowMgr.instance.CurCard.CheckCdt();
-                game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
-                game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
             }
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);
         }
+
+
     }
 }
 

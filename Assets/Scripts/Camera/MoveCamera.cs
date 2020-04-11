@@ -41,13 +41,13 @@ namespace act.game
                     if(trigger == false)
                     {
                         Cursor.visible = true;
-                        SetPosAndRot(TableMainPos, TableMainRot);
+                        //SetPosAndRot(TableMainPos, TableMainRot);
                     }
                     break;
                 default:
                     break;
             }
-            
+
         }
 
         public void SetPosAndRot(Vector3 pos, Vector3 rot)

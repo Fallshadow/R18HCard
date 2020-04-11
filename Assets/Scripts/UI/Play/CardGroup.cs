@@ -74,7 +74,7 @@ namespace act.ui
                     tempDis += 40;
                 }
                 item.localPosition = tempDisplay.InitPos + new Vector3(tempDis, 0, 0);
-
+                tempDisplay.InitPos = item.localPosition;
             }
 
         }

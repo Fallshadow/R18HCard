@@ -20,6 +20,7 @@ namespace act.ui
         public UiStaticText[] Text_Effects = null;
         [Header("Setting")]
         public Vector3 enterScaleSize = Vector3.zero;
+        public Vector3 enterPosition = Vector3.zero;
         public Canvas sortCanvas = null;
 
     }

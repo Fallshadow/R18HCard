@@ -30,12 +30,16 @@ namespace act.evt
         Globe_Event_Create,
         Globe_CurEvent_Completed,
         Globe_Card_Event_Success,
+        Globe_Card_Event_Success_Anim,
         Globe_Card_Event_Def,
+        Globe_Card_Event_Def_Anim,
         Globe_Round_Over,
         Globe_IDEvent_ROUNDNUM_CHANGE,
         Globe_Card_Exit_Slot,
         Globe_Refresh_HandCard_Delay,
         Limit_TwoOne,
+        HideAll,
+        DisHideAll,
     }
 
     public enum CardEvent : short

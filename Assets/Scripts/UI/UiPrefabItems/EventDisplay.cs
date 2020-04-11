@@ -11,7 +11,7 @@ namespace act.ui
         [Header("Setting")]
         [SerializeField] private Canvas BaseCanvas;
         [SerializeField] private Canvas DescCanvas;
-
+        [SerializeField] private GameObject rimlight;
         //展示位置
         [SerializeField] private bool isSettingBorn = true;
         [SerializeField] private Vector3 settingPos = new Vector3(0.64f, 0.802f, 1.401f);
@@ -156,7 +156,17 @@ namespace act.ui
         }
         #endregion
 
+        private void OnMouseOver()
+        {
+            if(game.GameFlowMgr.instance.eventDesc)
+                return;
+            rimlight.SetActive(true);
+        }
 
+        private void OnMouseExit()
+        {
+            rimlight.SetActive(false);
+        }
 
         private void OnMouseDown()
         {
