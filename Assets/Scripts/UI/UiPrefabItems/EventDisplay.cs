@@ -17,6 +17,9 @@ namespace act.ui
         [SerializeField] private Vector3 settingPos = new Vector3(0.64f, 0.802f, 1.401f);
         [SerializeField] private Vector3 settingRot = new Vector3(0f, 180f, 0f);
         [SerializeField] private Vector3 settingSca = new Vector3(0.315025f, 0.05390611f, 0.3635307f);
+        [SerializeField] private UiStaticText wuxiantext = null;
+        [SerializeField] private UiStaticText forwardtext = null;
+        [SerializeField] private UiStaticText nowtext = null;
         [Space]
         [SerializeField] protected EventReference config = null;
         [SerializeField] private game.EventInst event_inst = null;
@@ -102,7 +105,7 @@ namespace act.ui
             config.Text_Round.text = event_inst.RoundNum.ToString();
             if(event_inst.RoundNum == -2)
             {
-                config.Text_Round.text = "无限";
+                config.Text_Round.text = "∞";
                 showEventID38();
             }
         }
@@ -126,8 +129,16 @@ namespace act.ui
             config.Text_Round.text = event_inst.RoundNum.ToString();
             if(event_inst.RoundNum == -2)
             {
-                config.Text_Round.text = "无限";
+                wuxiantext.text = "∞";
+                config.Text_Round.text = "∞";
                 showEventID38();
+                ShowWuXian();
+            }
+            else
+            {
+                forwardtext.text = (event_inst.RoundNum + 1).ToString();
+                nowtext.text = event_inst.RoundNum.ToString();
+                ShowNomarl();
             }
             
         }
@@ -141,6 +152,16 @@ namespace act.ui
         {
             Anim.enabled = true;
             Anim.Play("Hide");
+        }
+
+        public void ShowWuXian()
+        {
+            Anim.Play("TextWuXian");
+        }
+
+        public void ShowNomarl()
+        {
+            Anim.Play("TextNomarl");
         }
         private void OnMouseEnter()
         {
