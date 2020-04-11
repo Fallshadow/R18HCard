@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
 
 namespace act.ui
 {
     public class CardGroup : MonoBehaviour
     {
+        [SerializeField] private float doLocalMoveTime = 1;
         private RectTransform rect = null;
         private List<RectTransform> childrenRects = new List<RectTransform>();
         private List<CardDisplay> childrenDisplays = new List<CardDisplay>();
@@ -73,8 +75,7 @@ namespace act.ui
                     tempType = tempDisplay.GetCardInst().config.type;
                     tempDis += 40;
                 }
-                item.localPosition = tempDisplay.InitPos + new Vector3(tempDis, 0, 0);
-                tempDisplay.InitPos = item.localPosition;
+                item.DOLocalMove(tempDisplay.InitPos + new Vector3(tempDis, 0, 0), doLocalMoveTime).SetEase(Ease.OutQuad).OnComplete(()=> { tempDisplay.InitPos = item.localPosition; });
             }
 
         }

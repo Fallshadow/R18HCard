@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using DG.Tweening;
+using TMPro;
 
 namespace act.ui
 {
@@ -13,14 +14,20 @@ namespace act.ui
     {
         [Header("Setting")]
         [SerializeField] private float ProcessDuration = 1;
+        [SerializeField] private float cardDisplayDuration = 1.0f;
+        [SerializeField] private float processDuration = 1.0f;
+        [SerializeField] private float hpDuration = 1.0f;
 
         [SerializeField] private CardGroup cardGroup;
         [SerializeField] private Transform cardParentGroupTran;
         [SerializeField] private Transform eventParentGroupTran;
         [SerializeField] private EventDesc eventDesc;
 
-        [SerializeField] private UiStaticText text_Touzi_Num;
         [SerializeField] private Text text_HP_Num;
+        [SerializeField] private Text text_HP_Effect_Num;
+        [SerializeField] private TMP_Text text_Process_Effect_Num;
+
+        [SerializeField] private UiStaticText text_Touzi_Num;
         [SerializeField] private Text text_Process_Num;
         [SerializeField] private Material material_Process_Num;
         [SerializeField] private UiStaticText text_Round_Num;
@@ -29,6 +36,8 @@ namespace act.ui
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
+        [SerializeField] private InputField tempProgressNum;
+        [SerializeField] private InputField tempHpNum;
         private List<GameObject> eventOGS = new List<GameObject>();
         private float processNum = 0;
         public override void Initialize()
@@ -69,7 +78,7 @@ namespace act.ui
         
         public void CreateEvent(game.EventInst eventInst)
         {
-            GameObject eventDisplayOB = utility.LoadResources.LoadPrefab(
+            var eventDisplayOB = utility.LoadResources.LoadPrefab(
                 data.ResourcesPathSetting.UiPrefabFolder
                 + data.ResourcesPathSetting.PlayUIEventPrefabBase
                 + eventInst.config.ID, true);
@@ -80,20 +89,31 @@ namespace act.ui
                     + data.ResourcesPathSetting.PlayUIEventPrefabBase);
             }
             eventOGS.Add(eventDisplayOB);
-            ui.EventDisplay eventDisplay = eventDisplayOB.GetComponentInChildren<ui.EventDisplay>();
+            var eventDisplay = eventDisplayOB.GetComponentInChildren<ui.EventDisplay>();
             eventDisplay.Init();
             eventDisplay.SetInst(eventInst);
             eventDisplay.EnterToTable();
+            eventDisplay.Show();
         }
 
         public void CreateCard(game.CardInst cardInst)
         {
-            ui.CardDisplay cardDisplay = utility.LoadResources.LoadPrefab<ui.CardDisplay>(data.ResourcesPathSetting.UiPrefabFolder + data.ResourcesPathSetting.PlayUICardPrefab,
+            var cardDisplay = utility.LoadResources.LoadPrefab<ui.CardDisplay>(
+                data.ResourcesPathSetting.UiPrefabFolder 
+                + data.ResourcesPathSetting.PlayUICardPrefab,
                 cardParentGroupTran);
             cardDisplay.Init();
             cardDisplay.SetInst(cardInst);
             cardDisplay.EnterToTable();
-            cardGroup.RefreshCardChildPos();
+
+            var createCardSequence = DOTween.Sequence();
+            var group = cardDisplay.GetOrAddComponent<CanvasGroup>();
+            var rectTransform = cardDisplay.transform as RectTransform;
+            createCardSequence.Append(group.DOFade(0.0f, 0.0f));
+            createCardSequence.Join(rectTransform.DOMove(new Vector3(0.0f, 0.0f, rectTransform.position.z), 0.0f));
+            createCardSequence.Append(group.DOFade(1.0f, cardDisplayDuration * 0.5f));
+            createCardSequence.AppendInterval(cardDisplayDuration * 0.5f);
+            createCardSequence.AppendCallback(() => { cardGroup.RefreshCardChildPos(); });
         }
 
 
@@ -109,13 +129,59 @@ namespace act.ui
         }
         public void ShowProcessNum()
         {
-            //TODO:数字缓动！
-            text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
-            material_Process_Num.DOFloat(game.GameFlowMgr.instance.Process / 100, "_Progress", ProcessDuration);
+            ////TODO:数字缓动！
+            //text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
+            //material_Process_Num.DOFloat(game.GameFlowMgr.instance.Process / 100, "_Progress", ProcessDuration);
+
+            var progress = game.GameFlowMgr.instance.Process;
+            var dealtProcess = progress - Convert.ToInt32(text_Process_Num.text);
+            if(Mathf.Approximately(dealtProcess, 0.0f))
+                return;
+            text_Process_Effect_Num.text = dealtProcess > 0.0f ? "+" + (int)dealtProcess : ((int)dealtProcess).ToString();
+            var rectTransform = text_Process_Effect_Num.rectTransform;
+            var targetRectTransform = rectTransform.parent as RectTransform;
+            var color = text_Process_Effect_Num.color;
+            var processChangeSequence = DOTween.Sequence();
+
+            processChangeSequence.Append(rectTransform.DOMove(new Vector3(0.0f, 0.0f, rectTransform.position.z), 0.0f));
+            processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), processDuration));
+            processChangeSequence.Join(rectTransform.DOScale(1.0f, processDuration));
+
+            processChangeSequence.AppendInterval(processDuration * 0.5f);
+
+            processChangeSequence.Append(rectTransform.DOMove(targetRectTransform.position, processDuration * 2.0f));
+            processChangeSequence.Join(rectTransform.DOScale(0.5f, processDuration));
+            processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.8f), processDuration));
+
+            processChangeSequence.AppendInterval(processDuration * 0.5f);
+
+            processChangeSequence.Append(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), processDuration));
+            processChangeSequence.Join(material_Process_Num.DOFloat(progress / 100, "_Progress", processDuration)
+                .OnUpdate(() => {
+                    Debug.Log(material_Process_Num.GetFloat("_Progress"));
+                    Debug.Log(Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f)));
+                    text_Process_Num.text = (Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f))).ToString(); }));
         }
         public void ShowHPNum()
         {
-            text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString();
+            //text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString();
+            var dealtHp = game.GameFlowMgr.instance.Hp - Convert.ToInt32(text_HP_Num.text);
+            if(dealtHp == 0)
+                return;
+            text_HP_Effect_Num.text = dealtHp > 0 ? "+" + dealtHp : dealtHp.ToString();
+            var rectTransform = text_HP_Effect_Num.rectTransform;
+            var color = text_HP_Effect_Num.color;
+            var hpChangeSequence = DOTween.Sequence();
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 25.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), hpDuration));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 75.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), hpDuration));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y, 0.0f));
+
+            hpChangeSequence.AppendCallback(() => { text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString(); });
         }
         public void ShowRoundNum()
         {
@@ -182,5 +248,16 @@ namespace act.ui
         {
             HideAll.enabled = false;
         }
+
+        public void UpdateProgressNum()
+        {
+            game.GameFlowMgr.instance.Process = Convert.ToInt32(tempProgressNum.text);
+        }
+
+        public void UpdateHpNum()
+        {
+            game.GameFlowMgr.instance.Hp = Convert.ToInt32(tempHpNum.text);
+        }
+
     }
 }

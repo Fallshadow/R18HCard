@@ -36,7 +36,7 @@ namespace act.ui
         public void EnterToTable()
         {
             card_inst.EnterTable();
-            //TODO:表现上EnterToTable
+            
         }
         public void Init()
         {
