@@ -811,7 +811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6211"
+  m_text: "\u6211\u6211\u6211\u6211\u6211"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8, type: 2}
   m_sharedMaterial: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
@@ -840,15 +840,15 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 514
-  m_characterSpacing: 0
+  m_characterSpacing: -15
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1989703708628969684}
-    characterCount: 1
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2156,18 +2156,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5979"
+  m_text: "\u5979\u5979\u5979"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 695a5035a5b33484bbc66990916a55c8, type: 2}
-  m_sharedMaterial: {fileID: -860404242591077925, guid: 695a5035a5b33484bbc66990916a55c8,
+  m_fontAsset: {fileID: 11400000, guid: c7f2af0fafc122247a3408c2705b3737, type: 2}
+  m_sharedMaterial: {fileID: -7102417178370363914, guid: c7f2af0fafc122247a3408c2705b3737,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278214655
+  m_fontColor: {r: 1, g: 0.37376443, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2226,7 +2226,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4200797042844442797}
-    characterCount: 1
+    characterCount: 3
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   isLocalizeOnAwake: 1
   localizationId: 
   localizationGroup: 
-  specificFont: muyao
+  specificFont: SourceHanSerifCN-SemiBold
   specificMaterial: Default
 --- !u!114 &4526303616451889290
 MonoBehaviour:

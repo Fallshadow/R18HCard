@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using UnityEngine;
 
 namespace act.ui
@@ -7,6 +6,7 @@ namespace act.ui
     public class CardGroup : MonoBehaviour
     {
         private RectTransform rect = null;
+        [SerializeField] private float refreshDuration = 0.5f;
         void Start()
         {
             rect = transform as RectTransform;
@@ -24,14 +24,14 @@ namespace act.ui
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    transform.GetChild(i).localPosition = new Vector2(childX * (i + 1), -(rect.sizeDelta.y / 2));
+                    transform.GetChild(i).DOLocalMove(new Vector2(childX * (i + 1), -(rect.sizeDelta.y / 2)), refreshDuration);
                 }
             }
             else
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    transform.GetChild(i).localPosition = new Vector2(space * (i + 1), -(rect.sizeDelta.y / 2));
+                    transform.GetChild(i).DOLocalMove(new Vector2(space * (i + 1), -(rect.sizeDelta.y / 2)), refreshDuration);
                 }
             }
 
