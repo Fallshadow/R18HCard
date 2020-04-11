@@ -19,11 +19,12 @@ namespace act.game
                 touzi[i].rollTouZi(resultList[i],continueCheck, ResetTouzi);
             }
             this.maxNum = maxNum;
+            game.GameFlowMgr.instance.RandomNum = maxNum;
         }
 
         public void ResetTouzi()
         {
-            game.GameFlowMgr.instance.RandomNum = maxNum;
+            
             for(int i = 0; i < touziNum; i++)
             {
                 touzi[i].gameObject.SetActive(false);
