@@ -116,7 +116,7 @@ Material:
     - _EnableTextureTransparent: 0
     - _EnvironmentalLightingIntensity: 1
     - _GIFlatShade: 0
-    - _GIShadeThreshold: 0.792
+    - _GIShadeThreshold: 0.624
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
