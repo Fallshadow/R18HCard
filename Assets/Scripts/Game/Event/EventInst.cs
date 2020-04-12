@@ -30,8 +30,12 @@ namespace act.game
                 roundNum = value;
                 if (roundNum == 0)
                 {
-                    DestorySelf();
+                    HasRoundNum0 = true;
                     evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_Over);
+                }
+                if(roundNum == -1)
+                {
+                    DestorySelf();
                 }
                 evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE);
             }
@@ -53,6 +57,25 @@ namespace act.game
             }
         }
         private bool hasComplete = false;
+
+        //生命为零但是不会消失，要
+        public bool HasRoundNum0
+        {
+            get
+            {
+                return hasRoundNum0;
+            }
+            set
+            {
+                hasRoundNum0 = value;
+                if(hasRoundNum0)
+                {
+                    evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM0);
+                }
+            }
+        }
+        private bool hasRoundNum0 = false;
+
         public int UniqueId = 0;
         public EventInst(EventData eventData)
         {

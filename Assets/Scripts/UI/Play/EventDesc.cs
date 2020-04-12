@@ -32,6 +32,7 @@ namespace act.ui
         [SerializeField] private VerticalLayoutGroup verLayputGroup = null;
         [SerializeField] private Image[] Image_CardSlot = new Image[4];
         [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private CanvasGroup BGcanvasGroup;//desc 界面部分
 
         public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
@@ -88,6 +89,12 @@ namespace act.ui
 
         public void ShowDesc(game.EventInst inst)
         {
+            if(anim == null)
+            {
+                anim = GetComponent<Animator>();
+            }
+            anim.enabled = false;
+
             register();
             gameObject.SetActive(true);
             canvasGroup.interactable = false;
@@ -171,6 +178,11 @@ namespace act.ui
             {
                 Image_CardSlot[i].transform.parent.gameObject.SetActive(true);
             }
+            BGcanvasGroup.blocksRaycasts = true;
+            if(curEventInst.HasRoundNum0)
+            {
+                ShowRoundOverDescTip();
+            }
             LayoutRefresh();
         }
 
@@ -234,15 +246,24 @@ namespace act.ui
 
         public void ShowDefDescTip()
         {
-            SText_Desc.Localize(curEventInst.config.desc_DefResult, "ui_system");
+            SText_Com_Desc.gameObject.SetActive(true);
+            SText_Com_Desc_Title.gameObject.SetActive(true);
+            SText_Com_Desc.Localize(curEventInst.config.desc_DefResult, "ui_system");
             LayoutRefresh();
         }
 
         //事件roundover
         public void ShowRoundOverDescTip()
         {
-            SText_RoundOver_Desc.gameObject.SetActive(true);
-            SText_RoundOver_Desc_Title.gameObject.SetActive(true);
+            BGcanvasGroup.blocksRaycasts = false;
+            SText_Com_Desc_Title.gameObject.SetActive(false);
+            SText_Com_Desc.gameObject.SetActive(false);
+            //SText_SP_Desc_Title.gameObject.SetActive(false);
+            //SText_SP_Desc.gameObject.SetActive(false);
+            SText_EventCard_Desc.gameObject.SetActive(false);
+            SText_EventCard_Desc_Title.gameObject.SetActive(false);
+            SText_Desc.Localize(curEventInst.config.desc_DefResult, "ui_system");
+            Img_Event_Bg.sprite = UiManager.instance.GetSprite($"card_sj_fail", "PlayCanvas");
             LayoutRefresh();
         }
 
@@ -306,17 +327,20 @@ namespace act.ui
         #region 播放动画
         public void RollEvent()
         {
+            anim.enabled = true;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll);
             anim.SetFloat("Init", 1);
             anim.Play("Rotate");
         }
         public void RollEventSucc()
         {
+            anim.enabled = true;
             anim.SetFloat("Init", 1);
             anim.SetTrigger("Succ");
         }
         public void RollEventDef()
         {
+            anim.enabled = true;
             anim.SetFloat("Init", 1);
             anim.SetTrigger("Def");
         }
