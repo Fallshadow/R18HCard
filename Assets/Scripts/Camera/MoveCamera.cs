@@ -93,7 +93,7 @@ namespace act.game
             transform.Rotate(-y, 0, 0);//Unity中摄像机随着y的变化绕X轴转动
 
             Vector3 tempRot = transform.rotation.eulerAngles;
-            Debug.Log(tempRot.x);
+            //Debug.Log(tempRot.x);
             if(tempRot.x > TableMainPosMaxX.x + 180)
             {
                 
