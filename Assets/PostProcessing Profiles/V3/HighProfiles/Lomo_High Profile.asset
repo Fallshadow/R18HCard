@@ -142,7 +142,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 3
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -170,10 +170,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 34
+    value: 13
   tint:
     overrideState: 1
-    value: 6
+    value: -34
   colorFilter:
     overrideState: 1
     value: {r: 0.9411765, g: 0.9561866, b: 1, a: 1}
@@ -188,7 +188,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.74
+    value: 0
   contrast:
     overrideState: 1
     value: 12
@@ -221,13 +221,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.8852502, y: 0.85760254, z: 1, w: 0}
+    value: {x: 0.7540611, y: 0.7184999, z: 1, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.9776386, y: 0.8263967, z: 1, w: 0}
+    value: {x: 0.9511644, y: 0.7952416, z: 1, w: 0}
   gain:
     overrideState: 1
-    value: {x: 1, y: 0.7986082, z: 0.9304646, w: 0}
+    value: {x: 1, y: 0.80223227, z: 0.97014225, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1445,26 +1445,26 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   filtering:
-    overrideState: 0
-    value: {x: 50, y: 95}
+    overrideState: 1
+    value: {x: 1, y: 46.000015}
   minLuminance:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -1.7
   maxLuminance:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2.9
   keyValue:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.2
   eyeAdaptation:
-    overrideState: 0
+    overrideState: 1
     value: 0
   speedUp:
-    overrideState: 0
-    value: 2
+    overrideState: 1
+    value: 2.83
   speedDown:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 2.74
 --- !u!114 &114468511647068946
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1524,13 +1524,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   mode:
     overrideState: 1
-    value: 1
+    value: 0
   intensity:
     overrideState: 1
     value: 0.19
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
   m_Name: ScreenSpaceReflections
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
