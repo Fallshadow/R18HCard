@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 29dc6064fda95624c9fcf6f887f71009, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskGloss:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0c54c553c403468428d7103abc954d04, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -117,7 +117,7 @@ Material:
     - _EnableTextureTransparent: 0
     - _EnvironmentalLightingIntensity: 1
     - _GIFlatShade: 0
-    - _GIShadeThreshold: 0
+    - _GIShadeThreshold: 0.235
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
@@ -133,7 +133,7 @@ Material:
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 0
     - _LightFalloffAffectShadowT: 0
-    - _LightFalloffSoftness: 0.734
+    - _LightFalloffSoftness: 0.415
     - _LightIntensity: -1
     - _Metallic: 0
     - _Mode: 3
@@ -157,7 +157,7 @@ Material:
     - _N_F_STIAL: 0
     - _N_F_STIS: 0
     - _NoisyOutlineIntensity: 0
-    - _NormalMapIntensity: 0
+    - _NormalMapIntensity: 0.1
     - _OcclusionStrength: 1
     - _Oper: 8
     - _OutlineExtrudeMethod: 0
@@ -184,7 +184,7 @@ Material:
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 1
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 1
+    - _SelfShadowRealtimeShadowIntensity: 0.85
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 0.85
     - _ShadowColorTexturePower: 0

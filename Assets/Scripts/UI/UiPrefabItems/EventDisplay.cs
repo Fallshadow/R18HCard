@@ -119,7 +119,18 @@ namespace act.ui
 
         public void CheckDestoryEvent()
         {
-            if (event_inst.HasComplete || event_inst.RoundNum == 0)
+            if (event_inst.HasComplete)
+            {
+                if(game.GameFlowMgr.instance.eventDesc == false)
+                {
+                    Hide();
+                }
+            }
+            if(event_inst.RoundNum == 0)
+            {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"card_sj_fail", "PlayCanvas");
+            }
+            if(event_inst.RoundNum == -1)
             {
                 if(game.GameFlowMgr.instance.eventDesc == false)
                 {
