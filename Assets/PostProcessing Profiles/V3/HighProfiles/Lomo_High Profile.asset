@@ -43,14 +43,14 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   color:
-    overrideState: 0
-    value: {r: 0, g: 0, b: 0, a: 1}
+    overrideState: 1
+    value: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.392
+    value: 0.43
   smoothness:
     overrideState: 0
     value: 0.2
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -221,13 +221,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.7540611, y: 0.7184999, z: 1, w: 0}
+    value: {x: 1, y: 0.8459294, z: 0.94581074, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.9511644, y: 0.7952416, z: 1, w: 0}
+    value: {x: 1, y: 0.7974934, z: 0.92657703, w: 0}
   gain:
     overrideState: 1
-    value: {x: 1, y: 0.80223227, z: 0.97014225, w: 0}
+    value: {x: 1, y: 0.8427527, z: 0.95869845, w: 0}
   masterCurve:
     overrideState: 0
     value:
