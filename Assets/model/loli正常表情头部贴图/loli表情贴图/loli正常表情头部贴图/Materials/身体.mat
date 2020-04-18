@@ -182,7 +182,7 @@ Material:
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
     - _OutlineWidth: 0.002
-    - _Outline_Width: 1
+    - _Outline_Width: 0.37
     - _QueueOffset: 0
     - _ReceiveShadowMappingAmount: 0.5
     - _ReceiveShadows: 1
@@ -211,7 +211,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_SystemShadowsLevel: 0
-    - _Unlit_Intensity: 1
+    - _Unlit_Intensity: 1.41
     - _UseAlphaClipping: 1
     - _UseEmission: 0
     - _Use_1stAs2nd: 0
