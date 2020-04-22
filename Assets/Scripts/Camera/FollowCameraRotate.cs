@@ -61,6 +61,26 @@ namespace act.game
         /// </summary>
         public float VerticalAngleMin = -30.0f;
 
+        /// <summary>
+        /// 水平左比率
+        /// </summary>
+        public float HorizontalLeftRatio = 1.0f;
+
+        /// <summary>
+        /// 水平右比率
+        /// </summary>
+        public float HorizontalRightRatio = 1.0f;
+
+        /// <summary>
+        /// 垂直上比率
+        /// </summary>
+        public float VerticalUpRatio = 1.0f;
+
+        /// <summary>
+        /// 垂直下比率
+        /// </summary>
+        public float VerticalDownRatio = 1.0f;
+
         private void Awake()
         {
             if (DefaultFromTransform)
@@ -96,7 +116,9 @@ namespace act.game
                            (CameraTransform == null ? Camera.main.transform.rotation : CameraTransform.rotation);
             var deltaAngles = deltaRot.eulerAngles;
             var deltaHorizontalAngle = EulerAngleConversion.Angle_PN_To_PN180(deltaAngles.y);
+            deltaHorizontalAngle *= deltaHorizontalAngle > 0.0f ? HorizontalRightRatio : HorizontalLeftRatio;
             var deltaVerticalAngle = -EulerAngleConversion.Angle_PN_To_PN180(deltaAngles.x);
+            deltaVerticalAngle *= deltaVerticalAngle > 0.0f ? VerticalUpRatio : VerticalDownRatio;
             deltaAngles.x = Mathf.Clamp(deltaHorizontalAngle, HorizontalAngleMin, HorizontalAngleMax);
             deltaAngles.y = Mathf.Clamp(deltaVerticalAngle, VerticalAngleMin, VerticalAngleMax);
             deltaAngles.z = 0.0f;
