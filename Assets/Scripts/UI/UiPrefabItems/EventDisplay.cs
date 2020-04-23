@@ -55,8 +55,8 @@ namespace act.ui
 
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
             evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
-            evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
+            evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
 
@@ -66,8 +66,8 @@ namespace act.ui
         {
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
             evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEvent);
-            evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEvent);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
+            evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
@@ -152,6 +152,28 @@ namespace act.ui
                 ShowNomarl();
             }
             
+        }
+        public void CheckDestoryEventWithoutAnim()
+        {
+            if(event_inst.HasComplete)
+            {
+                if(game.GameFlowMgr.instance.eventDesc == false)
+                {
+                    Hide();
+                }
+            }
+            if(event_inst.RoundNum == 0)
+            {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"card_sj_fail", "PlayCanvas");
+            }
+            if(event_inst.RoundNum == -1)
+            {
+                if(game.GameFlowMgr.instance.eventDesc == false)
+                {
+                    Hide();
+                }
+            }
+            config.Text_Round.text = event_inst.RoundNum.ToString();
         }
 
         #region 表现

@@ -33,6 +33,8 @@ namespace act.ui
         [SerializeField] private UiStaticText text_Round_Num;
         [SerializeField] private Image HideAll;
 
+        [SerializeField] private GameObject effectProcessNum;
+
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
@@ -146,8 +148,17 @@ namespace act.ui
             processChangeSequence.Append(rectTransform.DOMove(new Vector3(0.0f, 0.0f, rectTransform.position.z), 0.0f));
             processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), processDuration));
             processChangeSequence.Join(rectTransform.DOScale(1.0f, processDuration));
-
+            processChangeSequence.PrependCallback(
+                ()=> {
+                    effectProcessNum.SetActive(true);
+                });
+            processChangeSequence.InsertCallback(processDuration * 2,
+                () =>
+                {
+                    effectProcessNum.SetActive(false);
+                });
             processChangeSequence.AppendInterval(processDuration * 0.5f);
+
 
             processChangeSequence.Append(rectTransform.DOMove(targetRectTransform.position, processDuration * 2.0f));
             processChangeSequence.Join(rectTransform.DOScale(0.5f, processDuration));
