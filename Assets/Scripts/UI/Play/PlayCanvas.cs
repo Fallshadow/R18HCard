@@ -35,6 +35,9 @@ namespace act.ui
 
         [SerializeField] private GameObject effectProcessNum;
 
+        [SerializeField] private ParticleSystem roundOverEffect;
+        [SerializeField] private UiStaticText roundOverText;
+
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
@@ -44,6 +47,7 @@ namespace act.ui
         private float processNum = 0;
         public override void Initialize()
         {
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
@@ -58,6 +62,7 @@ namespace act.ui
         }
         public override void Release()
         {
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
@@ -75,9 +80,17 @@ namespace act.ui
             base.onShow();
             game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundStart);
+            ShowRoundOver();
         }
 
-        
+        private void ShowRoundOver()
+        {
+            roundOverEffect.Play();
+            roundOverText.text = $"第{game.GameFlowMgr.instance.RoundNum}回合";
+            roundOverText.DOFade(1, 0);
+            roundOverText.DOFade(0, 5);
+        }
+
         public void CreateEvent(game.EventInst eventInst)
         {
             var eventDisplayOB = utility.LoadResources.LoadPrefab(
