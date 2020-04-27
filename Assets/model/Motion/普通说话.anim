@@ -21,19 +21,19 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: c3ae89ba8fee17946b0e5fdcf68ef972, type: 2}
-    - time: 0.11666667
+    - time: 0.083333336
       value: {fileID: 2100000, guid: bec42cb3de74df84ebc1021c8d26ab4d, type: 2}
-    - time: 0.23333333
+    - time: 0.16666667
       value: {fileID: 2100000, guid: 0a00e7e6c1e0669408f3520ec8cc7dc1, type: 2}
-    - time: 0.35
+    - time: 0.25
       value: {fileID: 2100000, guid: 50fd3c77da7049e4c9bbef8ef2c3f3fa, type: 2}
-    - time: 0.46666667
+    - time: 0.33333334
       value: {fileID: 2100000, guid: 50fd3c77da7049e4c9bbef8ef2c3f3fa, type: 2}
+    - time: 0.43333334
+      value: {fileID: 2100000, guid: 0a00e7e6c1e0669408f3520ec8cc7dc1, type: 2}
+    - time: 0.5
+      value: {fileID: 2100000, guid: bec42cb3de74df84ebc1021c8d26ab4d, type: 2}
     - time: 0.5833333
-      value: {fileID: 2100000, guid: 0a00e7e6c1e0669408f3520ec8cc7dc1, type: 2}
-    - time: 0.7
-      value: {fileID: 2100000, guid: bec42cb3de74df84ebc1021c8d26ab4d, type: 2}
-    - time: 0.81666666
       value: {fileID: 2100000, guid: c3ae89ba8fee17946b0e5fdcf68ef972, type: 2}
     attribute: m_Materials.Array.data[0]
     path: head
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8333333
+    m_StopTime: 0.59999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
