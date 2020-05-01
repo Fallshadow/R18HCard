@@ -33,7 +33,7 @@ namespace act.ui
         [SerializeField] private UiStaticText text_Round_Num;
         [SerializeField] private Image HideAll;
 
-        [SerializeField] private GameObject effectProcessNum;
+        [SerializeField] private ParticleSystem effectProcessNum;
 
         [SerializeField] private ParticleSystem roundOverEffect;
         [SerializeField] private UiStaticText roundOverText;
@@ -163,13 +163,13 @@ namespace act.ui
             processChangeSequence.Join(rectTransform.DOScale(1.0f, processDuration));
             processChangeSequence.PrependCallback(
                 ()=> {
-                    effectProcessNum.SetActive(true);
+                    effectProcessNum.Play();
                 });
-            processChangeSequence.InsertCallback(processDuration * 2,
-                () =>
-                {
-                    effectProcessNum.SetActive(false);
-                });
+            //processChangeSequence.InsertCallback(processDuration * 2,
+            //    () =>
+            //    {
+            //        effectProcessNum.SetActive(false);
+            //    });
             processChangeSequence.AppendInterval(processDuration * 0.5f);
 
 

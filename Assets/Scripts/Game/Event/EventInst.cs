@@ -58,6 +58,19 @@ namespace act.game
         }
         private bool hasComplete = false;
 
+        public bool HasCompleteWaitRoundOver
+        {
+            get
+            {
+                return hasCompleteWaitRoundOver;
+            }
+            set
+            {
+                hasCompleteWaitRoundOver = value;
+            }
+        }
+        private bool hasCompleteWaitRoundOver = false;
+
         //生命为零但是不会消失，要
         public bool HasRoundNum0
         {

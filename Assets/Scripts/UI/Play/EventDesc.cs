@@ -188,6 +188,16 @@ namespace act.ui
             {
                 ShowRoundOverDescTip();
             }
+
+            if(curEventInst.HasComplete)
+            {
+                ShowSuccDescTip();
+                Img_Event_Bg.sprite = UiManager.instance.GetSprite($"card_sj_success", "PlayCanvas");
+                foreach(var item in Image_CardSlot)
+                {
+                    item.gameObject.SetActive(false);
+                }
+            }
             LayoutRefresh();
         }
 

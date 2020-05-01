@@ -54,7 +54,7 @@ namespace act.ui
             config = GetComponent<EventReference>();
 
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
+            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -65,7 +65,7 @@ namespace act.ui
         public void Release()
         {
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEvent);
+            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -117,13 +117,48 @@ namespace act.ui
             }
         }
 
-        public void CheckDestoryEvent()
+        public void CheckDestoryEventByRoundOver()
         {
-            if (event_inst.HasComplete)
+            if(event_inst.HasCompleteWaitRoundOver)
+            {
+                Hide();
+                return;
+            }
+            if(event_inst.RoundNum == 0)
+            {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"card_sj_fail", "PlayCanvas");
+            }
+            if(event_inst.RoundNum == -1)
             {
                 if(game.GameFlowMgr.instance.eventDesc == false)
                 {
                     Hide();
+                }
+            }
+            config.Text_Round.text = event_inst.RoundNum.ToString();
+            if(event_inst.RoundNum == -2)
+            {
+                wuxiantext.text = "∞";
+                config.Text_Round.text = "∞";
+                showEventID38();
+                ShowWuXian();
+            }
+            else
+            {
+                forwardtext.text = (event_inst.RoundNum + 1).ToString();
+                nowtext.text = event_inst.RoundNum.ToString();
+                ShowNomarl();
+            }
+
+        }
+        public void CheckDestoryEvent()
+        {
+            if (event_inst.HasComplete)
+            {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"card_sj_success", "PlayCanvas");
+                if(game.GameFlowMgr.instance.eventDesc == false)
+                {
+                    event_inst.HasCompleteWaitRoundOver = true;
                 }
             }
             if(event_inst.RoundNum == 0)
@@ -157,9 +192,10 @@ namespace act.ui
         {
             if(event_inst.HasComplete)
             {
+                config.Img_Type.sprite = UiManager.instance.GetSprite($"card_sj_success", "PlayCanvas");
                 if(game.GameFlowMgr.instance.eventDesc == false)
                 {
-                    Hide();
+                    event_inst.HasCompleteWaitRoundOver = true;
                 }
             }
             if(event_inst.RoundNum == 0)
