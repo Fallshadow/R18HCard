@@ -34,6 +34,7 @@ namespace act.ui
         [SerializeField] private GameObject[] ImageLight_CardSlot = new GameObject[5];
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private CanvasGroup BGcanvasGroup;//desc 界面部分
+        [SerializeField] private Button CheckBtn = null;
 
         public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
@@ -175,6 +176,7 @@ namespace act.ui
                         Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardTypeUnuse";
                         tempCardSlot++;
                     }
+                    Image_CardSlot[tempCardSlot].gameObject.SetActive(true);
                 }
             }
             Img_Bg.sprite = UiManager.instance.GetSprite($"determine_bg{tempCardSlot}", "PlayCanvas");
@@ -188,15 +190,24 @@ namespace act.ui
             {
                 ShowRoundOverDescTip();
             }
-
+            CheckBtn.gameObject.SetActive(true);
+            (verLayputGroup.transform as RectTransform).anchorMin = new Vector2(0, 1);
+            (verLayputGroup.transform as RectTransform).anchorMax = new Vector2(0, 1);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform as RectTransform);
+            (verLayputGroup.transform as RectTransform).anchoredPosition = new Vector3(204, -202, 0);
             if(curEventInst.HasComplete)
             {
                 ShowSuccDescTip();
                 Img_Event_Bg.sprite = UiManager.instance.GetSprite($"card_sj_success", "PlayCanvas");
                 foreach(var item in Image_CardSlot)
                 {
-                    item.gameObject.SetActive(false);
+                    item.transform.parent.gameObject.SetActive(false);
                 }
+                CheckBtn.gameObject.SetActive(false);
+                (verLayputGroup.transform as RectTransform).anchorMin = new Vector2(0.5f, 0.5f);
+                (verLayputGroup.transform as RectTransform).anchorMax = new Vector2(0.5f, 0.5f);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform as RectTransform);
+                (verLayputGroup.transform as RectTransform).anchoredPosition = Vector3.zero;
             }
             LayoutRefresh();
         }

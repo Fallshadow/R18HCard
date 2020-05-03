@@ -1467,8 +1467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196, y: -199.9}
-  m_SizeDelta: {x: 302.1, y: 334}
+  m_AnchoredPosition: {x: 204, y: -202}
+  m_SizeDelta: {x: 302.09998, y: 334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6077453642932806549
 MonoBehaviour:
@@ -3794,6 +3794,7 @@ MonoBehaviour:
   - {fileID: 3842637784190825571}
   canvasGroup: {fileID: 1546231685270790284}
   BGcanvasGroup: {fileID: 1443745444508202669}
+  CheckBtn: {fileID: 693540888491586009}
   curEventInst:
     config:
       ID: 0
