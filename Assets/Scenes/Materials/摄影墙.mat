@@ -215,7 +215,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.8254717, b: 0.9890429, a: 1}
-    - _MainColor: {r: 1, g: 0.8349056, b: 0.92366606, a: 1}
+    - _MainColor: {r: 0.3703054, g: 1, b: 0.25943398, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 1, g: 1, b: 1, a: 1}
