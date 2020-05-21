@@ -112,7 +112,7 @@ Material:
     - _1st_ShadeColor_Feather: 0.273
     - _1st_ShadeColor_Step: 0.916
     - _2nd_ShadeColor_Feather: 0.233
-    - _2nd_ShadeColor_Step: 0.506
+    - _2nd_ShadeColor_Step: 0.427
     - _Add_Antipodean_RimLight: 0
     - _AlphaClip: 0
     - _Ap_RimLight_FeatherOff: 0
@@ -182,7 +182,7 @@ Material:
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
     - _OutlineWidth: 0.1
-    - _Outline_Width: 2
+    - _Outline_Width: 0.22
     - _QueueOffset: 0
     - _ReceiveShadowMappingAmount: 0.5
     - _ReceiveShadows: 1

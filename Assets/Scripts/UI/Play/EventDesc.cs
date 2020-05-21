@@ -31,8 +31,10 @@ namespace act.ui
         [SerializeField] private UiStaticText SText_EventCard_Desc = null;
         [SerializeField] private VerticalLayoutGroup verLayputGroup = null;
         [SerializeField] private Image[] Image_CardSlot = new Image[4];
+        [SerializeField] private GameObject[] ImageLight_CardSlot = new GameObject[5];
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private CanvasGroup BGcanvasGroup;//desc 界面部分
+        [SerializeField] private Button CheckBtn = null;
 
         public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
@@ -49,6 +51,8 @@ namespace act.ui
         }
         private void register()
         {
+            evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Exit, HideCardSlotLight);
+            evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Enter, ShowCardSlotLight);
             evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Enter_Slot, ShowEventCardDescTip);
             evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Exit_Slot, HideEventCardDescTip);
             evt.EventManager.instance.Register<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, ChangeCurCard);
@@ -69,6 +73,8 @@ namespace act.ui
 
         private void unRegister()
         {
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Exit, HideCardSlotLight);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Enter,ShowCardSlotLight);
             evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Enter_Slot, ShowEventCardDescTip);
             evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Exit_Slot, HideEventCardDescTip);
             evt.EventManager.instance.Unregister<game.CardInst>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Current_Change, ChangeCurCard);
@@ -170,6 +176,7 @@ namespace act.ui
                         Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardTypeUnuse";
                         tempCardSlot++;
                     }
+                    Image_CardSlot[tempCardSlot].gameObject.SetActive(true);
                 }
             }
             Img_Bg.sprite = UiManager.instance.GetSprite($"determine_bg{tempCardSlot}", "PlayCanvas");
@@ -182,6 +189,25 @@ namespace act.ui
             if(curEventInst.HasRoundNum0)
             {
                 ShowRoundOverDescTip();
+            }
+            CheckBtn.gameObject.SetActive(true);
+            (verLayputGroup.transform as RectTransform).anchorMin = new Vector2(0, 1);
+            (verLayputGroup.transform as RectTransform).anchorMax = new Vector2(0, 1);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform as RectTransform);
+            (verLayputGroup.transform as RectTransform).anchoredPosition = new Vector3(204, -202, 0);
+            if(curEventInst.HasComplete)
+            {
+                ShowSuccDescTip();
+                Img_Event_Bg.sprite = UiManager.instance.GetSprite($"card_sj_success", "PlayCanvas");
+                foreach(var item in Image_CardSlot)
+                {
+                    item.transform.parent.gameObject.SetActive(false);
+                }
+                CheckBtn.gameObject.SetActive(false);
+                (verLayputGroup.transform as RectTransform).anchorMin = new Vector2(0.5f, 0.5f);
+                (verLayputGroup.transform as RectTransform).anchorMax = new Vector2(0.5f, 0.5f);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform as RectTransform);
+                (verLayputGroup.transform as RectTransform).anchoredPosition = Vector3.zero;
             }
             LayoutRefresh();
         }
@@ -209,6 +235,72 @@ namespace act.ui
         }
 
         #region 刷新显示
+        //鼠标移动到对应槽位时发光
+        private void ShowCardSlotLight(int index)
+        {
+            switch(Image_CardSlot[index].transform.parent.gameObject.name)
+            {
+                case "CardType1":
+                    MoveAndSetActiveCardSlotLight(index,0);
+                    break;
+                case "CardType2":
+                    MoveAndSetActiveCardSlotLight(index,1);
+                    break;
+                case "CardType3":
+                    MoveAndSetActiveCardSlotLight(index,2);
+                    break;
+                case "CardType4":
+                    MoveAndSetActiveCardSlotLight(index,3);
+                    break;
+                case "CardType":
+                    MoveAndSetActiveCardSlotLight(index,4);
+                    break;
+                default:
+                    Debug.Log("虽然进入了卡槽范围但是并没有对应该名字的背景光");
+                    break;
+            }
+        }
+
+        //将对应序号卡牌框光移动出对应槽位下并显隐藏
+        private void MoveAndSetFalseCardSlotLight(int cardSlotIndex, int lightIndex)
+        {
+            ImageLight_CardSlot[lightIndex].SetActive(false);
+        }
+        //鼠标移动出对应槽位时暗淡
+        private void HideCardSlotLight(int index)
+        {
+            switch(Image_CardSlot[index].transform.parent.gameObject.name)
+            {
+                case "CardType1":
+                    MoveAndSetFalseCardSlotLight(index, 0);
+                    break;
+                case "CardType2":
+                    MoveAndSetFalseCardSlotLight(index, 1);
+                    break;
+                case "CardType3":
+                    MoveAndSetFalseCardSlotLight(index, 2);
+                    break;
+                case "CardType4":
+                    MoveAndSetFalseCardSlotLight(index, 3);
+                    break;
+                case "CardType":
+                    MoveAndSetFalseCardSlotLight(index, 4);
+                    break;
+                default:
+                    Debug.Log("虽然进入了卡槽范围但是并没有对应该名字的背景光");
+                    break;
+            }
+        }
+
+        //将对应序号卡牌框光移动到对应槽位下并显示
+        private void MoveAndSetActiveCardSlotLight(int cardSlotIndex, int lightIndex)
+        {
+            ImageLight_CardSlot[lightIndex].SetActive(true);
+            ImageLight_CardSlot[lightIndex].transform.SetParent(Image_CardSlot[cardSlotIndex].transform.parent);
+            ImageLight_CardSlot[lightIndex].transform.position = Image_CardSlot[cardSlotIndex].transform.position;
+            ImageLight_CardSlot[lightIndex].transform.SetAsFirstSibling();
+        }
+
         //隐藏所有UI
         public void HideAll()
         {

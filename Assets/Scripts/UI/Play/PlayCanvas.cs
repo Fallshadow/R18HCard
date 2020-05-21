@@ -33,6 +33,11 @@ namespace act.ui
         [SerializeField] private UiStaticText text_Round_Num;
         [SerializeField] private Image HideAll;
 
+        [SerializeField] private ParticleSystem effectProcessNum;
+
+        [SerializeField] private ParticleSystem roundOverEffect;
+        [SerializeField] private UiStaticText roundOverText;
+
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
@@ -42,6 +47,7 @@ namespace act.ui
         private float processNum = 0;
         public override void Initialize()
         {
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
@@ -56,6 +62,7 @@ namespace act.ui
         }
         public override void Release()
         {
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
@@ -73,9 +80,17 @@ namespace act.ui
             base.onShow();
             game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundStart);
+            ShowRoundOver();
         }
 
-        
+        private void ShowRoundOver()
+        {
+            roundOverEffect.Play();
+            roundOverText.text = $"第{game.GameFlowMgr.instance.RoundNum}回合";
+            roundOverText.DOFade(1, 0);
+            roundOverText.DOFade(0, 5);
+        }
+
         public void CreateEvent(game.EventInst eventInst)
         {
             var eventDisplayOB = utility.LoadResources.LoadPrefab(
@@ -146,8 +161,17 @@ namespace act.ui
             processChangeSequence.Append(rectTransform.DOMove(new Vector3(0.0f, 0.0f, rectTransform.position.z), 0.0f));
             processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), processDuration));
             processChangeSequence.Join(rectTransform.DOScale(1.0f, processDuration));
-
+            processChangeSequence.PrependCallback(
+                ()=> {
+                    effectProcessNum.Play();
+                });
+            //processChangeSequence.InsertCallback(processDuration * 2,
+            //    () =>
+            //    {
+            //        effectProcessNum.SetActive(false);
+            //    });
             processChangeSequence.AppendInterval(processDuration * 0.5f);
+
 
             processChangeSequence.Append(rectTransform.DOMove(targetRectTransform.position, processDuration * 2.0f));
             processChangeSequence.Join(rectTransform.DOScale(0.5f, processDuration));

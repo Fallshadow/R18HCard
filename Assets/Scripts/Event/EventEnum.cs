@@ -56,7 +56,8 @@ namespace act.evt
         Event_ID_ROUNDNUM_CHANGE = 0,
         Event_ID_ROUNDNUM_Over,
         Event_ID_ROUNDNUM0,
-
+        Event_Desc_Card_Slot_Enter,
+        Event_Desc_Card_Slot_Exit,
     }
     public enum InputEvent : short
     {
