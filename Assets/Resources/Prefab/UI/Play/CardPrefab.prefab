@@ -783,7 +783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 47.2}
+  m_AnchoredPosition: {x: 0.70001, y: 45}
   m_SizeDelta: {x: 118.65, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1431263217910492691
@@ -814,8 +814,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6211\u6211\u6211\u6211\u6211"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0d732deab70966c4298e892c80f17ed4, type: 2}
-  m_sharedMaterial: {fileID: -4118602972300262813, guid: 0d732deab70966c4298e892c80f17ed4,
+  m_fontAsset: {fileID: 11400000, guid: ab4d4ed572308484281cd11e3c0e1d98, type: 2}
+  m_sharedMaterial: {fileID: 21855907555430774, guid: ab4d4ed572308484281cd11e3c0e1d98,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -841,15 +841,15 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 514
-  m_characterSpacing: -15
+  m_fontStyle: 1
+  m_textAlignment: 4097
+  m_characterSpacing: 0.14
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -908,7 +908,7 @@ MonoBehaviour:
   isLocalizeOnAwake: 1
   localizationId: 
   localizationGroup: 
-  specificFont: muyao
+  specificFont: ArialMT
   specificMaterial: Default
 --- !u!114 &7820720991156988153
 MonoBehaviour:

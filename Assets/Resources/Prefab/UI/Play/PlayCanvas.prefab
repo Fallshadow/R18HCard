@@ -23856,6 +23856,21 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3533185135404708476, guid: 1289437dce26a6a4e921a145f16b40c9,
+        type: 3}
+      propertyPath: m_text
+      value: "\u63CF\u8FF0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533185135404708476, guid: 1289437dce26a6a4e921a145f16b40c9,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 38.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533185135404708476, guid: 1289437dce26a6a4e921a145f16b40c9,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 38.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3550253386625089255, guid: 1289437dce26a6a4e921a145f16b40c9,
         type: 3}
       propertyPath: m_AnchorMin.y
