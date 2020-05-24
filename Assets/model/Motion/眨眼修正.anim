@@ -1,0 +1,2877 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: "\u7728\u773C\u4FEE\u6B63"
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: -0.15784414, y: 0.86032736, z: -0.18519843, w: 0.44791022}
+        inSlope: {x: -0.2238075, y: -0.32066834, z: -0.03705656, w: 0.50352633}
+        outSlope: {x: -0.2238075, y: -0.32066834, z: -0.03705656, w: 0.50352633}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.44
+        value: {x: -0.16679645, y: 0.8475006, z: -0.18668069, w: 0.46805128}
+        inSlope: {x: -0.31453517, y: -0.54490197, z: 0.005676985, w: 0.83979475}
+        outSlope: {x: -0.31453517, y: -0.54490197, z: 0.005676985, w: 0.83979475}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.52
+        value: {x: -0.19333446, y: 0.78113604, z: -0.1728598, w: 0.5679506}
+        inSlope: {x: -0.15130956, y: -0.7888808, z: 0.3639012, w: 1.162312}
+        outSlope: {x: -0.15130956, y: -0.7888808, z: 0.3639012, w: 1.162312}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.59999996
+        value: {x: -0.19418734, y: 0.7429887, z: -0.14664534, w: 0.62350154}
+        inSlope: {x: -0.00000016856939, y: -0.00000020861626, z: -0.00000020861626,
+          w: 0.0000017732382}
+        outSlope: {x: -0.00000016856939, y: -0.00000020861626, z: -0.00000020861626,
+          w: 0.0000017732382}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.71999997
+        value: {x: -0.18300693, y: 0.81673515, z: -0.18474422, w: 0.5150939}
+        inSlope: {x: 0.331725, y: 0.82955754, z: -0.17276104, w: -1.2487419}
+        outSlope: {x: 0.331725, y: 0.82955754, z: -0.17276104, w: -1.2487419}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.76
+        value: {x: -0.16679648, y: 0.8475006, z: -0.18668067, w: 0.46805128}
+        inSlope: {x: 0.3145348, y: 0.5449026, z: -0.005677499, w: -0.8397962}
+        outSlope: {x: 0.3145348, y: 0.5449026, z: -0.005677499, w: -0.8397962}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: -0.15784414, y: 0.86032736, z: -0.18519843, w: 0.44791022}
+        inSlope: {x: 0.22380857, y: 0.32066882, z: 0.03705624, w: -0.5035271}
+        outSlope: {x: 0.22380857, y: 0.32066882, z: 0.03705624, w: -0.5035271}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: -0.22305498, y: 0.57690597, z: -0.09726095, w: 0.7797219}
+        inSlope: {x: -0.047245968, y: 0.33078623, z: -0.1954899, w: -0.2886249}
+        outSlope: {x: -0.047245968, y: 0.33078623, z: -0.1954899, w: -0.2886249}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.44
+        value: {x: -0.22494482, y: 0.5901374, z: -0.10508055, w: 0.7681769}
+        inSlope: {x: -0.03216284, y: 0.5661234, z: -0.2836622, w: -0.4967317}
+        outSlope: {x: -0.03216284, y: 0.5661234, z: -0.2836622, w: -0.4967317}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.52
+        value: {x: -0.21947137, y: 0.660335, z: -0.13082752, w: 0.70616865}
+        inSlope: {x: 0.21138352, y: 0.86185324, z: -0.18081722, w: -0.7655374}
+        outSlope: {x: 0.21138352, y: 0.86185324, z: -0.18081722, w: -0.7655374}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.59999996
+        value: {x: -0.20277715, y: 0.7035388, z: -0.13451637, w: 0.6676975}
+        inSlope: {x: 0.00000011175871, y: 0.00000023841858, z: -0.0000000018626451,
+          w: -0.00000020861626}
+        outSlope: {x: 0.00000011175871, y: 0.00000023841858, z: -0.0000000018626451,
+          w: -0.00000020861626}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.71999997
+        value: {x: -0.225628, y: 0.6221959, z: -0.11995392, w: 0.7399833}
+        inSlope: {x: -0.06841746, y: -0.87747, z: 0.3218367, w: 0.7751035}
+        outSlope: {x: -0.06841746, y: -0.87747, z: 0.3218367, w: 0.7751035}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.76
+        value: {x: -0.22494482, y: 0.5901374, z: -0.10508055, w: 0.7681769}
+        inSlope: {x: 0.03216287, y: -0.56612414, z: 0.28366214, w: 0.4967324}
+        outSlope: {x: 0.03216287, y: -0.56612414, z: 0.28366214, w: 0.4967324}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: -0.22305498, y: 0.57690597, z: -0.09726095, w: 0.7797219}
+        inSlope: {x: 0.04724604, y: -0.33078673, z: 0.1954902, w: 0.28862533}
+        outSlope: {x: 0.04724604, y: -0.33078673, z: 0.1954902, w: 0.28862533}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: 0.096607015, y: -0.7799107, z: -0.22268109, w: 0.57690513}
+        inSlope: {x: 0.19566965, y: 0.28864875, z: -0.04787964, w: 0.33088607}
+        outSlope: {x: 0.19566965, y: 0.28864875, z: -0.04787964, w: 0.33088607}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.44
+        value: {x: 0.104433805, y: -0.7683647, z: -0.22459628, w: 0.5901406}
+        inSlope: {x: 0.28380287, y: 0.4968099, z: -0.033071812, w: 0.56632906}
+        outSlope: {x: 0.28380287, y: 0.4968099, z: -0.033071812, w: 0.56632906}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.52
+        value: {x: 0.13016698, y: -0.7063464, z: -0.21920384, w: 0.6603643}
+        inSlope: {x: 0.18019938, y: 0.765553, z: 0.21081728, w: 0.8620745}
+        outSlope: {x: 0.18019938, y: 0.765553, z: 0.21081728, w: 0.8620745}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.59999996
+        value: {x: 0.13380742, y: -0.6678836, z: -0.20252253, w: 0.7035707}
+        inSlope: {x: 0.0000000015133992, y: 0.00000020861626, z: 0.00000011175871,
+          w: 0.00000023841858}
+        outSlope: {x: 0.0000000015133992, y: 0.00000020861626, z: 0.00000011175871,
+          w: 0.00000023841858}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.71999997
+        value: {x: 0.11931126, y: -0.7401658, z: -0.22532685, w: 0.6222115}
+        inSlope: {x: -0.3216659, y: -0.7752287, z: -0.0674053, w: -0.8777971}
+        outSlope: {x: -0.3216659, y: -0.7752287, z: -0.0674053, w: -0.8777971}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.76
+        value: {x: 0.10443375, y: -0.76836467, z: -0.22459622, w: 0.5901406}
+        inSlope: {x: -0.28380305, y: -0.49681062, z: 0.03307203, w: -0.5663298}
+        outSlope: {x: -0.28380305, y: -0.49681062, z: 0.03307203, w: -0.5663298}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: 0.096607015, y: -0.7799107, z: -0.22268109, w: 0.57690513}
+        inSlope: {x: -0.19566864, y: -0.28865066, z: 0.04787822, w: -0.33088657}
+        outSlope: {x: -0.19566864, y: -0.28865066, z: 0.04787822, w: -0.33088657}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: 0.18444672, y: -0.4480805, z: -0.15779443, w: 0.8604094}
+        inSlope: {x: 0.03738178, y: -0.5037059, z: -0.22367488, w: -0.3208382}
+        outSlope: {x: 0.03738178, y: -0.5037059, z: -0.22367488, w: -0.3208382}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.44
+        value: {x: 0.185942, y: -0.46822876, z: -0.16674143, w: 0.84757584}
+        inSlope: {x: -0.00526087, y: -0.8400668, z: -0.31415987, w: -0.54519105}
+        outSlope: {x: -0.00526087, y: -0.8400668, z: -0.31415987, w: -0.54519105}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.52
+        value: {x: 0.17214787, y: -0.56814975, z: -0.19320497, w: 0.7811804}
+        inSlope: {x: -0.36390173, y: -1.1623106, z: -0.1499884, w: -0.7891028}
+        outSlope: {x: -0.36390173, y: -1.1623106, z: -0.1499884, w: -0.7891028}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.59999996
+        value: {x: 0.14592168, y: -0.6236859, z: -0.1939755, w: 0.7430318}
+        inSlope: {x: -0.0000005364418, y: -0.00000028312206, z: -0.00000072736293,
+          w: -0.00000020861626}
+        outSlope: {x: -0.0000005364418, y: -0.00000028312206, z: -0.00000072736293,
+          w: -0.00000020861626}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.71999997
+        value: {x: 0.18402588, y: -0.5152859, z: -0.18292725, w: 0.81679404}
+        inSlope: {x: 0.17242631, y: 1.2490127, z: 0.33079463, w: 0.8299427}
+        outSlope: {x: 0.17242631, y: 1.2490127, z: 0.33079463, w: 0.8299427}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.76
+        value: {x: 0.18594195, y: -0.46822876, z: -0.16674143, w: 0.8475758}
+        inSlope: {x: 0.0052604508, y: 0.84006745, z: 0.31416026, w: 0.5451917}
+        outSlope: {x: 0.0052604508, y: 0.84006745, z: 0.31416026, w: 0.5451917}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: 0.18444672, y: -0.4480805, z: -0.15779443, w: 0.8604094}
+        inSlope: {x: -0.037380718, y: 0.5037067, z: 0.2236752, w: 0.32084018}
+        outSlope: {x: -0.037380718, y: 0.5037067, z: 0.2236752, w: 0.32084018}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: {x: 0.018624727, y: -0.026708892, z: -0.027438112}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8
+        value: {x: 0.018624727, y: -0.026708892, z: -0.027438112}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: {x: 0.018624727, y: -0.026708893, z: -0.027438112}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8
+        value: {x: 0.018624727, y: -0.026708893, z: -0.027438112}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: -0.9999998, y: -1.0000004, z: -0.99999964}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: -0.9999998, y: -1.0000004, z: -0.99999964}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: {x: -0.9999995, y: -1.0000004, z: -1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999995
+        value: {x: -0.9999995, y: -1.0000004, z: -1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 25
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 1508727918
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 44759842
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1585485943
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3734173836
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1508727918
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 44759842
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1508727918
+      attribute: 3
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 44759842
+      attribute: 3
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.8
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.15784414
+        inSlope: -0.2238075
+        outSlope: -0.2238075
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.16679645
+        inSlope: -0.31453517
+        outSlope: -0.31453517
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.19333446
+        inSlope: -0.15130956
+        outSlope: -0.15130956
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.19418734
+        inSlope: -0.00000016856939
+        outSlope: -0.00000016856939
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.18300693
+        inSlope: 0.331725
+        outSlope: 0.331725
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.16679648
+        inSlope: 0.3145348
+        outSlope: 0.3145348
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.15784414
+        inSlope: 0.22380857
+        outSlope: 0.22380857
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.86032736
+        inSlope: -0.32066834
+        outSlope: -0.32066834
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.8475006
+        inSlope: -0.54490197
+        outSlope: -0.54490197
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.78113604
+        inSlope: -0.7888808
+        outSlope: -0.7888808
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.7429887
+        inSlope: -0.00000020861626
+        outSlope: -0.00000020861626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.81673515
+        inSlope: 0.82955754
+        outSlope: 0.82955754
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.8475006
+        inSlope: 0.5449026
+        outSlope: 0.5449026
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.86032736
+        inSlope: 0.32066882
+        outSlope: 0.32066882
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.18519843
+        inSlope: -0.03705656
+        outSlope: -0.03705656
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.18668069
+        inSlope: 0.005676985
+        outSlope: 0.005676985
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.1728598
+        inSlope: 0.3639012
+        outSlope: 0.3639012
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.14664534
+        inSlope: -0.00000020861626
+        outSlope: -0.00000020861626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.18474422
+        inSlope: -0.17276104
+        outSlope: -0.17276104
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.18668067
+        inSlope: -0.005677499
+        outSlope: -0.005677499
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.18519843
+        inSlope: 0.03705624
+        outSlope: 0.03705624
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.44791022
+        inSlope: 0.50352633
+        outSlope: 0.50352633
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.46805128
+        inSlope: 0.83979475
+        outSlope: 0.83979475
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.5679506
+        inSlope: 1.162312
+        outSlope: 1.162312
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.62350154
+        inSlope: 0.0000017732382
+        outSlope: 0.0000017732382
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.5150939
+        inSlope: -1.2487419
+        outSlope: -1.2487419
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.46805128
+        inSlope: -0.8397962
+        outSlope: -0.8397962
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.44791022
+        inSlope: -0.5035271
+        outSlope: -0.5035271
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.22305498
+        inSlope: -0.047245968
+        outSlope: -0.047245968
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.22494482
+        inSlope: -0.03216284
+        outSlope: -0.03216284
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.21947137
+        inSlope: 0.21138352
+        outSlope: 0.21138352
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.20277715
+        inSlope: 0.00000011175871
+        outSlope: 0.00000011175871
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.225628
+        inSlope: -0.06841746
+        outSlope: -0.06841746
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.22494482
+        inSlope: 0.03216287
+        outSlope: 0.03216287
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.22305498
+        inSlope: 0.04724604
+        outSlope: 0.04724604
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.57690597
+        inSlope: 0.33078623
+        outSlope: 0.33078623
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.5901374
+        inSlope: 0.5661234
+        outSlope: 0.5661234
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.660335
+        inSlope: 0.86185324
+        outSlope: 0.86185324
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.7035388
+        inSlope: 0.00000023841858
+        outSlope: 0.00000023841858
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.6221959
+        inSlope: -0.87747
+        outSlope: -0.87747
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.5901374
+        inSlope: -0.56612414
+        outSlope: -0.56612414
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.57690597
+        inSlope: -0.33078673
+        outSlope: -0.33078673
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.09726095
+        inSlope: -0.1954899
+        outSlope: -0.1954899
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.10508055
+        inSlope: -0.2836622
+        outSlope: -0.2836622
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.13082752
+        inSlope: -0.18081722
+        outSlope: -0.18081722
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.13451637
+        inSlope: -0.0000000018626451
+        outSlope: -0.0000000018626451
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.11995392
+        inSlope: 0.3218367
+        outSlope: 0.3218367
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.10508055
+        inSlope: 0.28366214
+        outSlope: 0.28366214
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.09726095
+        inSlope: 0.1954902
+        outSlope: 0.1954902
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.7797219
+        inSlope: -0.2886249
+        outSlope: -0.2886249
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.7681769
+        inSlope: -0.4967317
+        outSlope: -0.4967317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.70616865
+        inSlope: -0.7655374
+        outSlope: -0.7655374
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.6676975
+        inSlope: -0.00000020861626
+        outSlope: -0.00000020861626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.7399833
+        inSlope: 0.7751035
+        outSlope: 0.7751035
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.7681769
+        inSlope: 0.4967324
+        outSlope: 0.4967324
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.7797219
+        inSlope: 0.28862533
+        outSlope: 0.28862533
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.096607015
+        inSlope: 0.19566965
+        outSlope: 0.19566965
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.104433805
+        inSlope: 0.28380287
+        outSlope: 0.28380287
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.13016698
+        inSlope: 0.18019938
+        outSlope: 0.18019938
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.13380742
+        inSlope: 0.0000000015133992
+        outSlope: 0.0000000015133992
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.11931126
+        inSlope: -0.3216659
+        outSlope: -0.3216659
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.10443375
+        inSlope: -0.28380305
+        outSlope: -0.28380305
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.096607015
+        inSlope: -0.19566864
+        outSlope: -0.19566864
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.7799107
+        inSlope: 0.28864875
+        outSlope: 0.28864875
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.7683647
+        inSlope: 0.4968099
+        outSlope: 0.4968099
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.7063464
+        inSlope: 0.765553
+        outSlope: 0.765553
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.6678836
+        inSlope: 0.00000020861626
+        outSlope: 0.00000020861626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.7401658
+        inSlope: -0.7752287
+        outSlope: -0.7752287
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.76836467
+        inSlope: -0.49681062
+        outSlope: -0.49681062
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.7799107
+        inSlope: -0.28865066
+        outSlope: -0.28865066
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.22268109
+        inSlope: -0.04787964
+        outSlope: -0.04787964
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.22459628
+        inSlope: -0.033071812
+        outSlope: -0.033071812
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.21920384
+        inSlope: 0.21081728
+        outSlope: 0.21081728
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.20252253
+        inSlope: 0.00000011175871
+        outSlope: 0.00000011175871
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.22532685
+        inSlope: -0.0674053
+        outSlope: -0.0674053
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.22459622
+        inSlope: 0.03307203
+        outSlope: 0.03307203
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.22268109
+        inSlope: 0.04787822
+        outSlope: 0.04787822
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.57690513
+        inSlope: 0.33088607
+        outSlope: 0.33088607
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.5901406
+        inSlope: 0.56632906
+        outSlope: 0.56632906
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.6603643
+        inSlope: 0.8620745
+        outSlope: 0.8620745
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.7035707
+        inSlope: 0.00000023841858
+        outSlope: 0.00000023841858
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.6222115
+        inSlope: -0.8777971
+        outSlope: -0.8777971
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.5901406
+        inSlope: -0.5663298
+        outSlope: -0.5663298
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.57690513
+        inSlope: -0.33088657
+        outSlope: -0.33088657
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.18444672
+        inSlope: 0.03738178
+        outSlope: 0.03738178
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.185942
+        inSlope: -0.00526087
+        outSlope: -0.00526087
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.17214787
+        inSlope: -0.36390173
+        outSlope: -0.36390173
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.14592168
+        inSlope: -0.0000005364418
+        outSlope: -0.0000005364418
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.18402588
+        inSlope: 0.17242631
+        outSlope: 0.17242631
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.18594195
+        inSlope: 0.0052604508
+        outSlope: 0.0052604508
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.18444672
+        inSlope: -0.037380718
+        outSlope: -0.037380718
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.4480805
+        inSlope: -0.5037059
+        outSlope: -0.5037059
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.46822876
+        inSlope: -0.8400668
+        outSlope: -0.8400668
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.56814975
+        inSlope: -1.1623106
+        outSlope: -1.1623106
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.6236859
+        inSlope: -0.00000028312206
+        outSlope: -0.00000028312206
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.5152859
+        inSlope: 1.2490127
+        outSlope: 1.2490127
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.46822876
+        inSlope: 0.84006745
+        outSlope: 0.84006745
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.4480805
+        inSlope: 0.5037067
+        outSlope: 0.5037067
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.15779443
+        inSlope: -0.22367488
+        outSlope: -0.22367488
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -0.16674143
+        inSlope: -0.31415987
+        outSlope: -0.31415987
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -0.19320497
+        inSlope: -0.1499884
+        outSlope: -0.1499884
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -0.1939755
+        inSlope: -0.00000072736293
+        outSlope: -0.00000072736293
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -0.18292725
+        inSlope: 0.33079463
+        outSlope: 0.33079463
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -0.16674143
+        inSlope: 0.31416026
+        outSlope: 0.31416026
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.15779443
+        inSlope: 0.2236752
+        outSlope: 0.2236752
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 0.8604094
+        inSlope: -0.3208382
+        outSlope: -0.3208382
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 0.84757584
+        inSlope: -0.54519105
+        outSlope: -0.54519105
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 0.7811804
+        inSlope: -0.7891028
+        outSlope: -0.7891028
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 0.7430318
+        inSlope: -0.00000020861626
+        outSlope: -0.00000020861626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 0.81679404
+        inSlope: 0.8299427
+        outSlope: 0.8299427
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 0.8475758
+        inSlope: 0.5451917
+        outSlope: 0.5451917
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 0.8604094
+        inSlope: 0.32084018
+        outSlope: 0.32084018
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: 0.018624727
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: 0.018624727
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: -0.026708892
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: -0.026708892
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: -0.027438112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: -0.027438112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: 0.018624727
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: 0.018624727
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: -0.026708893
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: -0.026708893
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: -0.027438112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: -0.027438112
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.9999998
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.9999998
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -1.0000004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -1.0000004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.99999964
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.99999964
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -0.9999995
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -0.9999995
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -1.0000004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -1.0000004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 10.210351
+        inSlope: -24.201452
+        outSlope: -24.201452
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 9.223463
+        inSlope: -45.912384
+        outSlope: -46.40802
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 2.891524
+        inSlope: -83.55443
+        outSlope: -83.55443
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -1.3890173
+        inSlope: -0.00020563607
+        outSlope: -0.00013709068
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 6.5022755
+        inSlope: 78.01699
+        outSlope: 79.35887
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 9.223459
+        inSlope: 44.866966
+        outSlope: 44.867035
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 10.210351
+        inSlope: 23.717258
+        outSlope: 23.717258
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 122.59428
+        inSlope: -67.40852
+        outSlope: -67.40852
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 119.90762
+        inSlope: -110.13101
+        outSlope: -109.83012
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 107.18629
+        inSlope: -143.88231
+        outSlope: -143.88231
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 100.34265
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 113.80921
+        inSlope: 159.81044
+        outSlope: 158.98982
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 119.90762
+        inSlope: 110.70093
+        outSlope: 110.701096
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 122.59428
+        inSlope: 67.63636
+        outSlope: 67.63636
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -26.393894
+        inSlope: -30.844957
+        outSlope: -30.844957
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -27.610905
+        inSlope: -39.769054
+        outSlope: -39.139233
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -29.93571
+        inSlope: 11.215641
+        outSlope: 11.215641
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -28.13585
+        inSlope: 0.00007152559
+        outSlope: 0.000047683712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -29.500109
+        inSlope: 34.252594
+        outSlope: 31.27454
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -27.610907
+        inSlope: 41.0023
+        outSlope: 41.00236
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -26.393894
+        inSlope: 31.252987
+        outSlope: 31.252987
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone014
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -13.6282215
+        inSlope: 20.366037
+        outSlope: 20.366037
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -12.801315
+        inSlope: 36.976986
+        outSlope: 37.327774
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -7.885139
+        inSlope: 63.728424
+        outSlope: 63.728424
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -4.675517
+        inSlope: -0.00017881398
+        outSlope: -0.00011920928
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -10.640856
+        inSlope: -60.204647
+        outSlope: -61.311546
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -12.801315
+        inSlope: -36.24914
+        outSlope: -36.249195
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -13.6282215
+        inSlope: -20.05107
+        outSlope: -20.05107
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 76.01571
+        inSlope: 50.501034
+        outSlope: 50.501034
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 78.02814
+        inSlope: 84.53288
+        outSlope: 84.29262
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 88.17301
+        inSlope: 120.29317
+        outSlope: 120.29317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: 94.15251
+        inSlope: 0.0005722047
+        outSlope: 0.0003814697
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 82.75589
+        inSlope: -127.83889
+        outSlope: -127.04995
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 78.02814
+        inSlope: -84.9998
+        outSlope: -84.99993
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 76.01571
+        inSlope: -50.68307
+        outSlope: -50.68307
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -24.89057
+        inSlope: -27.135786
+        outSlope: -27.135786
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -25.964863
+        inSlope: -36.91147
+        outSlope: -36.503082
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -28.630043
+        inSlope: -3.1788833
+        outSlope: -3.1788833
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -27.807861
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -27.795439
+        inSlope: 36.64088
+        outSlope: 34.731514
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -25.964863
+        inSlope: 37.71427
+        outSlope: 37.714325
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -24.89057
+        inSlope: 27.409056
+        outSlope: 27.409056
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone021
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -13.643298
+        inSlope: 20.283712
+        outSlope: 20.283712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -12.819622
+        inSlope: 36.848526
+        outSlope: 37.200603
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -7.9178095
+        inSlope: 63.56025
+        outSlope: 63.56025
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -4.7171593
+        inSlope: -0.00014305118
+        outSlope: -0.000095367424
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -10.666075
+        inSlope: -60.020874
+        outSlope: -61.131016
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -12.819619
+        inSlope: -36.118034
+        outSlope: -36.118088
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -13.643298
+        inSlope: -19.967455
+        outSlope: -19.967455
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -104.00556
+        inSlope: 50.550816
+        outSlope: 50.550816
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -101.99112
+        inSlope: 84.62215
+        outSlope: 84.38074
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -91.836235
+        inSlope: 120.385
+        outSlope: 120.385
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -85.85394
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -97.258385
+        inSlope: -127.96401
+        outSlope: -127.175835
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -101.99111
+        inSlope: -85.08678
+        outSlope: -85.08691
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -104.00556
+        inSlope: -50.732853
+        outSlope: -50.732853
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -24.800323
+        inSlope: -27.21289
+        outSlope: -27.21289
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -25.877748
+        inSlope: -37.02033
+        outSlope: -36.612446
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -28.551674
+        inSlope: -3.2223709
+        outSlope: -3.2223709
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -27.728952
+        inSlope: -0.00021457676
+        outSlope: -0.00014305115
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -27.713919
+        inSlope: 36.74483
+        outSlope: 34.83966
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -25.877745
+        inSlope: 37.82027
+        outSlope: 37.820328
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -24.800323
+        inSlope: 27.485302
+        outSlope: 27.485302
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone010
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: 10.136285
+        inSlope: -24.137365
+        outSlope: -24.137365
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: 9.151968
+        inSlope: -45.80996
+        outSlope: -46.304737
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: 2.8326178
+        inSlope: -83.38535
+        outSlope: -83.38535
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -1.438886
+        inSlope: -0.00009387734
+        outSlope: -0.00006258488
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: 6.4365478
+        inSlope: 77.87033
+        outSlope: 79.20727
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: 9.151963
+        inSlope: 44.764614
+        outSlope: 44.76468
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: 10.136285
+        inSlope: 23.653172
+        outSlope: 23.653172
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -57.39689
+        inSlope: -67.42855
+        outSlope: -67.42855
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -60.084404
+        inSlope: -110.173355
+        outSlope: -109.87589
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -72.8123
+        inSlope: -143.969
+        outSlope: -143.969
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -79.65923
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -66.18561
+        inSlope: 159.87854
+        outSlope: 159.06592
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -60.084404
+        inSlope: 110.73984
+        outSlope: 110.740005
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -57.39689
+        inSlope: 67.65524
+        outSlope: 67.65524
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.39999998
+        value: -26.343754
+        inSlope: -30.810625
+        outSlope: -30.810625
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44
+        value: -27.559439
+        inSlope: -39.696815
+        outSlope: -39.06878
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.52
+        value: -29.872787
+        inSlope: 11.3931675
+        outSlope: 11.3931675
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59999996
+        value: -28.062008
+        inSlope: -0.00014305118
+        outSlope: -0.000095367424
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71999997
+        value: -29.44437
+        inSlope: 34.10082
+        outSlope: 31.128199
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.76
+        value: -27.559435
+        inSlope: 40.926483
+        outSlope: 40.926544
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79999995
+        value: -26.343754
+        inSlope: 31.216366
+        outSlope: 31.216366
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Bone_00/Bone_01/weizhi/Dummy001/yundong/Bone_04/Bone_05/Bone_06/Bone_07/Bone_08/Bone_09/Bone_10/Bone011/Bone003
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
