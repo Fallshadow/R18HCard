@@ -57,11 +57,31 @@ namespace act.fsm
             {
                 Debug.Log("卡牌使用成功了！！！");
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
+
             }
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);
         }
 
+        public void CallSuccTimeLine()
+        {
+        
+        }
 
+        public void CallDefTimeLine()
+        {
+            int random = UnityEngine.Random.Range(0,3);
+            switch(random)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 

@@ -18,6 +18,7 @@ namespace act.game
         EYE_CLOSE,
         MOUTH_A,
         MOUTH_E,
+
         MOUTH_I,
         MOUTH_O,
         MOUTH_U

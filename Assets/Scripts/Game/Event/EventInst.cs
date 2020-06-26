@@ -50,10 +50,11 @@ namespace act.game
             set
             {
                 hasComplete = value;
-                if(hasComplete)
-                {
-                    evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
-                }
+                //并不是一完成就要发送当前完成信号
+                //if(hasComplete)
+                //{
+                //    evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed);
+                //}
             }
         }
         private bool hasComplete = false;
@@ -140,16 +141,19 @@ namespace act.game
         public void ExcuteResult(List<bool> results)
         {
             EffectMgr.instance.ExcuteResult(effectInsts, results);
-            if (GameFlowMgr.instance.cardSuccEventComp)
+            game.GameFlowMgr.instance.CurEvent = null;
+        }
+
+        public void CheckHasComplete()
+        {
+            if(GameFlowMgr.instance.cardSuccEventComp)
             {
                 HasComplete = true;
-                game.GameFlowMgr.instance.CurEvent = null;
             }
             else
             {
                 GameFlowMgr.instance.cardSuccEventComp = true;
             }
-
         }
 
 

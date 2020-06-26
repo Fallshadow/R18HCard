@@ -49,7 +49,7 @@ namespace act.ui
         {
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
-            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
+            evt.EventManager.instance.Register<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll,ShowHideAllImage);
@@ -64,7 +64,7 @@ namespace act.ui
         {
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
-            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
+            evt.EventManager.instance.Unregister<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll, ShowHideAllImage);
@@ -142,12 +142,16 @@ namespace act.ui
             text_Touzi_Num.text = game.GameFlowMgr.instance.RandomNum.ToString();
             Debug.Log(game.GameFlowMgr.instance.RandomNum);
         }
-        public void ShowProcessNum()
+        public void ShowProcessNum(bool isQuickChange)
         {
             ////TODO:数字缓动！
             //text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
             //material_Process_Num.DOFloat(game.GameFlowMgr.instance.Process / 100, "_Progress", ProcessDuration);
-
+            if(isQuickChange)
+            {
+                material_Process_Num.SetFloat("_Progress", game.GameFlowMgr.instance.Process);
+                text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
+            }
             var progress = game.GameFlowMgr.instance.Process;
             var dealtProcess = progress - Convert.ToInt32(text_Process_Num.text);
             if(Mathf.Approximately(dealtProcess, 0.0f))
@@ -240,6 +244,7 @@ namespace act.ui
                     Destroy(item);
                 }
             }
+            act.game.GameFlowMgr.instance.ResetData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.MAINMENU);
         }
        

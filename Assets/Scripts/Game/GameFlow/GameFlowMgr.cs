@@ -87,7 +87,7 @@ namespace act.game
                 {
                     
                 }
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change);
+                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change,false);
             }
         }
         private float process = 0;
@@ -190,6 +190,7 @@ namespace act.game
             hadSolveEventInsts = saveData.hadSolvecardInsts;
             RoundNum = saveData.RoundNum;
             Hp = saveData.HP;
+            Process = saveData.process;
             ReShowData();
         }
 
@@ -205,7 +206,7 @@ namespace act.game
             saveData.hadSolvecardInsts = hadSolveEventInsts;
             saveData.RoundNum = RoundNum;
             saveData.HP = Hp;
-
+            saveData.process = Process;
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 
@@ -215,6 +216,7 @@ namespace act.game
             saveData = new data.SaveData();
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
+
         #endregion
 
         #region 流程相关

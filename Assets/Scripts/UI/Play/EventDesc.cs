@@ -225,7 +225,10 @@ namespace act.ui
             canvasGroup.DOFade(0, 0.5f);
             canvasGroup.blocksRaycasts = false;
             game.GameFlowMgr.instance.eventDesc = false;
-            game.GameFlowMgr.instance.CurEvent = null;
+            if(game.GameFlowMgr.instance.CurEvent != null && !game.GameFlowMgr.instance.CurEvent.HasComplete)
+            {
+                game.GameFlowMgr.instance.CurEvent = null;
+            }
             evt.EventManager.instance.Send(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide);
         }
 
@@ -439,9 +442,11 @@ namespace act.ui
 
         public void Succ()
         {
+            //转移到事件消失之后
             game.GameFlowMgr.instance.CurCard.CheckCdt();
-            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
-            game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+            //game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
+            //game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+            game.GameFlowMgr.instance.CurEvent.CheckHasComplete();
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
         }
