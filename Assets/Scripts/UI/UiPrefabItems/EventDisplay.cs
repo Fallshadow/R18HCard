@@ -33,7 +33,8 @@ namespace act.ui
                 {
                     return anim;
                 }
-                return GetComponentInParent<Animator>();
+                anim = GetComponentInParent<Animator>();
+                return anim;
             }
         }
         
@@ -54,7 +55,7 @@ namespace act.ui
             config = GetComponent<EventReference>();
 
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByRoundOver);
+            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -65,7 +66,7 @@ namespace act.ui
         public void Release()
         {
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByRoundOver);
+            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -117,7 +118,7 @@ namespace act.ui
             }
         }
 
-        public void CheckDestoryEventByRoundOver()
+        public void CheckDestoryEventByEventRoundOver()
         {
             if(event_inst.HasCompleteWaitRoundOver)
             {
@@ -149,7 +150,6 @@ namespace act.ui
                 nowtext.text = event_inst.RoundNum.ToString();
                 ShowNomarl();
             }
-
         }
         public void CheckDestoryEvent()
         {
@@ -197,6 +197,7 @@ namespace act.ui
                 {
                     event_inst.HasCompleteWaitRoundOver = true;
                 }
+                Hide();
             }
             if(event_inst.RoundNum == 0)
             {
@@ -239,6 +240,11 @@ namespace act.ui
         //TODO:写在动画最后一帧
         public void DestoryEvent()
         {
+            if(event_inst == game.GameFlowMgr.instance.CurEvent)
+            {
+                game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
+                game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+            }
             Release();
             event_inst.DestorySelf();
             Destroy(this.gameObject);

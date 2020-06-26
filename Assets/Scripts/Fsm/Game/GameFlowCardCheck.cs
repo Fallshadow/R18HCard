@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace act.fsm
 {
+    //检查卡牌按钮点下
     public class GameFlowCardCheck<T> : State<T>
     {
         public bool NeedCheck = false;
