@@ -222,6 +222,7 @@ namespace act.ui
         {
             Anim.enabled = true;
             Anim.Play("Hide");
+            UiManager.instance.ControlMouseInput(false);
         }
 
         public void ShowWuXian()
@@ -249,6 +250,7 @@ namespace act.ui
             event_inst.DestorySelf();
             Destroy(this.gameObject);
             Destroy(this.transform.parent.gameObject);
+            UiManager.instance.ControlMouseInput(true);
         }
         #endregion
 

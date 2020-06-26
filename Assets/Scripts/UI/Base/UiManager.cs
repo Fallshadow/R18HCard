@@ -23,6 +23,7 @@ namespace act.ui
         [SerializeField] private RectTransform[] canvasRoots;
 
         private UiManageStrategy manageStrat = null;
+        private CanvasGroup canvasGroup = null;
         private Dictionary<Type, UiBase> loadedUiDict = new Dictionary<Type, UiBase>();
 
         private Dictionary<string, Material> materialDict = new Dictionary<string, Material>();
@@ -37,6 +38,12 @@ namespace act.ui
         {
             //calculateAdaptation(); // NOTE: Waiting for CanvasScaler to initialize.
             //CreateUi<LoadingCanvas>();
+            canvasGroup = GetComponent<CanvasGroup>();
+        }
+
+        public void ControlMouseInput(bool canMouse)
+        {
+            canvasGroup.interactable = canMouse;
         }
 
         public T CreateUi<T>() where T : UiBase

@@ -428,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 338357838833888684}
   - component: {fileID: 338357838833888685}
+  - component: {fileID: 4049909909568877916}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -470,6 +471,18 @@ MonoBehaviour:
   canvasRoots:
   - {fileID: 338357839087394081}
   - {fileID: 338357838615683834}
+--- !u!225 &4049909909568877916
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338357838833888687}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &338357839087394080
 GameObject:
   m_ObjectHideFlags: 0

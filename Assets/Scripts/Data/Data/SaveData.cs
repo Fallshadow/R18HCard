@@ -11,6 +11,7 @@ namespace act.data
     {
         public int RoundNum = 1;
         public int HP = 100;
+        public float process = 0;
         public EventInst curEvent;
         public CardInst curCard;
         public List<bool> curEventResults = new List<bool>();

@@ -225,7 +225,7 @@ namespace act.ui
             canvasGroup.DOFade(0, 0.5f);
             canvasGroup.blocksRaycasts = false;
             game.GameFlowMgr.instance.eventDesc = false;
-            if(!game.GameFlowMgr.instance.CurEvent.HasComplete)
+            if(game.GameFlowMgr.instance.CurEvent != null && !game.GameFlowMgr.instance.CurEvent.HasComplete)
             {
                 game.GameFlowMgr.instance.CurEvent = null;
             }
