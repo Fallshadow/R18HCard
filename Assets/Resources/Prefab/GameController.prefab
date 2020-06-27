@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1296324289}
   - component: {fileID: 1296324288}
   - component: {fileID: 1296324287}
+  - component: {fileID: 8912613925909593991}
   m_Layer: 0
   m_Name: TimeLineMgr
   m_TagString: Untagged
@@ -41,7 +42,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1296324286}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ab3a958ee714fde4a97649167c12c907, type: 2}
+  m_PlayableAsset: {fileID: 0}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -63,10 +64,16 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 5625358325591618127, guid: ab3a958ee714fde4a97649167c12c907, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 6226830751865909136, guid: ab3a958ee714fde4a97649167c12c907, type: 2}
+  - key: {fileID: -5818413931105037688, guid: ab3a958ee714fde4a97649167c12c907, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - 718ffb9b1fa86654fa73b5a18f73436d: {fileID: 0}
+    - 4fe30f4b59540f041a7fc7a884f5e245: {fileID: 0}
+    - 3afc435db343ca94aad8e474be14d7e0: {fileID: 0}
+    - 3ab2c3aef325e2b4bb88d40e285f0fc2: {fileID: 0}
+    - 52b3d5c6a15bb6242864c5ef36d77c01: {fileID: 0}
+    - 05b11d78052f8c74a841e1d2205a81a4: {fileID: 0}
 --- !u!95 &1296324287
 Animator:
   serializedVersion: 3
@@ -86,6 +93,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8912613925909593991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296324286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e2b62ddadd45f4da2282c57100f4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &243314946415749787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,15 +1534,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c609c2040e417d64da722c4e219035a9, type: 3}
---- !u!224 &5866857144063648703 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3434460589302081955, guid: c609c2040e417d64da722c4e219035a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 9134114544313797148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &501651127228382290 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8661791810111321678, guid: c609c2040e417d64da722c4e219035a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 9134114544313797148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5866857144063648703 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3434460589302081955, guid: c609c2040e417d64da722c4e219035a9,
     type: 3}
   m_PrefabInstance: {fileID: 9134114544313797148}
   m_PrefabAsset: {fileID: 0}

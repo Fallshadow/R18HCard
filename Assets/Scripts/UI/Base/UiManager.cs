@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.U2D;
+using DG.Tweening;
 
 namespace act.ui
 {
@@ -45,7 +46,10 @@ namespace act.ui
         {
             canvasGroup.interactable = canMouse;
         }
-
+        public void SetAllUIAlpha(float alpha,bool immediate = false)
+        {
+            canvasGroup.DOFade(alpha, 0.5f);
+        }
         public T CreateUi<T>() where T : UiBase
         {
             Type uiType = typeof(T);
