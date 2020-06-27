@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 // A behaviour that is attached to a playable
-public class SetUIHidePlayableBehaviour : PlayableBehaviour
+public class TalkControlPlayableBehaviour : PlayableBehaviour
 {
+    public act.worldui.TalkChildPrefab talkChildPrefab;
+    public GameObject followItem;
+    public string content;
     // Called when the owning graph starts playing
     public override void OnGraphStart(Playable playable)
     {
@@ -16,23 +19,20 @@ public class SetUIHidePlayableBehaviour : PlayableBehaviour
     public override void OnGraphStop(Playable playable)
     {
         
-
     }
 
     // Called when the state of the playable is set to Play
     public override void OnBehaviourPlay(Playable playable, FrameData info)
     {
-        act.ui.UiManager.instance.SetAllUIAlpha(0);
-        act.ui.UiManager.instance.ControlMouseInput(false);
-        act.game.GameController.instance.GetComponent<act.game.FollowCameraRotate>().enabled = false;
+        talkChildPrefab.followGameObject = followItem;
+        talkChildPrefab.ChangeContent(content);
+        talkChildPrefab.ChangeAlpha(1);
     }
 
     // Called when the state of the playable is set to Paused
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
-        act.ui.UiManager.instance.SetAllUIAlpha(1);
-        act.ui.UiManager.instance.ControlMouseInput(true);
-        act.game.GameController.instance.GetComponent<act.game.FollowCameraRotate>().enabled = true;
+        talkChildPrefab.ChangeAlpha(0);
     }
 
     // Called each frame while the state is set to Play
