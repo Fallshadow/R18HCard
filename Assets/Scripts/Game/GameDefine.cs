@@ -98,4 +98,5 @@ namespace act.game
         ET_Self = 1,
         ET_World,
     }
+
 }

@@ -23,5 +23,7 @@ namespace act.data
         #region Config
         public static string ClassToConfigsFolder = Application.dataPath + "/Resources/Config/EditorConfig/";
         #endregion 
+
+        public const string event5TimeLine = "事件5Timeline";
     }
 }

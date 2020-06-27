@@ -57,17 +57,27 @@ namespace act.fsm
             {
                 Debug.Log("卡牌使用成功了！！！");
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
-
+                ChooseSuccTimeLineToPlay();
             }
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);
         }
 
-        public void CallSuccTimeLine()
+
+        public void ChooseSuccTimeLineToPlay()
         {
-        
+            string filename = "";
+            switch(game.GameFlowMgr.instance.CurEvent.config.ID)
+            {
+                case 5:
+                    filename = data.ResourcesPathSetting.event5TimeLine;
+                    break;
+                default:
+                    break;
+            }
+            game.TimeLineMgr.instance.PlayPlayableAsset(filename);
         }
 
-        public void CallDefTimeLine()
+        public void ChooseDefTimeLineToPlay()
         {
             int random = UnityEngine.Random.Range(0,3);
             switch(random)
