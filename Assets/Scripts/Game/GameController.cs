@@ -7,7 +7,8 @@ namespace act
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
         {
             public readonly fsm.Fsm<GameController> FSM = new fsm.Fsm<GameController>();
-
+            public GameObject mainCamera;
+            public GameObject uiCamera;
             protected override void Awake()
             {
                 base.Awake();

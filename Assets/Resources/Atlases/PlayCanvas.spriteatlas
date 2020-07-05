@@ -31,22 +31,25 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 56074f5934aa2ef4ab971988d30bf4ba, type: 3}
-    totalSpriteSurfaceArea: 3327748
+    totalSpriteSurfaceArea: 7192413
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 299b525014e823f4489bc3b6f647233c, type: 3}
   - {fileID: 21300000, guid: 11f52b50cac71264d8d16e4c9cafb857, type: 3}
   - {fileID: 21300000, guid: e4f00e50495dda644850ad62edbbfa9d, type: 3}
+  - {fileID: 21300000, guid: 0e46b370fa1e14f48922ed0d41aec32b, type: 3}
   - {fileID: 21300000, guid: 306418e06a1ad5d4cb1e393d0498b16c, type: 3}
   - {fileID: 21300000, guid: 82b8efe0fe253b242a3de880577b1ae5, type: 3}
   - {fileID: 21300000, guid: 22a836f18102052499942eb9d216faf1, type: 3}
   - {fileID: 21300000, guid: e55f98d210492134896ea5655992ba70, type: 3}
+  - {fileID: 21300000, guid: 3e3d3b834cfa8ef4389c8e4a809828bc, type: 3}
   - {fileID: 21300000, guid: c3b2ee9458705904899e9b8ad8c1c07b, type: 3}
   - {fileID: 21300000, guid: 872004b45ecb92f4281c05cd1130e137, type: 3}
   - {fileID: 21300000, guid: 14d036b498952574fbe04bd64a2e501b, type: 3}
   - {fileID: 21300000, guid: 6c9ed74534fd6cc4b9b47ad1bef2b889, type: 3}
   - {fileID: 21300000, guid: e32d291667c569d49a7b42294cecc3dd, type: 3}
+  - {fileID: 21300000, guid: f800e44685e369a4ebc807e3bf1cc1d9, type: 3}
   - {fileID: 21300000, guid: 15de933842c8dd143ba8851d0aaea69f, type: 3}
   - {fileID: 21300000, guid: 3de09f386a9a15641bf8c9c297ca1a0f, type: 3}
   - {fileID: 21300000, guid: f5be786821a57644aa1bc0dfb02c134b, type: 3}
@@ -62,24 +65,29 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2a089f9b810da86458b5a287f7de75ad, type: 3}
   - {fileID: 21300000, guid: a06c7e4c3cd8e434bbdeedc1e8c99cb1, type: 3}
   - {fileID: 21300000, guid: 8f858fad7d04ba54a8d85c2eb91cc700, type: 3}
+  - {fileID: 21300000, guid: 1149432e446c7f646aabf64848617fd7, type: 3}
   - {fileID: 21300000, guid: 3fc37d5e71403ae48ba8adac5cd4af9f, type: 3}
   - {fileID: 21300000, guid: ca033c9e28889c448a8ddcb587e98558, type: 3}
   - {fileID: 21300000, guid: 4d40d7ae8484c8c48a02402d353408f6, type: 3}
+  - {fileID: 21300000, guid: 67ec41def0da05c4f846765fb1b843da, type: 3}
   - {fileID: 21300000, guid: 3739505f4c45213459f3a8acce7d6dda, type: 3}
   - {fileID: 21300000, guid: d007315fe364fd548a93ee5610d1b85a, type: 3}
   m_PackedSpriteNamesToIndex:
   - EventShowType4
   - EventShowType3
   - EventType2
+  - "TIM\u622A\u56FE20200416231140"
   - fenwei_bg
   - CardDesc
   - card_sj_name
   - EventType1
+  - "\u5C01\u9762(2)"
   - EventType3
   - CardType1
   - CardType4
   - EventShowType1
   - determine_bg3
+  - "\u77E9\u5F62-32"
   - EventTime
   - card_sj_success
   - CardType2_3
@@ -95,9 +103,11 @@ SpriteAtlas:
   - EventType4
   - determine_btn
   - cm_icon
+  - "\u5C3C\u53E4\u62C9\u4E1D\u5DE5\u623FLOGO"
   - EventType
   - card_sj_fail
   - determine_bg2
+  - logo
   - card_sj_panding
   - card_sj_bg
   m_Tag: PlayCanvas

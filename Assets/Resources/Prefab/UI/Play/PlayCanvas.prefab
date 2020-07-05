@@ -6226,6 +6226,7 @@ GameObject:
   - component: {fileID: 835512622468681456}
   - component: {fileID: 2637989901826791596}
   - component: {fileID: 186641761242494301}
+  - component: {fileID: 2238970570846986018}
   m_Layer: 5
   m_Name: PlayCanvas
   m_TagString: Untagged
@@ -6373,6 +6374,18 @@ MonoBehaviour:
   tempEventId: {fileID: 5779133287853323093}
   tempProgressNum: {fileID: 7809661311126548311}
   tempHpNum: {fileID: 4673814315635685687}
+--- !u!225 &2238970570846986018
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350627543400292491}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3541696554371704099
 GameObject:
   m_ObjectHideFlags: 0
@@ -24561,15 +24574,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a95ca1fc6f1b9c846ae647e6789f3316, type: 3}
---- !u!4 &4943371075283036096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 90031026944504114, guid: a95ca1fc6f1b9c846ae647e6789f3316,
-    type: 3}
-  m_PrefabInstance: {fileID: 5018623452519978738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &4943371075263636096 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 90031026929300594, guid: a95ca1fc6f1b9c846ae647e6789f3316,
+    type: 3}
+  m_PrefabInstance: {fileID: 5018623452519978738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4943371075283036096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 90031026944504114, guid: a95ca1fc6f1b9c846ae647e6789f3316,
     type: 3}
   m_PrefabInstance: {fileID: 5018623452519978738}
   m_PrefabAsset: {fileID: 0}

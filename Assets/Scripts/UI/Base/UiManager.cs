@@ -45,10 +45,26 @@ namespace act.ui
         public void ControlMouseInput(bool canMouse)
         {
             canvasGroup.interactable = canMouse;
+            canvasGroup.blocksRaycasts = canMouse;
+        }
+
+        public void ControlMouseInput(UiBase uiBase, bool canMouse)
+        {
+            uiBase.GetOrAddComponent<CanvasGroup>().interactable = canMouse;
+            uiBase.GetOrAddComponent<CanvasGroup>().blocksRaycasts = canMouse;
         }
         public void SetAllUIAlpha(float alpha,bool immediate = false)
         {
             canvasGroup.DOFade(alpha, 0.5f);
+        }
+
+        public void SetUIAlpha(UiBase uiBase,  float endAlpha, float begAlpha = -1, float time = 0.5f,bool immediate = false,DG.Tweening.TweenCallback onComplete = null)
+        {
+            if(begAlpha != -1)
+            {
+                uiBase.GetOrAddComponent<CanvasGroup>().alpha = begAlpha;
+            }
+            uiBase.GetOrAddComponent<CanvasGroup>().DOFade(endAlpha, time).OnComplete(onComplete);
         }
         public T CreateUi<T>() where T : UiBase
         {
