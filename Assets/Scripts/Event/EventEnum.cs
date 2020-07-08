@@ -14,6 +14,11 @@ namespace act.evt
         INPUT = 4,
         TOUZI = 5,
         EVENT = 6,
+        TIMELINE = 7,
+    }
+    public enum TimeLine :short
+    {
+        TL_Continue_Play,
     }
     public enum UiEvent : short
     {

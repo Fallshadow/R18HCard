@@ -43,6 +43,7 @@ public class TalkCanvasControlPlayableBehaviour : PlayableBehaviour
         talkCanvas.talkContentString = content;
         talkCanvas.talkTime = time;
         act.ui.UiManager.instance.OpenUi<act.ui.TalkCanvas>();
+        act.ui.UiManager.instance.CreateUi<act.ui.TalkCanvas>().Refresh();
         act.ui.UiManager.instance.SetUIAlpha(talkCanvas,  1, time: talkCanvasAlphaTo1Time, immediate: false, onComplete: ()=> { });
     }
 
