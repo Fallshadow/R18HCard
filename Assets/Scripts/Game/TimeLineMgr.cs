@@ -8,11 +8,55 @@ namespace act.game
 {
     public class TimeLineMgr : SingletonMonoBehavior<TimeLineMgr>
     {
-        private PlayableDirector defaultPlayableDirector;
         private void Start()
         {
-            defaultPlayableDirector = GetComponent<PlayableDirector>();
+            gameDir = GetComponent<PlayableDirector>();
         }
+
+        public PlayableDirector gameDir;
+        public PlayableDirector newPlayerDir;
+        private System.Action _pasuedCallBackFunction = null;
+
+        public void PasueTimeline(System.Action callBack = null)
+        {
+            gameDir.Pause();
+            _pasuedCallBackFunction += callBack;
+        }
+
+        public void ResumeTimeLine(bool exeCallBack = false)
+        {
+            gameDir.Resume();
+            _pasuedCallBackFunction?.Invoke();
+            _pasuedCallBackFunction = null;
+        }
+
+        public void JumpToTime(float pointTime)
+        {
+            gameDir.time = pointTime;
+        }
+
+        #region 指定导演系统，真的会有用到么
+        public void PasueTimeline(PlayableDirector playableDirector, System.Action callBack = null)
+        {
+            playableDirector.Pause();
+            _pasuedCallBackFunction += callBack;
+        }
+
+        public void ResumeTimeLine(PlayableDirector playableDirector, bool exeCallBack = false)
+        {
+            gameDir = playableDirector;
+            gameDir.Resume();
+            _pasuedCallBackFunction?.Invoke();
+            _pasuedCallBackFunction = null;
+        }
+
+        public void JumpToTime(PlayableDirector playableDirector, float pointTime)
+        {
+            gameDir = playableDirector;
+            gameDir.time = pointTime;
+        }
+        #endregion
+
         public PlayableAsset LoadTimeline(string fileName)
         {
             PlayableAsset playableAsset = act.utility.LoadResources.LoadAsset<PlayableAsset>("model/Motion/" + fileName);
@@ -29,7 +73,7 @@ namespace act.game
 
             if(playableDirector == null)
             {
-                playableDirector = defaultPlayableDirector;
+                playableDirector = gameDir;
             }
 
             playableDirector.playableAsset = playableAsset;
@@ -47,7 +91,7 @@ namespace act.game
 
             if(playableDirector == null)
             {
-                playableDirector = defaultPlayableDirector;
+                playableDirector = gameDir;
             }
             
             playableDirector.playableAsset = playableAsset;

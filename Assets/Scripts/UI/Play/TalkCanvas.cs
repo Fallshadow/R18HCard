@@ -23,7 +23,7 @@ namespace act.ui
 
         public override void Refresh()
         {
-
+            onShow();
         }
 
         public override void Release()

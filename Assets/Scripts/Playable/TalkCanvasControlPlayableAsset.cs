@@ -7,13 +7,13 @@ using UnityEngine.Playables;
 public class TalkCanvasControlPlayableAsset : PlayableAsset
 {
     [Header("游玩屏幕变透明时间")]
-    public float playCanvasAlphaTo0Time;
+    private float playCanvasAlphaTo0Time = 1.78f;
     [Header("游玩屏幕重现时间")]
-    public float playCanvasAlphaTo1Time;
+    private float playCanvasAlphaTo1Time = 1.84f;
     [Header("对话框出现时间")]
-    public float talkCanvasAlphaTo1Time;
+    private float talkCanvasAlphaTo1Time = 1.78f;
     [Header("对话框变透明时间")]
-    public float talkCanvasAlphaTo0Time;
+    private float talkCanvasAlphaTo0Time = 1.75f;
     [Header("对话框文字内容")]
     [Multiline(5)]
     public string content;
