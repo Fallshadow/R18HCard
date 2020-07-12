@@ -39,6 +39,7 @@ namespace act.ui
         public game.EventInst curEventInst = null;
         public game.CardInst curCardInst = null;
 
+        private bool isShow = false;
         private Animator anim = null;
         private string SText_Desc_String = "";
         private void Awake()
@@ -92,9 +93,16 @@ namespace act.ui
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
         }
-
+        private void Update()
+        {
+            if(game.GameFlowMgr.instance.CurEvent == null && isShow)
+            {
+                game.GameFlowMgr.instance.CurEvent = curEventInst;
+            }
+        }
         public void ShowDesc(game.EventInst inst)
         {
+            isShow = true;
             if(anim == null)
             {
                 anim = GetComponent<Animator>();
@@ -221,6 +229,7 @@ namespace act.ui
         }
         public void HideDesc()
         {
+            isShow = false;
             InitAnim();
             canvasGroup.DOFade(0, 0.5f);
             canvasGroup.blocksRaycasts = false;

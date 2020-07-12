@@ -241,10 +241,10 @@ namespace act.ui
         //TODO:写在动画最后一帧
         public void DestoryEvent()
         {
-            if(event_inst == game.GameFlowMgr.instance.CurEvent)
+            if(event_inst.HasComplete)
             {
                 game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
-                game.GameFlowMgr.instance.CurEvent.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+                event_inst.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
             }
             Release();
             event_inst.DestorySelf();
