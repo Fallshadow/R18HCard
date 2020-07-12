@@ -65,6 +65,7 @@ namespace act.fsm
 
         public void ChooseSuccTimeLineToPlay()
         {
+            return;
             string filename = "";
             switch(game.GameFlowMgr.instance.CurEvent.config.ID)
             {
