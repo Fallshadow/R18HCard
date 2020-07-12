@@ -8,12 +8,11 @@ namespace act.fsm
 {
     public class Play<T> : State<T>
     {
-        private bool isFirstGame = true;
         public override void Enter()
         {
-            if(isFirstGame)
+            if(game.GameController.instance.isInNewPlayFlow)
             {
-                isFirstGame = false;
+                game.GameController.instance.isInNewPlayFlow = false;
                 act.game.GameController.instance.uiCamera.GetComponent<PostProcessVolume>().enabled = true;
                 act.game.GameController.instance.uiCamera.GetComponent<PostProcessLayer>().enabled = true;
                 game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.NewPlayerFlow);

@@ -10,6 +10,7 @@ namespace act
             public GameObject mainCamera;
             public GameObject uiCamera;
 
+            [Header("是否开启新手教程")]
             public bool isInNewPlayFlow = false;
             protected override void Awake()
             {
