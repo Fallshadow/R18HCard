@@ -36,6 +36,10 @@ namespace act.game
         }
 
         #region 指定导演系统，真的会有用到么
+        public void PlayTimeline(PlayableDirector playableDirector, System.Action callBack = null)
+        {
+            playableDirector.Play();
+        }
         public void PasueTimeline(PlayableDirector playableDirector, System.Action callBack = null)
         {
             playableDirector.Pause();

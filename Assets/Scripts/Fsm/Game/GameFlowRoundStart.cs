@@ -10,7 +10,15 @@ namespace act.fsm
         {
             game.GameFlowMgr.instance.SaveData();
             Debug.Log("进入状态：回合开始");
-            GiveInitCard();
+            if(game.GameController.instance.isInNewPlayFlow)
+            {
+                game.GameController.instance.isInNewPlayFlow = false;
+            }
+            else
+            {
+                GiveInitCard();
+            }
+            
             CheckProcessCondition();
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.RoundStartCEC);
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowWaitForCheck);

@@ -38,6 +38,9 @@ namespace act.ui
         [SerializeField] private ParticleSystem roundOverEffect;
         [SerializeField] private UiStaticText roundOverText;
 
+        [Header("NewPlayFlow")]
+        [SerializeField] private Image dark;
+
         [Header("Debug")]
         [SerializeField] private InputField tempCardId;
         [SerializeField] private InputField tempEventId;
@@ -78,11 +81,18 @@ namespace act.ui
         protected override void onShow()
         {
             base.onShow();
+            if(!game.GameController.instance.isInNewPlayFlow)
+            {
+                LoadIn();
+                ShowDrak(false);
+            }
+        }
+        public void LoadIn()
+        {
             game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundStart);
             ShowRoundOver();
         }
-
         private void ShowRoundOver()
         {
             roundOverEffect.Play();
@@ -133,15 +143,18 @@ namespace act.ui
 
 
         #region 刷新展示
+
         public void ShowEventDesc(game.EventInst inst)
         {
             eventDesc.ShowDesc(inst);
         }
+
         public void ShowRandomNum()
         {
             text_Touzi_Num.text = game.GameFlowMgr.instance.RandomNum.ToString();
             Debug.Log(game.GameFlowMgr.instance.RandomNum);
         }
+
         public void ShowProcessNum(bool isQuickChange)
         {
             ////TODO:数字缓动！
@@ -262,6 +275,12 @@ namespace act.ui
             CreateCard(inst);
         }
 
+        public void CreateCard(int cardId)
+        {
+            game.CardInst inst = game.CardMgr.instance.GetCardInstByID(cardId);
+            CreateCard(inst);
+        }
+
 
         #endregion
         public override void Refresh()
@@ -287,6 +306,24 @@ namespace act.ui
         {
             game.GameFlowMgr.instance.Hp = Convert.ToInt32(tempHpNum.text);
         }
+
+
+        #region NewPlayerFlow
+        public void ShowDrak(bool isActive)
+        {
+            dark.enabled = isActive;
+        }
+
+        public void FadeDrak(float dur)
+        {
+            dark.DOFade(0, dur);
+        }
+
+        public void HideAllBtn()
+        {
+            
+        }
+        #endregion
 
     }
 }

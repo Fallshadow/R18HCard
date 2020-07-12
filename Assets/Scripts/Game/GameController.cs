@@ -9,6 +9,8 @@ namespace act
             public readonly fsm.Fsm<GameController> FSM = new fsm.Fsm<GameController>();
             public GameObject mainCamera;
             public GameObject uiCamera;
+
+            public bool isInNewPlayFlow = false;
             protected override void Awake()
             {
                 base.Awake();
@@ -27,6 +29,7 @@ namespace act
                 FSM.AddState((int)fsm.GameFsmState.GameFlowCardNumCheck, new fsm.GameFlowCardNumCheck<GameController>());
                 FSM.AddState((int)fsm.GameFsmState.GameFlowCardUseOver, new fsm.GameFlowCardUseOver<GameController>());
                 FSM.AddState((int)fsm.GameFsmState.GameFlowRoundEnd, new fsm.GameFlowRoundEnd<GameController>());
+                FSM.AddState((int)fsm.GameFsmState.NewPlayerFlow, new fsm.NewPlayerFlow<GameController>());
                 FSM.SwitchToState((int)fsm.GameFsmState.ENTRY);
             }
 

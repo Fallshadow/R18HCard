@@ -6363,6 +6363,7 @@ MonoBehaviour:
   effectProcessNum: {fileID: 4943371075263636096}
   roundOverEffect: {fileID: 7266570538519804388}
   roundOverText: {fileID: 7156939639515563254}
+  dark: {fileID: 2215857398425704643}
   tempCardId: {fileID: 6340562359466060104}
   tempEventId: {fileID: 5779133287853323093}
   tempProgressNum: {fileID: 7809661311126548311}
@@ -6825,7 +6826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3127134427922904199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6867,7 +6868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

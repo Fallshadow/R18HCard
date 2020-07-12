@@ -12,15 +12,52 @@ namespace act.ui
 {
         public Text content;
         public float dur;
+        public Image dark;
+        public GameObject textShow;
 
+        private string contenttext;
         private bool isFirst = true;
         private CanvasGroup canvasGroup;
+        public void UseDark(bool isactive)
+        {
+            dark.enabled = isactive;
+        }
+        public void ResetText()
+        {
+            content.DOKill();
+            contenttext = "";
+            content.text = contenttext;
+            textShow.SetActive(false);
+        }
+        public void ResetTextString(string text)
+        {
+            content.DOKill();
+            contenttext = text;
+            content.text = contenttext;
+        }
+        public void HideText()
+        {
+            contenttext = "";
+            content.text = contenttext;
+            textShow.SetActive(false);
+        }
+
+        public void FadeDark(float dur)
+        {
+            dark.DOFade(0, dur);
+        }
+
         public void ShowText(string text)
         {
-            content.DOText(text, dur);
+            ResetText();
+            
+            textShow.SetActive(true);
+            contenttext = text;
+            content.DOText(text, dur).OnComplete(()=> { isFirst = false; });
         }
         private void Start()
         {
+            SetInteractable(true);
             canvasGroup = GetComponent<CanvasGroup>();
         }
         protected override void onShow()
@@ -38,7 +75,7 @@ namespace act.ui
             if(isFirst)
             {
                 isFirst = false;
-                content.DOKill();
+                ResetTextString(contenttext);
             }
             else
             {
@@ -46,7 +83,6 @@ namespace act.ui
                 game.TimeLineMgr.instance.ResumeTimeLine(game.TimeLineMgr.instance.newPlayerDir);
                 Close();
             }
-           
         }
         public override void Initialize()
         {

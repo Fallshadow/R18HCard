@@ -53,7 +53,7 @@ namespace act.ui
                 return;
             }
 
-            SetInteractable(false);
+            SetInteractable(true);
             onAnimationCompleteCallback += showCompleteCb;
             State = UiState.US_SHOW;
             SetVisible(true);
