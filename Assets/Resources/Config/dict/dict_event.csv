@@ -10,7 +10,7 @@ event_id,event_name,event_desc,event_SP_desc,event_common_desc,event_succResult_
 9,event_name9,event_desc9,event_desc_SP9,event_common_desc9,event_result_desc9,event_defResult_desc9,event_roundOver_desc9,9,,,,,1,4,1_11_4,10;1;17,,,,
 10,event_name10,event_desc10,event_desc_SP10,event_common_desc10,event_result_desc10,event_defResult_desc10,event_roundOver_desc10,-2,5,10,1,0,3,4,1_4,10;34_12,,,,
 11,event_name11,event_desc11,event_desc_SP11,event_common_desc11,event_result_desc11,event_defResult_desc11,event_roundOver_desc11,1,,,,,1,2,1_2_15,10;6;2,,,,
-12,event_name12,event_desc12,event_desc_SP12,event_common_desc12,event_result_desc12,event_defResult_desc12,event_roundOver_desc12,3,,,,,1,3,1_5,5;0,,,,
+12,event_name12,event_desc12,event_desc_SP12,event_common_desc12,event_result_desc12,event_defResult_desc12,event_roundOver_desc12,3,,,,,1,2,1_5,5;0,,,,
 13,event_name13,event_desc13,event_desc_SP13,event_common_desc13,event_result_desc13,event_defResult_desc13,event_roundOver_desc13,6,,,,,1,3,1_13,15;7_111111_5,,,,
 14,event_name14,event_desc14,event_desc_SP14,event_common_desc14,event_result_desc14,event_defResult_desc14,event_roundOver_desc14,3,,,,,1,1,1_2_15,10;11;1,,,,
 15,event_name15,event_desc15,event_desc_SP15,event_common_desc15,event_result_desc15,event_defResult_desc15,event_roundOver_desc15,3,5,0,1,-5,1,1,1,5,,,,

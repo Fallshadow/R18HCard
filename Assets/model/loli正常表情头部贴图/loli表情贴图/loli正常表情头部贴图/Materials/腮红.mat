@@ -112,17 +112,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _1st2nd_Shades_Feather: 0.49
-    - _1st_ShadeColor_Feather: 0.665
-    - _1st_ShadeColor_Step: 1
-    - _2nd_ShadeColor_Feather: 0.49
-    - _2nd_ShadeColor_Step: 0.42
+    - _1st2nd_Shades_Feather: 0.545
+    - _1st_ShadeColor_Feather: 0.743
+    - _1st_ShadeColor_Step: 0.755
+    - _2nd_ShadeColor_Feather: 0.545
+    - _2nd_ShadeColor_Step: 0.737
     - _Add_Antipodean_RimLight: 0
     - _AlphaClip: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
-    - _BaseColor_Step: 1
-    - _BaseShade_Feather: 0.665
+    - _BaseColor_Step: 0.755
+    - _BaseShade_Feather: 0.743
     - _Base_Speed: 0
     - _Blend: 0
     - _BlurLevelMatcap: 0
@@ -131,7 +131,7 @@ Material:
     - _CameraRolling_Stabilizer: 0
     - _CelShadeMidPoint: -0.5
     - _CelShadeSoftness: 0.05
-    - _Clipping_Level: 0.11
+    - _Clipping_Level: 1
     - _ColorShift_Speed: 0
     - _Cull: 2
     - _CullMode: 2
@@ -203,7 +203,7 @@ Material:
     - _Scroll_EmissiveU: 0
     - _Scroll_EmissiveV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0.42
+    - _ShadeColor_Step: 0.737
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -219,7 +219,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_SystemShadowsLevel: 0
-    - _Tweak_transparency: 0.01
+    - _Tweak_transparency: -0.03
     - _Unlit_Intensity: 2.87
     - _UseAlphaClipping: 1
     - _UseEmission: 0
@@ -234,8 +234,8 @@ Material:
     - _1st_ShadeColor: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 1, g: 0.28773582, b: 0.38117525, a: 1}
-    - _Color: {r: 1, g: 0.28773582, b: 0.38117525, a: 1}
+    - _BaseColor: {r: 1, g: 0, b: 0.13580227, a: 0.23529412}
+    - _Color: {r: 1, g: 0, b: 0.13580227, a: 0.23529412}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionMapChannelMask: {r: 1, g: 1, b: 1, a: 1}

@@ -18,6 +18,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 2
   text: "\u4F46\u673A\u4E0D\u53EF\u5931\uFF0C\u4F60\u4EEC\u90FD\u6E34\u671B\u7740\u90A3\u6837\u7684\u4E00\u523B\uFF0C\u53EA\u662F\u5728\u6B64\u4E4B\u524D\u9700\u8981\u4E00\u70B9\u70B9\u60C5\u8C03\u4E0A\u7684\u8425\u9020\u3002\u7A97\u5916\u5F00\u59CB\u98D8\u843D\u7684\u6D01\u767D\u96EA\u82B1\uFF0C\u90FD\u4EFF\u4F5B\u5728\u4E3A\u4F60\u4EEC\u70B9\u7F00\u7740\u6D6A\u6F2B\u7684\u6C1B\u56F4\u3002"
   dur: 5
@@ -63,6 +64,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 0
   text: "\u4F60\u4E0E\u4EA4\u5F80\u5DF2\u4E45\u7684\u5973\u53CB\u6D1B\u7483\u6B63\u6F2B\u6B65\u5728\u90FD\u5E02\u7684\u8857\u5934\uFF0C\u60C5\u6295\u610F\u5408\u7684\u4F60\u4EEC\u5FC3\u4E2D\u5BF9\u4E8E\u5F7C\u6B64\u7684\u7231\u610F\u5728\u957F\u4E45\u7684\u76F8\u4F34\u4E0B\u6108\u6F14\u6108\u70C8\uFF0C\u5374\u82E6\u4E8E\u53CC\u65B9\u7684\u7F9E\u6DA9\u88AB\u52A8\u8BA9\u8FD9\u4EFD\u5173\u7CFB\u96BE\u4EE5\u66F4\u8FDB\u4E00\u6B65\u3002"
   dur: 1
@@ -844,8 +846,77 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: Infinity
+    m_PostExtrapolationTime: 0.5499999999999989
     m_PreExtrapolationTime: 0.20000000000000107
+    m_DisplayName: NewPlayerPlayableAsset
+  - m_Version: 1
+    m_Start: 9.966666666666667
+    m_ClipIn: 1
+    m_Asset: {fileID: 8416146206372788269}
+    m_Duration: 0.5166666666666666
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3929494045073888856}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0.5499999999999989
     m_DisplayName: NewPlayerPlayableAsset
   m_Markers:
     m_Objects: []
@@ -867,6 +938,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 1
   text: "\u4F60\u51E0\u4E4E\u8981\u5FD8\u4E86\u81EA\u5DF1\u5982\u4F55\u63A7\u5236\u7740\u597D\u50CF\u88AB\u5FFD\u7136\u6253\u4E86\u7ED3\u7684\u820C\u5934\uFF0C\u7F16\u7EC7\u8BED\u8A00\u5411\u8EAB\u8FB9\u7684\u6D1B\u7483\u53D1\u51FA\u9080\u8BF7\uFF0C\u4F46\u4F60\u8BB0\u5F97\u5728\u70B9\u5934\u63A5\u53D7\u7684\u5979\u773C\u4E2D\uFF0C\u9664\u4E86\u7F9E\u6DA9\uFF0C\u66F4\u6709\u4E00\u4E1D\u60CA\u559C\u3002"
   dur: 0
@@ -889,6 +961,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 2
   text: "\u5728\u5723\u8BDE\u8282\u524D\u7684\u5E73\u5B89\u591C\uFF0C\u6709\u8BB8\u591A\u7684\u60C5\u4FA3\u50CF\u4F60\u4EEC\u4E00\u6837\u671F\u671B\u7740\u8E0F\u4E0A\u5927\u4EBA\u7684\u9636\u68AF\uFF0C\u4F46\u8FD9\u4E00\u5207\u5BF9\u4E8E\u4F60\u4EEC\u662F\u5426\u4E3A\u65F6\u5C1A\u65E9\uFF1F\u65E0\u8BBA\u662F\u4F60\u8FD8\u662F\u5979\uFF0C\u5728\u88AB\u5E97\u5458\u9886\u8FDB\u8FD9\u95F4\u7EA2\u8272\u7684\u623F\u95F4\u5185\u65F6\u90FD\u4E00\u5B9A\u6000\u63E3\u7740\u671F\u5F85\u4E0E\u7D27\u5F20\u3002"
   dur: 5
@@ -911,6 +984,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 0
   text: 
   dur: 0
@@ -953,6 +1027,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 1
+  IsOver: 0
   CardId: 2
   text: "\u4F60\u51E0\u4E4E\u8981\u5FD8\u4E86\u81EA\u5DF1\u5982\u4F55\u63A7\u5236\u7740\u597D\u50CF\u88AB\u5FFD\u7136\u6253\u4E86\u7ED3\u7684\u820C\u5934\uFF0C\u7F16\u7EC7\u8BED\u8A00\u5411\u8EAB\u8FB9\u7684\u6D1B\u7483\u53D1\u51FA\u9080\u8BF7\uFF0C\u4F46\u4F60\u8BB0\u5F97\u5728\u70B9\u5934\u63A5\u53D7\u7684\u5979\u773C\u4E2D\uFF0C\u9664\u4E86\u7F9E\u6DA9\uFF0C\u66F4\u6709\u4E00\u4E1D\u60CA\u559C\u3002"
   dur: 5
@@ -975,6 +1050,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 1
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 2
   text: "\u4F60\u51E0\u4E4E\u8981\u5FD8\u4E86\u81EA\u5DF1\u5982\u4F55\u63A7\u5236\u7740\u597D\u50CF\u88AB\u5FFD\u7136\u6253\u4E86\u7ED3\u7684\u820C\u5934\uFF0C\u7F16\u7EC7\u8BED\u8A00\u5411\u8EAB\u8FB9\u7684\u6D1B\u7483\u53D1\u51FA\u9080\u8BF7\uFF0C\u4F46\u4F60\u8BB0\u5F97\u5728\u70B9\u5934\u63A5\u53D7\u7684\u5979\u773C\u4E2D\uFF0C\u9664\u4E86\u7F9E\u6DA9\uFF0C\u66F4\u6709\u4E00\u4E1D\u60CA\u559C\u3002"
   dur: 5
@@ -997,6 +1073,7 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 0
   text: "\u7A76\u7ADF\u8BE5\u600E\u4E48\u505A\uFF0C\u624D\u80FD\u591F\u4E0E\u5979\u8DE8\u51FA\u90A3\u4E00\u6B65\u5462\uFF1F"
   dur: 5
@@ -1019,6 +1096,7 @@ MonoBehaviour:
   CreatCard: 1
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 2
   text: "\u4F60\u51E0\u4E4E\u8981\u5FD8\u4E86\u81EA\u5DF1\u5982\u4F55\u63A7\u5236\u7740\u597D\u50CF\u88AB\u5FFD\u7136\u6253\u4E86\u7ED3\u7684\u820C\u5934\uFF0C\u7F16\u7EC7\u8BED\u8A00\u5411\u8EAB\u8FB9\u7684\u6D1B\u7483\u53D1\u51FA\u9080\u8BF7\uFF0C\u4F46\u4F60\u8BB0\u5F97\u5728\u70B9\u5934\u63A5\u53D7\u7684\u5979\u773C\u4E2D\uFF0C\u9664\u4E86\u7F9E\u6DA9\uFF0C\u66F4\u6709\u4E00\u4E1D\u60CA\u559C\u3002"
   dur: 5
@@ -1041,6 +1119,7 @@ MonoBehaviour:
   CreatCard: 1
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 1
   text: 
   dur: 0
@@ -1063,7 +1142,31 @@ MonoBehaviour:
   CreatCard: 0
   CleanEye: 0
   FadePlayCanvasDark: 0
+  IsOver: 0
   CardId: 0
   text: "\u4F46\u8FD9\u4E00\u5929\u6216\u8BB8\u80FD\u4E3A\u4F60\u4EEC\u5E26\u6765\u8F6C\u673A\uFF0C\u672C\u8BE5\u662F\u53C8\u4E00\u6B21\u751C\u871C\u800C\u5E73\u6DE1\u7684\u7EA6\u4F1A\u7684\u7ED3\u5C3E\uFF0C\u5C3D\u5174\u5FD8\u6211\u7684\u4F60\u4EEC\u9519\u8FC7\u4E86\u56DE\u5BB6\u7684\u672B\u73ED\u8F66\u3002\u6B63\u5F53\u4F60\u82E6\u607C\u4E4B\u9645\uFF0C\u4E00\u5BB6\u7231\u60C5\u65C5\u9986\u7684\u9713\u8679\u706F\u7AD9\u724C\u6620\u5165\u4F60\u7684\u773C\u5E18\u3002"
+  dur: 5
+  isPauseTimeLine: 1
+--- !u!114 &8416146206372788269
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
+  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  showTalkWindow: 1
+  ShowTalkWindowText: 1
+  ShowPlayCanvas: 0
+  CreatCard: 0
+  CleanEye: 0
+  FadePlayCanvasDark: 0
+  IsOver: 1
+  CardId: 2
+  text: "\u4F46\u673A\u4E0D\u53EF\u5931\uFF0C\u4F60\u4EEC\u90FD\u6E34\u671B\u7740\u90A3\u6837\u7684\u4E00\u523B\uFF0C\u53EA\u662F\u5728\u6B64\u4E4B\u524D\u9700\u8981\u4E00\u70B9\u70B9\u60C5\u8C03\u4E0A\u7684\u8425\u9020\u3002\u7A97\u5916\u5F00\u59CB\u98D8\u843D\u7684\u6D01\u767D\u96EA\u82B1\uFF0C\u90FD\u4EFF\u4F5B\u5728\u4E3A\u4F60\u4EEC\u70B9\u7F00\u7740\u6D6A\u6F2B\u7684\u6C1B\u56F4\u3002"
   dur: 5
   isPauseTimeLine: 1
