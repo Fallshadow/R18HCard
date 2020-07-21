@@ -8,8 +8,17 @@ namespace act.game
     {
         TableMain = 0,
     }
+
+    public enum CameraPos
+    {
+        NewPlayer_OnlyLeg = 0,
+        NewPlayer_RiseHead = 1,
+    }
     public class MoveCamera : SingletonMonoBehavior<MoveCamera>
     {
+        [Header("这里是相机对应的位置哦")]
+        public Vector3[] pos;
+
         public float speed = 100;
 
         public game.CameraType ct = game.CameraType.TableMain;
@@ -48,6 +57,10 @@ namespace act.game
                     break;
             }
 
+        }
+        public void SetCameraPos(Vector3 camPos)
+        {
+            transform.position = camPos;
         }
 
         public void SetPosAndRot(Vector3 pos, Vector3 rot)

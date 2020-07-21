@@ -385,6 +385,12 @@ namespace act.ui
                     );
             }
             LayoutRefresh();
+
+            if(game.GameController.instance.isInNewPlayFlow)
+            {
+                act.game.TimeLineMgr.instance.ResumeTimeLine(act.game.TimeLineMgr.instance.newPlayerDir);
+            }
+
         }
 
         //卡牌退出槽
@@ -409,6 +415,11 @@ namespace act.ui
         #region BTN
         public void UseCard()
         {
+            if(game.GameController.instance.isInNewPlayFlow)
+            {
+                act.game.TimeLineMgr.instance.ResumeTimeLine(act.game.TimeLineMgr.instance.newPlayerDir);
+            }
+
             if(game.GameFlowMgr.instance.CurEvent != null && game.GameFlowMgr.instance.CurCard != null)
             {
                 if(game.GameFlowMgr.instance.CurEvent.config.ID == 28)

@@ -309,6 +309,8 @@ namespace act.ui
 
 
         #region NewPlayerFlow
+
+
         public void ShowDrak(bool isActive)
         {
             dark.enabled = isActive;

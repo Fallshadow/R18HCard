@@ -14,6 +14,7 @@ namespace act.ui
         public float dur;
         public Image dark;
         public GameObject textShow;
+        public Material material;
 
         private string contenttext;
         private bool isFirst = true;
@@ -27,7 +28,9 @@ namespace act.ui
             content.DOKill();
             contenttext = "";
             content.text = contenttext;
-            textShow.SetActive(false);
+            //textShow.SetActive(false);
+            textShow.GetOrAddComponent<CanvasGroup>().interactable = false;
+            material.DOFloat(-1, "_IntensityU", 1);
         }
         public void ResetTextString(string text)
         {
@@ -39,7 +42,9 @@ namespace act.ui
         {
             contenttext = "";
             content.text = contenttext;
-            textShow.SetActive(false);
+            //textShow.SetActive(false);
+            textShow.GetOrAddComponent<CanvasGroup>().interactable = false;
+            material.DOFloat(-1, "_IntensityU", 1);
         }
 
         public void FadeDark(float dur)
@@ -52,6 +57,8 @@ namespace act.ui
             ResetText();
             
             textShow.SetActive(true);
+            textShow.GetOrAddComponent<CanvasGroup>().interactable = true;
+            material.DOFloat(1, "_IntensityU", 1);
             contenttext = text;
             content.DOText(text, dur).OnComplete(()=> { isFirst = false; });
         }
@@ -64,11 +71,14 @@ namespace act.ui
         {
             base.onShow();
             canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
         }
         protected override void onClose()
         {
             base.onClose();
             canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+
         }
         public void Click()
         {
@@ -81,7 +91,6 @@ namespace act.ui
             {
                 isFirst = true;
                 game.TimeLineMgr.instance.ResumeTimeLine(game.TimeLineMgr.instance.newPlayerDir);
-                Close();
             }
         }
         public override void Initialize()

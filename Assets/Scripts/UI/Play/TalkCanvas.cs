@@ -15,6 +15,7 @@ namespace act.ui
         public float talkTime;
         public Button hideTalkContent;
         public Button showTalkContent;
+        public Button NextBtn;
         public CanvasGroup canvasGroup;
         public override void Initialize()
         {
@@ -31,27 +32,33 @@ namespace act.ui
 
         }
 
-        public void HideCanvas()
+        public void ShowCanvas()
         {
             Debug.Log("____________________");
             showTalkContent.gameObject.SetActive(true);
             hideTalkContent.interactable = false;
             canvasGroup.DOKill();
-            canvasGroup.DOFade(0, 0.5f);
+            canvasGroup.DOFade(1, 0.5f);
         }
 
-        public void ShowCanvas()
+        public void HideCanvas()
         {
             showTalkContent.gameObject.SetActive(false);
             hideTalkContent.interactable = true;
             canvasGroup.DOKill();
-            canvasGroup.DOFade(1, 0.5f);
+            canvasGroup.DOFade(0, 0.5f);
         }
 
         protected override void onShow()
         {
             talkContent.text = "";
             talkContent.DOText(talkContentString, talkTime);
+        }
+
+        public void SetNextBtn(UnityEngine.Events.UnityAction action)
+        {
+            NextBtn.onClick.RemoveAllListeners();
+            NextBtn.onClick.AddListener(action);
         }
     }
 }

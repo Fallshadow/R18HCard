@@ -12,7 +12,7 @@ namespace act.fsm
             Debug.Log("进入状态：回合开始");
             if(game.GameController.instance.isInNewPlayFlow)
             {
-                game.GameController.instance.isInNewPlayFlow = false;
+                
             }
             else
             {

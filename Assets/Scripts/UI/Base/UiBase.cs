@@ -104,7 +104,7 @@ namespace act.ui
 
         public void Open(Action<UiBase> closeCompleteCb, Action openCompleteCb = null)
         {
-            if (onCloseCompleteHandler != null)
+            if (openCompleteCb != null)
             {
                 //debug.PrintSystem.LogWarning($"[UserInterfaceBase] UI has already open. Name: {gameObject.name}");
                 openCompleteCb?.Invoke();
@@ -122,6 +122,7 @@ namespace act.ui
         {
             if (onCloseCompleteHandler == null)
             {
+                onClose();
                 //debug.PrintSystem.LogWarning($"[UserInterfaceBase] UI has already closed. Name: {gameObject.name}");
                 completeCb?.Invoke();
                 return;
