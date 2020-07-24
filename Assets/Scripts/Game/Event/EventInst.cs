@@ -127,6 +127,7 @@ namespace act.game
         public void DestorySelf()
         {
             GameFlowMgr.instance.eventInsts.Remove(this);
+            GameFlowCdtAndEft.instance.RemoveCECToListByID(UniqueId);
         }
         public bool CheckAndExcuteSPByBlend()
         {

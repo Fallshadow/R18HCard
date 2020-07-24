@@ -96,7 +96,7 @@ namespace act.game
                 case ConditionId.CI_13:
                     return true;
                 case ConditionId.CI_14:
-                    return game.RandomNumMgr.instance.curTouziCheckNum == 6;
+                    return game.RandomNumMgr.instance.justTouziCheckNum == 6;
                 case ConditionId.CI_15:
                     return true;
                 case ConditionId.CI_16:

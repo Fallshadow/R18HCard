@@ -11,6 +11,7 @@ namespace act.game
         public float initTouziNum = 1;
         public float initUseTouziTime = 1;
         public float curTouziCheckNum = 0;
+        public float justTouziCheckNum = 0;
         public List<float> futureTimeRandomNum = new List<float>();
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace act.game
             maxNum = curTouziCheckNum;
             Debug.Log($"当前骰子应该的数值curTouziCheckNum:{curTouziCheckNum}");
             Debug.Log($"当前result数值:{result[0]}");
+            justTouziCheckNum = result[0];
             ResetUseTouziTime();
         }
         public void ResetTouziNum()

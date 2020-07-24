@@ -50,6 +50,10 @@ namespace act.ui
             }
         }
 
+        private void OnDestroy()
+        {
+            int i = 0;
+        }
         public void Init()
         {
             config = GetComponent<EventReference>();
