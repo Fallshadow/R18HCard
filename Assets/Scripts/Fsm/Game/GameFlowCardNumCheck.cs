@@ -44,6 +44,7 @@ namespace act.fsm
         public void TouziCallBack()
         {
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckOverCEC);
+            //可以在这里处理加持数
             game.GameFlowMgr.instance.RandomNum = game.RollTouZiManager.instance.maxNum;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
             if(!game.GameFlowMgr.instance.CurCard.ExcuteCheck())

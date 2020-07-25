@@ -31,6 +31,7 @@ namespace act.game
                 if (roundNum == 0)
                 {
                     HasRoundNum0 = true;
+                    GameFlowCdtAndEft.instance.RemoveCECToListByID(UniqueId);
                     evt.EventManager.instance.Send(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_Over);
                 }
                 if(roundNum == -1)

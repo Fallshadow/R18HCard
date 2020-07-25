@@ -199,8 +199,8 @@ namespace act.ui
             processChangeSequence.Append(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), processDuration));
             processChangeSequence.Join(material_Process_Num.DOFloat(progress / 100, "_Progress", processDuration)
                 .OnUpdate(() => {
-                    Debug.Log(material_Process_Num.GetFloat("_Progress"));
-                    Debug.Log(Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f)));
+                    //Debug.Log(material_Process_Num.GetFloat("_Progress"));
+                    //Debug.Log(Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f)));
                     text_Process_Num.text = (Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f))).ToString(); }));
         }
         public void ShowHPNum()

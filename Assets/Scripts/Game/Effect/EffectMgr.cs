@@ -92,7 +92,7 @@ namespace act.game
                     }
                     return;
                 case EffectId.EI_5:
-                    RandomNumMgr.instance.curUseTouziTime = (int)vars[0];
+                    RandomNumMgr.instance.curTouziNum += (int)vars[0];
                     return;
                 case EffectId.EI_6:
                     GameFlowMgr.instance.CurCard.Canuse = true;//TODO:需要能使用
@@ -108,7 +108,7 @@ namespace act.game
                     GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].config.type;
                     return;
                 case EffectId.EI_10:
-                    GameFlowMgr.instance.RandomNum += (int)vars[0];
+                    RandomNumMgr.instance.nextAddCheckNum += (int)vars[0];
                     return;
                 case EffectId.EI_11:
                     //TODO:调用CG   ！临时用跳跃代替

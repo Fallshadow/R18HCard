@@ -240,7 +240,7 @@ namespace act.ui
         }
         private void OnMouseEnter()
         {
-            Debug.Log("自发光");
+            //Debug.Log("自发光");
         }
         //TODO:写在动画最后一帧
         public void DestoryEvent()

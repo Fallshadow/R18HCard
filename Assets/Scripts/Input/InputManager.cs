@@ -22,8 +22,6 @@ namespace act.input
             if(Input.GetMouseButtonDown(0))
             {
                 mouseClick.GetComponent<RectTransform>().anchoredPosition = Input.mousePosition;
-                Debug.Log(mouseClick.GetComponent<RectTransform>().anchoredPosition);
-                Debug.Log(Input.mousePosition);
                 mouseClick.Play();
             }
         }

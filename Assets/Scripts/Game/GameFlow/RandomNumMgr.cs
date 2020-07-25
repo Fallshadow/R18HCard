@@ -7,11 +7,10 @@ namespace act.game
     public class RandomNumMgr : Singleton<RandomNumMgr>
     {
         public float curTouziNum = 1;
-        public float curUseTouziTime = 1;
         public float initTouziNum = 1;
-        public float initUseTouziTime = 1;
         public float curTouziCheckNum = 0;
         public float justTouziCheckNum = 0;
+        public float nextAddCheckNum = 0;//加持骰子点数
         public List<float> futureTimeRandomNum = new List<float>();
 
         /// <summary>
@@ -26,7 +25,7 @@ namespace act.game
             //要不要判断一下骰子数和当前要到达的数值。。
             futureTimeRandomNum[timeNum - 1] = number;
         }
-
+        //result才是骰子投出来的
         public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum)
         {
             result = new List<float>();
@@ -57,20 +56,16 @@ namespace act.game
             {
                 curTouziCheckNum = Mathf.Max(item, curTouziCheckNum);
             }
-            maxNum = curTouziCheckNum;
-            Debug.Log($"当前骰子应该的数值curTouziCheckNum:{curTouziCheckNum}");
-            Debug.Log($"当前result数值:{result[0]}");
-            justTouziCheckNum = result[0];
-            ResetUseTouziTime();
+            maxNum = curTouziCheckNum + nextAddCheckNum;
+            maxNum = Mathf.Clamp(maxNum, 1, 6);
+            Debug.Log($"当前result数值:{maxNum}");
+            justTouziCheckNum = maxNum;
+            nextAddCheckNum = 0;
         }
         public void ResetTouziNum()
         {
             curTouziNum = initTouziNum;
             curTouziCheckNum = 1;
-        }
-        public void ResetUseTouziTime()
-        {
-            curUseTouziTime = initUseTouziTime;
         }
     }
 }

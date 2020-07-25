@@ -41,6 +41,8 @@ namespace act.fsm
         //结束回合无返回
         public void EndRound()
         {
+            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.RoundEndCEC);
+
             //在场的事件数量
             int tempCount = game.GameFlowMgr.instance.eventInsts.Count;
 

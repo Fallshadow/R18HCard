@@ -188,6 +188,7 @@ namespace act.ui
                 }
             }
             Img_Bg.sprite = UiManager.instance.GetSprite($"determine_bg{tempCardSlot}", "PlayCanvas");
+            CheckBtn.gameObject.SetActive(tempCardSlot != 0);
             Img_Bg.SetNativeSize();
             for(int i = 0; i < tempCardSlot; i++)
             {
@@ -198,7 +199,7 @@ namespace act.ui
             {
                 ShowRoundOverDescTip();
             }
-            CheckBtn.gameObject.SetActive(true);
+            
             (verLayputGroup.transform as RectTransform).anchorMin = new Vector2(0, 1);
             (verLayputGroup.transform as RectTransform).anchorMax = new Vector2(0, 1);
             LayoutRebuilder.ForceRebuildLayoutImmediate(verLayputGroup.transform as RectTransform);
@@ -346,14 +347,23 @@ namespace act.ui
             SText_EventCard_Desc_Title.gameObject.SetActive(false);
             SText_Desc.Localize(curEventInst.config.desc_SuccResult, "ui_system");
             LayoutRefresh();
+            CheckComp();
         }
 
+        private void CheckComp()
+        {
+            if(curEventInst.HasComplete)
+            {
+                CheckBtn.gameObject.SetActive(false);
+            }
+        }
         public void ShowDefDescTip()
         {
             SText_Com_Desc.gameObject.SetActive(true);
             SText_Com_Desc_Title.gameObject.SetActive(true);
             SText_Com_Desc.Localize(curEventInst.config.desc_DefResult, "ui_system");
             LayoutRefresh();
+            CheckComp();
         }
 
         //事件roundover
