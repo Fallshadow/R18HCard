@@ -28,7 +28,7 @@ event_id,event_name,event_desc,event_SP_desc,event_common_desc,event_succResult_
 27,event_name27,event_desc27,event_desc_SP27,event_common_desc27,event_result_desc27,event_defResult_desc27,event_roundOver_desc27,0,,,,,,,,,,,,
 28,event_name28,event_desc28,event_desc_SP28,event_common_desc28,event_result_desc28,event_defResult_desc28,event_roundOver_desc28,2,4,0,4_16,23;20_21_22_28,1,0,1,0,,,,
 29,event_name29,event_desc29,event_desc_SP29,event_common_desc29,event_result_desc29,event_defResult_desc29,event_roundOver_desc29,9,,,,,2,0,2_4,5;9,,,,
-30,event_name30,event_desc30,event_desc_SP30,event_common_desc30,event_result_desc30,event_defResult_desc30,event_roundOver_desc30,9,,,,,1,1_2_3,2,10,,,,
+30,event_name30,event_desc30,event_desc_SP30,event_common_desc30,event_result_desc30,event_defResult_desc30,event_roundOver_desc30,9,,,,,22,0,2,10,,,,
 31,event_name31,event_desc31,event_desc_SP31,event_common_desc31,event_result_desc31,event_defResult_desc31,event_roundOver_desc31,0,,,,,,,,,,,,
 32,event_name32,event_desc32,event_desc_SP32,event_common_desc32,event_result_desc32,event_defResult_desc32,event_roundOver_desc32,0,,,,,,,,,,,,
 33,event_name33,event_desc33,event_desc_SP33,event_common_desc33,event_result_desc33,event_defResult_desc33,event_roundOver_desc33,0,15_2,0;0,1_14,10;0,8,0,1,0,,,,
