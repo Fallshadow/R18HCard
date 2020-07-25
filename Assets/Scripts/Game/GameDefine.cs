@@ -57,7 +57,8 @@ namespace act.game
         CI_19,
         CI_20,
         CI_21,
-        CI_22,
+        CI_22,   
+        CI_23,
         CI_24,
     }
 

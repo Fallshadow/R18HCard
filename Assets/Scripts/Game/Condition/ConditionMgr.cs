@@ -120,6 +120,8 @@ namespace act.game
                     return true;
                 case ConditionId.CI_23:
                     return true;
+                case ConditionId.CI_24:
+                    return true;
                 default:
                     break;
             }
