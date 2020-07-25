@@ -187,7 +187,7 @@ namespace act.ui
                 (
                     tempPointGo.gameObject.name == $"CardType{card_inst.config.type}"
                     || tempPointGo.gameObject.name == $"CardType"
-                    || tempPointGo.gameObject.name == $"CardType{card_inst.config.ID}"
+                    || tempPointGo.gameObject.name == $"CardTypeID{card_inst.config.ID}"
                 )
              )
             {

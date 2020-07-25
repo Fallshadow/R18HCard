@@ -169,7 +169,7 @@ namespace act.ui
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
                         Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{game.CardMgr.instance.GetCardDataByID((int)item.numVars[0]).type}", "PlayCanvas");
-                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType{item.numVars[0]}";
+                        Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardTypeID{item.numVars[0]}";
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 2)
