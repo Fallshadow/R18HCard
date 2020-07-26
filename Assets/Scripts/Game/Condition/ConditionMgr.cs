@@ -76,8 +76,14 @@ namespace act.game
                     return (GameFlowMgr.instance.CurCard.config.ID == vars[0])
                         ? true : false;
                 case ConditionId.CI_4:
-                    return (GameFlowMgr.instance.CurEvent.RoundNum == 0)
-                        ? true : false;
+                    foreach(var item in GameFlowMgr.instance.eventInsts)
+                    {
+                        if(item.config.ID == vars[0] && item.RoundNum == 0)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
                 case ConditionId.CI_5:
                     return GameFlowMgr.instance.IsCurEventContain((int)vars[0]);
                 case ConditionId.CI_6:
@@ -122,6 +128,18 @@ namespace act.game
                     return true;
                 case ConditionId.CI_24:
                     return true;
+                case ConditionId.CI_25:
+                    if(GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_26:
+                    if(GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
                 default:
                     break;
             }

@@ -353,6 +353,7 @@ event_card_desc37=不要停下来啊！
 
 
 condition_desc5=回合开始时此ID事件在场的话（随事件消失）
+condition_desc4=回合结束时改ID事件在场且事件回合数为0的话
 condition_desc7=打入卡牌时当前事件是此ID事件的话（随事件消失）
 condition_desc18=开始检验时
 condition_desc19=卡牌使用后

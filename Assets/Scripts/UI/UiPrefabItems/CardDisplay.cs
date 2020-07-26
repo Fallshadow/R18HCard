@@ -45,6 +45,7 @@ namespace act.ui
             tempParent = transform.parent;
             InitPos = rectTrans.position;
             InitSizeDelta = rectTrans.sizeDelta;
+            evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh, refreshSelf);
             evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
             evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
@@ -179,6 +180,22 @@ namespace act.ui
             {
                 return false;
             }
+            if(card_inst.config.ID == 11)
+            {
+                bool canUse = false;
+                foreach(var item in game.GameFlowMgr.instance.cardInsts)
+                {
+                    if(!item.Canuse)
+                    {
+                        canUse = true;
+                        break;
+                    }
+                }
+                if(canUse == false)
+                {
+                    return canUse;
+                }
+            }
             game.GameFlowMgr.instance.CurCard = card_inst;
             Debug.Log($"tempPointGo：{tempPointGo}");
             if(tempPointGo != null
@@ -210,8 +227,13 @@ namespace act.ui
             GameObject.Destroy(this.gameObject);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Refresh_HandCard_Delay);
         }
+        private void refreshSelf()
+        {
+            SetInst(card_inst);
+        }
         private void OnDestroy()
         {
+            evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh,refreshSelf);
             evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
             evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
