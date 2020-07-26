@@ -59,7 +59,7 @@ namespace act.ui
             config = GetComponent<EventReference>();
 
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Register(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
+            evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -70,7 +70,7 @@ namespace act.ui
         public void Release()
         {
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
-            evt.EventManager.instance.Unregister(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
@@ -122,8 +122,12 @@ namespace act.ui
             }
         }
 
-        public void CheckDestoryEventByEventRoundOver()
+        public void CheckDestoryEventByEventRoundOver(int id)
         {
+            if(event_inst.UniqueId != id)
+            {
+                return;
+            }
             if(event_inst.HasCompleteWaitRoundOver)
             {
                 Hide();

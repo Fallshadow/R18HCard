@@ -20,6 +20,7 @@ namespace act.game
                 conditionInst.desc = string.Format(conditionInst.desc, item);
             }
             eventIds = ConfigDataMgr.ReturnObjectArraryBySplitString<int>(config.events_id, '_');
+            Debug.Log($"条件ID{processData.condition_id}成功");
         }
     }
 }

@@ -99,7 +99,6 @@ namespace act.game
                     return;
                 case EffectId.EI_7:
                     GameFlowMgr.instance.CurEvent.RoundNum += (int)vars[0];
-
                     return;
                 case EffectId.EI_8:
                     GameFlowMgr.instance.Hp += (int)vars[0];
