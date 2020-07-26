@@ -166,7 +166,7 @@ Material:
     - _OverallShadowColorPower: 1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.3
+    - _PointSpotlightIntensity: 0.51
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
     - _ReduceTextureQuality: 0

@@ -140,7 +140,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HighColor_Power: 0.648
+    - _HighColor_Power: 1
     - _IndirectLightMultiplier: 0.73
     - _Inverse_MatcapMask: 0
     - _Inverse_Z_Axis_BLD: 1
