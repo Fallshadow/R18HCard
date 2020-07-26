@@ -78,7 +78,7 @@ namespace act.game
                 case ConditionId.CI_4:
                     foreach(var item in GameFlowMgr.instance.eventInsts)
                     {
-                        if(item.config.ID == vars[0] && item.RoundNum == 0)
+                        if(item.config.ID == vars[0] && item.RoundNum == 1)
                         {
                             return true;
                         }

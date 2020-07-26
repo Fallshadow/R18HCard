@@ -361,6 +361,7 @@ condition_desc19=卡牌使用后
 condition_desc21=回合结束时此ID事件在场的话（随事件消失）
 
 desc1=改变气氛值
+desc4=加事件
 desc6=使当前卡牌依然可用
 desc8=血量减少
 desc10=鉴定数值变化

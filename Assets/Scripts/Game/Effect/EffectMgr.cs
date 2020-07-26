@@ -122,7 +122,7 @@ namespace act.game
                     act.game.ModelController.instance.ChangeAction((Action)vars[0], false);
                     return;
                 case EffectId.EI_12:
-                    if (GameFlowMgr.instance.CurEvent.config.ID == (int)vars[0])
+                    if (GameFlowMgr.instance.CurCard.config.ID == (int)vars[0])
                     {
                         GameFlowMgr.instance.CurCard.DestorySelf();
                     }
