@@ -89,6 +89,7 @@ namespace act.ui
             }
             else
             {
+                AudioMgr.instance.PlaySound(AudioClips.AC_kuang);
                 isFirst = true;
                 game.TimeLineMgr.instance.ResumeTimeLine(game.TimeLineMgr.instance.newPlayerDir);
             }

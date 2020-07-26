@@ -65,7 +65,7 @@ namespace act.ui
                 title.gameObject.SetActive(false);
                 textBtn.interactable = true;
                 PingPong(0,0.6f,1);
-                AudioMgr.instance.PlayMusicFade(AudioClips.AC_Menu);
+                AudioMgr.instance.PlayMusicFade(AudioClips.AC_TitleBGM);
             });
         }
         private void PingPong(float from,float to,float dur)
@@ -94,22 +94,27 @@ namespace act.ui
             FadeSeq.Append(textBtn.DOFade(1, 0));
             FadeSeq.Append(textBtn.DOFade(0, 1));
             FadeSeq.Append(interBtn.DOFade(1, 1));
-            AudioMgr.instance.PlaySound(AudioClips.AC_Btn);
+            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
         }
         public void ExitBtn()
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
             Application.Quit();
         }
         public void Play()
         {
             Hide();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
+            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
         }
         public void RePlay()
         {
             Hide();
             game.GameFlowMgr.instance.ClearData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
+            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
         }
         #endregion
     }

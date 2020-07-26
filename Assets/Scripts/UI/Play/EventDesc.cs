@@ -176,6 +176,10 @@ namespace act.ui
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType{item.numVars[0]}", "PlayCanvas");
                         Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowType{item.numVars[0]}", "PlayCanvas");
                         Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType{item.numVars[0]}";
+                        if(item.numVars[0] == 0)
+                        {
+                            continue;
+                        }
                         tempCardSlot++;
                     }
                     else if(item.config.ID == 3)
@@ -185,9 +189,10 @@ namespace act.ui
                         Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardTypeID{item.numVars[0]}";
                         tempCardSlot++;
                     }
-                    else if(item.config.ID == 2)
+                    else if(item.config.ID == 22)
                     {
                         Image_CardSlot[tempCardSlot].sprite = UiManager.instance.GetSprite($"EventType", "PlayCanvas");
+                        Img_Event_Bg.sprite = UiManager.instance.GetSprite($"EventShowTypeAll", "PlayCanvas");
                         Image_CardSlot[tempCardSlot].transform.parent.gameObject.name = $"CardType";
                         tempCardSlot++;
                     }
@@ -438,11 +443,11 @@ namespace act.ui
         #region BTN
         public void UseCard()
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_PlayClick);
             if(game.GameController.instance.isInNewPlayFlow)
             {
                 act.game.TimeLineMgr.instance.ResumeTimeLine(act.game.TimeLineMgr.instance.newPlayerDir);
             }
-
             if(game.GameFlowMgr.instance.CurEvent != null && game.GameFlowMgr.instance.CurCard != null)
             {
                 if(game.GameFlowMgr.instance.CurEvent.config.ID == 28)
@@ -492,6 +497,7 @@ namespace act.ui
             game.GameFlowMgr.instance.CurEvent.CheckHasComplete();
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
+            evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over);
         }
 
         public void Def()

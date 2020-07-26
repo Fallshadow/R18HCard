@@ -244,10 +244,12 @@ namespace act.ui
         #region Btn
         public void EndRound()
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_PlayClick);
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
         }
         public void ReturnToMain()
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_PlayClick);
             Hide();
             ResetShow();
             foreach(var item in eventOGS)

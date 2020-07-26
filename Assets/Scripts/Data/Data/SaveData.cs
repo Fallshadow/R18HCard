@@ -10,8 +10,9 @@ namespace act.data
     public class SaveData
     {
         public int RoundNum = 1;
-        public int HP = 100;
+        public int HP = 6;
         public float process = 0;
+        public int num21 = 0;
         public EventInst curEvent;
         public CardInst curCard;
         public List<bool> curEventResults = new List<bool>();
@@ -19,5 +20,7 @@ namespace act.data
         public List<EventInst> hadSolvecardInsts = new List<EventInst>();
         public List<CardInst> cardInsts = new List<CardInst>();
         public List<CardInst> hadUsecardInsts = new List<CardInst>();
+
+        public bool processE29Time = false;
     }
 }

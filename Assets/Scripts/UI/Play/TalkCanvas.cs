@@ -59,6 +59,9 @@ namespace act.ui
         {
             NextBtn.onClick.RemoveAllListeners();
             NextBtn.onClick.AddListener(action);
+            NextBtn.onClick.AddListener(() => {
+                AudioMgr.instance.PlaySound(AudioClips.AC_kuang);
+            });
         }
     }
 }

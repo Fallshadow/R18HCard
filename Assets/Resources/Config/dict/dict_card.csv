@@ -9,7 +9,7 @@ card_id,card_level,card_name,card_img,card_desc,card_desc_SP,card_verification_n
 8,1,card_name8,img8,card_desc8,card_desc_SP8,2,3,2,0,1_13,5;17_111111_6,,,,
 9,2,card_name9,img9,card_desc9,card_desc_SP9,2,2,24,0,9,9,,,,
 10,1,card_name10,img10,card_desc10,card_desc_SP10,3,4,2,0,1,10,,,,
-11,2,card_name11,img11,card_desc11,card_desc_SP11,3,1,26,11,6,0,25,11,5,1
+11,2,card_name11,img11,card_desc11,card_desc_SP11,3,1,25,11,5,1,,,,
 12,1,card_name12,img12,card_desc12,card_desc_SP12,1,4,2,0,23_12,2;12,,,,
 13,2,card_name13,img13,card_desc13,card_desc_SP13,1,4,,,,,,,,
 14,3,card_name14,img14,card_desc14,card_desc_SP14,,,,,,,,,,

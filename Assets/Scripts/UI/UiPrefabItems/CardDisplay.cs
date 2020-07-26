@@ -46,9 +46,27 @@ namespace act.ui
             InitPos = rectTrans.position;
             InitSizeDelta = rectTrans.sizeDelta;
             evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh, refreshSelf);
+            evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over, returnToHand);
             evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
             evt.EventManager.instance.Register<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
+        }
+        private void OnDestroy()
+        {
+            evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over, returnToHand);
+            evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh, refreshSelf);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
+            evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
+        }
+        private void returnToHand()
+        {
+            if(isLockedSlot)
+            {
+                game.GameFlowMgr.instance.CurCard = null;
+                evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Exit_Slot);
+                ResetToCardGroup();
+            }
         }
 
         private void SetTextColor(Color color)
@@ -231,13 +249,7 @@ namespace act.ui
         {
             SetInst(card_inst);
         }
-        private void OnDestroy()
-        {
-            evt.EventManager.instance.Unregister(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh,refreshSelf);
-            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Destory, CheckCardDestroy);
-            evt.EventManager.instance.Unregister<int>(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh_Use, ChangeDisplay);
-            evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, ResetToCardGroup);
-        }
+
         public void ChangeDisplay(int id)
         {
             if (card_inst.UniqueId != id)

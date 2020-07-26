@@ -56,6 +56,7 @@ namespace act.evt
         Card_Enter_Slot,
         Card_Exit_Slot,
         Card_Refresh,//刷新自身卡牌的显示
+        Card_Use_Over,//卡牌使用结束
 
     }
     public enum EventEvent : short

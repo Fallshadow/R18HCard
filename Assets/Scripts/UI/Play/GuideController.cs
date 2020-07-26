@@ -102,6 +102,7 @@ public class GuideController : SingletonMonoBehavior<GuideController>
         images[(int)guideType].GetOrAddComponent<Button>().onClick.AddListener(() =>
         {
             act.game.TimeLineMgr.instance.ResumeTimeLine(act.game.TimeLineMgr.instance.newPlayerDir);
+            AudioMgr.instance.PlaySound(AudioClips.AC_kuang);
         });
 
         CheckType checkType = CheckGuideType(guideType);

@@ -19,16 +19,16 @@ namespace act.game
             set
             {
                 twoOneNum = value;
-                if(twoOneNum == 21)
-                {
-                    CurEvent.HasComplete = true;
-                    twoOneNum = 0;
-                }
-                else if(twoOneNum > 21)
-                {
-                    twoOneNum = 0;
-                }
-                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne);
+                //if(twoOneNum == 21)
+                //{
+                //    CurEvent.HasComplete = true;
+                //    twoOneNum = 0;
+                //}
+                //else if(twoOneNum > 21)
+                //{
+                //    twoOneNum = 0;
+                //}
+                //evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne);
             }
         }
         private int twoOneNum = 0;
@@ -74,6 +74,10 @@ namespace act.game
             }
         }
         private int roundNum = 1;
+
+        private int processE29Value = 50;//气氛值达到50时
+        private bool processE29Time = false;//气氛值达到50时第一次才出发29
+
         public float Process
         {
             get
@@ -82,11 +86,31 @@ namespace act.game
             }
             set
             {
-                process = Mathf.Clamp(value, 0, 100);
-                if(process == 100)
+                if(process >= value)
                 {
-                    
+
                 }
+                else
+                {
+                    AudioMgr.instance.PlaySound(AudioClips.AC_ProcessGet);
+                }
+                process = value;
+                if(process < 0)
+                {
+                    process = 0;
+                }
+               
+                if(process >= processE29Value && processE29Time == false)
+                {
+                    processE29Time = true;
+                    PushEventToTable(29);
+                }
+
+                //process = Mathf.Clamp(value, 0, 100);
+                //if(process == 100)
+                //{
+                    
+                //}
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change,false);
             }
         }
@@ -164,6 +188,8 @@ namespace act.game
             Process = 0;
             CurCard = null;
             CurEvent = null;
+            twoOneNum = 0;
+            processE29Time = false;
             curEventResults.Clear();
             eventInsts.Clear();
             cardInsts.Clear();
@@ -185,12 +211,14 @@ namespace act.game
             CurEvent = saveData.curEvent;
             curEventResults = saveData.curEventResults;
             eventInsts = saveData.eventInsts;
+            twoOneNum = saveData.num21;
             cardInsts = saveData.cardInsts;
             hadUsecardInsts = saveData.hadUsecardInsts;
             hadSolveEventInsts = saveData.hadSolvecardInsts;
             RoundNum = saveData.RoundNum;
             Hp = saveData.HP;
             Process = saveData.process;
+            processE29Time = saveData.processE29Time;
             ReShowData();
         }
 
@@ -206,6 +234,9 @@ namespace act.game
             saveData.hadSolvecardInsts = hadSolveEventInsts;
             saveData.RoundNum = RoundNum;
             saveData.HP = Hp;
+            saveData.num21 = twoOneNum;
+            saveData.processE29Time = processE29Time;
+
             saveData.process = Process;
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
@@ -385,7 +416,7 @@ namespace act.game
         public List<ConditionEffectConfig> curTotalCEC = new List<ConditionEffectConfig>();
 
         public List<ConditionEffectConfig> RoundStartCEC = new List<ConditionEffectConfig>();
-        public List<ConditionEffectConfig> CardCheckCEC = new List<ConditionEffectConfig>();
+        public List<ConditionEffectConfig> CardWaitCheckCEC = new List<ConditionEffectConfig>();
         public List<ConditionEffectConfig> CardNumCheckStartCEC = new List<ConditionEffectConfig>();
         public List<ConditionEffectConfig> CardNumCheckOverCEC = new List<ConditionEffectConfig>();
         public List<ConditionEffectConfig> CardNumCheckSuccCEC = new List<ConditionEffectConfig>();
@@ -415,7 +446,7 @@ namespace act.game
                     RoundStartCEC.Add(CEC);
                     break;
                 case TimePoint.TP_CardCheck:
-                    CardCheckCEC.Add(CEC);
+                    CardWaitCheckCEC.Add(CEC);
                     break;
                 case TimePoint.TP_CardNumCheckStart:
                     CardNumCheckStartCEC.Add(CEC);
@@ -468,7 +499,7 @@ namespace act.game
                     RoundStartCEC.Remove(CEC);
                     break;
                 case TimePoint.TP_CardCheck:
-                    CardCheckCEC.Remove(CEC);
+                    CardWaitCheckCEC.Remove(CEC);
                     break;
                 case TimePoint.TP_CardNumCheckStart:
                     CardNumCheckStartCEC.Remove(CEC);

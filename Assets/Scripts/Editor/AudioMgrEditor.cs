@@ -9,11 +9,14 @@ public class AudioMgrEditor : Editor
 {
     private ReorderableList audioClips;
     private SerializedProperty Dur;
-
+    private SerializedProperty outDur;
     private SerializedProperty MU1;
     private SerializedProperty MU2;
+    private SerializedProperty Envir;
+    private SerializedProperty MaxVol;
 
-    private SerializedProperty SOUND;
+
+    private SerializedProperty SOUND; 
     private void OnEnable()
     {
         audioClips = new ReorderableList(serializedObject, serializedObject.FindProperty("audioClips")
@@ -67,8 +70,12 @@ public class AudioMgrEditor : Editor
 
         Dur = serializedObject.FindProperty("dur");
         MU1 = serializedObject.FindProperty("musicAS1");
-        MU2 = serializedObject.FindProperty("musicAS2");
+        
+MU2 = serializedObject.FindProperty("musicAS2");
+        Envir = serializedObject.FindProperty("musicEnvir");
         SOUND = serializedObject.FindProperty("soundAS");
+        MaxVol = serializedObject.FindProperty("MaxVol");
+        outDur = serializedObject.FindProperty("outDur");
     }
 
     public override void OnInspectorGUI()
@@ -78,7 +85,11 @@ public class AudioMgrEditor : Editor
         EditorGUILayout.PropertyField(Dur, true);
         EditorGUILayout.PropertyField(MU1, true);
         EditorGUILayout.PropertyField(MU2, true);
+        EditorGUILayout.PropertyField(Envir, true);
         EditorGUILayout.PropertyField(SOUND, true);
+        EditorGUILayout.PropertyField(MaxVol, true);
+        EditorGUILayout.PropertyField(outDur, true);
+        
         serializedObject.ApplyModifiedProperties();
     }
 }

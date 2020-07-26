@@ -5,23 +5,33 @@ using DG.Tweening;
 
 public enum AudioClips
 {
-    AC_Btn = 0,
-    AC_Menu = 1,
-    AC_Title = 2,
-    AC_RoundOver = 3,
+    AC_Envir = 0,//环境音
+    AC_Title = 1,//尼古拉斯标题音
+    AC_kuang = 2,//教程和对话框音
+    AC_TitleBGM = 3,//标题界面BGN
+    AC_ClickEvent = 4,//点击事件
+    AC_OneBGM = 5,//第一阶段
+    AC_TwoBGM = 6,//第二阶段
+    AC_PlayClick = 7,//游玩界面按钮
+    AC_ProcessGet = 8,//进度值获取
+    AC_TitleBtn = 9,//标题界面BTN music
 }
 
 public class AudioMgr : SingletonMonoBehavior<AudioMgr>
 {
     public AudioSource musicAS1;
     public AudioSource musicAS2;
+    public AudioSource musicEnvir;
     public float dur;
+    public float outDur;
     public AudioSource soundAS;
 
     [SerializeField] public AudioClip[] audioClips;
     private AudioSource isPlaying = null;
     private AudioSource isPauseing = null;
-    private float MaxVol = 1;
+
+    private bool isOnEnvir = false;
+    public float MaxVol = 0.5f;
     public void PlaySound(AudioClip audioClip)
     {
         soundAS.clip = audioClip;
@@ -54,10 +64,51 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
         }
         isPlaying.volume = 0;
         isPauseing.volume = MaxVol;
+        //isPauseing.volume = 0;
         isPlaying.clip = audioClip;
-        isPlaying.Play();
-        isPlaying.DOFade(MaxVol, dur);
-        isPauseing.DOFade(MaxVol, dur).OnComplete(()=> { isPauseing.Pause(); });
+
+        //isPauseing.Pause();
+        isPauseing.DOFade(MaxVol, outDur).OnComplete(()=> { isPauseing.Pause();
+            isPlaying.Play();
+            isPlaying.DOFade(MaxVol, dur);
+        });
+    }
+
+    public void PlayEnvirMusic()
+    {
+        if(isOnEnvir)
+        {
+            return;        
+        }
+
+        isOnEnvir = true;
+        PlayASFadeIn(musicEnvir, 0.5f, 0,1);
+    }
+    public void PauseEnvirMusic()
+    {
+        if(!isOnEnvir)
+        {
+            return;
+        }
+
+        isOnEnvir = false;
+        PlayASFadeOut(musicEnvir, 0.5f, 0,1);
+    }
+
+    public void PlayASFadeIn(AudioSource audioSource,float asMaxVol,float asMinVol, float dur)
+    {
+        audioSource.DOKill();
+        audioSource.Play();
+        audioSource.volume = asMinVol;
+        audioSource.DOFade(asMaxVol, dur);
+    }
+    public void PlayASFadeOut(AudioSource audioSource, float asMaxVol, float asMinVol,float dur)
+    {
+        audioSource.DOKill();
+        audioSource.volume = asMaxVol;
+        audioSource.DOFade(asMinVol, dur).OnComplete(()=> {
+            audioSource.Pause();
+        });
     }
 
     public AudioClip GetAudioClip(AudioClips clip)

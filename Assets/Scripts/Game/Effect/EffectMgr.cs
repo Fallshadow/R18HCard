@@ -180,6 +180,39 @@ namespace act.game
                 //case EffectId.EI_10:
                 //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
                 //    return;
+                case EffectId.EI_26:
+                    GameFlowMgr.instance.CurEvent.RoundNum += (int)game.RandomNumMgr.instance.justTouziCheckNum;
+                    return;
+                case EffectId.EI_27:
+                    //事件27的专属 转入啪啪啪流程 解决自己
+                    if(GameFlowMgr.instance.TwoOneNum > 21)
+                    {
+                        GameFlowMgr.instance.TwoOneNum = 0;
+                    }
+                    else if(GameFlowMgr.instance.TwoOneNum == 21)
+                    {
+                        //事件27的专属 转入啪啪啪流程 解决自己
+                    }
+                    return;
+                case EffectId.EI_28:
+                    GameFlowMgr.instance.CurEvent.RoundNum = (int)vars[0];
+                    return;
+                case EffectId.EI_29:
+                    //转入啪啪啪流程
+                    return;
+                case EffectId.EI_30:
+                    GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.justTouziCheckNum;
+                    return;
+                case EffectId.EI_31:
+                    if(GameFlowMgr.instance.CurCard.config.type == 1)
+                    {
+                        GameFlowMgr.instance.PushCardToTable(12);
+                    }
+                    else
+                    {
+                        GameFlowMgr.instance.CurEvent.RoundNum += -1;
+                    }
+                    return;
                 default:
                     break;
             }

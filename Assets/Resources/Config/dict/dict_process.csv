@@ -1,7 +1,6 @@
 process_id,p_condition_id,p_condition_var,p_events_id
 1,11,1,1_2
 2,11,2,5
-3,11,3,29
 4,11,4,11
 5,11,6,13_15
 6,29,1,39_45_49

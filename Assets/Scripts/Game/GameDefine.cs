@@ -68,6 +68,9 @@ namespace act.game
         CI_30,
         CI_31,
         CI_32,
+        CI_33,
+        CI_34,
+        CI_35,
     }
 
     public enum EffectId
@@ -91,6 +94,19 @@ namespace act.game
         EI_16,
         EI_17,
         EI_18,
+        EI_19,
+        EI_20,
+        EI_21,
+        EI_22,
+        EI_23,
+        EI_24,
+        EI_25,
+        EI_26,
+        EI_27,
+        EI_28,
+        EI_29,
+        EI_30,
+        EI_31,
     }
 
     public enum TimePoint

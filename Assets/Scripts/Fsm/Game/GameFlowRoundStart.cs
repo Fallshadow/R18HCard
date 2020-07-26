@@ -8,6 +8,9 @@ namespace act.fsm
     {
         public override void Enter()
         {
+            AudioMgr.instance.PlayEnvirMusic();
+            
+
             game.GameFlowMgr.instance.SaveData();
             Debug.Log("进入状态：回合开始");
             if(game.GameController.instance.isInNewPlayFlow)

@@ -11,7 +11,7 @@ namespace act.fsm
         public override void Enter()
         {
             Debug.Log("进入状态：检测卡牌");
-            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardCheckCEC);
+            game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardWaitCheckCEC);
             //if (!game.GameFlowMgr.instance.CurCard.Canuse)
             //{
             //    game.GameFlowMgr.instance.CurEvent = null;

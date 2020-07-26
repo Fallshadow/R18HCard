@@ -279,6 +279,7 @@ namespace act.ui
             if(game.GameFlowMgr.instance.eventDesc)
                 return;
             evt.EventManager.instance.Send<game.EventInst>(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Click,event_inst);
+            AudioMgr.instance.PlaySound(AudioClips.AC_ClickEvent);
         }
 
         //private void OnCollisionStay(Collision collision)

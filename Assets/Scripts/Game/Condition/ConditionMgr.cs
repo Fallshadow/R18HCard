@@ -65,10 +65,7 @@ namespace act.game
                 case ConditionId.CI_None:
                     return true;
                 case ConditionId.CI_1:
-                    return (GameFlowMgr.instance.CurCard.config.type == vars[0]
-                        || GameFlowMgr.instance.CurCard.config.type == vars[1]
-                        || GameFlowMgr.instance.CurCard.config.type == vars[2]
-                        )
+                    return GameFlowMgr.instance.CurCard.config.type == vars[0]
                         ? true : false;
                 case ConditionId.CI_2:
                     return true;
@@ -136,6 +133,24 @@ namespace act.game
                     return false;
                 case ConditionId.CI_26:
                     if(GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_33:
+                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0] && GameFlowMgr.instance.CurEvent.RoundNum == vars[1])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_34:
+                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0] && GameFlowMgr.instance.CurEvent.RoundNum > vars[1])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_35:
+                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0] && GameFlowMgr.instance.CurEvent.RoundNum >= vars[1])
                     {
                         return true;
                     }
