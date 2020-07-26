@@ -17,7 +17,7 @@ namespace act.ui
         public CanvasGroup allShow;
         public CanvasGroup textBtn;
         public float fadeIn = 1.5f;
-        public float hold = 1;
+        public float hold = 2;
         public float fadeOut = 1.5f;
         public float allShowTime = 2;
 
@@ -47,7 +47,7 @@ namespace act.ui
                 titleFadeSeq.Append(title.DOFade(1, fadeIn)).AppendCallback(() => { AudioMgr.instance.PlaySound(AudioClips.AC_Title); });
                 var audio = DOTween.Sequence();
                 titleFadeSeq.Append(audio);
-                audio.Append(title.DOFade(1, fadeIn));
+                audio.Append(title.DOFade(1, hold));
                 titleFadeSeq.Append(title.DOFade(1,1));
                 titleFadeSeq.Append(title.DOFade(0, fadeOut));
                 firstShow = false;
