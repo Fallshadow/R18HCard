@@ -55,6 +55,13 @@ namespace act.game
         CI_17,
         CI_18,
         CI_19,
+        CI_20,
+        CI_21,
+        CI_22,   
+        CI_23,
+        CI_24,
+        CI_25,
+        CI_26,
     }
 
     public enum EffectId

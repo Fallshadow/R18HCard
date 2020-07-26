@@ -18,3 +18,10 @@ condition_id,condition_desc,condition_tp,condition_times,condition_self
 17,condition_desc17,7,1,2
 18,condition_desc18,3,-2,1
 19,condition_desc19,7,-2,1
+20,condition_desc20,3,1,2
+21,condition_desc21,8,-2,1
+22,condition_desc22,2,-2,1
+23,condition_desc23,3,1,1
+24,condition_desc24,5,-2,2
+25,condition_desc25,3,-2,2
+26,condition_desc26,7,-2,2

@@ -54,7 +54,9 @@ namespace act.evt
         Card_Destory,
         Card_Refresh_Use,
         Card_Enter_Slot,
-        Card_Exit_Slot
+        Card_Exit_Slot,
+        Card_Refresh,//刷新自身卡牌的显示
+
     }
     public enum EventEvent : short
     {
@@ -63,6 +65,7 @@ namespace act.evt
         Event_ID_ROUNDNUM0,
         Event_Desc_Card_Slot_Enter,
         Event_Desc_Card_Slot_Exit,
+        Event_Refresh,
     }
     public enum InputEvent : short
     {

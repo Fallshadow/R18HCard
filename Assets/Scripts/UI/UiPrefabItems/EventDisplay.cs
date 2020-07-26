@@ -50,6 +50,10 @@ namespace act.ui
             }
         }
 
+        private void OnDestroy()
+        {
+            int i = 0;
+        }
         public void Init()
         {
             config = GetComponent<EventReference>();
@@ -236,7 +240,7 @@ namespace act.ui
         }
         private void OnMouseEnter()
         {
-            Debug.Log("自发光");
+            //Debug.Log("自发光");
         }
         //TODO:写在动画最后一帧
         public void DestoryEvent()

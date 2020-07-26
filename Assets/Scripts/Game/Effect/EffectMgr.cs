@@ -92,23 +92,31 @@ namespace act.game
                     }
                     return;
                 case EffectId.EI_5:
-                    RandomNumMgr.instance.curUseTouziTime = (int)vars[0];
+                    RandomNumMgr.instance.curTouziNum += (int)vars[0];
                     return;
                 case EffectId.EI_6:
                     GameFlowMgr.instance.CurCard.Canuse = true;//TODO:需要能使用
                     return;
                 case EffectId.EI_7:
                     GameFlowMgr.instance.CurEvent.RoundNum += (int)vars[0];
+
                     return;
                 case EffectId.EI_8:
                     GameFlowMgr.instance.Hp += (int)vars[0];
                     return;
                 case EffectId.EI_9:
-                    GameFlowMgr.instance.CurCard.config.type =
-                    GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].config.type;
+                    foreach(var item in GameFlowMgr.instance.cardInsts)
+                    {
+                        if(item.config.ID == (int)vars[0])
+                        {
+                            item.config.type =
+                            GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].config.type;
+                        }
+                    }
+                    evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Refresh);
                     return;
                 case EffectId.EI_10:
-                    GameFlowMgr.instance.RandomNum += (int)vars[0];
+                    RandomNumMgr.instance.nextAddCheckNum += (int)vars[0];
                     return;
                 case EffectId.EI_11:
                     //TODO:调用CG   ！临时用跳跃代替

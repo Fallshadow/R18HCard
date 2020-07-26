@@ -65,7 +65,10 @@ namespace act.game
                 case ConditionId.CI_None:
                     return true;
                 case ConditionId.CI_1:
-                    return (GameFlowMgr.instance.CurCard.config.type == vars[0])
+                    return (GameFlowMgr.instance.CurCard.config.type == vars[0]
+                        || GameFlowMgr.instance.CurCard.config.type == vars[1]
+                        || GameFlowMgr.instance.CurCard.config.type == vars[2]
+                        )
                         ? true : false;
                 case ConditionId.CI_2:
                     return true;
@@ -73,8 +76,14 @@ namespace act.game
                     return (GameFlowMgr.instance.CurCard.config.ID == vars[0])
                         ? true : false;
                 case ConditionId.CI_4:
-                    return (GameFlowMgr.instance.CurEvent.RoundNum == 0)
-                        ? true : false;
+                    foreach(var item in GameFlowMgr.instance.eventInsts)
+                    {
+                        if(item.config.ID == vars[0] && item.RoundNum == 0)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
                 case ConditionId.CI_5:
                     return GameFlowMgr.instance.IsCurEventContain((int)vars[0]);
                 case ConditionId.CI_6:
@@ -96,7 +105,7 @@ namespace act.game
                 case ConditionId.CI_13:
                     return true;
                 case ConditionId.CI_14:
-                    return game.RandomNumMgr.instance.curTouziCheckNum == 6;
+                    return game.RandomNumMgr.instance.justTouziCheckNum == 6;
                 case ConditionId.CI_15:
                     return true;
                 case ConditionId.CI_16:
@@ -109,6 +118,28 @@ namespace act.game
                 case ConditionId.CI_19:
                     return (GameFlowMgr.instance.CurEvent.config.ID == vars[0])
                         ? true : false;
+                case ConditionId.CI_20:
+                    return true;
+                case ConditionId.CI_21:
+                    return true;
+                case ConditionId.CI_22:
+                    return true;
+                case ConditionId.CI_23:
+                    return true;
+                case ConditionId.CI_24:
+                    return true;
+                case ConditionId.CI_25:
+                    if(GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_26:
+                    if(GameFlowMgr.instance.CurCard.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
                 default:
                     break;
             }

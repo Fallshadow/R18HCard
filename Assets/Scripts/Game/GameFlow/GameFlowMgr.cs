@@ -223,7 +223,14 @@ namespace act.game
         //使用卡牌
         public void UseCard()
         {
-            if (curEvent == null || curCard == null)
+            if(curEvent.config.ID == 17)
+            {
+                if(curCard.Canuse)
+                {
+                    return;
+                }
+            }
+            if (curEvent == null || curCard == null || curEvent.HasComplete)
             {
                 return;
             }
@@ -431,9 +438,24 @@ namespace act.game
                 default:
                     break;
             }
-            Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," +
-                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," +
+            Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," +"  "+$"ID{CEC.id}," +"  "+
+                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString()+"  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")},"+"  " +
                 $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}"): "无")} ");
+        }
+        public void RemoveCECToListByID(int uID)
+        {
+            List<ConditionEffectConfig> tempList = new List<ConditionEffectConfig>();
+            foreach(var cec in curTotalCEC)
+            {
+                if(cec.id == uID)
+                {
+                    tempList.Add(cec);
+                }
+            }
+            foreach(var cec in tempList)
+            {
+                RemoveCECToList(cec);
+            }
         }
         public void RemoveCECToList(ConditionEffectConfig CEC)
         {
@@ -469,6 +491,9 @@ namespace act.game
                 default:
                     break;
             }
+            Debug.Log($"欢送该CEC走出流程 ：时点{CEC.timePoint}," + "  " + $"ID{CEC.id}," + "  " +
+    $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," + "  " +
+    $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}") : "无")} ");
         }
     }
 }

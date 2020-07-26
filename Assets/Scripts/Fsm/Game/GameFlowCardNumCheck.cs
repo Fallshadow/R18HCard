@@ -11,6 +11,11 @@ namespace act.fsm
             Debug.Log("进入状态：检定卡牌成功或失败");
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckStartCEC);
 
+            if(game.GameFlowMgr.instance.CurEvent.config.ID == 20)
+            {
+                game.GameFlowMgr.instance.cardSuccEventComp = false;
+            }
+
             if(game.GameFlowMgr.instance.JumpUpTouzi)
             {
                 game.GameFlowMgr.instance.JumpUpTouzi = false;
@@ -44,6 +49,7 @@ namespace act.fsm
         public void TouziCallBack()
         {
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckOverCEC);
+            //可以在这里处理加持数
             game.GameFlowMgr.instance.RandomNum = game.RollTouZiManager.instance.maxNum;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
             if(!game.GameFlowMgr.instance.CurCard.ExcuteCheck())
@@ -56,6 +62,10 @@ namespace act.fsm
             else
             {
                 Debug.Log("卡牌使用成功了！！！");
+                if(game.GameFlowMgr.instance.CurEvent.config.ID == 20)
+                {
+                    game.GameFlowMgr.instance.CurEvent.RoundNum++;
+                }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
                 ChooseSuccTimeLineToPlay();
             }
