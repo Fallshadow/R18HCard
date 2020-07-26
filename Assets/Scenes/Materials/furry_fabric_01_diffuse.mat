@@ -115,7 +115,7 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 1
+    - _EnvironmentalLightingIntensity: 0.17
     - _GIFlatShade: 0
     - _GIShadeThreshold: 0.412
     - _GlossColorPower: 10
@@ -133,7 +133,7 @@ Material:
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 0
     - _LightFalloffAffectShadowT: 0
-    - _LightFalloffSoftness: 0.873
+    - _LightFalloffSoftness: 0.648
     - _LightIntensity: -1
     - _Metallic: 0
     - _Mode: 0
@@ -166,10 +166,10 @@ Material:
     - _OverallShadowColorPower: 1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.22
+    - _PointSpotlightIntensity: 0.16
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
-    - _ReduceTextureQuality: 0
+    - _ReduceTextureQuality: 3.07
     - _RefVal: 0
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0
@@ -215,7 +215,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 0.6179246, b: 0.7100704, a: 1}
+    - _MainColor: {r: 1, g: 0.9009434, b: 0.924431, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}

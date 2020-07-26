@@ -114,7 +114,7 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 1
+    - _EnvironmentalLightingIntensity: -0.51
     - _GIFlatShade: 0
     - _GIShadeThreshold: 0.881
     - _GlossColorPower: 10
@@ -165,7 +165,7 @@ Material:
     - _OverallShadowColorPower: 7.41
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 1.71
+    - _PointSpotlightIntensity: 1.24
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
     - _ReduceTextureQuality: 0
@@ -214,7 +214,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.5801887, g: 1, b: 0.99177843, a: 1}
+    - _MainColor: {r: 0.8160377, g: 1, b: 0.99656147, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}

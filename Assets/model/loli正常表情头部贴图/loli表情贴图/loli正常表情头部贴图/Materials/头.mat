@@ -182,7 +182,7 @@ Material:
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
     - _OutlineWidth: 0.002
-    - _Outline_Width: 0.3
+    - _Outline_Width: 0.2
     - _QueueOffset: 0
     - _ReceiveShadowMappingAmount: 0.5
     - _ReceiveShadows: 1

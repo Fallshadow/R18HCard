@@ -8,8 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 3d66Model-450565-2-10
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _EMISSION _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
+  m_Shader: {fileID: 4800000, guid: d12428961551799408aa97256fd770c3, type: 3}
+  m_ShaderKeywords: N_F_O_ON N_F_SS_ON _ALPHABASECUTOUT_ON _EMISSION _GIFLATSHADE_ON
+    _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -113,9 +114,9 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 1
-    - _GIFlatShade: 0
-    - _GIShadeThreshold: 0
+    - _EnvironmentalLightingIntensity: 3.69
+    - _GIFlatShade: 1
+    - _GIShadeThreshold: 1
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
@@ -143,7 +144,7 @@ Material:
     - _N_F_GLOT: 0
     - _N_F_HDLS: 0
     - _N_F_HPSS: 0
-    - _N_F_O: 0
+    - _N_F_O: 1
     - _N_F_PT: 0
     - _N_F_R: 0
     - _N_F_RL: 0
@@ -159,15 +160,15 @@ Material:
     - _OcclusionStrength: 1
     - _Oper: 8
     - _OutlineExtrudeMethod: 0
-    - _OutlineWidth: 0.5
+    - _OutlineWidth: 0.08
     - _OutlineWidthAffectedByViewDistance: 0
     - _OverallShadowColorPower: 1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.3
+    - _PointSpotlightIntensity: 2.69
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
-    - _ReduceTextureQuality: 0
+    - _ReduceTextureQuality: 6.82
     - _RefVal: 0
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0

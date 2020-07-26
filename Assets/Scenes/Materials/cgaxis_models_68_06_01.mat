@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: cgaxis_models_68_06_01
   m_Shader: {fileID: 4800000, guid: d12428961551799408aa97256fd770c3, type: 3}
-  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _GIFLATSHADE_ON _LIGHTAFFECTSHADOW_ON
-    _NORMALMAP _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
+  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _LIGHTAFFECTSHADOW_ON _NORMALMAP
+    _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -115,8 +115,8 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 2.56
-    - _GIFlatShade: 1
+    - _EnvironmentalLightingIntensity: -0.2
+    - _GIFlatShade: 0
     - _GIShadeThreshold: 0.404
     - _GlossColorPower: 10
     - _GlossIntensity: 1
@@ -134,7 +134,7 @@ Material:
     - _LightAffectShadow: 1
     - _LightFalloffAffectShadowT: 0
     - _LightFalloffSoftness: 0.401
-    - _LightIntensity: 0.18
+    - _LightIntensity: -8.45
     - _Metallic: 0
     - _Mode: 0
     - _N_F_CA: 0
@@ -166,11 +166,11 @@ Material:
     - _OverallShadowColorPower: 0.32
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.11
+    - _PointSpotlightIntensity: 0.73
     - _ReduceShadowPointLight: -5.57
     - _ReduceShadowSpotDirectionalLight: 10.38
-    - _ReduceTextureQuality: 0
-    - _RefVal: 0
+    - _ReduceTextureQuality: 1.71
+    - _RefVal: 2.77
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0
     - _RimLightColorPower: 10
@@ -184,7 +184,7 @@ Material:
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 0.713
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 0.862
+    - _SelfShadowRealtimeShadowIntensity: 0.835
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 0.743
     - _ShadowColorTexturePower: 0

@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: dark_fine_wood_pbr_18_45_diffuse
   m_Shader: {fileID: 4800000, guid: d12428961551799408aa97256fd770c3, type: 3}
-  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
+  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _GIFLATSHADE_ON _RIMLIGHTINLIGHT_ON
+    _SELFLITHIGHCONTRAST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -114,9 +115,9 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 1
-    - _GIFlatShade: 0
-    - _GIShadeThreshold: 0
+    - _EnvironmentalLightingIntensity: 3.02
+    - _GIFlatShade: 1
+    - _GIShadeThreshold: 1
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
@@ -165,7 +166,7 @@ Material:
     - _OverallShadowColorPower: 1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.3
+    - _PointSpotlightIntensity: 1.19
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
     - _ReduceTextureQuality: 0
