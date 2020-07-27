@@ -253,6 +253,7 @@ namespace act.ui
             {
                 game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
                 event_inst.ExcuteResult(game.GameFlowMgr.instance.curEventResults);
+                utility.Common.ChooseEventTimeLineToPlay(event_inst.config.ID);
             }
             Release();
             event_inst.DestorySelf();

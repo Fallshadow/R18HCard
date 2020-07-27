@@ -86,7 +86,7 @@ namespace act.game
 
         public void PlayPlayableAsset(string fileName, PlayableDirector playableDirector = null)
         {
-            PlayableAsset playableAsset = act.utility.LoadResources.LoadAsset<PlayableAsset>("TimeLine/" + fileName);
+            PlayableAsset playableAsset = act.utility.LoadResources.LoadAsset<PlayableAsset>("TimeLine/事件timeline/" + fileName);
             if(playableAsset == null)
             {
                 Debug.Log("并没有读取到对应TimeLine");

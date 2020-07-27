@@ -12,5 +12,12 @@ namespace act.utility
                 (System.ComponentModel.DescriptionAttribute[])fi.GetCustomAttributes(typeof(System.ComponentModel.DescriptionAttribute), false);
             return (attributes.Length > 0) ? attributes[0].Description : value.ToString();
         }
+
+        public static void ChooseEventTimeLineToPlay(int eventID)
+        {
+            string filename = "";
+            filename = $"事件{eventID}Timeline";
+            game.TimeLineMgr.instance.PlayPlayableAsset(filename);
+        }
     }
 }
