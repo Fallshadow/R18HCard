@@ -102,6 +102,11 @@ public class GuideController : SingletonMonoBehavior<GuideController>
         images[(int)guideType].GetOrAddComponent<Button>().onClick.RemoveAllListeners();
         images[(int)guideType].GetOrAddComponent<Button>().onClick.AddListener(() =>
         {
+            if(guideType == GuideType.Event1)
+            {
+                act.evt.EventManager.instance.Send<int>(act.evt.EventGroup.GAME, (short)act.evt.GameEvent.ShowDescByLogic, 1000002);
+            }
+
             act.game.TimeLineMgr.instance.ResumeTimeLine(act.game.TimeLineMgr.instance.newPlayerDir);
             AudioMgr.instance.PlaySound(AudioClips.AC_kuang);
         });

@@ -28,7 +28,7 @@ namespace act.game
         //result才是骰子投出来的
         public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum)
         {
-            bool dontSet = true;
+            bool doSet = false;
             result = new List<float>();
             touziNum = curTouziNum;
             if (futureTimeRandomNum.Count >= 1)
@@ -36,7 +36,7 @@ namespace act.game
                 if (futureTimeRandomNum[0] > 0)
                 {
                     result.Add(futureTimeRandomNum[0]);
-                    dontSet = false;
+                    doSet = true;
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace act.game
             }
             maxNum = curTouziCheckNum + nextAddCheckNum;
             maxNum = Mathf.Clamp(maxNum, 1, 6);
-            Debug.Log($"当前骰子正常数值:{maxNum}（是否被设定{dontSet}）");
+            Debug.Log($"当前骰子正常数值:{maxNum}（是否被设定{doSet}）");
 
             Debug.Log($"当前骰子加持数值:{nextAddCheckNum}");
 

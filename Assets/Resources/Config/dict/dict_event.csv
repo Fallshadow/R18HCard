@@ -15,7 +15,7 @@ event_id,event_name,event_desc,event_SP_desc,event_common_desc,event_succResult_
 14,event_name14,event_desc14,event_desc_SP14,event_common_desc14,event_result_desc14,event_defResult_desc14,event_roundOver_desc14,3,,,,,1,1,1_2_15,10;11;1,,,,
 15,event_name15,event_desc15,event_desc_SP15,event_common_desc15,event_result_desc15,event_defResult_desc15,event_roundOver_desc15,3,21,15,1,-5,1,1,1,5,,,,
 16,event_name16,event_desc16,event_desc_SP16,event_common_desc16,event_result_desc16,event_defResult_desc16,event_roundOver_desc16,2,,,,,1,2,1_2,5;9,,,,
-17,event_name17,event_desc17,event_desc_SP17,event_common_desc17,event_result_desc17,event_defResult_desc17,event_roundOver_desc17,-2,18_19_7_19,17;17;17;17,17_14_6_8,0;0;0;-1,16,0,1,0,,,,
+17,event_name17,event_desc17,event_desc_SP17,event_common_desc17,event_result_desc17,event_defResult_desc17,event_roundOver_desc17,-2,18_7_19,17;17;17,17_6_8,0;0;-1,16,0,1,0,,,,
 18,event_name18,event_desc18,event_desc_SP18,event_common_desc18,event_result_desc18,event_defResult_desc18,event_roundOver_desc18,1,4,18,4,19,1,2,4,19,,,,
 19,event_name19,event_desc19,event_desc_SP19,event_common_desc19,event_result_desc19,event_defResult_desc19,event_roundOver_desc19,5,,,,,1,3,1_4,10;20_21_22_28,,,,
 20,event_name20,event_desc20,event_desc_SP20,event_common_desc20,event_result_desc20,event_defResult_desc20,event_roundOver_desc20,1,4_4,20;20,4_16,23_25;21_22_28,1,2,7,1,,,,

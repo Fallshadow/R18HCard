@@ -19,6 +19,8 @@ namespace act.game
             set
             {
                 twoOneNum = value;
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change);
+
                 //if(twoOneNum == 21)
                 //{
                 //    CurEvent.HasComplete = true;

@@ -66,6 +66,10 @@ namespace act.fsm
                 {
                     game.GameFlowMgr.instance.CurEvent.RoundNum++;
                 }
+                if(game.GameFlowMgr.instance.CurEvent.config.ID == 21)
+                {
+                    game.GameFlowMgr.instance.Process+=10;
+                }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
                 //ChooseSuccTimeLineToPlay();
             }

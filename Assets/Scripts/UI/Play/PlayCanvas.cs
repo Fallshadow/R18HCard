@@ -31,6 +31,7 @@ namespace act.ui
         [SerializeField] private Text text_Process_Num;
         [SerializeField] private Material material_Process_Num;
         [SerializeField] private UiStaticText text_Round_Num;
+        [SerializeField] private UiStaticText text_21d_Num;
         [SerializeField] private Image HideAll;
 
         [SerializeField] private ParticleSystem effectProcessNum;
@@ -55,6 +56,7 @@ namespace act.ui
             evt.EventManager.instance.Register<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change, Show21dNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll,ShowHideAllImage);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll,HideHideAllImage);
 
@@ -70,6 +72,7 @@ namespace act.ui
             evt.EventManager.instance.Unregister<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change, Show21dNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll, ShowHideAllImage);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll, HideHideAllImage);
 
@@ -227,6 +230,11 @@ namespace act.ui
         public void ShowRoundNum()
         {
             text_Round_Num.text = game.GameFlowMgr.instance.RoundNum.ToString();
+        }
+        
+        public void Show21dNum()
+        {
+            text_21d_Num.text = game.GameFlowMgr.instance.TwoOneNum.ToString();
         }
 
         public void ResetShow()

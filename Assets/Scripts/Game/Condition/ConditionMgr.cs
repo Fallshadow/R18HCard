@@ -137,6 +137,12 @@ namespace act.game
                         return true;
                     }
                     return false;
+                case ConditionId.CI_32:
+                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
                 case ConditionId.CI_33:
                     if(GameFlowMgr.instance.CurEvent.config.ID == vars[0] && GameFlowMgr.instance.CurEvent.RoundNum == vars[1])
                     {

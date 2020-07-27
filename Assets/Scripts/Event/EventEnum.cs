@@ -32,6 +32,7 @@ namespace act.evt
         Globe_ProcessNum_Change,
         Globe_HpNum_Change,
         Globe_RoundNum_Change,
+        Globe_21Num_Change,
         Globe_Event_Create,
         Globe_CurEvent_Completed,
         Globe_Card_Event_Success,
@@ -45,6 +46,7 @@ namespace act.evt
         Limit_TwoOne,
         HideAll,
         DisHideAll,
+        ShowDescByLogic,
     }
 
     public enum CardEvent : short

@@ -64,6 +64,7 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
+            evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowDescByLogic, ShowDescByLogic);
 
         }
 
@@ -75,6 +76,7 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Desc_Hide, CheckDestoryEventWithoutAnim);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowDescByLogic, ShowDescByLogic);
         }
         public game.EventInst GetEventInst()
         {
@@ -281,6 +283,14 @@ namespace act.ui
                 return;
             evt.EventManager.instance.Send<game.EventInst>(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Click,event_inst);
             AudioMgr.instance.PlaySound(AudioClips.AC_ClickEvent);
+        }
+
+        private void ShowDescByLogic(int uid)
+        {
+            if(uid == event_inst.UniqueId)
+            {
+                evt.EventManager.instance.Send<game.EventInst>(evt.EventGroup.UI, (short)evt.UiEvent.UI_Event_Click, event_inst);
+            }
         }
 
         //private void OnCollisionStay(Collision collision)
