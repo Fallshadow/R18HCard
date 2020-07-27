@@ -17,6 +17,7 @@ public enum GuideType
     Body,
     CheckBtn,
     Exit,
+    CardCheckBtn,
 }
 
 public enum CheckType

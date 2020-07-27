@@ -75,16 +75,8 @@ namespace act.fsm
 
         public void ChooseSuccTimeLineToPlay()
         {
-            return;
             string filename = "";
-            switch(game.GameFlowMgr.instance.CurEvent.config.ID)
-            {
-                case 5:
-                    filename = data.ResourcesPathSetting.event5TimeLine;
-                    break;
-                default:
-                    break;
-            }
+            filename = $"事件{game.GameFlowMgr.instance.CurEvent.config.ID}Timeline";
             game.TimeLineMgr.instance.PlayPlayableAsset(filename);
         }
 
