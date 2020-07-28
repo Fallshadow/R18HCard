@@ -54,7 +54,9 @@ namespace act.ui
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Register<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
+            evt.EventManager.instance.Register<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, ShowPleasantNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
+            evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_VitNum_Change, ShowVITNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change, Show21dNum);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll,ShowHideAllImage);
@@ -70,7 +72,9 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Round_Over, ShowRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change, ShowRandomNum);
             evt.EventManager.instance.Unregister<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, ShowProcessNum);
+            evt.EventManager.instance.Unregister<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, ShowPleasantNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change, ShowHPNum);
+            evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_VitNum_Change, ShowVITNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RoundNum_Change, ShowRoundNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change, Show21dNum);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.HideAll, ShowHideAllImage);
@@ -160,6 +164,10 @@ namespace act.ui
 
         public void ShowProcessNum(bool isQuickChange)
         {
+            if(game.GameFlowMgr.instance.processTwo)
+            {
+                return;
+            }
             ////TODO:数字缓动！
             //text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
             //material_Process_Num.DOFloat(game.GameFlowMgr.instance.Process / 100, "_Progress", ProcessDuration);
@@ -206,8 +214,66 @@ namespace act.ui
                     //Debug.Log(Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f)));
                     text_Process_Num.text = (Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f))).ToString(); }));
         }
+        public void ShowPleasantNum(bool isQuickChange)
+        {
+            if(!game.GameFlowMgr.instance.processTwo)
+            {
+                return;
+            }
+            ////TODO:数字缓动！
+            //text_Process_Num.text = game.GameFlowMgr.instance.Process.ToString();
+            //material_Process_Num.DOFloat(game.GameFlowMgr.instance.Process / 100, "_Progress", ProcessDuration);
+            if(isQuickChange)
+            {
+                material_Process_Num.SetFloat("_Progress", game.GameFlowMgr.instance.Pleasant);
+                text_Process_Num.text = game.GameFlowMgr.instance.Pleasant.ToString();
+            }
+            var progress = game.GameFlowMgr.instance.Pleasant;
+            var dealtProcess = progress - Convert.ToInt32(text_Process_Num.text);
+            if(Mathf.Approximately(dealtProcess, 0.0f))
+                return;
+            text_Process_Effect_Num.text = dealtProcess > 0.0f ? "+" + (int)dealtProcess : ((int)dealtProcess).ToString();
+            var rectTransform = text_Process_Effect_Num.rectTransform;
+            var targetRectTransform = rectTransform.parent as RectTransform;
+            var color = text_Process_Effect_Num.color;
+            var processChangeSequence = DOTween.Sequence();
+
+            processChangeSequence.Append(rectTransform.DOMove(new Vector3(0.0f, 0.0f, rectTransform.position.z), 0.0f));
+            processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), processDuration));
+            processChangeSequence.Join(rectTransform.DOScale(1.0f, processDuration));
+            processChangeSequence.PrependCallback(
+                () => {
+                    effectProcessNum.Play();
+                });
+            //processChangeSequence.InsertCallback(processDuration * 2,
+            //    () =>
+            //    {
+            //        effectProcessNum.SetActive(false);
+            //    });
+            processChangeSequence.AppendInterval(processDuration * 0.5f);
+
+
+            processChangeSequence.Append(rectTransform.DOMove(targetRectTransform.position, processDuration * 2.0f));
+            processChangeSequence.Join(rectTransform.DOScale(0.5f, processDuration));
+            processChangeSequence.Join(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.8f), processDuration));
+
+            processChangeSequence.AppendInterval(processDuration * 0.5f);
+
+            processChangeSequence.Append(text_Process_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), processDuration));
+            processChangeSequence.Join(material_Process_Num.DOFloat(progress / 100, "_Progress", processDuration)
+                .OnUpdate(() => {
+                    //Debug.Log(material_Process_Num.GetFloat("_Progress"));
+                    //Debug.Log(Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f)));
+                    text_Process_Num.text = (Convert.ToInt32((material_Process_Num.GetFloat("_Progress") * 100.0f))).ToString();
+                }));
+        }
+
         public void ShowHPNum()
         {
+            if(game.GameFlowMgr.instance.processTwo)
+            {
+                return;
+            }
             //text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString();
             var dealtHp = game.GameFlowMgr.instance.Hp - Convert.ToInt32(text_HP_Num.text);
             if(dealtHp == 0)
@@ -226,6 +292,31 @@ namespace act.ui
             hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y, 0.0f));
 
             hpChangeSequence.AppendCallback(() => { text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString(); });
+        }
+        public void ShowVITNum()
+        {
+            if(!game.GameFlowMgr.instance.processTwo)
+            {
+                return;
+            }
+            //text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString();
+            var dealtHp = game.GameFlowMgr.instance.Vit - Convert.ToInt32(text_HP_Num.text);
+            if(dealtHp == 0)
+                return;
+            text_HP_Effect_Num.text = dealtHp > 0 ? "+" + dealtHp : dealtHp.ToString();
+            var rectTransform = text_HP_Effect_Num.rectTransform;
+            var color = text_HP_Effect_Num.color;
+            var hpChangeSequence = DOTween.Sequence();
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 25.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), hpDuration));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 75.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), hpDuration));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y, 0.0f));
+
+            hpChangeSequence.AppendCallback(() => { text_HP_Num.text = game.GameFlowMgr.instance.Vit.ToString(); });
         }
         public void ShowRoundNum()
         {

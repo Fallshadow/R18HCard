@@ -51,7 +51,7 @@ namespace act.fsm
         }
         public void GiveInitCard()
         {
-            if (game.GameFlowMgr.instance.RoundNum == 1)
+            if (game.GameFlowMgr.instance.RoundNum == 1 && !game.GameFlowMgr.instance.processTwo)
             {
                 Debug.Log("给予卡片：1，2，3");
                 game.GameFlowMgr.instance.PushCardToTable(1);

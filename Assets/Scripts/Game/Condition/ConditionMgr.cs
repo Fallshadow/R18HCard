@@ -96,7 +96,7 @@ namespace act.game
                 case ConditionId.CI_10:
                     return true;
                 case ConditionId.CI_11:
-                    return game.GameFlowMgr.instance.RoundNum == vars[0];
+                    return game.GameFlowMgr.instance.RoundNum == vars[0] && !GameFlowMgr.instance.processTwo;
                 case ConditionId.CI_12:
                     return game.GameFlowMgr.instance.Process >= vars[0];
                 case ConditionId.CI_13:
@@ -137,6 +137,27 @@ namespace act.game
                         return true;
                     }
                     return false;
+                case ConditionId.CI_27:
+                    foreach(var item in GameFlowMgr.instance.eventInsts)
+                    {
+                        if(item.config.ID == vars[0] && item.RoundNum >= 1)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                case ConditionId.CI_28:
+                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                    {
+                        return true;
+                    }
+                    return false;
+                case ConditionId.CI_29:
+                    return GameFlowMgr.instance.processTwo && GameFlowMgr.instance.RoundNum == (int)vars[0] ;
+                case ConditionId.CI_30:
+                    return GameFlowMgr.instance.Pleasant == (int)vars[0] ;
+                case ConditionId.CI_31:
+                    return GameFlowMgr.instance.Vit == (int)vars[0] ;
                 case ConditionId.CI_32:
                     if(GameFlowMgr.instance.CurEvent.config.ID == vars[0])
                     {
