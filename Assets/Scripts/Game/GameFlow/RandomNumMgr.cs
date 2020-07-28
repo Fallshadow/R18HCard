@@ -11,6 +11,7 @@ namespace act.game
         public float curTouziCheckNum = 0;
         public float justTouziCheckNum = 0;
         public float nextAddCheckNum = 0;//加持骰子点数
+        public int resultChengNum = 1;//加持骰子翻倍
         public List<float> futureTimeRandomNum = new List<float>();
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace act.game
             }
             maxNum = curTouziCheckNum + nextAddCheckNum;
             maxNum = Mathf.Clamp(maxNum, 1, 6);
+            maxNum *= resultChengNum;
             Debug.Log($"当前骰子正常数值:{maxNum}（是否被设定{doSet}）");
 
             Debug.Log($"当前骰子加持数值:{nextAddCheckNum}");
@@ -67,6 +69,7 @@ namespace act.game
             Debug.Log($"当前骰子最终数值:{maxNum}");
             justTouziCheckNum = maxNum;
             nextAddCheckNum = 0;
+            resultChengNum = 1;
         }
         public void ResetTouziNum()
         {

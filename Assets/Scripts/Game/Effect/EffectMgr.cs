@@ -177,9 +177,41 @@ namespace act.game
                     //21点事件，将游戏21点数值增加
                     GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.curTouziCheckNum;
                     return;
-                //case EffectId.EI_10:
-                //    GameFlowMgr.instance.PushEventToTable((int)vars[0]);
-                //    return;
+                case EffectId.EI_19:
+                    GameFlowMgr.instance.Pleasant += (int)RandomNumMgr.instance.justTouziCheckNum * (int)vars[0];
+                    return;
+                case EffectId.EI_20:
+                    if(RandomNumMgr.instance.justTouziCheckNum >= vars[0])
+                    {
+                        GameFlowMgr.instance.Vit += (int)vars[1];
+                    }
+                    return;
+                case EffectId.EI_21:
+                    GameFlowMgr.instance.Vit += (int)vars[0];
+                    return;
+                case EffectId.EI_22:
+                    GameFlowMgr.instance.Pleasant += (int)vars[0];
+                    return;
+                case EffectId.EI_23:
+                    RandomNumMgr.instance.resultChengNum = (int)vars[0]; 
+                        return;
+                case EffectId.EI_24:
+                    foreach(var item in GameFlowMgr.instance.cardInsts)
+                    {
+                        if(item.config.ID == (int)vars[0])
+                        {
+                            item.RefreshUse();
+                        }
+                    }
+                    return;
+                case EffectId.EI_25:
+                    int count = GameFlowMgr.instance.cardInsts.Count;
+                    GameFlowMgr.instance.DelectAllCard();
+                    for(int i = 0; i < count; i++)
+                    {
+                        GameFlowMgr.instance.PushCardToTable((int)vars[0]);
+                    }
+                    return;
                 case EffectId.EI_26:
                     GameFlowMgr.instance.CurEvent.RoundNum += (int)game.RandomNumMgr.instance.justTouziCheckNum;
                     return;
@@ -191,14 +223,14 @@ namespace act.game
                     }
                     else if(GameFlowMgr.instance.TwoOneNum == 21)
                     {
-                        //事件27的专属 转入啪啪啪流程 解决自己
+                        game.GameFlowMgr.instance.EnterToProcessTwo();
                     }
                     return;
                 case EffectId.EI_28:
                     GameFlowMgr.instance.CurEvent.RoundNum = (int)vars[0];
                     return;
                 case EffectId.EI_29:
-                    //转入啪啪啪流程
+                    game.GameFlowMgr.instance.EnterToProcessTwo();
                     return;
                 case EffectId.EI_30:
                     GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.justTouziCheckNum;

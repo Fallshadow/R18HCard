@@ -12,7 +12,7 @@ namespace act.game
         public bool cardSuccEventComp = true;
         public int TwoOneNum
         {
-            get 
+            get
             {
                 return twoOneNum;
             }
@@ -88,6 +88,10 @@ namespace act.game
             }
             set
             {
+                if(processTwo)
+                {
+                    return;
+                }
                 if(process >= value)
                 {
 
@@ -101,7 +105,7 @@ namespace act.game
                 {
                     process = 0;
                 }
-               
+
                 if(process >= processE29Value && processE29Time == false)
                 {
                     processE29Time = true;
@@ -111,9 +115,9 @@ namespace act.game
                 //process = Mathf.Clamp(value, 0, 100);
                 //if(process == 100)
                 //{
-                    
+
                 //}
-                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change,false);
+                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, false);
             }
         }
         private float process = 0;
@@ -263,7 +267,7 @@ namespace act.game
                     return;
                 }
             }
-            if (curEvent == null || curCard == null || curEvent.HasComplete)
+            if(curEvent == null || curCard == null || curEvent.HasComplete)
             {
                 return;
             }
@@ -299,6 +303,51 @@ namespace act.game
                 }
             }
         }
+
+        #region 二阶段
+        public bool processTwo = false;
+        private int vit = 0;
+        public int Vit
+        {
+            get
+            {
+                return vit;
+            }
+            set
+            {
+                vit = value;
+
+                evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_VitNum_Change);
+            }
+        }
+        private int pleasant = 0;
+        public int Pleasant
+        {
+            get
+            {
+                return pleasant;
+            }
+            set
+            {
+                pleasant = value;
+                //通知显示
+                //evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change);
+            }
+        }
+        //进入二阶段
+        public void EnterToProcessTwo()
+        {
+            DelectAllEvent();
+            processTwo = true;
+            //计算结算体力值
+            Vit = (20 - roundNum) + 2 * hp;
+            //todo:特殊特效显示体力
+            pleasant = (int)process;
+            roundNum = 0;
+            game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
+        }
+        #endregion
+
         #endregion
 
         #region 功能相关
@@ -337,6 +386,24 @@ namespace act.game
                 }
             }
         }
+
+        public void DelectAllEvent()
+        {
+            for(int i = 0; i < eventInsts.Count; i++)
+            {
+                eventInsts[i].RoundNum = -1;
+                i--;
+            }
+        }
+
+        public void DelectAllCard()
+        {
+            for(int i = 0; i < cardInsts.Count; i++)
+            {
+                cardInsts[i].DestorySelf();
+                i--;
+            }
+        }
         #endregion
 
 
@@ -344,7 +411,7 @@ namespace act.game
         public bool CheckCardOnEventByBlend(List<List<ConditionInst>> conditionInsts, List<List<EffectInst>> effectInsts)
         {
             List<bool> results = new List<bool>();
-            if (ConditionMgr.instance.CheckConditionByBlend(conditionInsts, out results))
+            if(ConditionMgr.instance.CheckConditionByBlend(conditionInsts, out results))
             {
                 EffectMgr.instance.ExcuteResult(effectInsts, results);
                 return true;
@@ -356,7 +423,7 @@ namespace act.game
         public bool CheckAndExcuteBySplit(List<List<ConditionInst>> conditionInsts, List<List<EffectInst>> effectInsts)
         {
             List<bool> results = new List<bool>();
-            if (ConditionMgr.instance.CheckConditionBySplit(conditionInsts, out results))
+            if(ConditionMgr.instance.CheckConditionBySplit(conditionInsts, out results))
             {
                 EffectMgr.instance.ExcuteResult(effectInsts, results);
                 return true;
@@ -429,7 +496,7 @@ namespace act.game
         public void CheckCdt(List<ConditionEffectConfig> cdtList)
         {
             ConditionEffectConfig tempCEC;
-            for (int i = cdtList.Count - 1; i >= 0; i--)
+            for(int i = cdtList.Count - 1; i >= 0; i--)
             {
                 tempCEC = cdtList[i];
                 bool tempBool = tempCEC.CECheckByBlend();
@@ -440,7 +507,7 @@ namespace act.game
         public void AddCECToList(ConditionEffectConfig CEC)
         {
             curTotalCEC.Add(CEC);
-            switch (CEC.timePoint)
+            switch(CEC.timePoint)
             {
                 case TimePoint.TP_None:
                     break;
@@ -471,9 +538,9 @@ namespace act.game
                 default:
                     break;
             }
-            Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," +"  "+$"ID{CEC.id}," +"  "+
-                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString()+"  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")},"+"  " +
-                $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}"): "无")} ");
+            Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," + "  " + $"ID{CEC.id}," + "  " +
+                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," + "  " +
+                $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}") : "无")} ");
         }
         public void RemoveCECToListByID(int uID)
         {
@@ -493,7 +560,7 @@ namespace act.game
         public void RemoveCECToList(ConditionEffectConfig CEC)
         {
             curTotalCEC.Remove(CEC);
-            switch (CEC.timePoint)
+            switch(CEC.timePoint)
             {
                 case TimePoint.TP_None:
                     break;

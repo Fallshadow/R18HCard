@@ -22,5 +22,8 @@ namespace act.data
         public List<CardInst> hadUsecardInsts = new List<CardInst>();
 
         public bool processE29Time = false;
+
+        public bool processTwo = false;
+        public int vit = 0;
     }
 }
