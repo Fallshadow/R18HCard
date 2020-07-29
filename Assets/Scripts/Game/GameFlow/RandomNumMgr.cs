@@ -60,7 +60,6 @@ namespace act.game
                 curTouziCheckNum = Mathf.Max(item, curTouziCheckNum);
             }
             maxNum = curTouziCheckNum + nextAddCheckNum;
-            maxNum = Mathf.Clamp(maxNum, 1, 6);
             maxNum *= resultChengNum;
             Debug.Log($"当前骰子正常数值:{maxNum}（是否被设定{doSet}）");
 

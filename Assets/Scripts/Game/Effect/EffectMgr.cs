@@ -63,7 +63,12 @@ namespace act.game
 
         public void ExcuteEffectResult(game.EffectId effect, params float[] vars)
         {
-            Debug.Log($"执行效果ID：{(int)effect}");
+            Debug.Log($"执行效果ID：{(int)effect}:{localization.LocalizationManager.instance.GetLocalizedString($"desc{(int)effect}", "ui_system_ssc")}");
+            foreach(var item in vars)
+            {
+                Debug.Log($"参数{item}");
+            }
+
             switch (effect)
             {
                 case EffectId.EI_None:

@@ -331,7 +331,7 @@ namespace act.game
             {
                 pleasant = value;
                 //通知显示
-                //evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_21Num_Change);
+                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change,false);
             }
         }
         //进入二阶段
@@ -539,8 +539,8 @@ namespace act.game
                     break;
             }
             Debug.Log($"欢迎该CEC进入流程 ：时点{CEC.timePoint}," + "  " + $"ID{CEC.id}," + "  " +
-                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," + "  " +
-                $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}") : "无")} ");
+                $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system_ssc")}") : "无")}," + "  " +
+                $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system_ssc")}") : "无")} ");
         }
         public void RemoveCECToListByID(int uID)
         {
@@ -592,8 +592,8 @@ namespace act.game
                     break;
             }
             Debug.Log($"欢送该CEC走出流程 ：时点{CEC.timePoint}," + "  " + $"ID{CEC.id}," + "  " +
-    $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system")}") : "无")}," + "  " +
-    $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system")}") : "无")} ");
+    $"条件1ID{(CEC.conditionInsts[0] != null ? (CEC.conditionInsts[0].config.ID.ToString() + "  " + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.conditionInsts[0].config.desc, "ui_system_ssc")}") : "无")}," + "  " +
+    $"效果1ID{(CEC.effectInsts[0] != null ? (CEC.effectInsts[0].config.ID.ToString() + $"说明：{localization.LocalizationManager.instance.GetLocalizedString(CEC.effectInsts[0].config.desc, "ui_system_ssc")}") : "无")} ");
         }
     }
 }

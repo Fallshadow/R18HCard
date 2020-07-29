@@ -59,7 +59,11 @@ namespace act.game
         #endregion
         public bool ExcuteConditionCheck(ConditionId condition, params float[] vars)
         {
-            Debug.Log($"执行条件ID：{(int)condition}");
+            Debug.Log($"执行条件ID：{(int)condition}:{localization.LocalizationManager.instance.GetLocalizedString($"condition_desc{(int)condition}", "ui_system_ssc")}");
+            foreach(var item in vars)
+            {
+                Debug.Log($"参数{item}");
+            }
             switch (condition)
             {
                 case ConditionId.CI_None:
@@ -140,7 +144,7 @@ namespace act.game
                 case ConditionId.CI_27:
                     foreach(var item in GameFlowMgr.instance.eventInsts)
                     {
-                        if(item.config.ID == vars[0] && item.RoundNum >= 1)
+                        if(item.config.ID == vars[0] && (item.RoundNum >= 1 || item.RoundNum == -2))
                         {
                             return true;
                         }
@@ -159,9 +163,12 @@ namespace act.game
                 case ConditionId.CI_31:
                     return GameFlowMgr.instance.Vit == (int)vars[0] ;
                 case ConditionId.CI_32:
-                    if(GameFlowMgr.instance.CurEvent.config.ID == vars[0])
+                    foreach(var item in GameFlowMgr.instance.eventInsts)
                     {
-                        return true;
+                        if(item.config.ID == vars[0])
+                        {
+                            return true;
+                        }
                     }
                     return false;
                 case ConditionId.CI_33:
@@ -180,6 +187,15 @@ namespace act.game
                     if(GameFlowMgr.instance.CurEvent.config.ID == vars[0] && GameFlowMgr.instance.CurEvent.RoundNum >= vars[1])
                     {
                         return true;
+                    }
+                    return false;
+                case ConditionId.CI_36:
+                    foreach(var item in GameFlowMgr.instance.eventInsts)
+                    {
+                        if(item.config.ID == vars[0])
+                        {
+                            return true;
+                        }
                     }
                     return false;
                 default:

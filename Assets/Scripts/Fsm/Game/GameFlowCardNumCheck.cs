@@ -72,6 +72,11 @@ namespace act.fsm
                 }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
                 //ChooseSuccTimeLineToPlay();
+
+                if(game.GameFlowMgr.instance.CurEvent.RoundNum == -2)
+                {
+                    game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
+                }
             }
             m_fsm.SwitchToState((int)fsm.GameFsmState.GameFlowCardUseOver);
         }

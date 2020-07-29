@@ -8,10 +8,12 @@ _tw=繁體中文
 
 [_cn]
 ui_system_cn
+ui_system_ssc_cn
 
 [_en]
 ui_system_en
-
+ui_system_ssc_en
 
 [_tw]
 ui_system_tw
+ui_system_ssc_tw
