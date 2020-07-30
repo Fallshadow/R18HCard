@@ -100,6 +100,7 @@ namespace act.game
                 {
                     AudioMgr.instance.PlaySound(AudioClips.AC_ProcessGet);
                 }
+
                 process = value;
                 if(process < 0)
                 {
@@ -215,6 +216,7 @@ namespace act.game
             CurCard = saveData.curCard;
             CurCard = null;
             CurEvent = saveData.curEvent;
+            CurEvent = null;
             curEventResults = saveData.curEventResults;
             eventInsts = saveData.eventInsts;
             twoOneNum = saveData.num21;
@@ -225,6 +227,10 @@ namespace act.game
             Hp = saveData.HP;
             Process = saveData.process;
             processE29Time = saveData.processE29Time;
+
+            Pleasant = saveData.pleasant;
+            Vit = saveData.vit;
+            processTwo = saveData.processTwo;
             ReShowData();
         }
 
@@ -235,15 +241,18 @@ namespace act.game
             saveData.curEvent = CurEvent;
             saveData.curEventResults = curEventResults;
             saveData.eventInsts = eventInsts;
+            saveData.num21 = twoOneNum;
             saveData.cardInsts = cardInsts;
             saveData.hadUsecardInsts = hadUsecardInsts;
             saveData.hadSolvecardInsts = hadSolveEventInsts;
             saveData.RoundNum = RoundNum;
             saveData.HP = Hp;
-            saveData.num21 = twoOneNum;
+            saveData.process = Process;
             saveData.processE29Time = processE29Time;
 
-            saveData.process = Process;
+            saveData.pleasant = Pleasant;
+            saveData.vit = Vit;
+            saveData.processTwo = processTwo;
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 

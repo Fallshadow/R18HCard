@@ -48,16 +48,6 @@ namespace act.ui
                 transform.rotation = Quaternion.Euler(settingRot);
                 transform.localScale = settingSca;
             }
-        }
-
-        private void OnDestroy()
-        {
-            int i = 0;
-        }
-        public void Init()
-        {
-            config = GetComponent<EventReference>();
-
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
             evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
@@ -65,11 +55,11 @@ namespace act.ui
 
             evt.EventManager.instance.Register(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
             evt.EventManager.instance.Register<int>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowDescByLogic, ShowDescByLogic);
-
         }
 
-        public void Release()
+        private void OnDestroy()
         {
+            int i = 0;
             //事件生命减少、完成、UI关闭 都需要判断是否破坏事件
             evt.EventManager.instance.Unregister<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, CheckDestoryEventByEventRoundOver);
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_CurEvent_Completed, CheckDestoryEventWithoutAnim);
@@ -77,6 +67,19 @@ namespace act.ui
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
             evt.EventManager.instance.Unregister<int>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowDescByLogic, ShowDescByLogic);
+        }
+       
+        public void Init()
+        {
+            config = GetComponent<EventReference>();
+
+            
+
+        }
+
+        public void Release()
+        {
+
         }
         public game.EventInst GetEventInst()
         {

@@ -94,7 +94,7 @@ namespace act.ui
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim, RollEventSucc);
 
             evt.EventManager.instance.Unregister(evt.EventGroup.GAME, (short)evt.GameEvent.Limit_TwoOne, showEventID38);
-            evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, refreshRound);
+            evt.EventManager.instance.Unregister<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, refreshRound);
 
         }
 

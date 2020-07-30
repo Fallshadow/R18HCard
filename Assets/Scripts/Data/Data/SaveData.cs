@@ -25,5 +25,6 @@ namespace act.data
 
         public bool processTwo = false;
         public int vit = 0;
+        public int pleasant = 0;
     }
 }
