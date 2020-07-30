@@ -388,7 +388,7 @@ MonoBehaviour:
   fadeIn: 1.5
   hold: 1
   fadeOut: 1.5
-  allShowTime: 2
+  allShowTime: 0
 --- !u!1 &2466241286691559384
 GameObject:
   m_ObjectHideFlags: 0
