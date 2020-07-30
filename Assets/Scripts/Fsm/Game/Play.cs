@@ -20,7 +20,16 @@ namespace act.fsm
             else
             {
                 ui.UiManager.instance.CreateUi<ui.PlayCanvas>().Show();
-                act.game.GameController.instance.mainCamera.SetActive(true);
+                if(game.GameFlowMgr.instance.processTwo)
+                {
+                    act.game.GameController.instance.mainCameraTwo.SetActive(true);
+                    act.game.GameController.instance.mainCamera.SetActive(false);
+                }
+                else
+                {
+                    act.game.GameController.instance.mainCameraTwo.SetActive(false);
+                    act.game.GameController.instance.mainCamera.SetActive(true);
+                }
                 act.game.GameController.instance.uiCamera.GetComponent<PostProcessVolume>().enabled = true;
                 act.game.GameController.instance.uiCamera.GetComponent<PostProcessLayer>().enabled = true;
             }

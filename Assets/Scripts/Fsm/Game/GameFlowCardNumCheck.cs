@@ -52,6 +52,10 @@ namespace act.fsm
             //可以在这里处理加持数
             game.GameFlowMgr.instance.RandomNum = game.RollTouZiManager.instance.maxNum;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
+            if(game.GameFlowMgr.instance.processTwo)
+            {
+                game.GameFlowMgr.instance.Vit -= 1;
+            }
             if(!game.GameFlowMgr.instance.CurCard.ExcuteCheck())
             {
                 //TODO:发信号！卡牌使用失败了

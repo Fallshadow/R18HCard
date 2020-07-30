@@ -13,6 +13,10 @@ namespace act.fsm
         {
             Debug.Log("进入状态：回合结束");
             EndRound();
+            if(game.GameFlowMgr.instance.processTwo)
+            {
+                game.GameFlowMgr.instance.Vit -= 5;
+            }
             SwitchToStart();
             //if(!EndRoundRTHasEventDie())
             //{

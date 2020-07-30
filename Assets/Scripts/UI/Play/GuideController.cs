@@ -15,9 +15,15 @@ public enum GuideType
     Cost,
     qifen,
     Body,
-    CheckBtn,
-    Exit,
     CardCheckBtn,
+    Camera,
+
+    Vit2,
+    CardHand2,
+    RoundOver2,
+    Pleasant2,
+
+    Exit,
 }
 
 public enum CheckType
@@ -190,10 +196,15 @@ public class GuideController : SingletonMonoBehavior<GuideController>
             case GuideType.Cost:
             case GuideType.qifen:
             case GuideType.Body:
+            case GuideType.CardCheckBtn:
+            case GuideType.Camera:
+            case GuideType.Vit2:
+            case GuideType.CardHand2:
+            case GuideType.RoundOver2:
+            case GuideType.Pleasant2:
                 return CheckType.OnlyMyBtn;
             case GuideType.CardCon:
             case GuideType.CardSalt:
-            case GuideType.CheckBtn:
                 return CheckType.UseYouBtn;
             default:
                 break;

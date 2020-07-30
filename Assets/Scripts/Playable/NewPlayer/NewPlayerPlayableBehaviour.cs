@@ -35,11 +35,19 @@ public class NewPlayerPlayableBehaviour : PlayableBehaviour
     // Called when the owning graph starts playing
     public override void OnGraphStart(Playable playable)
     {
-        TalkWindow = act.ui.UiManager.instance.CreateUi<act.ui.TalkWindow>();
-        TalkWindow.ResetText();
-        PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
-        PlayCanvas.ShowDrak(true);
-        TalkCanvas = act.ui.UiManager.instance.CreateUi<act.ui.TalkCanvas>();
+        if(act.game.GameFlowMgr.instance.processTwo)
+        {
+            PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
+            GuideController.instance.StartGuide();
+        }
+        else
+        {
+            TalkWindow = act.ui.UiManager.instance.CreateUi<act.ui.TalkWindow>();
+            TalkWindow.ResetText();
+            PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
+            PlayCanvas.ShowDrak(true);
+            TalkCanvas = act.ui.UiManager.instance.CreateUi<act.ui.TalkCanvas>();
+        }
     }
 
     // Called when the owning graph stops playing

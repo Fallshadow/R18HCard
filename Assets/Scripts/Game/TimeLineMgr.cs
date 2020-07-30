@@ -35,9 +35,14 @@ namespace act.game
             gameDir.time = pointTime;
         }
 
-        #region 指定导演系统，真的会有用到么
+        #region 指定导演系统，真的会有用到么,还真的有用到
         public void PlayTimeline(PlayableDirector playableDirector, System.Action callBack = null)
         {
+            playableDirector.Play();
+        }
+        public void PlayTimeline(PlayableDirector playableDirector, PlayableAsset playableAsset)
+        {
+            playableDirector.playableAsset = playableAsset;
             playableDirector.Play();
         }
         public void PasueTimeline(PlayableDirector playableDirector, System.Action callBack = null)

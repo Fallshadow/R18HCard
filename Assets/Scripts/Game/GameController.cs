@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Playables;
 
 namespace act
 {
@@ -6,8 +7,11 @@ namespace act
     {
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
         {
+            public PlayableAsset xinShouEr = null;
+
             public readonly fsm.Fsm<GameController> FSM = new fsm.Fsm<GameController>();
             public GameObject mainCamera;
+            public GameObject mainCameraTwo;
             public GameObject uiCamera;
 
             [Header("是否开启新手教程")]

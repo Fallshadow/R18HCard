@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace act.game
 {
     public class GameFlowMgr : Singleton<GameFlowMgr>
@@ -92,6 +93,7 @@ namespace act.game
                 {
                     return;
                 }
+
                 if(process >= value)
                 {
 
@@ -118,6 +120,10 @@ namespace act.game
                 //{
 
                 //}
+                if(process == 0)
+                {
+                    //TODO:游戏结束
+                }
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_ProcessNum_Change, false);
             }
         }
@@ -231,6 +237,14 @@ namespace act.game
             Pleasant = saveData.pleasant;
             Vit = saveData.vit;
             processTwo = saveData.processTwo;
+
+            FirstVit0 = saveData.FirstVit0;
+            SecondVit0 = saveData.SecondVit0;
+            ThrVit0 = saveData.ThrVit0;
+            FirstPlea0 = saveData.FirstPlea0;
+            SecondPlea0 = saveData.SecondPlea0;
+            ThrPlea0 = saveData.ThrPlea0;
+
             ReShowData();
         }
 
@@ -253,6 +267,16 @@ namespace act.game
             saveData.pleasant = Pleasant;
             saveData.vit = Vit;
             saveData.processTwo = processTwo;
+
+
+
+            saveData.FirstVit0 = FirstVit0;
+            saveData.SecondVit0 = SecondVit0;
+            saveData.ThrVit0 = ThrVit0;
+            saveData.FirstPlea0 = FirstPlea0;
+            saveData.SecondPlea0 = SecondPlea0;
+            saveData.ThrPlea0 = ThrPlea0;
+
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 
@@ -314,6 +338,13 @@ namespace act.game
         }
 
         #region 二阶段
+        public bool FirstVit0 = true;
+        public bool SecondVit0 = true;
+        public bool ThrVit0 = true;
+        public bool FirstPlea0 = true;
+        public bool SecondPlea0 = true;
+        public bool ThrPlea0 = true;
+
         public bool processTwo = false;
         private int vit = 0;
         public int Vit
@@ -324,11 +355,44 @@ namespace act.game
             }
             set
             {
-                vit = value;
-
+                if(!processTwo)
+                {
+                    return;
+                }
+                int last = 0;
+                last = value < 0 ? 0 : value;
+                if(last == 0)
+                {
+                    if(FirstVit0)
+                    {
+                        FirstVit0 = false;
+                        PushEventToTable(53);
+                        PushEventToTable(54);
+                        last += 20;
+                        Pleasant = 0;
+                    }
+                    else if(SecondVit0)
+                    {
+                        SecondVit0 = false;
+                        PushEventToTable(58);
+                        PushEventToTable(59);
+                        last += 20;
+                        Pleasant = 0;
+                    }
+                    else if(ThrVit0)
+                    {
+                        ThrVit0 = false;
+                        PushEventToTable(60);
+                        PushEventToTable(61);
+                        last += 20;
+                        Pleasant = 0;
+                    }
+                }
+                vit = last;
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_VitNum_Change);
             }
         }
+
         private int pleasant = 0;
         public int Pleasant
         {
@@ -338,9 +402,42 @@ namespace act.game
             }
             set
             {
-                pleasant = value;
+                if(!processTwo)
+                {
+                    return;
+                }
+                int last = 0;
+                last = value < 0 ? 0 : value;
+                if(last == 100)
+                {
+                    if(FirstPlea0)
+                    {
+                        FirstPlea0 = false;
+                        PushEventToTable(53);
+                        PushEventToTable(54);
+                        Vit += 20;
+                        last = 0;
+                    }
+                    else if(SecondPlea0)
+                    {
+                        SecondPlea0 = false;
+                        PushEventToTable(58);
+                        PushEventToTable(59);
+                        Vit += 20;
+                        last = 0;
+                    }
+                    else if(ThrPlea0)
+                    {
+                        ThrPlea0 = false;
+                        PushEventToTable(60);
+                        PushEventToTable(61);
+                        Vit += 20;
+                        last = 0;
+                    }
+                }
+                pleasant = last;
                 //通知显示
-                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change,false);
+                evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
             }
         }
         //进入二阶段
@@ -351,8 +448,13 @@ namespace act.game
             //计算结算体力值
             Vit = (20 - roundNum) + 2 * hp;
             //todo:特殊特效显示体力
-            pleasant = (int)process;
+            Pleasant = (int)process;
             roundNum = 0;
+            act.game.GameController.instance.mainCamera.SetActive(false);
+            act.game.GameController.instance.mainCameraTwo.SetActive(true);
+
+            game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
+
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
         }
         #endregion

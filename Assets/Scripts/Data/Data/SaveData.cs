@@ -26,5 +26,13 @@ namespace act.data
         public bool processTwo = false;
         public int vit = 0;
         public int pleasant = 0;
+
+        public bool FirstVit0 = true;
+        public bool SecondVit0 = true;
+        public bool ThrVit0 = true;
+        public bool FirstPlea0 = true;
+        public bool SecondPlea0 = true;
+        public bool ThrPlea0 = true;
+
     }
 }

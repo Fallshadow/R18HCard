@@ -440,8 +440,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3454627357952026569}
+  - component: {fileID: 7049151405959035530}
   - component: {fileID: 5655866250398009588}
-  - component: {fileID: 2677098358492901447}
+  - component: {fileID: 7238030507035189130}
   - component: {fileID: 5583767856541235643}
   - component: {fileID: 2296895239158071231}
   - component: {fileID: 5885044974346233110}
@@ -468,6 +469,26 @@ Transform:
   m_Father: {fileID: 582829532077553705}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 336.489, y: 357.7166, z: 1.018967}
+--- !u!114 &7049151405959035530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786318169095403102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10b5c0d84307de419b6686e3d7e2d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: []
+  speed: 60
+  ct: 0
+  TableMainPos: {x: 0, y: 0, z: 0}
+  TableMainRot: {x: 0, y: 0, z: 0}
+  TableMainPosMaxX: {x: 0, y: 0}
+  TableMainPosMaxY: {x: 0, y: 0}
+  CanMove: 0
 --- !u!20 &5655866250398009588
 Camera:
   m_ObjectHideFlags: 0
@@ -511,7 +532,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &2677098358492901447
+--- !u!114 &7238030507035189130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -520,16 +541,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7786318169095403102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41baaae0a1d12ba4d8a8f7e8650ad306, type: 3}
+  m_Script: {fileID: 11500000, guid: a10b5c0d84307de419b6686e3d7e2d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pos: []
-  speed: 60
+  speed: 100
   ct: 0
-  TableMainPos: {x: 0.037, y: 0.202, z: 0.911}
-  TableMainRot: {x: 33.04, y: 180, z: 0}
-  TableMainPosMaxX: {x: -13.1, y: 33.04}
-  TableMainPosMaxY: {x: 140.2, y: 232.2}
+  TableMainPos: {x: 0, y: 0, z: 0}
+  TableMainRot: {x: 0, y: 0, z: 0}
+  TableMainPosMaxX: {x: 0, y: 0}
+  TableMainPosMaxY: {x: 0, y: 0}
   CanMove: 0
 --- !u!114 &5583767856541235643
 MonoBehaviour:
