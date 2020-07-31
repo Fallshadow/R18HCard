@@ -138,6 +138,10 @@ namespace act.game
             set
             {
                 hp = value;
+                if(hp == 0)
+                {
+                    GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameOver);
+                }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_HpNum_Change);
             }
         }
@@ -453,7 +457,10 @@ namespace act.game
             act.game.GameController.instance.mainCamera.SetActive(false);
             act.game.GameController.instance.mainCameraTwo.SetActive(true);
 
-            game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
+            if(GameController.instance.isInNewPlayFlow2)
+            {
+                game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
+            }
 
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
         }

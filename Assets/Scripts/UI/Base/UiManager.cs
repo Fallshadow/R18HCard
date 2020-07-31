@@ -71,7 +71,10 @@ namespace act.ui
             Type uiType = typeof(T);
             if (loadedUiDict.TryGetValue(uiType, out UiBase ui))
             {
-                return ui as T;
+                if(ui != null)
+                {
+                    return ui as T;
+                }
             }
 
             Type attrType = typeof(BindingResourceAttribute);

@@ -16,6 +16,7 @@ namespace act
 
             [Header("是否开启新手教程")]
             public bool isInNewPlayFlow = false;
+            public bool isInNewPlayFlow2 = false;
             protected override void Awake()
             {
                 base.Awake();
@@ -35,6 +36,7 @@ namespace act
                 FSM.AddState((int)fsm.GameFsmState.GameFlowCardUseOver, new fsm.GameFlowCardUseOver<GameController>());
                 FSM.AddState((int)fsm.GameFsmState.GameFlowRoundEnd, new fsm.GameFlowRoundEnd<GameController>());
                 FSM.AddState((int)fsm.GameFsmState.NewPlayerFlow, new fsm.NewPlayerFlow<GameController>());
+                FSM.AddState((int)fsm.GameFsmState.GameOver, new fsm.GameFlowGameOver<GameController>());
                 FSM.SwitchToState((int)fsm.GameFsmState.ENTRY);
             }
 

@@ -9,8 +9,13 @@ namespace act.fsm
     {
         public override void Enter()
         {
+
+            GameObject.Destroy(ui.UiManager.instance.CreateUi<ui.GameOverCanvas>().gameObject)
+            ;
             AudioMgr.instance.PauseEnvirMusic();
-            ui.UiManager.instance.CreateUi<ui.MainMenuCanvas>().Show();
+            ui.UiManager.instance.CreateUi<ui.MainMenuCanvas>();
+            ui.UiManager.instance.OpenUi<ui.MainMenuCanvas>();
+
             act.game.GameController.instance.mainCamera.SetActive(false);
             act.game.GameController.instance.mainCameraTwo.SetActive(false);
             act.game.GameController.instance.uiCamera.GetComponent<PostProcessVolume>().enabled = false;

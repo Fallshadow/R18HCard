@@ -19,7 +19,8 @@ namespace act.fsm
             }
             else
             {
-                ui.UiManager.instance.CreateUi<ui.PlayCanvas>().Show();
+                ui.UiManager.instance.CreateUi<ui.PlayCanvas>();
+                ui.UiManager.instance.OpenUi<ui.PlayCanvas>();
                 if(game.GameFlowMgr.instance.processTwo)
                 {
                     act.game.GameController.instance.mainCameraTwo.SetActive(true);

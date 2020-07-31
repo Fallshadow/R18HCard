@@ -18,6 +18,7 @@ namespace act
             GameFlowCardUseOver,
             GameFlowRoundEnd,
             NewPlayerFlow,
+            GameOver,
         }
 
         public enum PlayerFsmState

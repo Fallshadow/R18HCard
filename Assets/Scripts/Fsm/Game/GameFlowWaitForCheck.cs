@@ -7,9 +7,11 @@ namespace act.fsm
 
     public class GameFlowWaitForCheck<T> : State<T>
     {
+        
         public override void Enter()
         {
-            Debug.Log("进入状态：等待主要阶段开启（等待操作卡牌）");
+            Debug.Log("进入状态：等待主要阶段开启（游戏结束）");
+
         }
 
         public override void Exit()
