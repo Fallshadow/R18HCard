@@ -13,6 +13,7 @@ namespace act.game
         public Image reTime;
         public Image Touzi1;
         public Image Touzi2;
+        public Image Touzi3;
 
         public Image SuccOrDefImg;
         public UiStaticText SuccOrDefText;
@@ -74,6 +75,9 @@ namespace act.game
                 case 2:
                     ShowTwoTouzi();
                     break;
+                case 3:
+                    ShowThreeTouzi();
+                    break;
                 default:
                     break;
             }
@@ -92,8 +96,10 @@ namespace act.game
 
         private void ShowOneTouzi()
         {
+            Touzi1.color = Color.white;
             Touzi1.gameObject.SetActive(true);
             Touzi2.gameObject.SetActive(false);
+            Touzi3.gameObject.SetActive(false);
             Sprite resultSprite = null;
             switch(maxTouziNum)
             {
@@ -122,14 +128,19 @@ namespace act.game
                 Touzi1.DOKill(); Touzi1.sprite = resultSprite;
                 continueCheck.Invoke();
                 TextRoll.GetOrAddComponent<CanvasGroup>().DOFade(1, 1);
+                Touzi1.color = Color.green;
             });
             PingPongImg(Touzi1, 0.6f, 1, 2.5f);
         }
 
         private void ShowTwoTouzi()
         {
+            Touzi1.color = Color.white;
+            Touzi2.color = Color.white;
+
             Touzi1.gameObject.SetActive(true);
             Touzi2.gameObject.SetActive(true);
+            Touzi3.gameObject.SetActive(false);
             Sprite resultSprite1 = null;
             Sprite resultSprite2 = null;
 
@@ -187,9 +198,120 @@ namespace act.game
                 Touzi2.sprite = resultSprite2;
                 continueCheck.Invoke();
                 TextRoll.GetOrAddComponent<CanvasGroup>().DOFade(1, 1);
+                returnMaxTouzi(resultList[0], resultList[1]).color = Color.green;
             });
             PingPongImg(Touzi1, 0.6f, 1, 2.5f);
             PingPongImg(Touzi2, 0.6f, 1, 2.5f);
+        }
+        private void ShowThreeTouzi()
+        {
+            Touzi1.color = Color.white;
+            Touzi2.color = Color.white;
+            Touzi3.color = Color.white;
+
+            Touzi1.gameObject.SetActive(true);
+            Touzi2.gameObject.SetActive(true);
+            Touzi3.gameObject.SetActive(true);
+            Sprite resultSprite1 = null;
+            Sprite resultSprite2 = null;
+            Sprite resultSprite3 = null;
+
+            switch(resultList[0])
+            {
+                case 1:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子1", "PlayCanvas");
+                    break;
+                case 2:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子2", "PlayCanvas");
+                    break;
+                case 3:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子3", "PlayCanvas");
+                    break;
+                case 4:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子4", "PlayCanvas");
+                    break;
+                case 5:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子5", "PlayCanvas");
+                    break;
+                case 6:
+                    resultSprite1 = UiManager.instance.GetSprite($"骰子6", "PlayCanvas");
+                    break;
+                default:
+                    break;
+            }
+            switch(resultList[1])
+            {
+                case 1:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子1", "PlayCanvas");
+                    break;
+                case 2:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子2", "PlayCanvas");
+                    break;
+                case 3:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子3", "PlayCanvas");
+                    break;
+                case 4:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子4", "PlayCanvas");
+                    break;
+                case 5:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子5", "PlayCanvas");
+                    break;
+                case 6:
+                    resultSprite2 = UiManager.instance.GetSprite($"骰子6", "PlayCanvas");
+                    break;
+                default:
+                    break;
+            }
+            switch(resultList[2])
+            {
+                case 1:
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子1", "PlayCanvas");
+                    break;      
+                case 2:         
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子2", "PlayCanvas");
+                    break;      
+                case 3:         
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子3", "PlayCanvas");
+                    break;      
+                case 4:         
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子4", "PlayCanvas");
+                    break;      
+                case 5:         
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子5", "PlayCanvas");
+                    break;      
+                case 6:         
+                    resultSprite3 = UiManager.instance.GetSprite($"骰子6", "PlayCanvas");
+                    break;
+                default:
+                    break;
+            }
+
+            reTime.DOFade(0, 2).OnComplete(() => {
+                Touzi1.DOKill();
+                Touzi1.sprite = resultSprite1;
+                Touzi2.DOKill();
+                Touzi2.sprite = resultSprite2;
+                Touzi3.DOKill();
+                Touzi3.sprite = resultSprite3;
+                continueCheck.Invoke();
+                TextRoll.GetOrAddComponent<CanvasGroup>().DOFade(1, 1);
+                returnMaxTouzi(resultList[0], resultList[1], resultList[2]).color = Color.green;
+            });
+            PingPongImg(Touzi1, 0.6f, 1, 2.5f);
+            PingPongImg(Touzi2, 0.6f, 1, 2.5f);
+            PingPongImg(Touzi3, 0.6f, 1, 2.5f);
+        }
+        private Image returnMaxTouzi(float t1,float t2 = 0,float t3= 0)
+        {
+            if(t1 >= t2 && t1 >= t3)
+            {
+                return Touzi1;
+            }
+            else if(t2 >= t3)
+            {
+                return Touzi2;
+            }
+            return Touzi3;
         }
 
         private int NUM;
@@ -216,14 +338,14 @@ namespace act.game
                 SuccOrDefText.text = "检定失败";
             }
 
-            if(NUM == 2)
-            {
-                SuccOrDefTextShow.anchoredPosition = towGO.anchoredPosition;
-            }
-            else if(NUM == 1)
-            {
-                SuccOrDefTextShow.anchoredPosition = oneGO.anchoredPosition;
-            }
+            //if(NUM == 2)
+            //{
+            //    SuccOrDefTextShow.anchoredPosition = towGO.anchoredPosition;
+            //}
+            //else if(NUM == 1)
+            //{
+            //    SuccOrDefTextShow.anchoredPosition = oneGO.anchoredPosition;
+            //}
         }
 
 
@@ -236,12 +358,19 @@ namespace act.game
             }
 
         }
-
+        [Header("骰子速度，越大越慢")]
+        public int speed = 10;
+        private int timeupdate = 0;
         private void PingPongImg(Image target, float from, float to, float dur)
         {
             target.DOFade(to, dur).OnComplete(() => { PingPongImg(target,to, from, dur); })
                 .OnUpdate(()=> {
-                    Touzi1.sprite = GetRandomSprite();
+                    timeupdate++;
+                    if(timeupdate == speed)
+                    {
+                        timeupdate=0;
+                        Touzi1.sprite = GetRandomSprite();
+                    }
                 });
         }
 

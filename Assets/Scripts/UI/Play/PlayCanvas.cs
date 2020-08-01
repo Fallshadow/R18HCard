@@ -89,6 +89,7 @@ namespace act.ui
         protected override void onShow()
         {
             base.onShow();
+            game.GameFlowMgr.instance.LoadData();
             if(!game.GameController.instance.isInNewPlayFlow)
             {
                 LoadIn();

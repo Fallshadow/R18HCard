@@ -35,6 +35,19 @@ namespace act.game
             }
         }
         private int twoOneNum = 0;
+
+        public CardInst JustCard
+        {
+            get
+            {
+                return justCard;
+            }
+            set
+            {
+                justCard = value;
+            }
+        }
+        private CardInst justCard;
         #region 当前使用的卡牌与事件
         public CardInst CurCard
         {
