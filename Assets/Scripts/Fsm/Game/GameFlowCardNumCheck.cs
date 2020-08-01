@@ -36,15 +36,22 @@ namespace act.fsm
         {
 
         }
-
+        float touziNum = 0;
+        float maxNum = 0;
+        float addNum = 0;
+        float chengNum = 0;
+        float maxTouziNum = 0;
 
         public void Touzi()
         {
-            float touziNum = 0;
-            float maxNum = 0;
+           touziNum = 0;
+           maxNum = 0;
+           addNum = 0;
+           chengNum = 0;
+           maxTouziNum = 0;
             List<float> result = new List<float>();
-            game.RandomNumMgr.instance.GetRandomNum(out result, out touziNum, out maxNum);
-            game.RollTouZiManager.instance.PlayRoll(touziNum, result, TouziCallBack, maxNum);
+            game.RandomNumMgr.instance.GetRandomNum(out result, out touziNum, out maxNum,out addNum,out chengNum,out maxTouziNum);
+            game.RollTouZiManager.instance.PlayRoll(touziNum, result, TouziCallBack, maxNum,addNum,chengNum,maxTouziNum);
         }
         public void TouziCallBack()
         {
@@ -52,6 +59,7 @@ namespace act.fsm
             //可以在这里处理加持数
             game.GameFlowMgr.instance.RandomNum = game.RollTouZiManager.instance.maxNum;
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_RandomNum_Change);
+            
             if(game.GameFlowMgr.instance.processTwo)
             {
                 game.GameFlowMgr.instance.Vit -= 1;
@@ -62,6 +70,7 @@ namespace act.fsm
                 Debug.Log("卡牌使用失败了QAQ");
 
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def_Anim);
+                evt.EventManager.instance.Send<int, bool>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowOrDefCG, (int)touziNum,false);
             }
             else
             {
@@ -75,6 +84,7 @@ namespace act.fsm
                     game.GameFlowMgr.instance.Process+=10;
                 }
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success_Anim);
+                evt.EventManager.instance.Send<int, bool>(evt.EventGroup.GAME, (short)evt.GameEvent.ShowOrDefCG, (int)touziNum, true);
                 //ChooseSuccTimeLineToPlay();
 
                 if(game.GameFlowMgr.instance.CurEvent.RoundNum == -2)

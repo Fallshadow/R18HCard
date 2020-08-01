@@ -27,7 +27,7 @@ namespace act.game
             futureTimeRandomNum[timeNum - 1] = number;
         }
         //result才是骰子投出来的
-        public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum)
+        public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum,out float addNum,out float chengNum,out float maxTouZiNum)
         {
             bool doSet = false;
             result = new List<float>();
@@ -61,10 +61,11 @@ namespace act.game
             }
             maxNum = curTouziCheckNum + nextAddCheckNum;
             maxNum *= resultChengNum;
+            chengNum = resultChengNum;
             Debug.Log($"当前骰子正常数值:{maxNum}（是否被设定{doSet}）");
-
+            addNum = nextAddCheckNum;
             Debug.Log($"当前骰子加持数值:{nextAddCheckNum}");
-
+            maxTouZiNum = curTouziCheckNum;
             Debug.Log($"当前骰子最终数值:{maxNum}");
             justTouziCheckNum = maxNum;
             nextAddCheckNum = 0;

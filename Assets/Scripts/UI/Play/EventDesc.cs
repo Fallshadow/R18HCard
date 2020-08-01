@@ -52,6 +52,7 @@ namespace act.ui
         }
         private void register()
         {
+            unRegister();
             evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Exit, HideCardSlotLight);
             evt.EventManager.instance.Register<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_Desc_Card_Slot_Enter, ShowCardSlotLight);
             evt.EventManager.instance.Register(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Enter_Slot, ShowEventCardDescTip);

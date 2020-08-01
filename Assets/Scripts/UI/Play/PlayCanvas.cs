@@ -23,6 +23,7 @@ namespace act.ui
         [SerializeField] private Transform eventParentGroupTran;
         [SerializeField] private EventDesc eventDesc;
 
+        [SerializeField] private GameObject HP;
         [SerializeField] private Text text_HP_Num;
         [SerializeField] private Text text_HP_Effect_Num;
         [SerializeField] private TMP_Text text_Process_Effect_Num;
@@ -293,6 +294,43 @@ namespace act.ui
 
             hpChangeSequence.AppendCallback(() => { text_HP_Num.text = game.GameFlowMgr.instance.Hp.ToString(); });
         }
+
+        public void ShowSpecialVitShow(Action callBaack = null)
+        {
+            ui.UiManager.instance.ControlMouseInput(UiManager.instance.CreateUi<PlayCanvas>(), false);
+            RectTransform hprt = HP.GetComponent<RectTransform>();
+            var rectTransform = text_HP_Effect_Num.rectTransform;
+            var color = text_HP_Effect_Num.color;
+
+            int dealtHp = game.GameFlowMgr.instance.Vit - Convert.ToInt32(text_HP_Num.text);
+            text_HP_Effect_Num.text = dealtHp > 0 ? "+" + dealtHp : dealtHp.ToString();
+
+
+            var hpChangeSequence = DOTween.Sequence();
+            hpChangeSequence.Append(hprt.DOLocalMove(new Vector3(0, 480, 0), 2));
+            hpChangeSequence.Join(hprt.DOScale(1.5f, 2));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 25.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), hpDuration));
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 75.0f, hpDuration));
+            hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 0.0f), hpDuration)).OnComplete(
+                ()=> 
+                { text_HP_Num.text = game.GameFlowMgr.instance.Vit.ToString(); }
+            );
+
+            hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y, 0));
+
+            hpChangeSequence.Append(hprt.DOLocalMove(new Vector3(-709, 0, 0), 2));
+            hpChangeSequence.Join(hprt.DOScale(1f, 2));
+            hpChangeSequence.AppendCallback(() => {
+                ui.UiManager.instance.ControlMouseInput(UiManager.instance.CreateUi<PlayCanvas>(), true);
+                callBaack.Invoke();
+            });
+
+
+
+        }
         public void ShowVITNum()
         {
             if(!game.GameFlowMgr.instance.processTwo)
@@ -393,6 +431,7 @@ namespace act.ui
         {
             HideAll.enabled = true;
         }
+
         public void HideHideAllImage()
         {
             HideAll.enabled = false;

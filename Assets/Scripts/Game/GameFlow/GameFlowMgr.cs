@@ -450,19 +450,23 @@ namespace act.game
             DelectAllEvent();
             processTwo = true;
             //计算结算体力值
-            Vit = (20 - roundNum) + 2 * hp;
-            //todo:特殊特效显示体力
+            vit = (20 - roundNum) + 2 * hp;
+            act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ShowSpecialVitShow(()=> {
+                if(GameController.instance.isInNewPlayFlow2)
+                {
+                    game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
+                    game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
+
+                }
+            });
+
             Pleasant = (int)process;
             roundNum = 0;
             act.game.GameController.instance.mainCamera.SetActive(false);
             act.game.GameController.instance.mainCameraTwo.SetActive(true);
 
-            if(GameController.instance.isInNewPlayFlow2)
-            {
-                game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
-            }
+            
 
-            game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
         }
         #endregion
 

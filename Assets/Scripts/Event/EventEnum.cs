@@ -49,6 +49,8 @@ namespace act.evt
         HideAll,
         DisHideAll,
         ShowDescByLogic,
+        ShowOrDefCG,
+
     }
 
     public enum CardEvent : short
