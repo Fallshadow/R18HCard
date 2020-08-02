@@ -8,7 +8,7 @@ card_name7=
 card_name8=对视
 card_name9=复读
 card_name10=
-card_name11=驾轻就熟11
+card_name11=驾轻就熟
 card_name12=天神下凡
 card_name13=“丁”
 
