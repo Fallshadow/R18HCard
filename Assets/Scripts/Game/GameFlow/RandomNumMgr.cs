@@ -26,10 +26,11 @@ namespace act.game
             //要不要判断一下骰子数和当前要到达的数值。。
             futureTimeRandomNum[timeNum - 1] = number;
         }
+        public bool doSet = false;
         //result才是骰子投出来的
         public void GetRandomNum(out List<float> result,out float touziNum,out float maxNum,out float addNum,out float chengNum,out float maxTouZiNum)
         {
-            bool doSet = false;
+            doSet = false;
             result = new List<float>();
             touziNum = curTouziNum;
             if (futureTimeRandomNum.Count >= 1)
@@ -38,6 +39,10 @@ namespace act.game
                 {
                     result.Add(futureTimeRandomNum[0]);
                     doSet = true;
+                    for(int i = 1; i < curTouziNum; i++)
+                    {
+                        result.Add(Random.Range(1, 7));
+                    }
                 }
                 else
                 {

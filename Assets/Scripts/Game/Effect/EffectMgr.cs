@@ -250,6 +250,9 @@ namespace act.game
                         GameFlowMgr.instance.CurEvent.RoundNum += -1;
                     }
                     return;
+                case EffectId.EI_32:
+                    GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].DestorySelf();
+                    return;
                 default:
                     break;
             }

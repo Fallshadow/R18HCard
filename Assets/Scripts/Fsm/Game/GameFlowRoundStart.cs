@@ -56,7 +56,7 @@ namespace act.fsm
                 Debug.Log("给予卡片：1，2，3");
                 game.GameFlowMgr.instance.PushCardToTable(1);
                 game.GameFlowMgr.instance.PushCardToTable(2);
-                game.GameFlowMgr.instance.PushCardToTable(3);
+                //game.GameFlowMgr.instance.PushCardToTable(3);
             }
         }
     }

@@ -42,6 +42,8 @@ public enum BtnControlType
 
 public class GuideController : SingletonMonoBehavior<GuideController>
 {
+    [Header("新手教程缩放时间")]
+    public float scaleTime = 0.75f;
     public GameObject[] texts;
     public GameObject[] images;
     public GameObject guideBG;
@@ -85,7 +87,7 @@ public class GuideController : SingletonMonoBehavior<GuideController>
         images[(int)guideType].SetActive(true);
         images[(int)guideType].transform.localScale = new Vector3(25, 25, 25);
         images[(int)guideType].GetComponent<Button>().enabled = false;
-        images[(int)guideType].transform.DOScale(imageVecs[(int)guideType], 1.5f).OnComplete(() => {
+        images[(int)guideType].transform.DOScale(imageVecs[(int)guideType], scaleTime).OnComplete(() => {
             images[(int)guideType].GetComponent<Button>().enabled = true;
             playCanvasGroup.interactable = true;
         });
