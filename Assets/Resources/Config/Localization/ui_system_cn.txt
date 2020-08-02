@@ -38,7 +38,6 @@ card_desc_SP9=这张卡的类型变成与上一张打出的卡一致
 card_desc_SP10=
 card_desc_SP11=手牌中有灰色卡时才能打出，自带奖励骰
 card_desc_SP12=下一次检定结果翻倍
-card_desc13=
 
 event_name1=起初的关心
 event_name2=口味与意见
