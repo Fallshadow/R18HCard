@@ -89,7 +89,7 @@ namespace act.ui
         protected override void onShow()
         {
             base.onShow();
-            game.GameFlowMgr.instance.LoadData();
+            game.GameFlowMgr.instance.ReShowData();
             if(!game.GameController.instance.isInNewPlayFlow)
             {
                 LoadIn();
@@ -98,7 +98,6 @@ namespace act.ui
         }
         public void LoadIn()
         {
-            game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundStart);
             ShowRoundOver();
         }

@@ -21,7 +21,8 @@ namespace act.ui
         public float fadeOut = 1.5f;
         public float allShowTime = 2;
 
-
+        [Header("重洗开始按钮")]
+        public Button playbtn;
         public override void Initialize()
         {
 
@@ -86,6 +87,14 @@ namespace act.ui
         #region Btn
         public void ShowInterBtn()
         {
+            if(game.GameFlowMgr.instance.CanReplay)
+            {
+                playbtn.interactable = true;
+            }
+            else
+            {
+                playbtn.interactable = false;
+            }
             textBtn.DOKill();
             textBtn.interactable = false;
             interBtn.gameObject.SetActive(true);
@@ -111,7 +120,9 @@ namespace act.ui
         public void RePlay()
         {
             Hide();
+            game.GameFlowMgr.instance.CanReplay = true;
             game.GameFlowMgr.instance.ClearData();
+            game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
             AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
