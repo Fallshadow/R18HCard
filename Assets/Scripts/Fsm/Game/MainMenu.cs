@@ -12,6 +12,7 @@ namespace act.fsm
 
             GameObject.Destroy(ui.UiManager.instance.CreateUi<ui.GameOverCanvas>().gameObject)
             ;
+
             AudioMgr.instance.PauseEnvirMusic();
             ui.UiManager.instance.CreateUi<ui.MainMenuCanvas>();
             ui.UiManager.instance.OpenUi<ui.MainMenuCanvas>();

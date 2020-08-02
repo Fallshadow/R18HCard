@@ -389,6 +389,7 @@ MonoBehaviour:
   hold: 1
   fadeOut: 1.5
   allShowTime: 0
+  playbtn: {fileID: 6657476659534970860}
 --- !u!1 &2466241286691559384
 GameObject:
   m_ObjectHideFlags: 0

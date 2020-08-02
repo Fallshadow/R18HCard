@@ -7,6 +7,7 @@ namespace act.game
 {
     public class GameFlowMgr : Singleton<GameFlowMgr>
     {
+        public bool CanReplay = false;
         //event 展示
         public bool eventDesc = false;
         //卡牌成功即解决事件？
@@ -262,7 +263,6 @@ namespace act.game
             SecondPlea0 = saveData.SecondPlea0;
             ThrPlea0 = saveData.ThrPlea0;
 
-            ReShowData();
         }
 
         public void SaveData()
@@ -324,7 +324,7 @@ namespace act.game
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowCardCheck);
         }
         //重新展示数据
-        private void ReShowData()
+        public void ReShowData()
         {
             if(eventInsts != null)
             {

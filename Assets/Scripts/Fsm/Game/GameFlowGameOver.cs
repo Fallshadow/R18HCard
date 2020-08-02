@@ -16,6 +16,7 @@ namespace act.fsm
 
         public override void Exit()
         {
+            game.GameFlowMgr.instance.CanReplay = false;
             act.ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 1, time: 0);
         }
 

@@ -12,7 +12,7 @@ namespace act.ui
         public Image Image;
         public void ExitToMenu()
         {
-           game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.MAINMENU);
+            ui.UiManager.instance.CreateUi<PlayCanvas>().ReturnToMain();
         }
 
         public override void Initialize()
