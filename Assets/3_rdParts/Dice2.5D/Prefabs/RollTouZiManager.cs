@@ -66,7 +66,14 @@ namespace act.game
             this.addNum = addNum;
             this.chengNum = chengNum;
             this.maxTouziNum = maxTouZiNum;
-            TextRoll.text = $"({maxTouZiNum}+{addNum})*{chengNum}={maxNum}";
+            if(RandomNumMgr.instance.doSet)
+            {
+                TextRoll.text = $"(<color=green>{maxTouZiNum}</color>+{addNum})*{chengNum}={maxNum}";
+            }
+            else
+            {
+                TextRoll.text = $"({maxTouZiNum}+{addNum})*{chengNum}={maxNum}";
+            }
             switch(touziNum)
             {
                 case 1:
@@ -325,7 +332,7 @@ namespace act.game
         public void ShowCheckGOReal()
         {
 
-            succordefCG.alpha = 1;
+            succordefCG.DOFade(1, 1);
             succordefCG.interactable = true;
             if(SUCC)
             {
@@ -359,7 +366,7 @@ namespace act.game
 
         }
         [Header("骰子速度，越大越慢")]
-        public int speed = 10;
+        public int speed = 4;
         private int timeupdate = 0;
         private void PingPongImg(Image target, float from, float to, float dur)
         {
@@ -369,7 +376,7 @@ namespace act.game
                     if(timeupdate == speed)
                     {
                         timeupdate=0;
-                        Touzi1.sprite = GetRandomSprite();
+                        target.sprite = GetRandomSprite();
                     }
                 });
         }

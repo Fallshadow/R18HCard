@@ -29032,6 +29032,11 @@ PrefabInstance:
       propertyPath: Touzi3
       value: 
       objectReference: {fileID: 6097998914881875612}
+    - target: {fileID: 4917066804659912787, guid: 549d59d4977c3e34cb74f8feac69f82a,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5126980035143012873, guid: 549d59d4977c3e34cb74f8feac69f82a,
         type: 3}
       propertyPath: m_AnchorMin.y
