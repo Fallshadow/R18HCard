@@ -228,14 +228,14 @@ namespace act.game
                     }
                     else if(GameFlowMgr.instance.TwoOneNum == 21)
                     {
-                        game.GameFlowMgr.instance.EnterToProcessTwo();
+                        game.GameFlowMgr.instance.PlayTimeLineFixed("足交");
                     }
                     return;
                 case EffectId.EI_28:
                     GameFlowMgr.instance.CurEvent.RoundNum = (int)vars[0];
                     return;
                 case EffectId.EI_29:
-                    game.GameFlowMgr.instance.EnterToProcessTwo();
+                    game.GameFlowMgr.instance.PlayTimeLineFixed("足交");
                     return;
                 case EffectId.EI_30:
                     GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.justTouziCheckNum;

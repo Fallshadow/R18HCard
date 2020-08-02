@@ -25,6 +25,7 @@ public class NewPlayerPlayableBehaviour : PlayableBehaviour
     public float Cdur;
     public string TalkText;
     public float dur;
+    public bool ZUJiao;
 
     private bool perPause;
     private bool talkCanvasPause;
@@ -158,6 +159,10 @@ public class NewPlayerPlayableBehaviour : PlayableBehaviour
         {
             act.game.TimeLineMgr.instance.PasueTimeline(act.game.TimeLineMgr.instance.newPlayerDir);
             showGuidePause = false;
+        }
+        if(ZUJiao)
+        {
+            act.game.GameFlowMgr.instance.EnterToProcessTwo();
         }
     }
 

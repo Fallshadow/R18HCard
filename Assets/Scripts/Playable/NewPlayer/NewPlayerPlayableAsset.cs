@@ -53,6 +53,9 @@ public class NewPlayerPlayableAsset : PlayableAsset,ITimelineClipAsset
     public bool ShowGuide;
     public GuideType guideType;
 
+    [Header("---------足交回调---------")]
+    public bool ZUJiao;
+
     public ClipCaps clipCaps
     {
         get
@@ -84,6 +87,7 @@ public class NewPlayerPlayableAsset : PlayableAsset,ITimelineClipAsset
         playable.GetBehaviour().ShowGuide = ShowGuide;
         playable.GetBehaviour().CloseTalkWindow = CloseTalkWindow;
         playable.GetBehaviour().StartRound = StartRound;
+        playable.GetBehaviour().ZUJiao = ZUJiao;
         return playable;
     }
 }

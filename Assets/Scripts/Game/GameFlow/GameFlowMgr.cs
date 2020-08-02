@@ -432,6 +432,7 @@ namespace act.game
                         FirstPlea0 = false;
                         PushEventToTable(53);
                         PushEventToTable(54);
+
                         Vit += 20;
                         last = 0;
                     }
@@ -456,6 +457,11 @@ namespace act.game
                 //通知显示
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
             }
+        }
+        public void PlayTimeLineFixed(string fileName)
+        {
+            ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 0, 1);
+            game.TimeLineMgr.instance.PlayActivePlayableAsset(fileName);
         }
         //进入二阶段
         public void EnterToProcessTwo()

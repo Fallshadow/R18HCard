@@ -106,6 +106,24 @@ namespace act.game
             playableDirector.playableAsset = playableAsset;
             playableDirector.Play();
         }
+
+        public void PlayActivePlayableAsset(string fileName, PlayableDirector playableDirector = null)
+        {
+            PlayableAsset playableAsset = act.utility.LoadResources.LoadAsset<PlayableAsset>("TimeLine/H动画timeline/" + fileName);
+            if(playableAsset == null)
+            {
+                Debug.Log("并没有读取到对应TimeLine");
+                return;
+            }
+
+            if(playableDirector == null)
+            {
+                playableDirector = gameDir;
+            }
+
+            playableDirector.playableAsset = playableAsset;
+            playableDirector.Play();
+        }
     }
 }
 
