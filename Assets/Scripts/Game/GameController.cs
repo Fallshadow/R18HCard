@@ -1,10 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
+using System.Collections.Generic;
 
 namespace act
 {
     namespace game
     {
+        public enum ModelType
+        {
+            Common = 0,
+            YuJinBody,
+            AiFu,
+            ZhengMianWei,
+            BeiMianWei,
+            QiChengWei,
+        }
+        public enum TimeLineType
+        {
+            ZuJiaoHard = 0,
+
+        }
+
+
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
         {
             public PlayableAsset xinShouEr = null;
@@ -14,6 +31,11 @@ namespace act
             public GameObject mainCameraTwo;
             public GameObject uiCamera;
 
+            [Header("模型们")]
+            public GameObject[] models = null;
+            public Animator[] modelsAnimtor = null;
+            [Header("Timeline们")]
+            public PlayableDirector[] timelines = null;
             [Header("是否开启新手教程")]
             public bool isInNewPlayFlow = false;
             public bool isInNewPlayFlow2 = false;
@@ -38,14 +60,49 @@ namespace act
                 FSM.AddState((int)fsm.GameFsmState.NewPlayerFlow, new fsm.NewPlayerFlow<GameController>());
                 FSM.AddState((int)fsm.GameFsmState.GameOver, new fsm.GameFlowGameOver<GameController>());
                 FSM.SwitchToState((int)fsm.GameFsmState.ENTRY);
+                modelsAnimtor = new Animator[models.Length];
+                for(int i = 0; i < models.Length; i++)
+                {
+                    modelsAnimtor[i] = models[i].GetComponent<Animator>();
+                }
             }
-
+            [Header("这个是时间计时器")]
+            public float timer = 0;
+            public float timerDel = 5;
+            public bool useTimerNorModel = true;
             private void Update()
             {
                 // TODO: should be remove after
                 //Physics.SyncTransforms();
 
                 FSM.Update();
+
+                if(models[0].gameObject.activeSelf && useTimerNorModel)
+                {
+                    timer += Time.deltaTime;
+                    if(timer > timerDel)
+                    {
+                        timer = 0;
+                        int random = UnityEngine.Random.Range(0, 3);
+                        string animName = "";
+                        switch(random)
+                        {
+                            case 0:
+                                animName = "坐姿呼吸";
+                                break;
+                            case 1:
+                                animName = "晃动";
+                                break;
+                            case 2:
+                                animName = "俯身";
+                                break;
+                            default:
+                                break;
+                        }
+                        Debug.Log(random + animName);
+                        modelsAnimtor[0].Play(animName);
+                    }
+                }
             }
 
             private void FixedUpdate()
@@ -61,6 +118,11 @@ namespace act
             private void OnApplicationQuit()
             {
                 FSM.Finalize();
+            }
+
+            public void PlayActivePlayableAsset(TimeLineType timeLineType)
+            {
+                timelines[(int)timeLineType].Play();
             }
         }
     }

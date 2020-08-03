@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 public class RealToolGetClipLength : MonoBehaviour
 {
@@ -9,5 +10,16 @@ public class RealToolGetClipLength : MonoBehaviour
     public static void GetAnimClipLengthToGameDefineClass()
     {
     
+    }
+    
+    [MenuItem("RealTool/获取某个fbx的animationclip")]
+    public static void GetAnimClip()
+    {
+        string tname = "Assets/坐姿呼吸.anim";
+            AnimationClip src = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/model/Motion/坐姿待机-呼吸.FBX");
+            AnimationClip temp = new AnimationClip();
+            EditorUtility.CopySerialized(src, temp);
+            Directory.CreateDirectory(tname);
+            AssetDatabase.CreateAsset(temp, tname);
     }
 }

@@ -461,7 +461,7 @@ namespace act.game
         public void PlayTimeLineFixed(string fileName)
         {
             ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 0, 1);
-            game.TimeLineMgr.instance.PlayActivePlayableAsset(fileName);
+            game.GameController.instance.PlayActivePlayableAsset(TimeLineType.ZuJiaoHard);
         }
         //进入二阶段
         public void EnterToProcessTwo()

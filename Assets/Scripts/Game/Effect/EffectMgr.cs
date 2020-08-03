@@ -95,6 +95,14 @@ namespace act.game
                     {
                         GameFlowMgr.instance.PushEventToTable((int)item);
                     }
+                    if(vars.Length > 0)
+                    {
+                        if(vars[0] == 19)
+                        {
+                            GameController.instance.models[0].SetActive(false);
+                        }
+                    }
+                    
                     return;
                 case EffectId.EI_5:
                     RandomNumMgr.instance.curTouziNum += (int)vars[0];
@@ -173,6 +181,18 @@ namespace act.game
                     {
                         GameFlowMgr.instance.DelectEventByID((int)item);
                     }
+                    if(vars.Length == 3)
+                    {
+                        if(vars[0] == 21 && vars[1] == 22 && vars[2] == 28)
+                        {
+                            GameController.instance.models[1].SetActive(true);
+                        }
+                        if(vars[0] == 20 && vars[1] == 21 && vars[2] == 22)
+                        {
+                            GameController.instance.models[1].SetActive(true);
+                        }
+                    }
+                    
                     return;
                 case EffectId.EI_17:
                     //跳过骰子

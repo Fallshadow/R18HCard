@@ -86,7 +86,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Progress: 3.5
+    - _Progress: 0.05
     - _Shine: 0
     - _ShineSpeed: 1
     - _SmoothnessTextureChannel: 0

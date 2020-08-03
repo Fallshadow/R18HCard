@@ -19,7 +19,15 @@ public class TalkCanvasControlPlayableAsset : PlayableAsset
     public string content;
     [Header("对话框文字打字出现速度 单位s")]
     public float time;
+    [Header("是否暂停下面的TimeLine")]
+    public bool pauseTL;
+    [Header("TIMELINE")]
+    public act.game.TimeLineType timeline;
+    [Header("结束了么")]
+    public bool isOver = false;
 
+    [Header("---------足交回调---------")]
+    public bool ZUJiao;
     // Factory method that generates a playable based on this asset
     public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
     {
@@ -30,6 +38,10 @@ public class TalkCanvasControlPlayableAsset : PlayableAsset
         playable.GetBehaviour().playCanvasAlphaTo1Time = playCanvasAlphaTo1Time;
         playable.GetBehaviour().talkCanvasAlphaTo1Time = talkCanvasAlphaTo1Time;
         playable.GetBehaviour().talkCanvasAlphaTo0Time = talkCanvasAlphaTo0Time;
+        playable.GetBehaviour().timeline = timeline;
+        playable.GetBehaviour().pauseTL = pauseTL;
+        playable.GetBehaviour().isOver = isOver;
+        playable.GetBehaviour().ZUJiao = ZUJiao;
         return playable;
     }
 }

@@ -41,13 +41,19 @@ public class NewPlayerPlayableBehaviour : PlayableBehaviour
             PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
             GuideController.instance.StartGuide();
         }
-        else
+        else if(act.game.GameController.instance.isInNewPlayFlow)
         {
             TalkWindow = act.ui.UiManager.instance.CreateUi<act.ui.TalkWindow>();
             TalkWindow.ResetText();
             PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
             PlayCanvas.ShowDrak(true);
             TalkCanvas = act.ui.UiManager.instance.CreateUi<act.ui.TalkCanvas>();
+        }
+        else
+        {
+            PlayCanvas = act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>();
+            TalkCanvas = act.ui.UiManager.instance.CreateUi<act.ui.TalkCanvas>();
+            TalkWindow = act.ui.UiManager.instance.CreateUi<act.ui.TalkWindow>();
         }
     }
 
