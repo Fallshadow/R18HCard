@@ -18,7 +18,10 @@ namespace act
         public enum TimeLineType
         {
             ZuJiaoHard = 0,
-
+            AiFu = 1,
+            ZhengMian,
+            BeiMian,
+            QiCheng,
         }
 
 
