@@ -5,7 +5,7 @@ using System.Collections;
 namespace act.game
 {
 
-    public class MoveCamera2 : SingletonMonoBehavior<MoveCamera>
+    public class MoveCamera2 : SingletonMonoBehavior<MoveCamera2>
     {
         [Header("这里是相机对应的位置哦")]
         public Vector3[] pos;

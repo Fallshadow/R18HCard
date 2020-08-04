@@ -259,10 +259,12 @@ namespace act.game
             FirstVit0 = saveData.FirstVit0;
             SecondVit0 = saveData.SecondVit0;
             ThrVit0 = saveData.ThrVit0;
+            FourVit0 = saveData.FourVit0;
+
             FirstPlea0 = saveData.FirstPlea0;
             SecondPlea0 = saveData.SecondPlea0;
             ThrPlea0 = saveData.ThrPlea0;
-
+            FourPlea0 = saveData.FourPlea0;
         }
 
         public void SaveData()
@@ -290,9 +292,11 @@ namespace act.game
             saveData.FirstVit0 = FirstVit0;
             saveData.SecondVit0 = SecondVit0;
             saveData.ThrVit0 = ThrVit0;
+            saveData.FourVit0 = FourVit0;
             saveData.FirstPlea0 = FirstPlea0;
             saveData.SecondPlea0 = SecondPlea0;
             saveData.ThrPlea0 = ThrPlea0;
+            saveData.FourPlea0 = FourPlea0;
 
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
@@ -358,9 +362,11 @@ namespace act.game
         public bool FirstVit0 = true;
         public bool SecondVit0 = true;
         public bool ThrVit0 = true;
+        public bool FourVit0 = true;
         public bool FirstPlea0 = true;
         public bool SecondPlea0 = true;
         public bool ThrPlea0 = true;
+        public bool FourPlea0 = true;
 
         public bool processTwo = false;
         private int vit = 0;
@@ -385,6 +391,7 @@ namespace act.game
                         FirstVit0 = false;
                         PushEventToTable(53);
                         PushEventToTable(54);
+                        PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuDef);
                         last += 20;
                         Pleasant = 0;
                     }
@@ -393,6 +400,7 @@ namespace act.game
                         SecondVit0 = false;
                         PushEventToTable(58);
                         PushEventToTable(59);
+                        PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianDef);
                         last += 20;
                         Pleasant = 0;
                     }
@@ -401,8 +409,14 @@ namespace act.game
                         ThrVit0 = false;
                         PushEventToTable(60);
                         PushEventToTable(61);
+                        PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianDef);
                         last += 20;
                         Pleasant = 0;
+                    }
+                    else if(FourVit0)
+                    {
+                        FourVit0 = false;
+                        PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengDef);
                     }
                 }
                 vit = last;
@@ -432,36 +446,55 @@ namespace act.game
                         FirstPlea0 = false;
                         PushEventToTable(53);
                         PushEventToTable(54);
-
-                        Vit += 20;
-                        last = 0;
-                    }
-                    else if(SecondPlea0)
-                    {
-                        SecondPlea0 = false;
-                        PushEventToTable(58);
-                        PushEventToTable(59);
-                        Vit += 20;
-                        last = 0;
-                    }
-                    else if(ThrPlea0)
-                    {
-                        ThrPlea0 = false;
-                        PushEventToTable(60);
-                        PushEventToTable(61);
+                        PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuSucc);
                         Vit += 20;
                         last = 0;
                     }
                 }
+                if(last == 150)
+                {
+                    if(SecondPlea0)
+                    {
+                        SecondPlea0 = false;
+                        PushEventToTable(58);
+                        PushEventToTable(59);
+                        PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianSucc);
+                        Vit += 20;
+                        last = 0;
+                    }
+                }
+                if(last == 200)
+                {
+                    if(ThrPlea0)
+                    {
+                        ThrPlea0 = false;
+                        PushEventToTable(60);
+                        PushEventToTable(61);
+                        PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianSucc);
+                        Vit += 20;
+                        last = 0;
+                    }
+                }
+                if(last == 300)
+                {
+                    if(FourPlea0)
+                    {
+                        FourPlea0 = false;
+                        PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengSucc);
+                    }
+                }
+                
+                
+
                 pleasant = last;
                 //通知显示
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
             }
         }
-        public void PlayTimeLineFixed(string fileName)
+        public void PlayTimeLineFixed(game.TimeLineType timeLineType, TimeLineAssetType timeLineAssetType = 0)
         {
             ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 0, 1);
-            game.GameController.instance.PlayActivePlayableAsset(TimeLineType.ZuJiaoHard);
+            game.GameController.instance.PlayActivePlayableAsset(timeLineType, timeLineAssetType);
         }
         //进入二阶段
         public void EnterToProcessTwo()

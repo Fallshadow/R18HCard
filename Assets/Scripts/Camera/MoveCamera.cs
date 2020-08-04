@@ -22,8 +22,6 @@ namespace act.game
         public float speed = 100;
 
         public game.CameraType ct = game.CameraType.TableMain;
-        public Vector3 TableMainPos = Vector3.zero;
-        public Vector3 TableMainRot = Vector3.zero;
         public Vector2 TableMainPosMaxX = Vector2.zero;
         public Vector2 TableMainPosMaxY = Vector2.zero;
         public bool CanMove = false;

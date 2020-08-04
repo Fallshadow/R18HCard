@@ -30,9 +30,10 @@ namespace act.data
         public bool FirstVit0 = true;
         public bool SecondVit0 = true;
         public bool ThrVit0 = true;
+        public bool FourVit0 = true;
         public bool FirstPlea0 = true;
         public bool SecondPlea0 = true;
         public bool ThrPlea0 = true;
-
+        public bool FourPlea0 = true;
     }
 }

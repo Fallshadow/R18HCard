@@ -99,7 +99,7 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 7954946064485681976, guid: 96164e06a68cf6b4682d4e1fb3a15362, type: 2}
     value: {fileID: 8481268142627042639}
-  - key: {fileID: 4163469689215415303, guid: 60c682fdfaddb874cb1448177f4d1af1, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: -11573991216088055, guid: d0d93af3a36e257468debe775799c268, type: 2}
     value: {fileID: 8481268142627042639}
@@ -1902,6 +1902,8 @@ PlayableDirector:
     value: {fileID: 1825344400}
   - key: {fileID: -8454744115987752942, guid: 96164e06a68cf6b4682d4e1fb3a15362, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -3929494045073888856, guid: 0c703d34e42be304fab010c3a6194707, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 3225f1206b916614995f038f8d17383d: {fileID: 0}
@@ -1923,6 +1925,7 @@ GameObject:
   - component: {fileID: 1366976396263805140}
   - component: {fileID: 327666981180853271}
   - component: {fileID: 1529715886}
+  - component: {fileID: 871834992}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1962,10 +1965,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c70b9eb7ccf2d49aadb9357f5f314e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xinShouEr: {fileID: 11400000, guid: 0c703d34e42be304fab010c3a6194707, type: 2}
   mainCamera: {fileID: 0}
   mainCameraTwo: {fileID: 0}
   uiCamera: {fileID: 338357838059246624}
+  models:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  modelsAnimtor: []
+  timelines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeLineAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isInNewPlayFlow: 0
+  isInNewPlayFlow2: 0
+  timer: 0
+  timerDel: 5
+  useTimerNorModel: 1
 --- !u!114 &7628676228069763188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,7 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultFromTransform: 0
-  DefaultCameraAngles: {x: 20, y: 180, z: 0}
+  DefaultCameraAngles: {x: 10, y: 170, z: 0}
   DefaultLocalAngles: {x: 0, y: 0, z: 0}
   CameraTransform: {fileID: 0}
   FollowObjectTransform: {fileID: 0}
@@ -2097,6 +2130,25 @@ MonoBehaviour:
   HorizontalRightRatio: 3.65
   VerticalUpRatio: 3.76
   VerticalDownRatio: 3.31
+--- !u!95 &871834992
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086230290344969043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90ac448f213f2ef439f98b3c7c0f4fcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7681519930343790809
 GameObject:
   m_ObjectHideFlags: 0
