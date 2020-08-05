@@ -305,7 +305,6 @@ namespace act.ui
             int dealtHp = game.GameFlowMgr.instance.Vit - Convert.ToInt32(text_HP_Num.text);
             text_HP_Effect_Num.text = dealtHp > 0 ? "+" + dealtHp : dealtHp.ToString();
 
-
             var hpChangeSequence = DOTween.Sequence();
             hpChangeSequence.Append(hprt.DOLocalMove(new Vector3(0, 480, 0), 2));
             hpChangeSequence.Join(hprt.DOScale(1.5f, 2));

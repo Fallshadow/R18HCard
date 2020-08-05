@@ -23,6 +23,18 @@ namespace act
             BeiMian,
             QiCheng,
         }
+        public enum TimeLineAssetType
+        {
+            ZuJiaoHard = 0,
+            AiFuSucc,
+            AiFuDef,
+            ZhengMianSucc,
+            ZhengMianDef,
+            BeiMianSucc,
+            BeiMianDef,
+            QiChengSucc,
+            QiChengDef,
+        }
 
 
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
@@ -39,6 +51,8 @@ namespace act
             public Animator[] modelsAnimtor = null;
             [Header("Timeline们")]
             public PlayableDirector[] timelines = null;
+            [Header("TimelineAssest们")]
+            public PlayableAsset[] timeLineAssets = null;
             [Header("是否开启新手教程")]
             public bool isInNewPlayFlow = false;
             public bool isInNewPlayFlow2 = false;
@@ -123,8 +137,9 @@ namespace act
                 FSM.Finalize();
             }
 
-            public void PlayActivePlayableAsset(TimeLineType timeLineType)
+            public void PlayActivePlayableAsset(TimeLineType timeLineType, TimeLineAssetType timeLineAssetType)
             {
+                timelines[(int)timeLineType].playableAsset = timeLineAssets[(int)timeLineAssetType];
                 timelines[(int)timeLineType].Play();
             }
         }
