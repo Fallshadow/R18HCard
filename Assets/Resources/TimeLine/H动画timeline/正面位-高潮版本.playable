@@ -461,25 +461,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3030,7 +3012,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 2.1666666666666665
+    m_Start: 1.7
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: 3989352159498290535}
     m_Duration: 0.9333333333333336
@@ -3060,10 +3042,10 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 4.166666666666666
-    m_PreExtrapolationTime: 2.1666666666666665
+    m_PreExtrapolationTime: 1.7
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 8.2
+    m_Start: 7.733333333333333
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: -6909260783748334342}
     m_Duration: 0.9333333333333336
@@ -3092,11 +3074,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 3.916666666666666
+    m_PostExtrapolationTime: 3.8666666666666654
     m_PreExtrapolationTime: 0
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 13.983333333333333
+    m_Start: 13.466666666666667
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: 5988775114730551889}
     m_Duration: 0.9333333333333336
@@ -3125,11 +3107,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 3.333333333333334
+    m_PostExtrapolationTime: 3.3833333333333346
     m_PreExtrapolationTime: 0
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 19.183333333333334
+    m_Start: 18.71666666666667
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: -1164645323320050840}
     m_Duration: 0.9333333333333336
@@ -3158,11 +3140,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 9.416666666666664
+    m_PostExtrapolationTime: 9.333333333333332
     m_PreExtrapolationTime: 0
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 7.266666666666666
+    m_Start: 6.8
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: -2329870409405574744}
     m_Duration: 0.9333333333333336
@@ -3195,7 +3177,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 4.166666666666666
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 30.466666666666665
+    m_Start: 29.916666666666668
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: 5575625202962205755}
     m_Duration: 0.016666666666666666
@@ -3228,7 +3210,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 13.049999999999999
+    m_Start: 12.533333333333333
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: -8519408548325863471}
     m_Duration: 0.9333333333333336
@@ -3258,10 +3240,10 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 3.916666666666666
+    m_PreExtrapolationTime: 3.8666666666666654
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 18.25
+    m_Start: 17.783333333333335
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: 5815770977738733152}
     m_Duration: 0.9333333333333336
@@ -3291,10 +3273,10 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 3.333333333333334
+    m_PreExtrapolationTime: 3.3833333333333346
     m_DisplayName: NewPlayerPlayableAsset
   - m_Version: 1
-    m_Start: 29.53333333333333
+    m_Start: 28.983333333333334
     m_ClipIn: 1.0499999999999972
     m_Asset: {fileID: 68531853311763304}
     m_Duration: 0.9333333333333336
@@ -3324,7 +3306,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 9.416666666666664
+    m_PreExtrapolationTime: 9.333333333333332
     m_DisplayName: NewPlayerPlayableAsset
   m_Markers:
     m_Objects: []
