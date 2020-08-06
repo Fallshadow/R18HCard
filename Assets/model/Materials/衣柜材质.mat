@@ -114,7 +114,7 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 1
+    - _EnvironmentalLightingIntensity: 1.29
     - _GIFlatShade: 0
     - _GIShadeThreshold: 0
     - _GlossColorPower: 10
@@ -165,7 +165,7 @@ Material:
     - _OverallShadowColorPower: 1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.3
+    - _PointSpotlightIntensity: 1.25
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
     - _ReduceTextureQuality: 2.77

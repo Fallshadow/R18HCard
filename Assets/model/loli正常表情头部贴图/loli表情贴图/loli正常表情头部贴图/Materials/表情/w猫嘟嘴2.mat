@@ -136,7 +136,7 @@ Material:
     - _EMISSIVE: 0
     - _EnvironmentReflections: 1
     - _Farthest_Distance: 100
-    - _GI_Intensity: 1
+    - _GI_Intensity: 0.952
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -211,7 +211,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_SystemShadowsLevel: 0
-    - _Unlit_Intensity: 2.15
+    - _Unlit_Intensity: 2.22
     - _UseAlphaClipping: 1
     - _UseEmission: 0
     - _Use_1stAs2nd: 0
