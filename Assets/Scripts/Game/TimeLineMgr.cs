@@ -53,16 +53,14 @@ namespace act.game
 
         public void ResumeTimeLine(PlayableDirector playableDirector, bool exeCallBack = false)
         {
-            gameDir = playableDirector;
-            gameDir.Resume();
+            playableDirector.Resume();
             _pasuedCallBackFunction?.Invoke();
             _pasuedCallBackFunction = null;
         }
 
         public void JumpToTime(PlayableDirector playableDirector, float pointTime)
         {
-            gameDir = playableDirector;
-            gameDir.time = pointTime;
+            playableDirector.time = pointTime;
         }
         #endregion
 

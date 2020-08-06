@@ -1188,3 +1188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: "\u4ECA\u665A\uFF0C\u8F9B\u82E6\u4F60\u5566~"
   time: 0
+  pauseTL: 0
+  timeline: 0
+  isOver: 0
+  ZUJiao: 0
