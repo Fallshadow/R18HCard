@@ -132,7 +132,7 @@ Material:
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 0
     - _LightFalloffAffectShadowT: 0
-    - _LightFalloffSoftness: 0.581
+    - _LightFalloffSoftness: 1
     - _LightIntensity: -1
     - _Metallic: 0
     - _Mode: 0
@@ -181,9 +181,9 @@ Material:
     - _SelfLitIntensity: 0
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
-    - _SelfShadowHardness: 0.03
+    - _SelfShadowHardness: 0.35
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 0.77
+    - _SelfShadowRealtimeShadowIntensity: 0.4
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 1
     - _ShadowColorTexturePower: 0
@@ -214,7 +214,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.7122642, g: 0.9067735, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 0.5424528, b: 0.6479071, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}

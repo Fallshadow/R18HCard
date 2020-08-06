@@ -169,7 +169,7 @@ Material:
     - _PointSpotlightIntensity: 1.38
     - _ReduceShadowPointLight: 0
     - _ReduceShadowSpotDirectionalLight: 10
-    - _ReduceTextureQuality: 1.86
+    - _ReduceTextureQuality: 4.73
     - _RefVal: 0
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0

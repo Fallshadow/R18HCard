@@ -115,7 +115,7 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 3.39
+    - _EnvironmentalLightingIntensity: 4.16
     - _GIFlatShade: 1
     - _GIShadeThreshold: 1
     - _GlossColorPower: 10
