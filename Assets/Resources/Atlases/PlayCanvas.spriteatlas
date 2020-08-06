@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 56074f5934aa2ef4ab971988d30bf4ba, type: 3}
-    totalSpriteSurfaceArea: 8489622
+    totalSpriteSurfaceArea: 9023574
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -42,6 +42,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 306418e06a1ad5d4cb1e393d0498b16c, type: 3}
   - {fileID: 21300000, guid: 82b8efe0fe253b242a3de880577b1ae5, type: 3}
   - {fileID: 21300000, guid: 97397f21f2fb89d439c8f2f25ce4cf34, type: 3}
+  - {fileID: 21300000, guid: d1584d7106a042b48afb142d4a2d1344, type: 3}
   - {fileID: 21300000, guid: 22a836f18102052499942eb9d216faf1, type: 3}
   - {fileID: 21300000, guid: 4681fda2202b00240b61c38343711ab5, type: 3}
   - {fileID: 21300000, guid: e55f98d210492134896ea5655992ba70, type: 3}
@@ -91,6 +92,7 @@ SpriteAtlas:
   - fenwei_bg
   - CardDesc
   - "\u6210\u529F"
+  - SettingBG
   - card_sj_name
   - EventShowTypeAll
   - EventType1

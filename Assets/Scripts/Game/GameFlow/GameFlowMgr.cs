@@ -267,6 +267,16 @@ namespace act.game
             FourPlea0 = saveData.FourPlea0;
         }
 
+        public void LoadSettingData()
+        {
+            data.SaveData settingData = data.DataArchiver.Load<data.SaveData>(SAVE_FILE_NAME);
+            AudioMgr.instance.SetMusicVoice(settingData.musicVoice);
+            AudioMgr.instance.SetEnvirVoice(settingData.envirVoice);
+            AudioMgr.instance.SetSoundVoice(settingData.soundVoice);
+            game.GameController.instance.isInNewPlayFlow = settingData.isPlayNewPlayer;
+            game.GameController.instance.isInNewPlayFlow2 = settingData.isPlayNewPlayer;
+        }
+
         public void SaveData()
         {
             saveData = new data.SaveData();
@@ -298,6 +308,12 @@ namespace act.game
             saveData.ThrPlea0 = ThrPlea0;
             saveData.FourPlea0 = FourPlea0;
 
+
+            saveData.musicVoice = AudioMgr.instance.musicVol;
+            saveData.envirVoice = AudioMgr.instance.envirVol;
+            saveData.soundVoice = AudioMgr.instance.soundVol;
+            saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow;
+            saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow2;
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 

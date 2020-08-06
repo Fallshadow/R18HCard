@@ -31,9 +31,12 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
     private AudioSource isPauseing = null;
 
     private bool isOnEnvir = false;
-    public float MaxVol = 0.5f;
+    public float musicVol = 0.5f;
+    public float envirVol = 0.2f;
+    public float soundVol = 0.2f;
     public void PlaySound(AudioClip audioClip)
     {
+        soundAS.volume = soundVol;
         soundAS.clip = audioClip;
         soundAS.Play();
     }
@@ -63,14 +66,14 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
             isPauseing = musicAS2;
         }
         isPlaying.volume = 0;
-        isPauseing.volume = MaxVol;
+        isPauseing.volume = musicVol;
         //isPauseing.volume = 0;
         isPlaying.clip = audioClip;
 
         //isPauseing.Pause();
-        isPauseing.DOFade(MaxVol, outDur).OnComplete(()=> { isPauseing.Pause();
+        isPauseing.DOFade(musicVol, outDur).OnComplete(()=> { isPauseing.Pause();
             isPlaying.Play();
-            isPlaying.DOFade(MaxVol, dur);
+            isPlaying.DOFade(musicVol, dur);
         });
     }
 
@@ -82,7 +85,7 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
         }
 
         isOnEnvir = true;
-        PlayASFadeIn(musicEnvir, 0.5f, 0,1);
+        PlayASFadeIn(musicEnvir, envirVol, 0,1);
     }
     public void PauseEnvirMusic()
     {
@@ -92,7 +95,7 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
         }
 
         isOnEnvir = false;
-        PlayASFadeOut(musicEnvir, 0.5f, 0,1);
+        PlayASFadeOut(musicEnvir, envirVol, 0,1);
     }
 
     public void PlayASFadeIn(AudioSource audioSource,float asMaxVol,float asMinVol, float dur)
@@ -128,5 +131,24 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
     public void PlayMusicFade(AudioClips clip)
     {
         PlayMusicFade(GetAudioClip(clip));
+    }
+
+    public void SetMusicVoice(float vol)
+    {
+        musicVol = vol;
+        musicAS1.volume = vol;
+        musicAS2.volume = vol;
+    }
+
+    public void SetSoundVoice(float vol)
+    {
+        soundVol = vol;
+        soundAS.volume = vol;
+    }
+
+    public void SetEnvirVoice(float vol)
+    {
+        envirVol = vol;
+        musicEnvir.volume = vol;
     }
 }

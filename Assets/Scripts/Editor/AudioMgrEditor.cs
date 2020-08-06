@@ -13,7 +13,6 @@ public class AudioMgrEditor : Editor
     private SerializedProperty MU1;
     private SerializedProperty MU2;
     private SerializedProperty Envir;
-    private SerializedProperty MaxVol;
 
 
     private SerializedProperty SOUND; 
@@ -74,7 +73,6 @@ public class AudioMgrEditor : Editor
 MU2 = serializedObject.FindProperty("musicAS2");
         Envir = serializedObject.FindProperty("musicEnvir");
         SOUND = serializedObject.FindProperty("soundAS");
-        MaxVol = serializedObject.FindProperty("MaxVol");
         outDur = serializedObject.FindProperty("outDur");
     }
 
@@ -87,7 +85,6 @@ MU2 = serializedObject.FindProperty("musicAS2");
         EditorGUILayout.PropertyField(MU2, true);
         EditorGUILayout.PropertyField(Envir, true);
         EditorGUILayout.PropertyField(SOUND, true);
-        EditorGUILayout.PropertyField(MaxVol, true);
         EditorGUILayout.PropertyField(outDur, true);
         
         serializedObject.ApplyModifiedProperties();

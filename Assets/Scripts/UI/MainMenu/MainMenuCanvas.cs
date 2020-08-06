@@ -36,6 +36,7 @@ namespace act.ui
         }
         protected override void onShow()
         {
+            game.GameFlowMgr.instance.LoadSettingData();
             HideAll();
             title.gameObject.SetActive(true);
             allShow.gameObject.SetActive(true);
@@ -127,6 +128,17 @@ namespace act.ui
             AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
         }
+
+        public void ShowSetting()
+        {
+            ui.UiManager.instance.ControlMouseInput(UiManager.instance.CreateUi<MainMenuCanvas>(), false);
+
+            SettingWindow settingWindow = act.ui.UiManager.instance.CreateUi<act.ui.SettingWindow>();
+            settingWindow.gameObject.SetActive(true);
+            settingWindow.ShowWindow();
+        }
+
+
         #endregion
     }
 }

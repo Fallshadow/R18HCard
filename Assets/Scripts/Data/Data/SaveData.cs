@@ -35,5 +35,10 @@ namespace act.data
         public bool SecondPlea0 = true;
         public bool ThrPlea0 = true;
         public bool FourPlea0 = true;
+
+        public float musicVoice = 0.5f;
+        public float envirVoice = 0.2f;
+        public float soundVoice = 1;
+        public bool isPlayNewPlayer = true;
     }
 }
