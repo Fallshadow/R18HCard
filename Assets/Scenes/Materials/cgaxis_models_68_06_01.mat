@@ -115,7 +115,7 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: -0.2
+    - _EnvironmentalLightingIntensity: 3.43
     - _GIFlatShade: 0
     - _GIShadeThreshold: 0.404
     - _GlossColorPower: 10
@@ -166,7 +166,7 @@ Material:
     - _OverallShadowColorPower: 0.32
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.73
+    - _PointSpotlightIntensity: 0.78
     - _ReduceShadowPointLight: -5.57
     - _ReduceShadowSpotDirectionalLight: 10.38
     - _ReduceTextureQuality: 1.71
@@ -182,11 +182,11 @@ Material:
     - _SelfLitIntensity: 0
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
-    - _SelfShadowHardness: 0.713
+    - _SelfShadowHardness: 0.319
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 0.835
+    - _SelfShadowRealtimeShadowIntensity: 0.083
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.743
+    - _SelfShadowThreshold: 1
     - _ShadowColorTexturePower: 0
     - _ShadowTColorPower: 1
     - _ShadowTHardness: 1
