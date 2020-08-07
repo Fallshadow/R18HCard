@@ -231,7 +231,7 @@ Material:
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_SystemShadowsLevel: 0
     - _UVSec: 0
-    - _Unlit_Intensity: 1.36
+    - _Unlit_Intensity: 3.14
     - _UseAlphaClipping: 1
     - _UseEmission: 0
     - _Use_1stAs2nd: 0
