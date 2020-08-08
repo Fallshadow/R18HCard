@@ -86,6 +86,8 @@ namespace act
                 {
                     modelsAnimtor[i] = models[i].GetComponent<Animator>();
                 }
+
+
             }
             [Header("这个是时间计时器")]
             public float timer = 0;

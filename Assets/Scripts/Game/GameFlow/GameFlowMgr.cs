@@ -530,15 +530,14 @@ namespace act.game
                 PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFu0,DirectorWrapMode.Loop);
                 PushEventToTable(39);
                 PushEventToTable(45);
+                act.ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 1, time: 0);
             });
 
             Pleasant = (int)process;
             roundNum = 0;
-            act.game.GameController.instance.mainCamera.SetActive(false);
-            act.game.GameController.instance.mainCameraTwo.SetActive(true);
-
+            //act.game.GameController.instance.mainCamera.SetActive(false);
+            //act.game.GameController.instance.mainCameraTwo.SetActive(true);
             
-
         }
         #endregion
 
