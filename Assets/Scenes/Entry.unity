@@ -1091,6 +1091,41 @@ MonoBehaviour:
   colorStrength: 1
   useExtinction: 0
   extinction: 0.75
+--- !u!84 &340970033
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Aura Spot Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &352276157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2352,41 +2387,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 399915a7284a21249aed7437565d2603, type: 3}
---- !u!84 &640675452
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Aura Spot Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &650958189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2865,7 +2865,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 07d664cbcf9ed704f89120ea06a2efbd, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -7561,7 +7561,7 @@ PlayableDirector:
   m_GameObject: {fileID: 994766554}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 56d2d170ad724d840a96a3cefe9677c3, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: d0d93af3a36e257468debe775799c268, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -7619,6 +7619,10 @@ PlayableDirector:
     value: {fileID: 994766555}
   - key: {fileID: -6969144750196439025, guid: 56d2d170ad724d840a96a3cefe9677c3, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 1277810882857513357, guid: 56d2d170ad724d840a96a3cefe9677c3, type: 2}
+    value: {fileID: 1087705934}
+  - key: {fileID: 4108196386813537320, guid: d0d93af3a36e257468debe775799c268, type: 2}
+    value: {fileID: 1087705934}
   m_ExposedReferences:
     m_References:
     - 32533f5201a8d7d478a3e14096ab272e: {fileID: 0}
@@ -8600,8 +8604,8 @@ PlayableDirector:
   m_GameObject: {fileID: 1087705934}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: d5682fac56399bf42a024f324ce7509d, type: 2}
-  m_InitialState: 0
+  m_PlayableAsset: {fileID: 11400000, guid: 57f535799f24e1a4abe9ed639c1c02c6, type: 2}
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -8662,6 +8666,10 @@ PlayableDirector:
     value: {fileID: 185735976}
   - key: {fileID: -723424693649737299, guid: d5682fac56399bf42a024f324ce7509d, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 7682672211201483890, guid: 82cbc30e5fe5d5e4784c6af86f8c8be3, type: 2}
+    value: {fileID: 1569607079}
+  - key: {fileID: 6828363270889723199, guid: d5682fac56399bf42a024f324ce7509d, type: 2}
+    value: {fileID: 1569607079}
   m_ExposedReferences:
     m_References:
     - 406fccb69a883a14f9fa0e932f7c1f12: {fileID: 708084521}
@@ -8843,6 +8851,41 @@ PlayableDirector:
     value: {fileID: 1025099371}
   m_ExposedReferences:
     m_References: []
+--- !u!84 &1212462723
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Aura Spot Light (1) : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!114 &1218434314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13228,8 +13271,8 @@ PlayableDirector:
   m_GameObject: {fileID: 1569607079}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 813f40c535f806145b0abe9c36325cfd, type: 2}
-  m_InitialState: 0
+  m_PlayableAsset: {fileID: 11400000, guid: 198d036acd86f294ba207107bf82bb45, type: 2}
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -13292,6 +13335,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -6675264927626303367, guid: e220938022ea32646833a66171e2861d, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 4902595022640197125, guid: 198d036acd86f294ba207107bf82bb45, type: 2}
+    value: {fileID: 680153977}
   m_ExposedReferences:
     m_References:
     - a5325bff44d5cb1449daea6efdb3890a: {fileID: 903273915}
@@ -13375,41 +13420,6 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dbc7953efe5e774590af0a22fd0b2d6, type: 3}
 --- !u!84 &1601499891
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Aura Spot Light (1) : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
---- !u!84 &1606834357
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13778,41 +13788,6 @@ PlayableDirector:
     value: {fileID: 1025099371}
   m_ExposedReferences:
     m_References: []
---- !u!84 &1760880435
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Directional Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 0
-  m_Height: 0
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &1785298321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15651,6 +15626,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1910135038
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Directional Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 0
+  m_Height: 0
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!4 &1948466571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1820077756652231456, guid: 65f810ea1ff4ee54e945b68ca3e3db87,
@@ -20042,8 +20052,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582829533602643722}
-  m_LocalRotation: {x: -0, y: 0.98473895, z: -0.17403807, w: 0}
-  m_LocalPosition: {x: -0.06524551, y: 0.5067377, z: 1.5267167}
+  m_LocalRotation: {x: -0, y: 0.9981268, z: -0, w: 0.061179273}
+  m_LocalPosition: {x: 1.4817544, y: 0.15373766, z: -0.63628334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582829532559210277}
