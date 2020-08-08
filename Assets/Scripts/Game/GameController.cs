@@ -34,6 +34,10 @@ namespace act
             BeiMianDef,
             QiChengSucc,
             QiChengDef,
+            AiFu0,
+            ZhengMian0,
+            BeiMian0,
+            QiCheng0,
         }
 
 
@@ -87,6 +91,14 @@ namespace act
             public float timer = 0;
             public float timerDel = 5;
             public bool useTimerNorModel = true;
+            [Header("洛璃TimelineAssest们")]
+            public PlayableAsset[] loliTimeLineAssets = null;
+            public PlayableDirector loliTimeline = null;
+
+            [Header("洛璃浴巾TimelineAssest们")]
+            public bool YUJINuseTimerNorModel = true;
+            public PlayableAsset[] loliYUJINTimeLineAssets = null;
+            public PlayableDirector loliYUJINTimeline = null;
             private void Update()
             {
                 // TODO: should be remove after
@@ -117,8 +129,24 @@ namespace act
                                 break;
                         }
                         Debug.Log(random + animName);
-                        modelsAnimtor[0].Play(animName);
+                        loliTimeline.playableAsset = loliTimeLineAssets[random];
+                        loliTimeline.Play();
                     }
+                }
+                else if(models[1].gameObject.activeSelf && YUJINuseTimerNorModel)
+                {
+                    timer += Time.deltaTime;
+                    if(timer > timerDel)
+                    {
+                        timer = 0;
+                        int random = UnityEngine.Random.Range(0, 3);
+                        loliYUJINTimeline.playableAsset = loliYUJINTimeLineAssets[random];
+                        loliYUJINTimeline.Play();
+                    }
+                }
+                else
+                {
+                    timer = 0;
                 }
             }
 
@@ -137,9 +165,10 @@ namespace act
                 FSM.Finalize();
             }
 
-            public void PlayActivePlayableAsset(TimeLineType timeLineType, TimeLineAssetType timeLineAssetType)
+            public void PlayActivePlayableAsset(TimeLineType timeLineType, TimeLineAssetType timeLineAssetType, DirectorWrapMode directorWrapMode = DirectorWrapMode.None)
             {
                 timelines[(int)timeLineType].playableAsset = timeLineAssets[(int)timeLineAssetType];
+                timelines[(int)timeLineType].extrapolationMode = directorWrapMode;
                 timelines[(int)timeLineType].Play();
             }
         }

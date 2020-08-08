@@ -248,6 +248,8 @@ namespace act.game
                     }
                     else if(GameFlowMgr.instance.TwoOneNum == 21)
                     {
+                        game.GameController.instance.YUJINuseTimerNorModel = false;
+                        game.GameController.instance.models[6].gameObject.SetActive(true);
                         game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
                     }
                     return;
@@ -255,6 +257,8 @@ namespace act.game
                     GameFlowMgr.instance.CurEvent.RoundNum = (int)vars[0];
                     return;
                 case EffectId.EI_29:
+                    game.GameController.instance.YUJINuseTimerNorModel = false;
+                    game.GameController.instance.models[6].gameObject.SetActive(true);
                     game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
                     return;
                 case EffectId.EI_30:

@@ -294,7 +294,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 2.083333333333333
-    m_BlendOutDuration: 1.0166666666666666
+    m_BlendOutDuration: 0.3000000000000007
     m_MixInCurve:
       serializedVersion: 2
       m_Curve: []
@@ -318,15 +318,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: "\u865A\u62DF\u6444\u50CF\u673A-\u53F3\u76FC"
   - m_Version: 1
-    m_Start: 7.95
+    m_Start: 8.666666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -8115701323154070184}
-    m_Duration: 1.0166666666666666
+    m_Duration: 0.3000000000000007
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3213667998646117466}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.0166666666666666
+    m_BlendInDuration: 0.3000000000000007
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2

@@ -83,38 +83,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-8519408548325863471
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u6211\u4EEC\u73B0\u5728\uFF0C\u6B63\u7D27\u7D27\u8FDE\u5728\u4E00\u8D77\u5462"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &-8213720427594295178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,38 +139,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-6909260783748334342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u6211\u597D\u9AD8\u5174\u2026\u2026\u7EC8\u4E8E\u2026\u2026\u5230\u4E86\u8FD9\u4E00\u523B\uFF01"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &-6750482062376850779
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,7 +397,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -628,6 +582,24 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-4233882044000830704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u55EF\u2026\u2026\uFF01\u55EF\u3001\u554A\uFF01\u54C8\u2026\u2026"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
 --- !u!114 &-4199837317839631823
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -745,38 +717,6 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
---- !u!114 &-2329870409405574744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u55EF\u2026\u2026\uFF01\u55EF\u3001\u554A\uFF01\u54C8\u2026\u2026"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &-2223866037331506395
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -811,6 +751,24 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
+--- !u!114 &-1922622930615839871
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u90A3\u79CD\u611F\u89C9\uFF0C\u53C8\u6765\u4E86\uFF01"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
 --- !u!114 &-1675430769629316311
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -889,38 +847,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &-1164645323320050840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u8981\u3001\u51FA\u6765\u4E86\u2026\u2026\u968F\u65F6\u90FD\u2026\u2026\uFF01"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &-1108810121013827260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -964,6 +890,344 @@ MonoBehaviour:
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips: []
+  m_Markers:
+    m_Objects: []
+--- !u!114 &-820843807722546219
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u6211\u597D\u9AD8\u5174\u2026\u2026\u7EC8\u4E8E\u2026\u2026\u5230\u4E86\u8FD9\u4E00\u523B\uFF01"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
+--- !u!114 &-723424693649737299
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cd92ffc29383742932b27ca414c80f, type: 3}
+  m_Name: Playable Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 29.916666666666668
+    m_ClipIn: 0
+    m_Asset: {fileID: 1152038644496582108}
+    m_Duration: 0.5000000000000036
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0.01666666666666572
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 1.7
+    m_ClipIn: 0
+    m_Asset: {fileID: 5454710088957980152}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 6.8
+    m_ClipIn: 0
+    m_Asset: {fileID: -4233882044000830704}
+    m_Duration: 0.9333333333333336
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 7.733333333333334
+    m_ClipIn: 0
+    m_Asset: {fileID: -820843807722546219}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 12.533333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 7601206484352510647}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 13.466666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 363149224449674160}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 17.783333333333335
+    m_ClipIn: 0
+    m_Asset: {fileID: -1922622930615839871}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 18.71666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 7923250422077142403}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
+  - m_Version: 1
+    m_Start: 29
+    m_ClipIn: 0
+    m_Asset: {fileID: 1926571162494799443}
+    m_Duration: 0.9333333333333338
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -723424693649737299}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 0.01666666666666572
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TalkCanvasControlPlayableAsset
   m_Markers:
     m_Objects: []
 --- !u!114 &-629724833519641720
@@ -1455,19 +1719,19 @@ MonoBehaviour:
   - {fileID: 2263574983631646792}
   - {fileID: 8062159042477477087}
   - {fileID: 808226068224703337}
-  - {fileID: 4240991053534714460}
   - {fileID: 3359651506412134775}
   - {fileID: 5695634111088710864}
   - {fileID: 9170849198364900339}
   - {fileID: -70413651117533964}
   - {fileID: 8064414262651545995}
   - {fileID: -5962148660910798204}
+  - {fileID: -723424693649737299}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
   m_DurationMode: 0
   m_MarkerTrack: {fileID: -932802850630407495}
---- !u!114 &68531853311763304
+--- !u!114 &363149224449674160
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1476,28 +1740,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u2026\u2026\u6211\u4EEC\u7EE7\u7EED\u5427\uFF1F\u6211\u8FD8\u60F3\u7EE7\u7EED"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
+  content: "\u6211\u3001\u6211\u80FD\u611F\u89C9\u5F97\u5230\uFF0C\u90A3\u80A1\u70ED\u91CF\u2026\u2026"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
   ZUJiao: 0
 --- !u!114 &445549347680298551
 MonoBehaviour:
@@ -2052,6 +2302,24 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
+--- !u!114 &1152038644496582108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: 
+  time: 0
+  pauseTL: 0
+  timeline: 0
+  isOver: 1
+  ZUJiao: 0
 --- !u!114 &1634499646914022716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2069,6 +2337,24 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
+--- !u!114 &1926571162494799443
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u2026\u2026\u6211\u4EEC\u7EE7\u7EED\u5427\uFF1F\u6211\u8FD8\u60F3\u7EE7\u7EED"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
 --- !u!114 &2150683315061120396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2936,38 +3222,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &3989352159498290535
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u6765\u5427\uFF0C\u6211\u51C6\u5907\u597D\u4E86"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &3994597132901279525
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2990,326 +3244,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &4240991053534714460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab44db7a8397c494b963e69f832682cb, type: 3}
-  m_Name: New Player Track
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips:
-  - m_Version: 1
-    m_Start: 1.7
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: 3989352159498290535}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 4.166666666666666
-    m_PreExtrapolationTime: 1.7
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 7.733333333333333
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: -6909260783748334342}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 3.8666666666666654
-    m_PreExtrapolationTime: 0
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 13.466666666666667
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: 5988775114730551889}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 3.3833333333333346
-    m_PreExtrapolationTime: 0
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 18.71666666666667
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: -1164645323320050840}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 9.333333333333332
-    m_PreExtrapolationTime: 0
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 6.8
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: -2329870409405574744}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 4.166666666666666
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 29.916666666666668
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: 5575625202962205755}
-    m_Duration: 0.016666666666666666
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 0
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 12.533333333333333
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: -8519408548325863471}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 3.8666666666666654
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 17.783333333333335
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: 5815770977738733152}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 3.3833333333333346
-    m_DisplayName: NewPlayerPlayableAsset
-  - m_Version: 1
-    m_Start: 28.983333333333334
-    m_ClipIn: 1.0499999999999972
-    m_Asset: {fileID: 68531853311763304}
-    m_Duration: 0.9333333333333336
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4240991053534714460}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 9.333333333333332
-    m_DisplayName: NewPlayerPlayableAsset
-  m_Markers:
-    m_Objects: []
 --- !u!114 &4316108517422069895
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3484,7 +3418,7 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &5575625202962205755
+--- !u!114 &5454710088957980152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3493,28 +3427,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u6211\u597D\u9AD8\u5174\u2026\u2026\u7EC8\u4E8E\u2026\u2026\u5230\u4E86\u8FD9\u4E00\u523B\uFF01"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
+  content: "\u6765\u5427\uFF0C\u6211\u51C6\u5907\u597D\u4E86"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
   ZUJiao: 0
 --- !u!114 &5695634111088710864
 MonoBehaviour:
@@ -3631,70 +3551,6 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &5815770977738733152
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u90A3\u79CD\u611F\u89C9\uFF0C\u53C8\u6765\u4E86\uFF01"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
---- !u!114 &5988775114730551889
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89e8fcc3faa5c44c888822cb26c7793, type: 3}
-  m_Name: NewPlayerPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  showTalkWindow: 0
-  CloseTalkWindow: 0
-  ShowTalkWindowText: 0
-  text: 
-  dur: 0
-  ShowTalkCanvas: 0
-  ShowTalkCanvasStopTimeLine: 1
-  TalkCText: "\u6211\u3001\u6211\u80FD\u611F\u89C9\u5F97\u5230\uFF0C\u90A3\u80A1\u70ED\u91CF\u2026\u2026"
-  Cdur: 1
-  ShowPlayCanvas: 0
-  CreatCard: 0
-  CardId: 0
-  CleanEye: 0
-  FadePlayCanvasDark: 0
-  StartRound: 0
-  IsOver: 0
-  isPauseTimeLine: 0
-  ShowGuide: 0
-  guideType: 0
-  ZUJiao: 0
 --- !u!114 &6328009930486898172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4181,6 +4037,24 @@ MonoBehaviour:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
+--- !u!114 &7601206484352510647
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u6211\u4EEC\u73B0\u5728\uFF0C\u6B63\u7D27\u7D27\u8FDE\u5728\u4E00\u8D77\u5462"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
 --- !u!114 &7877673922029223556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4193,6 +4067,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset
   m_EditorClassIdentifier: 
+--- !u!114 &7923250422077142403
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d9c461a070dd84aa673970746f23fb, type: 3}
+  m_Name: TalkCanvasControlPlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  content: "\u8981\u3001\u51FA\u6765\u4E86\u2026\u2026\u968F\u65F6\u90FD\u2026\u2026\uFF01"
+  time: 0
+  pauseTL: 1
+  timeline: 2
+  isOver: 0
+  ZUJiao: 0
 --- !u!114 &8062159042477477087
 MonoBehaviour:
   m_ObjectHideFlags: 1

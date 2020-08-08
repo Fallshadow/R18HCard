@@ -48,13 +48,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5707726709578294279}
-    m_Duration: 3.0833333333333335
+    m_Duration: 5.833333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7898435951019292457}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.5000000000000002
+    m_BlendOutDuration: 1.6000000000000005
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -81,25 +81,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -114,15 +96,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: "\u865A\u62DF\u6444\u50CF\u673A-\u58C1\u7089"
   - m_Version: 1
-    m_Start: 1.5833333333333333
+    m_Start: 4.233333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -772089474017802953}
-    m_Duration: 1.5000000000000002
+    m_Duration: 1.6
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7898435951019292457}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.5000000000000002
+    m_BlendInDuration: 1.6000000000000005
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -204,10 +186,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 1.5833333333333333
+    m_Start: 1.4333333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 6049941485098142348}
-    m_Duration: 1.5000000000000002
+    m_Duration: 4.3999999999999995
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1196517647334939150}
     m_EaseInDuration: 0

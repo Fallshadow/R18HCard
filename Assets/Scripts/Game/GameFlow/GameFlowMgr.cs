@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Playables;
 
 namespace act.game
 {
@@ -507,10 +507,10 @@ namespace act.game
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
             }
         }
-        public void PlayTimeLineFixed(game.TimeLineType timeLineType, TimeLineAssetType timeLineAssetType = 0)
+        public void PlayTimeLineFixed(game.TimeLineType timeLineType, TimeLineAssetType timeLineAssetType = 0, DirectorWrapMode directorWrapMode = DirectorWrapMode.None)
         {
             ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 0, 1);
-            game.GameController.instance.PlayActivePlayableAsset(timeLineType, timeLineAssetType);
+            game.GameController.instance.PlayActivePlayableAsset(timeLineType, timeLineAssetType, directorWrapMode);
         }
         //进入二阶段
         public void EnterToProcessTwo()
@@ -524,8 +524,12 @@ namespace act.game
                 {
                     game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
                     game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
-
                 }
+                game.GameController.instance.models[2].gameObject.SetActive(true);
+                ui.UiManager.instance.ControlMouseInput(true);
+                PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFu0,DirectorWrapMode.Loop);
+                PushEventToTable(39);
+                PushEventToTable(45);
             });
 
             Pleasant = (int)process;
