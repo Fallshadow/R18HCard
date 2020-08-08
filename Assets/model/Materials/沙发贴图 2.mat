@@ -7,10 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: furry_fabric_01_diffuse
+  m_Name: "\u6C99\u53D1\u8D34\u56FE 2"
   m_Shader: {fileID: 4800000, guid: d12428961551799408aa97256fd770c3, type: 3}
-  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _NORMALMAP _RIMLIGHTINLIGHT_ON
-    _SELFLITHIGHCONTRAST_ON _TEXTUREPATTERNSTYLE_ON
+  m_ShaderKeywords: N_F_SS_ON _ALPHABASECUTOUT_ON _RIMLIGHTINLIGHT_ON _SELFLITHIGHCONTRAST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -22,9 +21,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 17a4fb4eccb697d4e85b14a4ff9f8595, type: 3}
-        m_Scale: {x: 2.857143, y: 2.857143}
-        m_Offset: {x: -0, y: -2.857143}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -50,9 +49,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 11a16ee3496d0fd48857e08d1612d885, type: 3}
-        m_Scale: {x: 2.857143, y: 2.857143}
-        m_Offset: {x: -0, y: -2.857143}
+        m_Texture: {fileID: 2800000, guid: a942b8dc42d5b1840b6550b7da0d5497, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: -1}
     - _MaskGloss:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -115,9 +114,9 @@ Material:
     - _DynamicNoisyOutline: 0
     - _EOPO: 0
     - _EnableTextureTransparent: 0
-    - _EnvironmentalLightingIntensity: 0.17
+    - _EnvironmentalLightingIntensity: 0.94
     - _GIFlatShade: 0
-    - _GIShadeThreshold: 0.412
+    - _GIShadeThreshold: 0.296
     - _GlossColorPower: 10
     - _GlossIntensity: 1
     - _GlossMapScale: 1
@@ -133,7 +132,7 @@ Material:
     - _LightAffectRimLightColor: 0
     - _LightAffectShadow: 0
     - _LightFalloffAffectShadowT: 0
-    - _LightFalloffSoftness: 0.648
+    - _LightFalloffSoftness: 1
     - _LightIntensity: -1
     - _Metallic: 0
     - _Mode: 0
@@ -163,13 +162,13 @@ Material:
     - _OutlineExtrudeMethod: 0
     - _OutlineWidth: 0.5
     - _OutlineWidthAffectedByViewDistance: 0
-    - _OverallShadowColorPower: 1
+    - _OverallShadowColorPower: -2.1
     - _PTexturePower: 1
     - _Parallax: 0.02
-    - _PointSpotlightIntensity: 0.16
+    - _PointSpotlightIntensity: 1.72
     - _ReduceShadowPointLight: 0
-    - _ReduceShadowSpotDirectionalLight: 10
-    - _ReduceTextureQuality: 3.07
+    - _ReduceShadowSpotDirectionalLight: 6.74
+    - _ReduceTextureQuality: 14.86
     - _RefVal: 0
     - _ReflectionIntensity: 0
     - _ReflectionRoughtness: 0
@@ -182,11 +181,11 @@ Material:
     - _SelfLitIntensity: 0
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
-    - _SelfShadowHardness: 1
+    - _SelfShadowHardness: 0.35
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 1
+    - _SelfShadowRealtimeShadowIntensity: 0.4
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.85
+    - _SelfShadowThreshold: 1
     - _ShadowColorTexturePower: 0
     - _ShadowTColorPower: 1
     - _ShadowTHardness: 1
@@ -200,7 +199,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TexturePatternStyle: 1
+    - _TexturePatternStyle: 0
     - _UVSec: 0
     - _UseFReflection: 0
     - _UseSecondaryCutout: 0
@@ -210,15 +209,15 @@ Material:
     - _XYZHardness: 14
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.5176471, b: 0.5372549, a: 1}
+    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.6462264, g: 0.7726734, b: 1, a: 1}
+    - _MainColor: {r: 0.8, g: 0.57254905, b: 0.76454896, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _OverallShadowColor: {r: 0.6320754, g: 0.5933161, b: 0.5933161, a: 1}
+    - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
