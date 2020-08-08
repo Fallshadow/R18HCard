@@ -25,6 +25,8 @@ public class TalkCanvasControlPlayableAsset : PlayableAsset
     public act.game.TimeLineType timeline;
     [Header("结束了么")]
     public bool isOver = false;
+    [Header("游戏结束了么")]
+    public bool gameover = false;
 
     [Header("---------足交回调---------")]
     public bool ZUJiao;
@@ -42,6 +44,7 @@ public class TalkCanvasControlPlayableAsset : PlayableAsset
         playable.GetBehaviour().pauseTL = pauseTL;
         playable.GetBehaviour().isOver = isOver;
         playable.GetBehaviour().ZUJiao = ZUJiao;
+        playable.GetBehaviour().gameover = gameover;
         return playable;
     }
 }

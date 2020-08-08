@@ -40,5 +40,7 @@ namespace act.data
         public float envirVoice = 0.2f;
         public float soundVoice = 1;
         public bool isPlayNewPlayer = true;
+
+        public bool[] gameobjectBool = new bool[20];
     }
 }

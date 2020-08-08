@@ -265,11 +265,17 @@ namespace act.game
             SecondPlea0 = saveData.SecondPlea0;
             ThrPlea0 = saveData.ThrPlea0;
             FourPlea0 = saveData.FourPlea0;
+            GameController.instance.LoadGOpos(saveData.gameobjectBool);
+            GameController.instance.LoadEventPos(saveData);
         }
 
         public void LoadSettingData()
         {
             data.SaveData settingData = data.DataArchiver.Load<data.SaveData>(SAVE_FILE_NAME);
+            if(settingData == null)
+            {
+                settingData = new data.SaveData();
+            }
             AudioMgr.instance.SetMusicVoice(settingData.musicVoice);
             AudioMgr.instance.SetEnvirVoice(settingData.envirVoice);
             AudioMgr.instance.SetSoundVoice(settingData.soundVoice);
@@ -314,6 +320,7 @@ namespace act.game
             saveData.soundVoice = AudioMgr.instance.soundVol;
             saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow;
             saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow2;
+            saveData.gameobjectBool = GameController.instance.SaveGOpos();
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 
@@ -406,10 +413,10 @@ namespace act.game
                     {
                         FirstVit0 = false;
                         PushEventToTable(53);
-                        PushEventToTable(54);
                         PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuDef);
                         last += 20;
                         Pleasant = 0;
+                        game.GameController.instance.Carda1zPos();
                     }
                     else if(SecondVit0)
                     {
@@ -419,6 +426,7 @@ namespace act.game
                         PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianDef);
                         last += 20;
                         Pleasant = 0;
+                        game.GameController.instance.Cardz2bPos();
                     }
                     else if(ThrVit0)
                     {
@@ -428,6 +436,7 @@ namespace act.game
                         PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianDef);
                         last += 20;
                         Pleasant = 0;
+                        game.GameController.instance.Carda1zPos();
                     }
                     else if(FourVit0)
                     {
@@ -455,7 +464,7 @@ namespace act.game
                 }
                 int last = 0;
                 last = value < 0 ? 0 : value;
-                if(last == 100)
+                if(last >= 100)
                 {
                     if(FirstPlea0)
                     {
@@ -465,9 +474,10 @@ namespace act.game
                         PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuSucc);
                         Vit += 20;
                         last = 0;
+                        game.GameController.instance.Carda1zPos();
                     }
                 }
-                if(last == 150)
+                if(last >= 150)
                 {
                     if(SecondPlea0)
                     {
@@ -477,9 +487,10 @@ namespace act.game
                         PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianSucc);
                         Vit += 20;
                         last = 0;
+                        game.GameController.instance.Cardz2bPos();
                     }
                 }
-                if(last == 200)
+                if(last >= 200)
                 {
                     if(ThrPlea0)
                     {
@@ -491,7 +502,7 @@ namespace act.game
                         last = 0;
                     }
                 }
-                if(last == 300)
+                if(last >= 300)
                 {
                     if(FourPlea0)
                     {
@@ -500,8 +511,6 @@ namespace act.game
                     }
                 }
                 
-                
-
                 pleasant = last;
                 //通知显示
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
@@ -527,9 +536,9 @@ namespace act.game
                 }
                 game.GameController.instance.models[2].gameObject.SetActive(true);
                 ui.UiManager.instance.ControlMouseInput(true);
-                PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFu0,DirectorWrapMode.Loop);
                 PushEventToTable(39);
                 PushEventToTable(45);
+                PushEventToTable(49);
                 act.ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 1, time: 0);
             });
 
@@ -654,6 +663,10 @@ namespace act.game
         {
             EventInst inst = game.EventMgr.instance.GetEventInstByID(eventID);
             PushEventToTable(inst);
+            if(eventID > 38)
+            {
+                game.GameController.instance.LoadEventPos();
+            }
         }
         public void PushCardToTable(int cardId)
         {

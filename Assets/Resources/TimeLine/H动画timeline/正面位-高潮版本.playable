@@ -614,6 +614,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-4199837317839631823
 MonoBehaviour:
@@ -876,6 +877,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-1675430769629316311
 MonoBehaviour:
@@ -1029,6 +1031,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-723424693649737299
 MonoBehaviour:
@@ -1870,6 +1873,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &445549347680298551
 MonoBehaviour:
@@ -2441,6 +2445,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 1
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &1634499646914022716
 MonoBehaviour:
@@ -2476,6 +2481,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &2150683315061120396
 MonoBehaviour:
@@ -3557,6 +3563,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &5695634111088710864
 MonoBehaviour:
@@ -4281,6 +4288,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &7877673922029223556
 MonoBehaviour:
@@ -4311,6 +4319,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 2
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &8062159042477477087
 MonoBehaviour:

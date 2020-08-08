@@ -103,18 +103,18 @@ namespace act.game
             
             transform.Rotate(-y, 0, 0);//Unity中摄像机随着y的变化绕X轴转动
 
-            Vector3 tempRot = transform.rotation.eulerAngles;
+            Vector3 tempRot = transform.localRotation.eulerAngles;
             //Debug.Log(tempRot.x);
-            if(tempRot.x > TableMainPosMaxX.x + 180)
-            {
+            //if(tempRot.x > TableMainPosMaxX.x + 180)
+            //{
                 
-                tempRot.x -= 360;
-            }
-            float tempy = Mathf.Clamp(tempRot.y, TableMainPosMaxY.x, TableMainPosMaxY.y);
-            float tempx = Mathf.Clamp(tempRot.x, TableMainPosMaxX.x, TableMainPosMaxX.y);
-            tempRot = new Vector3(tempx, tempy, tempRot.z);
-            
-            transform.rotation =Quaternion.Euler(tempRot);
+            //    tempRot.x -= 360;
+            //}
+            //float tempy = Mathf.Clamp(tempRot.y, TableMainPosMaxY.x, TableMainPosMaxY.y);
+            //float tempx = Mathf.Clamp(tempRot.x, TableMainPosMaxX.x, TableMainPosMaxX.y);
+            //tempRot = new Vector3(tempx, tempy, tempRot.z);
+
+            //transform.localRotation = Quaternion.Euler(tempRot);
 
         }
     }

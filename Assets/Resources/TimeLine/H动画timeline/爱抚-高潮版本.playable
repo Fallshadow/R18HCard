@@ -1064,6 +1064,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-2641593450305795566
 MonoBehaviour:
@@ -1253,6 +1254,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-792547794346364787
 MonoBehaviour:
@@ -1279,7 +1281,7 @@ MonoBehaviour:
     m_Start: 13.766666666666662
     m_ClipIn: 0
     m_Asset: {fileID: 3047582562785052360}
-    m_Duration: 3.0666666666666664
+    m_Duration: 3.1500000000000057
     m_TimeScale: 1
     m_ParentTrack: {fileID: -792547794346364787}
     m_EaseInDuration: 0
@@ -1557,7 +1559,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1709,6 +1729,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 1
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &999480609926761680
 MonoBehaviour:
@@ -2334,10 +2355,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 22.633333333333333
+    m_Start: 23.333333333333332
     m_ClipIn: 0
     m_Asset: {fileID: -2641593450305795566}
-    m_Duration: 3.450000000000003
+    m_Duration: 2.7500000000000036
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2012528374005134043}
     m_EaseInDuration: 0
@@ -2439,6 +2460,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &3047582562785052360
 MonoBehaviour:
@@ -2481,6 +2503,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &4026715450185384884
 MonoBehaviour:
@@ -2499,6 +2522,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &4108196386813537320
 MonoBehaviour:
@@ -3222,6 +3246,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &8138046235278454737
 MonoBehaviour:
@@ -3248,7 +3273,7 @@ MonoBehaviour:
     m_Start: 8.566666666666663
     m_ClipIn: 0
     m_Asset: {fileID: 1321953437755788334}
-    m_Duration: 2.799999999999999
+    m_Duration: 2.8333333333333375
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8138046235278454737}
     m_EaseInDuration: 0
@@ -3465,6 +3490,7 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &8640374149074177053
 MonoBehaviour:
@@ -3522,4 +3548,5 @@ MonoBehaviour:
   pauseTL: 1
   timeline: 1
   isOver: 0
+  gameover: 0
   ZUJiao: 0

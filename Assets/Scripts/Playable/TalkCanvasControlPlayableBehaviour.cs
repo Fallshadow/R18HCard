@@ -19,7 +19,7 @@ public class TalkCanvasControlPlayableBehaviour : PlayableBehaviour
     [Header("TIMELINE")]
     public act.game.TimeLineType timeline;
 
-
+    public bool gameover = false;
     public bool isOver
     {
         get
@@ -80,6 +80,10 @@ public class TalkCanvasControlPlayableBehaviour : PlayableBehaviour
             act.ui.UiManager.instance.ControlMouseInput(playCanvas, true);
             act.ui.UiManager.instance.SetUIAlpha(playCanvas, 1, time: playCanvasAlphaTo1Time);
             act.ui.UiManager.instance.SetUIAlpha(talkCanvas, 0, time: talkCanvasAlphaTo0Time, immediate: false, onComplete: () => { act.ui.UiManager.instance.CloseUi<act.ui.TalkCanvas>(); });
+        }
+        if(gameover)
+        {
+            act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ReturnToMain();
         }
     }
 
