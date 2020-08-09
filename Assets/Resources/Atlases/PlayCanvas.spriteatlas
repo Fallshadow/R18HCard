@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 56074f5934aa2ef4ab971988d30bf4ba, type: 3}
-    totalSpriteSurfaceArea: 9023574
+    totalSpriteSurfaceArea: 11097174
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -48,6 +48,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e55f98d210492134896ea5655992ba70, type: 3}
   - {fileID: 21300000, guid: 3e3d3b834cfa8ef4389c8e4a809828bc, type: 3}
   - {fileID: 21300000, guid: 63c9fb544ced7f14c9728e3f430551d3, type: 3}
+  - {fileID: 21300000, guid: 1dce4d84235376644acdad043e89c24b, type: 3}
   - {fileID: 21300000, guid: c3b2ee9458705904899e9b8ad8c1c07b, type: 3}
   - {fileID: 21300000, guid: 872004b45ecb92f4281c05cd1130e137, type: 3}
   - {fileID: 21300000, guid: 14d036b498952574fbe04bd64a2e501b, type: 3}
@@ -98,6 +99,7 @@ SpriteAtlas:
   - EventType1
   - "\u5C01\u9762(2)"
   - EventShowType0
+  - NewPlayer
   - EventType3
   - CardType1
   - CardType4

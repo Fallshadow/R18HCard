@@ -506,6 +506,7 @@ namespace act.ui
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckDeffCEC);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
+            evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over);
         }
 
         public void InitAnim()

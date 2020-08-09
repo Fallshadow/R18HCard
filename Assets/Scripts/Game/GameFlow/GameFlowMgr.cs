@@ -704,6 +704,10 @@ namespace act.game
             ConditionEffectConfig tempCEC;
             for(int i = cdtList.Count - 1; i >= 0; i--)
             {
+                if(i >= cdtList.Count)
+                {
+                    continue;
+                }
                 tempCEC = cdtList[i];
                 bool tempBool = tempCEC.CECheckByBlend();
                 Debug.Log($"当前时点：{System.Enum.GetName(typeof(TimePoint), tempCEC.timePoint)};当前ID：{tempCEC.id}当前结果：{tempBool}");
