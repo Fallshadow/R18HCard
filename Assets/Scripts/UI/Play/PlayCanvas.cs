@@ -307,7 +307,7 @@ namespace act.ui
 
             var hpChangeSequence = DOTween.Sequence();
             hpChangeSequence.Append(hprt.DOLocalMove(new Vector3(0, 480, 0), 2));
-            hpChangeSequence.Join(hprt.DOScale(1.5f, 2));
+            hpChangeSequence.Join(hprt.DOScale(2f, 2));
 
             hpChangeSequence.Append(rectTransform.DOLocalMoveY(rectTransform.localPosition.y + 25.0f, hpDuration));
             hpChangeSequence.Join(text_HP_Effect_Num.DOColor(new Color(color.r, color.g, color.b, 1.0f), hpDuration));

@@ -46,7 +46,8 @@ namespace act.ui
             {
                 titleFadeSeq.Append(title.DOFade(0, 0));
                 titleFadeSeq.Append(allShow.DOFade(0, 0));
-                titleFadeSeq.Append(title.DOFade(1, fadeIn)).AppendCallback(() => { AudioMgr.instance.PlaySound(AudioClips.AC_Title); });
+                titleFadeSeq.Append(title.DOFade(1, fadeIn));
+                   // .AppendCallback(() => { AudioMgr.instance.PlaySound(AudioClips.AC_Title); });
                 var audio = DOTween.Sequence();
                 titleFadeSeq.Append(audio);
                 audio.Append(title.DOFade(1, hold));

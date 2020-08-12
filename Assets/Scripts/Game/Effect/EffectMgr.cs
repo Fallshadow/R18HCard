@@ -181,13 +181,13 @@ namespace act.game
                     {
                         GameFlowMgr.instance.DelectEventByID((int)item);
                     }
-                    if(vars.Length == 3)
+                    if(vars.Length == 5)
                     {
-                        if(vars[0] == 21 && vars[1] == 22 && vars[2] == 28)
+                        if(vars[0] == 21 && vars[1] == 22 && vars[2] == 28 && vars[3] == 29 && vars[4] == 9)
                         {
                             GameController.instance.models[1].SetActive(true);
                         }
-                        if(vars[0] == 20 && vars[1] == 21 && vars[2] == 22)
+                        if(vars[0] == 20 && vars[1] == 21 && vars[2] == 22 && vars[3] == 29 && vars[4] == 9)
                         {
                             GameController.instance.models[1].SetActive(true);
                         }
