@@ -807,6 +807,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 1
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &4306206900774878476
 MonoBehaviour:
