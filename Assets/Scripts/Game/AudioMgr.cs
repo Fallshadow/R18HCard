@@ -14,7 +14,14 @@ public enum AudioClips
     AC_TwoBGM = 6,//第二阶段
     AC_PlayClick = 7,//游玩界面按钮
     AC_ProcessGet = 8,//进度值获取
-    AC_TitleBtn = 9,//标题界面BTN music
+    AC_9 = 9,//10关闭事件
+    AC_10 = 10,//11打开事件
+    AC_11 = 11,//12获取卡牌
+    AC_12 = 12,//3获取快感音
+    AC_13 = 13,//4标题界面音
+    AC_14 = 14,//5检定失败钮
+    AC_15 = 15,//16鉴定成功
+    AC_16 = 16,//
 }
 
 public class AudioMgr : SingletonMonoBehavior<AudioMgr>
@@ -87,6 +94,7 @@ public class AudioMgr : SingletonMonoBehavior<AudioMgr>
         isOnEnvir = true;
         PlayASFadeIn(musicEnvir, envirVol, 0,1);
     }
+
     public void PauseEnvirMusic()
     {
         if(!isOnEnvir)

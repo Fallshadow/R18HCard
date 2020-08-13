@@ -249,6 +249,7 @@ namespace act.ui
         }
         public void HideDesc()
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_9);
             isShow = false;
             InitAnim();
             canvasGroup.DOFade(0, 0.5f);
@@ -499,6 +500,8 @@ namespace act.ui
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Success);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
             evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over);
+            AudioMgr.instance.PlaySound(AudioClips.AC_15);
+
         }
 
         public void Def()
@@ -507,6 +510,7 @@ namespace act.ui
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);
             evt.EventManager.instance.Send(evt.EventGroup.CARD, (short)evt.CardEvent.Card_Use_Over);
+            AudioMgr.instance.PlaySound(AudioClips.AC_14);
         }
 
         public void InitAnim()

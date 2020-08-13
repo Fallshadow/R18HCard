@@ -382,6 +382,13 @@ namespace act.ui
         {
             AudioMgr.instance.PlaySound(AudioClips.AC_PlayClick);
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
+             UiManager.instance.ControlMouseInput(false);
+            Invoke("SetTreu",1.5f);
+        }
+
+        public void SetTreu()
+        {
+            UiManager.instance.ControlMouseInput(true);
         }
         public void ReturnToMain()
         {

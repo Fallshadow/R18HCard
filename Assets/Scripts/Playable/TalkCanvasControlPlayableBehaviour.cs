@@ -73,16 +73,26 @@ public class TalkCanvasControlPlayableBehaviour : PlayableBehaviour
         }
         if(ZUJiao)
         {
-            act.game.GameFlowMgr.instance.EnterToProcessTwo();
+            if(act.game.GameController.instance.unlocktest.GetifR18())
+            {
+                act.game.GameFlowMgr.instance.EnterToProcessTwo();
+            }
+            else
+            {
+                act.game.GameFlowMgr.instance.ClearData();
+                act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ReturnToMain();
+            }
         }
         if(isOver)
         {
             act.ui.UiManager.instance.ControlMouseInput(playCanvas, true);
             act.ui.UiManager.instance.SetUIAlpha(playCanvas, 1, time: playCanvasAlphaTo1Time);
             act.ui.UiManager.instance.SetUIAlpha(talkCanvas, 0, time: talkCanvasAlphaTo0Time, immediate: false, onComplete: () => { act.ui.UiManager.instance.CloseUi<act.ui.TalkCanvas>(); });
+            act.game.GameFlowMgr.instance.ActiveAllEventWhenChange();
         }
         if(gameover)
         {
+            act.game.GameFlowMgr.instance.ClearData();
             act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ReturnToMain();
         }
     }

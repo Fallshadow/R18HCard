@@ -89,13 +89,14 @@ namespace act.ui
         #region Btn
         public void ShowInterBtn()
         {
-            if(game.GameFlowMgr.instance.CanReplay)
+            data.SaveData saveData = data.DataArchiver.Load<data.SaveData>("SaveData");
+            if(saveData == null || saveData.cardInsts.Count == 0 || !game.GameFlowMgr.instance.CanReplay)
             {
-                playbtn.interactable = true;
+                playbtn.interactable = false;
             }
             else
             {
-                playbtn.interactable = false;
+                playbtn.interactable = true;
             }
             textBtn.DOKill();
             textBtn.interactable = false;
@@ -105,19 +106,21 @@ namespace act.ui
             FadeSeq.Append(textBtn.DOFade(1, 0));
             FadeSeq.Append(textBtn.DOFade(0, 1));
             FadeSeq.Append(interBtn.DOFade(1, 1));
-            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlaySound(AudioClips.AC_13);
         }
         public void ExitBtn()
         {
-            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlaySound(AudioClips.AC_13);
             Application.Quit();
         }
         public void Play()
         {
+            game.GameFlowMgr.instance.LoadData();
             Hide();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
-            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlaySound(AudioClips.AC_13);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
+            
         }
         public void RePlay()
         {
@@ -126,7 +129,7 @@ namespace act.ui
             game.GameFlowMgr.instance.ClearData();
             game.GameFlowMgr.instance.LoadData();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
-            AudioMgr.instance.PlaySound(AudioClips.AC_TitleBtn);
+            AudioMgr.instance.PlaySound(AudioClips.AC_13);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
         }
 

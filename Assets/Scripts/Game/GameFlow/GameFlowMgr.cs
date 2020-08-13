@@ -7,7 +7,7 @@ namespace act.game
 {
     public class GameFlowMgr : Singleton<GameFlowMgr>
     {
-        public bool CanReplay = false;
+        public bool CanReplay = true;
         //event 展示
         public bool eventDesc = false;
         //卡牌成功即解决事件？
@@ -237,6 +237,11 @@ namespace act.game
             {
                 return;
             }
+            if(saveData.cardInsts.Count == 0)
+            {
+                saveData.gameobjectBool[0] = true;
+                saveData.gameobjectBool[1] = true;
+            }
             CurCard = saveData.curCard;
             CurCard = null;
             CurEvent = saveData.curEvent;
@@ -417,6 +422,8 @@ namespace act.game
                         last += 20;
                         Pleasant = 0;
                         game.GameController.instance.Carda1zPos();
+                        HideAllEventWhenChange();
+
                     }
                     else if(SecondVit0)
                     {
@@ -427,6 +434,8 @@ namespace act.game
                         last += 20;
                         Pleasant = 0;
                         game.GameController.instance.Cardz2bPos();
+                        HideAllEventWhenChange();
+
                     }
                     else if(ThrVit0)
                     {
@@ -437,11 +446,15 @@ namespace act.game
                         last += 20;
                         Pleasant = 0;
                         game.GameController.instance.Carda1zPos();
+                        HideAllEventWhenChange();
+
                     }
                     else if(FourVit0)
                     {
                         FourVit0 = false;
                         PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengDef);
+                        HideAllEventWhenChange();
+
                     }
                 }
                 vit = last;
@@ -475,6 +488,7 @@ namespace act.game
                         Vit += 20;
                         last = 0;
                         game.GameController.instance.Carda1zPos();
+                        HideAllEventWhenChange();
                     }
                 }
                 if(last >= 150)
@@ -488,6 +502,8 @@ namespace act.game
                         Vit += 20;
                         last = 0;
                         game.GameController.instance.Cardz2bPos();
+                        HideAllEventWhenChange();
+
                     }
                 }
                 if(last >= 200)
@@ -500,6 +516,8 @@ namespace act.game
                         PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianSucc);
                         Vit += 20;
                         last = 0;
+                        HideAllEventWhenChange();
+
                     }
                 }
                 if(last >= 300)
@@ -508,12 +526,34 @@ namespace act.game
                     {
                         FourPlea0 = false;
                         PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengSucc);
+                        HideAllEventWhenChange();
+
                     }
                 }
-                
+                AudioMgr.instance.PlaySound(AudioClips.AC_14);
                 pleasant = last;
                 //通知显示
                 evt.EventManager.instance.Send<bool>(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_PleasantNum_Change, false);
+            }
+        }
+        public void HideAllEventWhenChange()
+        {
+            GameObject[] goes = GameObject.FindGameObjectsWithTag("EventPrefab");
+            tempPos = goes;
+            for(int i = 0; i < goes.Length; i++)
+            {
+                goes[i].SetActive(false);
+            }
+        }
+        GameObject[] tempPos = null;
+        public void ActiveAllEventWhenChange()
+        {
+            if(tempPos != null)
+            {
+                for(int i = 0; i < tempPos.Length; i++)
+                {
+                    tempPos[i].SetActive(true);
+                }
             }
         }
         public void PlayTimeLineFixed(game.TimeLineType timeLineType, TimeLineAssetType timeLineAssetType = 0, DirectorWrapMode directorWrapMode = DirectorWrapMode.None)
@@ -670,6 +710,7 @@ namespace act.game
         }
         public void PushCardToTable(int cardId)
         {
+            AudioMgr.instance.PlaySound(AudioClips.AC_11);
             CardInst inst = game.CardMgr.instance.GetCardInstByID(cardId);
             PushCardToTable(inst);
         }

@@ -43,8 +43,9 @@ namespace act
 
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
         {
+            public GameObject[] goesCamera = null;
             public PlayableAsset xinShouEr = null;
-
+            public unlocktest unlocktest = null;
             public readonly fsm.Fsm<GameController> FSM = new fsm.Fsm<GameController>();
             public GameObject mainCamera;
             public GameObject mainCameraTwo;

@@ -12,6 +12,7 @@ namespace act.ui
         public Image Image;
         public void ExitToMenu()
         {
+            game.GameFlowMgr.instance.ClearData();
             ui.UiManager.instance.CreateUi<PlayCanvas>().ReturnToMain();
         }
 
