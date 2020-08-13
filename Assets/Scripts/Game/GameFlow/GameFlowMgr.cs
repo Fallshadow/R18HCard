@@ -333,6 +333,11 @@ namespace act.game
         public void ClearData()
         {
             saveData = new data.SaveData();
+            saveData.musicVoice = AudioMgr.instance.musicVol;
+            saveData.envirVoice = AudioMgr.instance.envirVol;
+            saveData.soundVoice = AudioMgr.instance.soundVol;
+            saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow;
+            saveData.isPlayNewPlayer = game.GameController.instance.isInNewPlayFlow2;
             data.DataArchiver.Save(saveData, SAVE_FILE_NAME);
         }
 
