@@ -296,6 +296,7 @@ Transform:
   - {fileID: 4025255291610907551}
   - {fileID: 3611958814281183609}
   - {fileID: 7333003739655805445}
+  - {fileID: 7507744049490858830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4551,6 +4552,276 @@ Transform:
   m_Father: {fileID: 4123680803985638387}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5591208555569735857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7507744049490858830}
+  - component: {fileID: 2028092662647604957}
+  m_Layer: 0
+  m_Name: "Magica Bone Spring (\u9A91\u4E58\u5F85\u673A)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7507744049490858830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591208555569735857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3469538295594705177}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028092662647604957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591208555569735857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cf32dda670fde4198398db706c7d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataHash: 1363450300
+  dataVersion: 4
+  teamData:
+    colliderList: []
+    penetrationIgnoreColliderList: []
+    userBlendRatio: 1
+  clothParams:
+    radius:
+      startValue: 0.02
+      endValue: 0.02
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    mass:
+      startValue: 1
+      endValue: 1
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    useGravity: 0
+    gravity:
+      startValue: 0
+      endValue: 0
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    useDirectionalDamping: 0
+    directionalDampingObject: {fileID: 0}
+    directionalDamping:
+      startValue: 1
+      endValue: 0.1
+      useEndValue: 1
+      curveValue: -0.5
+      useCurveValue: 1
+    useDrag: 1
+    drag:
+      startValue: 0.03
+      endValue: 0.015
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    useMaxVelocity: 1
+    maxVelocity:
+      startValue: 3
+      endValue: 3
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    influenceTarget: {fileID: 0}
+    worldMoveInfluence:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    worldRotationInfluence:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    massInfluence: 0.2
+    windInfluence: 0
+    windRandomScale: 0.1
+    useDistanceDisable: 0
+    disableReferenceObject: {fileID: 0}
+    disableDistance: 20
+    disableFadeDistance: 5
+    useResetTeleport: 0
+    teleportDistance: 0.2
+    teleportRotation: 45
+    useClampDistanceRatio: 0
+    clampDistanceMinRatio: 0
+    clampDistanceMaxRatio: 2
+    clampDistanceVelocityInfluence: 0.5
+    useClampPositionLength: 1
+    clampPositionLength:
+      startValue: 0.017
+      endValue: 1
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    clampPositionRatioX: 1
+    clampPositionRatioY: 1
+    clampPositionRatioZ: 1
+    clampPositionVelocityInfluence: 1
+    useClampRotation: 0
+    clampRotationAngle:
+      startValue: 30
+      endValue: 30
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    clampRotationVelocityInfluence: 0.3
+    restoreDistanceVelocityInfluence: 1
+    structDistanceStiffness:
+      startValue: 1
+      endValue: 1
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    useBendDistance: 0
+    bendDistanceMaxCount: 2
+    bendDistanceStiffness:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    useNearDistance: 0
+    nearDistanceMaxCount: 3
+    nearDistanceMaxDepth: 1
+    nearDistanceLength:
+      startValue: 0.05
+      endValue: 0.05
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    nearDistanceStiffness:
+      startValue: 0.3
+      endValue: 0.3
+      useEndValue: 0
+      curveValue: 0
+      useCurveValue: 0
+    useRestoreRotation: 0
+    restoreRotation:
+      startValue: 0.01
+      endValue: 0.01
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    restoreRotationVelocityInfluence: 0.2
+    useSpring: 1
+    springPower: 0.0179
+    springRadius: 0.17
+    springScaleX: 1
+    springScaleY: 1
+    springScaleZ: 1
+    springIntensity: 1
+    springDirectionAtten:
+      startValue: 1
+      endValue: 1
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 1
+    springDistanceAtten:
+      startValue: 1
+      endValue: 1
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 1
+    useAdjustRotation: 1
+    adjustMode: 3
+    adjustRotationPower: 1
+    useTriangleBend: 0
+    triangleBend:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    useVolume: 0
+    maxVolumeLength: 0.1
+    volumeStretchStiffness:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    volumeShearStiffness:
+      startValue: 0.5
+      endValue: 0.5
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    useCollision: 0
+    friction: 0.2
+    keepInitialShape: 0
+    usePenetration: 0
+    penetrationMode: 0
+    penetrationAxis: 5
+    penetrationMaxDepth: 1
+    penetrationConnectDistance:
+      startValue: 0.2
+      endValue: 0.3
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    penetrationDistance:
+      startValue: 0.1
+      endValue: 0.2
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    penetrationRadius:
+      startValue: 0.3
+      endValue: 1
+      useEndValue: 1
+      curveValue: 0
+      useCurveValue: 0
+    useLineAvarageRotation: 1
+    useFixedNonRotation: 0
+  clothData: {fileID: 8661688941729828853}
+  clothDataHash: -1322591406
+  clothDataVersion: 5
+  clothSelection: {fileID: 0}
+  clothSelectionHash: 0
+  clothSelectionVersion: 0
+  meshData: {fileID: -4488917376217144134}
+  meshDataHash: 600315591
+  meshDataVersion: 2
+  clothTarget:
+    rootList:
+    - {fileID: 2228960806135317253}
+    - {fileID: 7788447094586234844}
+  useTransformList:
+  - {fileID: 2228960806135317253}
+  - {fileID: 7788447094586234844}
+  useTransformPositionList:
+  - {x: -0.018135602, y: -0.000000023037197, z: -0.000000013351441}
+  - {x: -0.018135674, y: -0.00000003051758, z: -0.00000024414064}
+  useTransformRotationList:
+  - {x: -0.00000075623393, y: 0, z: -0, w: 1}
+  - {x: 0.0000023841858, y: -0.0000004768374, z: -0.000000104773555, w: 1}
+  useTransformScaleList:
+  - {x: 1, y: 0.99999994, z: 0.9999998}
+  - {x: 1.0000004, y: 1.0000006, z: 1.0000002}
 --- !u!1 &5638276546057055291
 GameObject:
   m_ObjectHideFlags: 0
@@ -7440,6 +7711,34 @@ Transform:
   m_Father: {fileID: 1125309466906185456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4488917376217144134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8ed8fdca875474bbc1b8d6dcfb79bc, type: 3}
+  m_Name: "BoneSpringMeshData_Magica Bone Spring (\u9A91\u4E58\u5F85\u673A)"
+  m_EditorClassIdentifier: 
+  dataHash: 600315591
+  dataVersion: 2
+  isSkinning: 0
+  vertexCount: 2
+  vertexInfoList: 0000001001000010
+  vertexWeightList: []
+  vertexHashList: 
+  uvList: []
+  lineCount: 0
+  lineList: 
+  triangleCount: 0
+  triangleList: 
+  boneCount: 0
+  vertexToTriangleInfoList: 
+  vertexToTriangleIndexList: 
+  childDataList: []
 --- !u!114 &-3190621494624633592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8426,6 +8725,57 @@ MonoBehaviour:
     dataLength: 4
   - startIndex: 13
     dataLength: 5
+  edgeCollisionDataList: []
+  edgeCollisionReferenceList: []
+  edgeCollisionWriteBufferCount: 0
+  penetrationDataList: []
+  penetrationReferenceList: []
+  penetrationMode: 0
+--- !u!114 &8661688941729828853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0548f9dc46468d94c96cbbd1e5c05f74, type: 3}
+  m_Name: "BoneSpringData_Magica Bone Spring (\u9A91\u4E58\u5F85\u673A)"
+  m_EditorClassIdentifier: 
+  dataHash: -1322591406
+  dataVersion: 5
+  useVertexList: 0000000001000000
+  selectionData: 0100000001000000
+  maxLevel: 1
+  vertexFlagLevelList: 0000010000000100
+  vertexDepthList:
+  - 0
+  - 0
+  rootList: ffffffffffffffff
+  parentList: ffffffffffffffff
+  directionalDampingUpDir: {x: 0, y: 1, z: 0}
+  structDistanceDataList: []
+  structDistanceReferenceList: []
+  bendDistanceDataList: []
+  bendDistanceReferenceList: []
+  nearDistanceDataList: []
+  nearDistanceReferenceList: []
+  rootDistanceDataList: []
+  rootDistanceReferenceList: []
+  restoreRotationDataList: []
+  restoreRotationReferenceList: []
+  clampRotationDataList: []
+  clampRotationRootInfoList: []
+  adjustRotationDataList: []
+  triangleBendDataList: []
+  triangleBendReferenceList: []
+  triangleBendWriteBufferCount: 0
+  volumeDataList: []
+  volumeReferenceList: []
+  volumeWriteBufferCount: 0
+  lineRotationDataList: []
+  lineRotationRootInfoList: []
   edgeCollisionDataList: []
   edgeCollisionReferenceList: []
   edgeCollisionWriteBufferCount: 0

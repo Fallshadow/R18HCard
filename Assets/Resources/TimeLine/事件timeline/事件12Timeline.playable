@@ -218,6 +218,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &-7822658826251768707
 MonoBehaviour:
@@ -249,7 +250,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: -7822658826251768707}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.4833333333333325
+    m_BlendInDuration: 2.683333333333333
     m_BlendOutDuration: 2.6238208616780083
     m_MixInCurve:
       serializedVersion: 2
@@ -451,13 +452,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -7765838434192887259}
-    m_Duration: 1.4833333333333325
+    m_Duration: 2.683333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7822658826251768707}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.4833333333333325
+    m_BlendOutDuration: 2.683333333333333
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -515,7 +516,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: "\u865A\u62DF\u6444\u50CF\u673A_\u65B0\u624B\u6559\u7A0B\u4E13\u7528_\u62AC\u5934\u4E86\uFF01"
+    m_DisplayName: "\u865A\u62DF\u6444\u50CF\u673A-\u4FA7\u89C6"
   m_Markers:
     m_Objects: []
 --- !u!114 &-7765838434192887259
@@ -1069,7 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   VirtualCamera:
-    exposedName: 99fc818a5a73cc04da3760d82d9dc8c6
+    exposedName: 300caaf26c6e9a04b8e86460eb55784b
     defaultValue: {fileID: 0}
 --- !u!114 &-1565722528796895943
 MonoBehaviour:
@@ -1799,6 +1800,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &3247879254805097732
 MonoBehaviour:
@@ -1910,6 +1912,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 0
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &4896374685656139168
 MonoBehaviour:
@@ -2122,6 +2125,7 @@ MonoBehaviour:
   pauseTL: 0
   timeline: 0
   isOver: 1
+  gameover: 0
   ZUJiao: 0
 --- !u!114 &7401669400143274092
 MonoBehaviour:
