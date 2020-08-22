@@ -102,7 +102,6 @@ namespace act.game
                             GameController.instance.models[0].SetActive(false);
                         }
                     }
-                    
                     return;
                 case EffectId.EI_5:
                     RandomNumMgr.instance.curTouziNum += (int)vars[0];
@@ -250,7 +249,16 @@ namespace act.game
                     {
                         game.GameController.instance.YUJINuseTimerNorModel = false;
                         game.GameController.instance.models[6].gameObject.SetActive(true);
-                        game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
+                        if(act.game.GameController.instance.unlocktest.GetifR18())
+                        {
+                            game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
+                        }
+                        else
+                        {
+                            act.game.GameFlowMgr.instance.ClearData();
+                            act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ReturnToMain();
+                        }
+                        
                     }
                     return;
                 case EffectId.EI_28:
@@ -259,7 +267,15 @@ namespace act.game
                 case EffectId.EI_29:
                     game.GameController.instance.YUJINuseTimerNorModel = false;
                     game.GameController.instance.models[6].gameObject.SetActive(true);
-                    game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
+                    if(act.game.GameController.instance.unlocktest.GetifR18())
+                    {
+                        game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
+                    }
+                    else
+                    {
+                        act.game.GameFlowMgr.instance.ClearData();
+                        act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ReturnToMain();
+                    }
                     return;
                 case EffectId.EI_30:
                     GameFlowMgr.instance.TwoOneNum += (int)RandomNumMgr.instance.justTouziCheckNum;
@@ -276,6 +292,14 @@ namespace act.game
                     return;
                 case EffectId.EI_32:
                     GameFlowMgr.instance.hadUsecardInsts[GameFlowMgr.instance.hadUsecardInsts.Count - 1].DestorySelf();
+                    return;
+                case EffectId.EI_33:
+                    int[] num = new int[vars.Length];
+                    for(int i = 0; i < vars.Length; i++)
+                    {
+                        num[i] = (int)vars[i];
+                    }
+                    GameFlowMgr.instance.DelectAllEventUnSelfID(num);
                     return;
                 default:
                     break;

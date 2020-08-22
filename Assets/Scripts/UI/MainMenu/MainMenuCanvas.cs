@@ -118,6 +118,7 @@ namespace act.ui
             game.GameFlowMgr.instance.LoadData();
             Hide();
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
+            game.GameController.instance.LoadEventPos();
             AudioMgr.instance.PlaySound(AudioClips.AC_13);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);
             
@@ -125,9 +126,14 @@ namespace act.ui
         public void RePlay()
         {
             Hide();
+            game.GameController.instance.initcamera();
             game.GameFlowMgr.instance.CanReplay = true;
             game.GameFlowMgr.instance.ClearData();
             game.GameFlowMgr.instance.LoadData();
+            game.GameController.instance.SetPlayableAsset(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFu0);
+            game.GameController.instance.SetPlayableAsset(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMian0);
+            game.GameController.instance.SetPlayableAsset(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMian0);
+            game.GameController.instance.SetPlayableAsset(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiCheng0);
             game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.PLAP);
             AudioMgr.instance.PlaySound(AudioClips.AC_13);
             AudioMgr.instance.PlayMusicFade(AudioClips.AC_OneBGM);

@@ -70,3 +70,4 @@ desc29=进入PPP
 desc30=21点数变化X
 desc31=
 desc32=删除上一张卡牌
+desc33=删除suoyoue

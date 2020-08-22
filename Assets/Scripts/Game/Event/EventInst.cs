@@ -42,6 +42,13 @@ namespace act.game
             }
         }
         private int roundNum = 0;
+
+        public void DestoryByOther(int value)
+        {
+            roundNum = value;
+            DestorySelf();
+            evt.EventManager.instance.Send<int>(evt.EventGroup.EVENT, (short)evt.EventEvent.Event_ID_ROUNDNUM_CHANGE, UniqueId);
+        }
         public bool HasComplete
         {
             get

@@ -17,7 +17,10 @@ namespace act.utility
         {
             string filename = "";
             filename = $"事件{eventID}Timeline";
-            game.TimeLineMgr.instance.PlayPlayableAsset(filename);
+            if(game.GameController.instance.isEventTL)
+            {
+                game.TimeLineMgr.instance.PlayPlayableAsset(filename);
+            }
         }
     }
 }

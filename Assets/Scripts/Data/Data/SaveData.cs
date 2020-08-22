@@ -42,5 +42,8 @@ namespace act.data
         public bool isPlayNewPlayer = true;
 
         public bool[] gameobjectBool = new bool[20];
+        public float vecX = 0;
+        public float vecY = 0;
+        public float vecZ = 0;
     }
 }

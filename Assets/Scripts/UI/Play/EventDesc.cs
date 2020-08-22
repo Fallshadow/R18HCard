@@ -142,7 +142,7 @@ namespace act.ui
             }
             if(inst.config.specialCId != null)
             {
-                SText_Desc_String += "/n" + localization.LocalizationManager.instance.GetLocalizedString(inst.config.desc_SP, "ui_system");
+                SText_Desc_String += "\n" + localization.LocalizationManager.instance.GetLocalizedString(inst.config.desc_SP, "ui_system");
                 
 
                 //SText_SP_Desc.gameObject.SetActive(true);
@@ -249,6 +249,7 @@ namespace act.ui
         }
         public void HideDesc()
         {
+            UiManager.instance.CreateUi<PlayCanvas>().setOverRound(true);
             AudioMgr.instance.PlaySound(AudioClips.AC_9);
             isShow = false;
             InitAnim();
@@ -482,6 +483,7 @@ namespace act.ui
             anim.enabled = true;
             anim.SetFloat("Init", 1);
             anim.SetTrigger("Succ");
+            UiManager.instance.CreateUi<PlayCanvas>().setOverRound(false);
         }
         public void RollEventDef()
         {
@@ -492,6 +494,7 @@ namespace act.ui
 
         public void Succ()
         {
+
             //转移到事件消失之后
             game.GameFlowMgr.instance.CurCard.CheckCdt();
             //game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckSuccCEC);
@@ -506,6 +509,7 @@ namespace act.ui
 
         public void Def()
         {
+
             game.GameFlowCdtAndEft.instance.CheckCdt(game.GameFlowCdtAndEft.instance.CardNumCheckDeffCEC);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_Card_Event_Def);
             evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.DisHideAll);

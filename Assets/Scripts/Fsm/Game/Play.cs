@@ -23,12 +23,10 @@ namespace act.fsm
                 ui.UiManager.instance.OpenUi<ui.PlayCanvas>();
                 if(game.GameFlowMgr.instance.processTwo)
                 {
-                    act.game.GameController.instance.mainCameraTwo.SetActive(true);
-                    act.game.GameController.instance.mainCamera.SetActive(false);
+                    act.game.GameController.instance.mainCamera.SetActive(true);
                 }
                 else
                 {
-                    act.game.GameController.instance.mainCameraTwo.SetActive(false);
                     act.game.GameController.instance.mainCamera.SetActive(true);
                 }
                 act.game.GameController.instance.uiCamera.GetComponent<PostProcessVolume>().enabled = true;

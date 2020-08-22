@@ -849,6 +849,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7102417178370363914, guid: 57ed9b5fa7d16e4489a28b2b043a1607,
         type: 2}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.25098035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.7086237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235956934651569903, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4290068689
+      objectReference: {fileID: 0}
     - target: {fileID: 4632224841301229551, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_Name
@@ -1019,6 +1039,26 @@ PrefabInstance:
     - target: {fileID: 6175452954185238408, guid: 648399e19379318459a774e377285a86,
         type: 3}
       propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175452954185238408, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175452954185238408, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175452954185238408, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175452954185238408, guid: 648399e19379318459a774e377285a86,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6392881621501423358, guid: 648399e19379318459a774e377285a86,

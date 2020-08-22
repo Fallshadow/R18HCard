@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections.Generic;
+using Cinemachine;
 
 namespace act
 {
@@ -62,6 +63,20 @@ namespace act
             [Header("是否开启新手教程")]
             public bool isInNewPlayFlow = false;
             public bool isInNewPlayFlow2 = false;
+            [Header("是否开启事件timeline")]
+            public bool isEventTL = true;
+            [Header("初始摄像机")]
+            public CinemachineVirtualCamera initCamera = null;
+
+            public void initcamera()
+            {
+                initCamera.gameObject.SetActive(true);
+                Invoke("inactivecamera",0.1f);
+            }
+            private void inactivecamera()
+            {
+                initCamera.gameObject.SetActive(false);
+            }
             protected override void Awake()
             {
                 base.Awake();
@@ -185,6 +200,11 @@ namespace act
                 timelines[(int)timeLineType].playableAsset = timeLineAssets[(int)timeLineAssetType];
                 timelines[(int)timeLineType].extrapolationMode = directorWrapMode;
                 timelines[(int)timeLineType].Play();
+            }
+
+            public void SetPlayableAsset(TimeLineType timeLineType, TimeLineAssetType timeLineAssetType)
+            {
+                timelines[(int)timeLineType].playableAsset = timeLineAssets[(int)timeLineAssetType];
             }
 
             public void Carda1zPos()
@@ -740,15 +760,15 @@ namespace act
 
             public void LoadEventPos(data.SaveData saveData)
             {
-                if(saveData.ThrPlea0 || saveData.ThrVit0)
+                if(!saveData.ThrPlea0 || !saveData.ThrVit0)
                 {
                     Cardb3qPos();
                 }
-                else if(saveData.SecondVit0 || saveData.SecondPlea0)
+                else if(!saveData.SecondVit0 || !saveData.SecondPlea0)
                 {
                     Cardz2bPos();
                 }
-                else if(saveData.FirstVit0 || saveData.FirstPlea0)
+                else if(!saveData.FirstVit0 || !saveData.FirstPlea0)
                 {
                     Carda1zPos();
                 }

@@ -109,6 +109,7 @@ namespace act.game
         EI_30,
         EI_31,
         EI_32,
+        EI_33,
     }
 
     public enum TimePoint

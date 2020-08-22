@@ -242,6 +242,8 @@ namespace act.game
                 saveData.gameobjectBool[0] = true;
                 saveData.gameobjectBool[1] = true;
             }
+            game.GameController.instance.mainCamera.transform.position = new Vector3(saveData.vecX, saveData.vecY, saveData.vecZ);
+            processTwo = saveData.processTwo;
             CurCard = saveData.curCard;
             CurCard = null;
             CurEvent = saveData.curEvent;
@@ -259,7 +261,7 @@ namespace act.game
 
             Pleasant = saveData.pleasant;
             Vit = saveData.vit;
-            processTwo = saveData.processTwo;
+
 
             FirstVit0 = saveData.FirstVit0;
             SecondVit0 = saveData.SecondVit0;
@@ -271,7 +273,7 @@ namespace act.game
             ThrPlea0 = saveData.ThrPlea0;
             FourPlea0 = saveData.FourPlea0;
             GameController.instance.LoadGOpos(saveData.gameobjectBool);
-            GameController.instance.LoadEventPos(saveData);
+            
         }
 
         public void LoadSettingData()
@@ -291,6 +293,7 @@ namespace act.game
         public void SaveData()
         {
             saveData = new data.SaveData();
+            saveData.processTwo = processTwo;
             saveData.curCard = CurCard;
             saveData.curEvent = CurEvent;
             saveData.curEventResults = curEventResults;
@@ -306,8 +309,6 @@ namespace act.game
 
             saveData.pleasant = Pleasant;
             saveData.vit = Vit;
-            saveData.processTwo = processTwo;
-
 
 
             saveData.FirstVit0 = FirstVit0;
@@ -318,8 +319,9 @@ namespace act.game
             saveData.SecondPlea0 = SecondPlea0;
             saveData.ThrPlea0 = ThrPlea0;
             saveData.FourPlea0 = FourPlea0;
-
-
+            saveData.vecX = game.GameController.instance.mainCamera.transform.position.x;
+            saveData.vecY = game.GameController.instance.mainCamera.transform.position.y;
+            saveData.vecZ = game.GameController.instance.mainCamera.transform.position.z;
             saveData.musicVoice = AudioMgr.instance.musicVol;
             saveData.envirVoice = AudioMgr.instance.envirVol;
             saveData.soundVoice = AudioMgr.instance.soundVol;
@@ -421,8 +423,9 @@ namespace act.game
                 {
                     if(FirstVit0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FirstVit0 = false;
-                        PushEventToTable(53);
+                        cardsCanUse();                        PushEventToTable(53);
                         PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuDef);
                         last += 20;
                         Pleasant = 0;
@@ -432,8 +435,9 @@ namespace act.game
                     }
                     else if(SecondVit0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         SecondVit0 = false;
-                        PushEventToTable(58);
+                        cardsCanUse();                        PushEventToTable(58);
                         PushEventToTable(59);
                         PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianDef);
                         last += 20;
@@ -444,18 +448,20 @@ namespace act.game
                     }
                     else if(ThrVit0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         ThrVit0 = false;
-                        PushEventToTable(60);
+                        cardsCanUse();                      PushEventToTable(60);
                         PushEventToTable(61);
                         PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianDef);
                         last += 20;
                         Pleasant = 0;
-                        game.GameController.instance.Carda1zPos();
+                        game.GameController.instance.Cardb3qPos();
                         HideAllEventWhenChange();
 
                     }
                     else if(FourVit0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FourVit0 = false;
                         PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengDef);
                         HideAllEventWhenChange();
@@ -464,6 +470,14 @@ namespace act.game
                 }
                 vit = last;
                 evt.EventManager.instance.Send(evt.EventGroup.GAME, (short)evt.GameEvent.Globe_VitNum_Change);
+            }
+        }
+
+        private void cardsCanUse()
+        {
+            foreach(var item in cardInsts)
+            {
+                item.Canuse = true;
             }
         }
 
@@ -482,13 +496,13 @@ namespace act.game
                 }
                 int last = 0;
                 last = value < 0 ? 0 : value;
-                if(last >= 100)
+                if(last >= 120)
                 {
                     if(FirstPlea0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FirstPlea0 = false;
-                        PushEventToTable(53);
-                        PushEventToTable(54);
+                        cardsCanUse();                        PushEventToTable(53);
                         PlayTimeLineFixed(game.TimeLineType.AiFu, game.TimeLineAssetType.AiFuSucc);
                         Vit += 20;
                         last = 0;
@@ -496,12 +510,13 @@ namespace act.game
                         HideAllEventWhenChange();
                     }
                 }
-                if(last >= 150)
+                if(last >= 160)
                 {
                     if(SecondPlea0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         SecondPlea0 = false;
-                        PushEventToTable(58);
+                        cardsCanUse();                        PushEventToTable(58);
                         PushEventToTable(59);
                         PlayTimeLineFixed(game.TimeLineType.ZhengMian, game.TimeLineAssetType.ZhengMianSucc);
                         Vit += 20;
@@ -515,20 +530,22 @@ namespace act.game
                 {
                     if(ThrPlea0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         ThrPlea0 = false;
-                        PushEventToTable(60);
+                        cardsCanUse();                        PushEventToTable(60);
                         PushEventToTable(61);
                         PlayTimeLineFixed(game.TimeLineType.BeiMian, game.TimeLineAssetType.BeiMianSucc);
                         Vit += 20;
                         last = 0;
+                        game.GameController.instance.Cardb3qPos();
                         HideAllEventWhenChange();
-
                     }
                 }
-                if(last >= 300)
+                if(last >= 240)
                 {
                     if(FourPlea0)
                     {
+                        ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FourPlea0 = false;
                         PlayTimeLineFixed(game.TimeLineType.QiCheng, game.TimeLineAssetType.QiChengSucc);
                         HideAllEventWhenChange();
@@ -572,22 +589,23 @@ namespace act.game
             DelectAllEvent();
             processTwo = true;
             //计算结算体力值
-            vit = (20 - roundNum) + 2 * hp;
+            vit = (20 - roundNum) + 2 * hp + 5;
             act.ui.UiManager.instance.CreateUi<act.ui.PlayCanvas>().ShowSpecialVitShow(()=> {
                 if(GameController.instance.isInNewPlayFlow2)
                 {
                     game.TimeLineMgr.instance.PlayTimeline(game.TimeLineMgr.instance.newPlayerDir, act.game.GameController.instance.xinShouEr);
-                    game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
                 }
                 game.GameController.instance.models[2].gameObject.SetActive(true);
-                ui.UiManager.instance.ControlMouseInput(true);
                 PushEventToTable(39);
                 PushEventToTable(45);
                 PushEventToTable(49);
+                game.GameController.instance.FSM.SwitchToState((int)fsm.GameFsmState.GameFlowRoundEnd);
+                ui.UiManager.instance.ControlMouseInput(true);
+                
                 act.ui.UiManager.instance.SetUIAlpha(ui.UiManager.instance.CreateUi<ui.PlayCanvas>(), 1, time: 0);
             });
 
-            Pleasant = (int)process;
+            Pleasant = (int)(process/5);
             roundNum = 0;
             //act.game.GameController.instance.mainCamera.SetActive(false);
             //act.game.GameController.instance.mainCameraTwo.SetActive(true);
@@ -638,8 +656,31 @@ namespace act.game
         {
             for(int i = 0; i < eventInsts.Count; i++)
             {
-                eventInsts[i].RoundNum = -1;
+                eventInsts[i].DestoryByOther(-1);
                 i--;
+            }
+        }
+        
+        public void DelectAllEventUnSelfID(int[] IDs)
+        {
+            for(int i = 0; i < eventInsts.Count; i++)
+            {
+                bool boolC = false;
+                for(int j = 0; j < IDs.Length; j++)
+                {
+                    if(IDs[j] == eventInsts[i].config.ID)
+                    {
+                        boolC = true;
+                        continue;
+                    }
+                }
+                if(boolC)
+                {
+                    continue;
+                }
+                eventInsts[i].DestoryByOther(-1);
+                i--;
+                
             }
         }
 

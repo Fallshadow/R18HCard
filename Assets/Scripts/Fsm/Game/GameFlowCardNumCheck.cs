@@ -100,7 +100,10 @@ namespace act.fsm
         {
             string filename = "";
             filename = $"事件{game.GameFlowMgr.instance.CurEvent.config.ID}Timeline";
-            game.TimeLineMgr.instance.PlayPlayableAsset(filename);
+            if(game.GameController.instance.isEventTL)
+            {
+                game.TimeLineMgr.instance.PlayPlayableAsset(filename);
+            }
         }
 
         public void ChooseDefTimeLineToPlay()
