@@ -23,7 +23,7 @@ namespace act.game
         public RectTransform oneGO;
 
         public CanvasGroup succordefCG = null;
-
+        
         public Touzi[] touzi;
         public List<float> resultList = new List<float>();
         public float touziNum = 0;
@@ -131,7 +131,7 @@ namespace act.game
                 default:
                     break;
             }
-            reTime.DOFade(0, 2).OnComplete(() => { 
+            reTime.DOFade(0, 1).OnComplete(() => { 
                 Touzi1.DOKill(); Touzi1.sprite = resultSprite;
                 continueCheck.Invoke();
                 TextRoll.GetOrAddComponent<CanvasGroup>().DOFade(1, 1);
@@ -198,7 +198,7 @@ namespace act.game
                     break;
             }
 
-            reTime.DOFade(0, 2).OnComplete(() => {
+            reTime.DOFade(0, 1).OnComplete(() => {
                 Touzi1.DOKill();
                 Touzi1.sprite = resultSprite1;
                 Touzi2.DOKill();
@@ -293,7 +293,7 @@ namespace act.game
                     break;
             }
 
-            reTime.DOFade(0, 2).OnComplete(() => {
+            reTime.DOFade(0, 1).OnComplete(() => {
                 Touzi1.DOKill();
                 Touzi1.sprite = resultSprite1;
                 Touzi2.DOKill();
