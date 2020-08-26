@@ -9,6 +9,8 @@ namespace act.ui
     [BindingResource("Play/TalkCanvas")]
     public class TalkCanvas : FullScreenCanvasBase
     {
+        public GameObject[] objs = null;
+        
         public Text talkContent;
         public UiStaticText talkerName;
         public string talkContentString;
@@ -17,6 +19,17 @@ namespace act.ui
         public Button showTalkContent;
         public Button NextBtn;
         public CanvasGroup canvasGroup;
+        private void Start()
+        {
+            setobjs(game.GameController.instance.isshowtalkcanvas);
+        }
+        public void setobjs(bool isshow)
+        {
+            foreach(var item in objs)
+            {
+                item.SetActive(isshow);
+            }
+        }
         public override void Initialize()
         {
 

@@ -248,6 +248,8 @@ namespace act.game
             CurCard = null;
             CurEvent = saveData.curEvent;
             CurEvent = null;
+            game.GameController.instance.isshowtalkcanvas = saveData.isshowtalkobjs;
+
             curEventResults = saveData.curEventResults;
             eventInsts = saveData.eventInsts;
             twoOneNum = saveData.num21;
@@ -293,6 +295,7 @@ namespace act.game
         public void SaveData()
         {
             saveData = new data.SaveData();
+            saveData.isshowtalkobjs = game.GameController.instance.isshowtalkcanvas;
             saveData.processTwo = processTwo;
             saveData.curCard = CurCard;
             saveData.curEvent = CurEvent;
@@ -421,7 +424,7 @@ namespace act.game
                 last = value < 0 ? 0 : value;
                 if(last == 0)
                 {
-                    if(FirstVit0)
+                    if(FirstVit0 && FirstPlea0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FirstVit0 = false;
@@ -433,7 +436,7 @@ namespace act.game
                         HideAllEventWhenChange();
 
                     }
-                    else if(SecondVit0)
+                    else if(SecondVit0 && SecondPlea0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         SecondVit0 = false;
@@ -446,7 +449,7 @@ namespace act.game
                         HideAllEventWhenChange();
 
                     }
-                    else if(ThrVit0)
+                    else if(ThrVit0 && ThrPlea0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         ThrVit0 = false;
@@ -459,7 +462,7 @@ namespace act.game
                         HideAllEventWhenChange();
 
                     }
-                    else if(FourVit0)
+                    else if(FourVit0 && FourPlea0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FourVit0 = false;
@@ -498,7 +501,7 @@ namespace act.game
                 last = value < 0 ? 0 : value;
                 if(last >= 120)
                 {
-                    if(FirstPlea0)
+                    if(FirstPlea0 && FirstVit0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FirstPlea0 = false;
@@ -512,7 +515,7 @@ namespace act.game
                 }
                 if(last >= 160)
                 {
-                    if(SecondPlea0)
+                    if(SecondPlea0 && SecondVit0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         SecondPlea0 = false;
@@ -528,7 +531,7 @@ namespace act.game
                 }
                 if(last >= 200)
                 {
-                    if(ThrPlea0)
+                    if(ThrPlea0 && ThrVit0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         ThrPlea0 = false;
@@ -543,7 +546,7 @@ namespace act.game
                 }
                 if(last >= 240)
                 {
-                    if(FourPlea0)
+                    if(FourPlea0 && FourVit0)
                     {
                         ui.UiManager.instance.CreateUi<ui.PlayCanvas>().HideHideAllImage();
                         FourPlea0 = false;

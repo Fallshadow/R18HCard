@@ -1010,6 +1010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDontDestroy: 0
   graphicRaycaster: {fileID: 1294371787134102700}
+  objs:
+  - {fileID: 3244736234162035313}
+  - {fileID: 8806888383754749621}
   talkContent: {fileID: 3928176153089354853}
   talkerName: {fileID: 3215573803262379582}
   talkContentString: 

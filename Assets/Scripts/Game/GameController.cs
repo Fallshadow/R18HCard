@@ -44,6 +44,7 @@ namespace act
 
         public class GameController : SingletonMonoBehaviorNoDestroy<GameController>
         {
+            public bool isshowtalkcanvas = true;
             public GameObject[] goesCamera = null;
             public PlayableAsset xinShouEr = null;
             public unlocktest unlocktest = null;
@@ -341,6 +342,12 @@ namespace act
                     GameObject.Find("EventPrefabBase56(Clone)").transform.eulerAngles = A1ZR[4];
                     GameObject.Find("EventPrefabBase56(Clone)").transform.localScale = A1ZS[4];
                 }
+                if(GameObject.Find("EventPrefabBase62(Clone)") != null)
+                {
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.position = A1Z[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.eulerAngles = A1ZR[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.localScale = A1ZS[4];
+                }
 
 
 
@@ -500,6 +507,13 @@ namespace act
                     GameObject.Find("EventPrefabBase56(Clone)").transform.localScale = Z2BS[4];
 
                 }
+                if(GameObject.Find("EventPrefabBase62(Clone)") != null)
+                {
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.position = Z2B[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.eulerAngles = Z2BR[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.localScale = Z2BS[4];
+                }
+
 
 
 
@@ -681,6 +695,12 @@ namespace act
                     GameObject.Find("EventPrefabBase56(Clone)").transform.eulerAngles = B3QR[4];
                     GameObject.Find("EventPrefabBase56(Clone)").transform.localScale = B3QS[4];
 
+                }
+                if(GameObject.Find("EventPrefabBase62(Clone)") != null)
+                {
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.position = B3Q[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.eulerAngles = B3QR[4];
+                    GameObject.Find("EventPrefabBase62(Clone)").transform.localScale = B3QS[4];
                 }
 
 

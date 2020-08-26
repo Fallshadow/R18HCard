@@ -251,6 +251,8 @@ namespace act.game
                         game.GameController.instance.models[6].gameObject.SetActive(true);
                         if(act.game.GameController.instance.unlocktest.GetifR18())
                         {
+                            game.GameController.instance.isshowtalkcanvas = false;
+                            ui.UiManager.instance.CreateUi<ui.TalkCanvas>().setobjs(false);
                             game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
                         }
                         else
@@ -269,6 +271,8 @@ namespace act.game
                     game.GameController.instance.models[6].gameObject.SetActive(true);
                     if(act.game.GameController.instance.unlocktest.GetifR18())
                     {
+                        game.GameController.instance.isshowtalkcanvas = false;
+                        ui.UiManager.instance.CreateUi<ui.TalkCanvas>().setobjs(false);
                         game.GameFlowMgr.instance.PlayTimeLineFixed(game.TimeLineType.ZuJiaoHard, game.TimeLineAssetType.ZuJiaoHard);
                     }
                     else

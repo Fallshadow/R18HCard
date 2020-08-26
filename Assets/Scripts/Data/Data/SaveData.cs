@@ -45,5 +45,6 @@ namespace act.data
         public float vecX = 0;
         public float vecY = 0;
         public float vecZ = 0;
+        public bool isshowtalkobjs = true;
     }
 }
